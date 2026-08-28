@@ -1,0 +1,64 @@
+# =========================
+# 1. Datasets & Imagery (CRITICAL)
+# =========================
+# Ignore massive satellite datasets and images
+data/
+datasets/
+sen1floods11/
+*.tif
+*.tiff
+*.vrt
+*.geojson
+*.tfrecord
+*.nc
+
+# =========================
+# 2. PyTorch & Model Checkpoints
+# =========================
+# Ignore heavy model weights and training logs
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+lightning_logs/
+wandb/
+tb_logs/
+checkpoints/
+models/
+
+# =========================
+# 3. Python & Environments
+# =========================
+# Ignore standard Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+env/
+.venv/
+
+# =========================
+# 4. Jupyter Notebooks
+# =========================
+# Ignore notebook checkpoints and temporary files
+.ipynb_checkpoints/
+*.ipynb[_-]bck
+
+# =========================
+# 5. Hugging Face Cache
+# =========================
+# Ignore downloaded foundation model weights (Prithvi)
+.huggingface/
+hf_cache/
+.cache/
+
+# =========================
+# 6. IDEs & OS Files
+# =========================
+# Ignore VS Code, PyCharm, and Windows/Mac junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
