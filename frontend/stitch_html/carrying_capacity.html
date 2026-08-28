@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carrying Capacity Assessment - Safe Zones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#131b2e",
+                      "primary-fixed": "#dae2fd",
+                      "surface-variant": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f6f3f5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#d8e3fb",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#98805d",
+                      "outline": "#76777d",
+                      "on-tertiary-fixed": "#271901",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed": "#111c2d",
+                      "surface-tint": "#565e74",
+                      "secondary": "#545f73",
+                      "tertiary": "#000000",
+                      "background": "#fcf8fa",
+                      "tertiary-fixed": "#fcdeb5",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-background": "#1b1b1d",
+                      "tertiary-container": "#271901",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#3c475a",
+                      "secondary-container": "#d5e0f8",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#131b2e",
+                      "primary-fixed-dim": "#bec6e0",
+                      "inverse-surface": "#303032",
+                      "on-secondary-container": "#586377",
+                      "surface-container-high": "#eae7e9",
+                      "secondary-fixed-dim": "#bcc7de",
+                      "on-surface-variant": "#45464d",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#fcf8fa",
+                      "inverse-primary": "#bec6e0",
+                      "surface-container": "#f0edef",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#7c839b",
+                      "outline-variant": "#c6c6cd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "control-height": "40px",
+                      "container-max": "1440px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "gutter": "16px",
+                      "stack-md": "16px",
+                      "edge-margin": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "title-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "10px",
+                              {
+                                      "lineHeight": "14px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-primary-container text-primary dark:text-primary-fixed font-body-md text-body-md docked full-width top-0 border-b border-outline-variant dark:border-outline flat no shadows transition-all duration-200 ease-in-out hidden md:flex justify-between items-center w-full px-edge-margin h-control-height z-50">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed flex items-center gap-2">
+<span class="material-symbols-outlined filled">security</span>
+            Safe Zones
+        </div>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Risk Map</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Capacity</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Evacuation</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Alerts</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Admin</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-8 pr-3 py-1 border border-outline-variant rounded bg-surface-container-low text-sm focus:outline-none focus:border-primary w-48 transition-colors" placeholder="Search..." type="text"/>
+</div>
+<button class="bg-error text-on-error px-4 py-1 rounded text-sm font-bold flex items-center gap-1 hover:bg-red-700 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 16px;">warning</span> Emergency
+            </button>
+</div>
+</nav>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar -->
+<aside class="bg-surface dark:bg-primary-container text-primary dark:text-primary-fixed font-label-md text-label-md docked left-0 h-full w-[320px] border-r border-outline-variant dark:border-outline flat no shadows scale-95 active:scale-100 transition-transform hidden lg:flex flex-col h-full py-stack-md px-stack-sm flex-shrink-0 z-40">
+<div class="mb-stack-lg px-2">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A highly detailed close-up portrait of a professional command center operator in a crisp white shirt, set against a blurred background of glowing monitors in a modern, light-mode control room. Soft, even lighting highlights a vigilant, serious expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs8C0L5jifPxd2evAGL4of9Z-3eKTH_ITC7_gHSJz16kgFxdIeDaA-YBMqnB7V-SSHPy799nTl05yCEIJJFIHmn5rlVIZ5PzCr0EOjl5thg1j91qY0K8_WsV6J3KoZuMB7EHYaREW8wZCO9FfoxN2xiIeVpo6IoqKLE3RmkRUYYKUt7NjnGWaiEXuIWynLwMPAba_m7htmE_HhfUwxuRHt_A1NRv2T1We8ZaVR1VYFbZ4ilcrZETJP"/>
+</div>
+<div>
+<div class="font-bold text-sm">Command Center</div>
+<div class="text-xs text-on-surface-variant">Vigilant Operations</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant flex items-center gap-3 px-3 py-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">gpp_maybe</span>
+                    Risk Zones
+                </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant flex items-center gap-3 px-3 py-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">priority_high</span>
+                    Priority
+                </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant flex items-center gap-3 px-3 py-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">moped</span>
+                    Relocation
+                </a>
+<a class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg flex items-center gap-3 px-3 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                    Analytics
+                </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant flex items-center gap-3 px-3 py-2 rounded-lg transition-colors mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-edge-margin bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<header class="mb-stack-lg border-b border-outline-variant pb-4 flex justify-between items-end">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-1">Carrying Capacity Assessment</h1>
+<p class="text-on-surface-variant">Calculate maximum safe population thresholds for designated safe zones.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 bg-green-100 text-green-800 border border-green-300 rounded font-label-md text-label-md uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">check_circle</span>
+                            Status: SAFE
+                        </span>
+</div>
+</header>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Input Section -->
+<section class="xl:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm">
+<h2 class="font-title-lg text-title-lg mb-4 flex items-center gap-2 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-primary">tune</span>
+                                Resource Inputs
+                            </h2>
+<form class="space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Existing Population</label>
+<input class="w-full h-control-height border border-outline-variant rounded px-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-label-md" type="number" value="4800"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Available Land (Ha)</label>
+<input class="w-full h-control-height border border-outline-variant rounded px-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-label-md" type="number" value="1250"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Water Supply (L/day)</label>
+<input class="w-full h-control-height border border-outline-variant rounded px-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-label-md" type="number" value="150000"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Electricity (MW)</label>
+<input class="w-full h-control-height border border-outline-variant rounded px-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-label-md" type="number" value="45"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Housing Units</label>
+<input class="w-full h-control-height border border-outline-variant rounded px-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-label-md" type="number" value="2100"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Medical Beds</label>
+<input class="w-full h-control-height border border-outline-variant rounded px-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-label-md" type="number" value="350"/>
+</div>
+<button class="w-full h-control-height bg-primary text-on-primary rounded font-bold hover:bg-slate-800 transition-colors mt-4 flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined">calculate</span>
+                                    Calculate Capacity
+                                </button>
+</form>
+</div>
+</section>
+<!-- Output & Visualization Section -->
+<section class="xl:col-span-8 flex flex-col gap-gutter">
+<!-- Top KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm border-t-4 border-t-primary">
+<div class="text-on-surface-variant font-label-md text-label-md uppercase mb-2">Maximum Safe Capacity</div>
+<div class="font-display-lg text-display-lg text-primary">6,500</div>
+<div class="text-sm text-on-surface-variant mt-1">people</div>
+</div>
+<div class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm">
+<div class="text-on-surface-variant font-label-md text-label-md uppercase mb-2">Current Population</div>
+<div class="font-headline-lg text-headline-lg text-primary">4,800</div>
+<div class="text-sm text-on-surface-variant mt-1">people (73.8% of max)</div>
+</div>
+<div class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm border-t-4 border-t-green-500">
+<div class="text-on-surface-variant font-label-md text-label-md uppercase mb-2">Available Capacity</div>
+<div class="font-headline-lg text-headline-lg text-green-700">1,700</div>
+<div class="text-sm text-on-surface-variant mt-1">people</div>
+</div>
+</div>
+<!-- Progress Bars -->
+<div class="bg-surface rounded-xl border border-outline-variant p-6 shadow-sm flex-1">
+<h3 class="font-title-lg text-title-lg mb-6 flex items-center gap-2 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-primary">bar_chart</span>
+                                Resource Utilization Constraints
+                            </h3>
+<div class="space-y-6">
+<!-- Water -->
+<div>
+<div class="flex justify-between items-end mb-1">
+<div class="flex items-center gap-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-blue-500" style="font-size: 18px;">water_drop</span>
+                                            Water Supply
+                                        </div>
+<div class="font-label-md text-label-md text-on-surface-variant">82%</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2.5">
+<div class="bg-blue-500 h-2.5 rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- Housing -->
+<div>
+<div class="flex justify-between items-end mb-1">
+<div class="flex items-center gap-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-amber-500" style="font-size: 18px;">home</span>
+                                            Housing Capacity
+                                        </div>
+<div class="font-label-md text-label-md text-on-surface-variant">65%</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2.5">
+<div class="bg-amber-500 h-2.5 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<!-- Healthcare -->
+<div>
+<div class="flex justify-between items-end mb-1">
+<div class="flex items-center gap-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-red-500" style="font-size: 18px;">medical_services</span>
+                                            Healthcare (Beds)
+                                        </div>
+<div class="font-label-md text-label-md text-on-surface-variant">91%</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2.5">
+<div class="bg-red-500 h-2.5 rounded-full" style="width: 91%"></div>
+</div>
+</div>
+<!-- Roads -->
+<div>
+<div class="flex justify-between items-end mb-1">
+<div class="flex items-center gap-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-slate-500" style="font-size: 18px;">add_road</span>
+                                            Road Network Capacity
+                                        </div>
+<div class="font-label-md text-label-md text-on-surface-variant">45%</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2.5">
+<div class="bg-slate-500 h-2.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-surface-container-low border border-outline-variant rounded text-sm text-on-surface-variant flex gap-3">
+<span class="material-symbols-outlined text-outline">info</span>
+<div>
+<strong class="text-on-surface block mb-1">Constraint Analysis</strong>
+                                    Healthcare capacity (Beds) is the primary limiting factor at 91% utilization. Expanding medical facilities will increase overall carrying capacity most efficiently.
+                                </div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-primary-container text-primary dark:text-primary-fixed font-label-sm text-label-sm full-width bottom-0 border-t border-outline-variant dark:border-outline flat no shadows flex flex-col md:flex-row justify-between items-center w-full px-edge-margin py-stack-sm z-50">
+<div class="font-label-md text-label-md font-black mb-2 md:mb-0">
+            © 2024 Safe Zones Intelligence. All Rights Reserved.
+        </div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Support</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed opacity-80 hover:opacity-100 transition-opacity" href="#">System Status</a>
+</div>
+</footer>
+</body></html>

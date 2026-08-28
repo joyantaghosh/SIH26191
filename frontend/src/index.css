@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #080C08;
+    color: #E4E9DF;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 200;
+    color: #E4E9DF;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* Custom Cartographic Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #060906;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(122, 154, 110, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 169, 120, 0.5);
+}
+
+/* Meridian Surface Styling */
+.mg-surface-subtle {
+  background: rgba(13, 18, 12, 0.55);
+  border: 1px solid rgba(228, 233, 223, 0.06);
+  border-radius: 17px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mg-surface-interactive {
+  background: rgba(13, 18, 12, 0.78);
+  border: 1px solid rgba(122, 154, 110, 0.12);
+  border-radius: 17px;
+  transition: border-color 300ms ease, background 300ms ease, transform 300ms ease, box-shadow 300ms ease;
+}
+
+.mg-surface-interactive:hover {
+  border-color: rgba(134, 169, 120, 0.6);
+  background: rgba(22, 32, 20, 0.96);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 36px -6px rgba(122, 154, 110, 0.35);
+}
+
+/* Terrain Contour & Cartographic Animations (Amplified 3x) */
+@keyframes terrainBreathe {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.06) translate(14px, -10px);
+    opacity: 0.95;
+  }
+}
+
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(800%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.7;
+    box-shadow: 0 0 10px rgba(122, 154, 110, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 32px rgba(134, 169, 120, 0.8), 0 0 12px rgba(220, 38, 38, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animation Classes - 3x Speed & Dynamic Motion */
+.animate-terrain-breathe {
+  animation: terrainBreathe 3s ease-in-out infinite;
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 3.5s linear infinite;
+}
+
+.animate-scanline {
+  animation: scanline 2.5s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-slow {
+  animation: floatSlow 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 0.9s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.mg-bg-dark {
+  background-color: #080C08;
+}
+

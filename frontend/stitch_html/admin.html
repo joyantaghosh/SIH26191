@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Safe Zones - Admin Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#131b2e",
+                      "primary-fixed": "#dae2fd",
+                      "surface-variant": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f6f3f5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#d8e3fb",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#98805d",
+                      "outline": "#76777d",
+                      "on-tertiary-fixed": "#271901",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed": "#111c2d",
+                      "surface-tint": "#565e74",
+                      "secondary": "#545f73",
+                      "tertiary": "#000000",
+                      "background": "#fcf8fa",
+                      "tertiary-fixed": "#fcdeb5",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-background": "#1b1b1d",
+                      "tertiary-container": "#271901",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#3c475a",
+                      "secondary-container": "#d5e0f8",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#131b2e",
+                      "primary-fixed-dim": "#bec6e0",
+                      "inverse-surface": "#303032",
+                      "on-secondary-container": "#586377",
+                      "surface-container-high": "#eae7e9",
+                      "secondary-fixed-dim": "#bcc7de",
+                      "on-surface-variant": "#45464d",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#fcf8fa",
+                      "inverse-primary": "#bec6e0",
+                      "surface-container": "#f0edef",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#7c839b",
+                      "outline-variant": "#c6c6cd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "control-height": "40px",
+                      "container-max": "1440px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "gutter": "16px",
+                      "stack-md": "16px",
+                      "edge-margin": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "title-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "10px",
+                              {
+                                      "lineHeight": "14px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F8FAFC;
+        }
+        .flat-shadow {
+            box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        /* Custom scrollbar for data density */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface h-screen overflow-hidden flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-primary-container text-on-primary-container flex-col hidden md:flex flex-row items-center justify-between w-full px-edge-margin h-control-height shrink-0">
+<div class="flex items-center gap-stack-lg">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">shield</span>
+                Safe Zones
+            </div>
+<nav class="flex gap-gutter">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors transition-all duration-200 ease-in-out" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors transition-all duration-200 ease-in-out" href="#">Risk Map</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors transition-all duration-200 ease-in-out" href="#">Capacity</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors transition-all duration-200 ease-in-out" href="#">Evacuation</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors transition-all duration-200 ease-in-out" href="#">Alerts</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors transition-all duration-200 ease-in-out text-white border-white" href="#">Admin</a>
+</nav>
+</div>
+<div class="flex items-center gap-gutter">
+<!-- Search placeholder if 'on_right' -->
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline-variant text-[18px]">search</span>
+<input class="bg-surface-container-high/20 border border-outline-variant/30 text-white rounded pl-8 pr-3 py-1 text-label-md font-label-md focus:outline-none focus:border-white transition-colors w-64 h-8 placeholder:text-outline-variant/70" placeholder="Search operational data..." type="text"/>
+</div>
+<button class="bg-[#DC2626] text-white font-label-md text-label-md px-4 py-1.5 rounded flex items-center gap-2 hover:bg-opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+                Emergency
+            </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-surface dark:bg-primary-container font-label-md text-label-md docked left-0 h-full w-[320px] border-r border-outline-variant dark:border-outline flat no shadows flex flex-col h-full py-stack-md px-stack-sm shrink-0 hidden md:flex z-10">
+<div class="mb-stack-lg px-2 flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a stern emergency management director in a dark navy uniform, set against a blurred high-tech command center background with subtle blue lighting. Crisp focus, corporate modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADMpl1Avr34oUsoGww-7ckVyhToQEv5BvfXAl8PqHwf-ilFN_aIt-m_D-Mq-iT4LbND7I9EG_JwcoJs5_TlCYV-5z1x1WeKHVYGEWgIc6nJN1jiwCcwFCLUtkd5IbPWGIa3nLnb-cU_Q6Z8jFIuTjKpqBwnu5nDHCWsWfjawbBDGuUxU5ZwqFxvWfq-ZZy8F0M3xjIS3u5SkmY9S5xy62NHiHK-4S4cPCQVp_ndwZFs9EYPfe5Tl26"/>
+<div>
+<div class="font-headline-md text-headline-md text-primary text-[16px] leading-tight">Command Center</div>
+<div class="text-on-surface-variant">Vigilant Operations</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1 flex-1 overflow-y-auto">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant scale-95 active:scale-100 transition-transform flex items-center gap-3 px-3 py-2 rounded" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">gpp_maybe</span>
+                    Risk Zones
+                </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant scale-95 active:scale-100 transition-transform flex items-center gap-3 px-3 py-2 rounded" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">priority_high</span>
+                    Priority
+                </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant scale-95 active:scale-100 transition-transform flex items-center gap-3 px-3 py-2 rounded" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">moped</span>
+                    Relocation
+                </a>
+<a class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg scale-95 active:scale-100 transition-transform flex items-center gap-3 px-3 py-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                    Analytics
+                </a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant scale-95 active:scale-100 transition-transform flex items-center gap-3 px-3 py-2 rounded" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                    Settings
+                </a>
+</nav>
+<!-- Admin Stats Panel inside Sidebar -->
+<div class="mt-auto pt-stack-md border-t border-outline-variant flex flex-col gap-stack-sm px-2">
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Live Status Overview</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-3 rounded flat-shadow">
+<div class="flex justify-between items-center mb-1">
+<span class="text-on-surface font-body-md text-body-md">Active Red Zones</span>
+<span class="text-[#DC2626] font-label-md text-label-md font-bold">14</span>
+</div>
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="bg-[#DC2626] h-full" style="width: 25%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-3 rounded flat-shadow">
+<div class="flex justify-between items-center mb-1">
+<span class="text-on-surface font-body-md text-body-md">High Risk Zones</span>
+<span class="text-[#b45309] font-label-md text-label-md font-bold">42</span>
+</div>
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="bg-[#b45309] h-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-3 rounded flat-shadow">
+<div class="flex justify-between items-center mb-1">
+<span class="text-on-surface font-body-md text-body-md">Relocation Progress</span>
+<span class="text-[#059669] font-label-md text-label-md font-bold">68%</span>
+</div>
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="bg-[#059669] h-full" style="width: 68%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-3 rounded flat-shadow">
+<div class="flex justify-between items-center mb-1">
+<span class="text-on-surface font-body-md text-body-md">Capacity Warnings</span>
+<span class="text-[#b45309] font-label-md text-label-md font-bold">7</span>
+</div>
+<div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
+<div class="bg-[#b45309] h-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Canvas -->
+<main class="flex-1 flex flex-col h-full bg-background relative overflow-hidden">
+<!-- Map Container -->
+<div class="flex-1 relative w-full border-b border-outline-variant bg-surface-container-high overflow-hidden" data-location="Los Angeles" style="">
+<!-- Simulate Map with placeholder -->
+<div class="bg-cover bg-center absolute inset-0 opacity-80 mix-blend-multiply" data-alt="A highly detailed top-down GIS satellite map of a coastal city resembling Los Angeles. The map is overlaid with semi-transparent polygonal zones in red, orange, and green indicating risk levels. High-contrast corporate modern style, utilizing a clean color palette of dark navy, bright red, and stark white for data points. The mood is analytical and authoritative." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNWyv7Dqpw9D_QwY3-pZeiJXnbNEtyZSNLAbjavTMrGb4UYLtRWbz6IiDhR0cBNCZzNLqDC01wMxQg9UuMdgv8jQl7AJ_RM4IW2T99hdtdxSBDEUNlzT9LgRGxMJyjyctDLPhaaOrEQci6SxZ2r9-siPHJhYcjW1FkfBN5KvAFh5aGsVpxfwWlzOJbB9QwQdMaJTDIeTOAZuIndyVzRpNxl3rdOf-2XmxQUD5uqD4E_bMWUBZkm5BU')"></div>
+<!-- Map Controls (Floating) -->
+<div class="absolute top-gutter right-gutter flex flex-col gap-2 z-20">
+<button class="w-control-height h-control-height bg-surface-container-lowest border border-outline-variant rounded flat-shadow flex items-center justify-center hover:border-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary">add</span>
+</button>
+<button class="w-control-height h-control-height bg-surface-container-lowest border border-outline-variant rounded flat-shadow flex items-center justify-center hover:border-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary">remove</span>
+</button>
+<button class="w-control-height h-control-height bg-surface-container-lowest border border-outline-variant rounded flat-shadow flex items-center justify-center mt-2 hover:border-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary">layers</span>
+</button>
+</div>
+<!-- Simulated Active Zone Indicator -->
+<div class="absolute top-1/2 left-1/3 transform -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative group cursor-pointer">
+<div class="w-4 h-4 bg-[#DC2626] rounded-full animate-ping absolute top-0 left-0"></div>
+<div class="w-4 h-4 bg-[#DC2626] rounded-full relative z-10 border-2 border-white shadow-lg"></div>
+<!-- Tooltip -->
+<div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-surface-container-lowest border border-outline-variant p-3 rounded flat-shadow hidden group-hover:block w-48 z-30 pointer-events-none">
+<div class="text-label-sm font-label-sm text-[#DC2626] uppercase font-bold mb-1">Critical Zone Z-9</div>
+<div class="font-body-md text-body-md text-on-surface mb-2">Immediate evacuation protocol active.</div>
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface-variant">Pop:</span>
+<span class="font-bold">12,400</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Panel: Tables & Alerts -->
+<div class="h-[280px] bg-surface flex shrink-0 overflow-hidden">
+<!-- Priority Habitation Table -->
+<div class="flex-1 flex flex-col border-r border-outline-variant">
+<div class="p-3 border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+<h2 class="font-title-lg text-title-lg text-primary">Priority Habitation Targets</h2>
+<button class="text-label-md font-label-md text-primary flex items-center gap-1 hover:underline">
+                            View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="flex-1 overflow-auto bg-surface-container-lowest p-gutter">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-label-sm font-label-sm text-on-surface-variant border-b border-outline-variant">
+<th class="pb-2 font-medium">District ID</th>
+<th class="pb-2 font-medium">Risk Level</th>
+<th class="pb-2 font-medium">Available Cap</th>
+<th class="pb-2 font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-2 font-label-md">DST-042</td>
+<td class="py-2">
+<span class="bg-[#059669] text-white text-[10px] uppercase font-label-md px-2 py-0.5 rounded">Safe</span>
+</td>
+<td class="py-2 font-label-md">4,200</td>
+<td class="py-2 text-right">
+<button class="opacity-0 group-hover:opacity-100 text-label-md font-label-md text-primary border border-outline-variant px-2 py-1 rounded hover:border-primary transition-all">Route</button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-2 font-label-md">DST-089</td>
+<td class="py-2">
+<span class="bg-[#b45309] text-white text-[10px] uppercase font-label-md px-2 py-0.5 rounded">Warning</span>
+</td>
+<td class="py-2 font-label-md">850</td>
+<td class="py-2 text-right">
+<button class="opacity-0 group-hover:opacity-100 text-label-md font-label-md text-primary border border-outline-variant px-2 py-1 rounded hover:border-primary transition-all">Route</button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-2 font-label-md">DST-112</td>
+<td class="py-2">
+<span class="bg-[#059669] text-white text-[10px] uppercase font-label-md px-2 py-0.5 rounded">Safe</span>
+</td>
+<td class="py-2 font-label-md">12,050</td>
+<td class="py-2 text-right">
+<button class="opacity-0 group-hover:opacity-100 text-label-md font-label-md text-primary border border-outline-variant px-2 py-1 rounded hover:border-primary transition-all">Route</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Recent Alerts Feed -->
+<div class="w-[360px] flex flex-col bg-surface-container-lowest">
+<div class="p-3 border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+<h2 class="font-title-lg text-title-lg text-primary">Live Alerts</h2>
+<span class="material-symbols-outlined text-outline-variant">notifications</span>
+</div>
+<div class="flex-1 overflow-auto p-3 flex flex-col gap-3">
+<div class="border-l-2 border-[#DC2626] pl-3 py-1">
+<div class="text-label-sm font-label-sm text-[#DC2626] mb-0.5 font-bold">14:02 UTC</div>
+<div class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Breach reported in Sector 7 perimeter.</div>
+<div class="text-label-md font-label-md text-on-surface-variant mt-1">Automatic containment protocols initiated.</div>
+</div>
+<div class="border-l-2 border-[#b45309] pl-3 py-1">
+<div class="text-label-sm font-label-sm text-[#b45309] mb-0.5 font-bold">13:45 UTC</div>
+<div class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Capacity nearing 90% at Habitation Alpha.</div>
+<div class="text-label-md font-label-md text-on-surface-variant mt-1">Recommend diverting incoming flow.</div>
+</div>
+<div class="border-l-2 border-outline-variant pl-3 py-1 opacity-70">
+<div class="text-label-sm font-label-sm text-on-surface-variant mb-0.5">13:10 UTC</div>
+<div class="font-body-md text-body-md font-semibold text-on-surface leading-tight">Routine system diagnostic complete.</div>
+<div class="text-label-md font-label-md text-on-surface-variant mt-1">All core systems nominal.</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer (Shared Component - Suppressed on Dashboard/Canvas focus) -->
+<!-- Suppressed per Semantic Shell Mandate: The UX Goal prioritizes the Canvas in high-stakes environments. -->
+</body></html>

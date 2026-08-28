@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Risk Zone Identification | Safe Zones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#131b2e",
+                        "primary-fixed": "#dae2fd",
+                        "surface-variant": "#e4e2e4",
+                        "surface-dim": "#dcd9db",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f5",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-fixed": "#d8e3fb",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#98805d",
+                        "outline": "#76777d",
+                        "on-tertiary-fixed": "#271901",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-secondary-fixed": "#111c2d",
+                        "surface-tint": "#565e74",
+                        "secondary": "#545f73",
+                        "tertiary": "#000000",
+                        "background": "#fcf8fa",
+                        "tertiary-fixed": "#fcdeb5",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1b1d",
+                        "on-background": "#1b1b1d",
+                        "tertiary-container": "#271901",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "secondary-container": "#d5e0f8",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#131b2e",
+                        "primary-fixed-dim": "#bec6e0",
+                        "inverse-surface": "#303032",
+                        "on-secondary-container": "#586377",
+                        "surface-container-high": "#eae7e9",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-surface-variant": "#45464d",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fcf8fa",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container": "#f0edef",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "outline-variant": "#c6c6cd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "control-height": "40px",
+                        "container-max": "1440px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "edge-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for data panels */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen w-screen overflow-hidden flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-edge-margin h-control-height shrink-0 z-50 relative">
+<div class="flex items-center gap-6 h-full">
+<div class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined fill text-[24px]">radar</span>
+                Safe Zones
+            </div>
+<div class="hidden md:flex h-full items-end gap-6 ml-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 border-b-2 border-transparent" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Risk Map</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 border-b-2 border-transparent" href="#">Capacity</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 border-b-2 border-transparent" href="#">Evacuation</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 border-b-2 border-transparent" href="#">Alerts</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 border-b-2 border-transparent" href="#">Admin</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="pl-9 pr-3 h-[32px] w-[200px] bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-0 font-body-md text-body-md text-on-surface placeholder:text-outline" placeholder="Search locations..." type="text"/>
+</div>
+<button class="bg-[#DC2626] text-white h-[32px] px-4 rounded font-label-md text-label-md flex items-center gap-2 hover:bg-red-700 transition-colors">
+<span class="material-symbols-outlined text-[16px]">emergency</span>
+                Emergency
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex overflow-hidden">
+<!-- SideNavBar (Desktop Fixed) -->
+<aside class="hidden md:flex flex-col h-full w-[240px] bg-surface border-r border-outline-variant py-stack-md px-stack-sm shrink-0 z-40">
+<div class="mb-stack-lg px-2">
+<div class="font-label-md text-label-md text-outline uppercase tracking-wider mb-1">Command Center</div>
+<div class="font-body-md text-body-md font-medium">Vigilant Operations</div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<a class="bg-secondary-container text-on-secondary-container rounded-lg flex items-center gap-3 px-3 py-2 transition-transform scale-100" href="#">
+<span class="material-symbols-outlined text-[20px]">gpp_maybe</span>
+<span class="font-label-md text-label-md">Risk Zones</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg flex items-center gap-3 px-3 py-2 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]">priority_high</span>
+<span class="font-label-md text-label-md">Priority</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg flex items-center gap-3 px-3 py-2 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]">moped</span>
+<span class="font-label-md text-label-md">Relocation</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg flex items-center gap-3 px-3 py-2 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low rounded-lg flex items-center gap-3 px-3 py-2 transition-transform active:scale-95 mt-auto" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Map Area -->
+<main class="flex-1 relative bg-surface-container-highest overflow-hidden flex flex-col sm:flex-row">
+<!-- Map Container -->
+<div class="flex-1 h-full relative z-10" data-location="Jakarta, Indonesia" style="">
+<!-- Using a subtle pattern to represent a GIS map canvas instead of heavy image -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 16px 16px;"></div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="A highly detailed, professional GIS satellite map interface of a dense urban coastal city. The map features stark, high-contrast structural data with utilitarian minimalism. A modern, light-mode corporate aesthetic dominates, utilizing a pristine white and subtle gray base palette. Vivid, semi-transparent geographic overlays in danger red, warning orange, and safe green highlight specific zones across the terrain. The visual style is reminiscent of enterprise command center displays, prioritizing clarity, sharp lines, and grid alignment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnaiXbhpRPQ8WFmYSxaVB9iWn6ei4bYlptZk6iqQ_x8bqgnCHGBYKr2nO0Oy9h_n73WAoHxKYvqnhUG-z1w9otIJi9xr53sRlBpSaEkaSkTae45JB0u-TLTlvYdL9Ik8EZfKTcPwE9qH7OiZh-aYL5jFTZYC8wgbVuf3koA0Y7G_wrYYrzh6DoTL6BPzqIwYPp9bG2PqpXSWRXWpyFEKEIiO01EZlrkw_p_Y_uoEuV0xJp_a7Cx6Pa"/>
+<!-- Overlay Elements representing GIS Zones -->
+<div class="absolute top-[30%] left-[40%] w-32 h-32 bg-red-500/20 border border-red-500/50 rounded-full animate-pulse blur-sm"></div>
+<div class="absolute top-[30%] left-[40%] w-24 h-24 bg-red-500/30 border-2 border-red-500 rounded-full flex items-center justify-center backdrop-blur-[1px]">
+<span class="material-symbols-outlined fill text-red-700">warning</span>
+</div>
+<div class="absolute bottom-[20%] right-[30%] w-48 h-32 bg-orange-500/20 border border-orange-500/50 rounded-lg -rotate-12 backdrop-blur-[1px]"></div>
+<div class="absolute top-[15%] right-[15%] w-40 h-40 bg-green-500/10 border border-green-500/30 rounded-full backdrop-blur-[1px]"></div>
+<!-- Floating Map Controls (Level 2) -->
+<div class="absolute top-4 right-4 flex flex-col gap-2 z-20">
+<button class="w-10 h-10 bg-surface-container-lowest border border-outline-variant shadow-[0_4px_20px_rgba(15,23,42,0.05)] rounded flex items-center justify-center text-on-surface hover:border-primary/20 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest border border-outline-variant shadow-[0_4px_20px_rgba(15,23,42,0.05)] rounded flex items-center justify-center text-on-surface hover:border-primary/20 transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest border border-outline-variant shadow-[0_4px_20px_rgba(15,23,42,0.05)] rounded flex items-center justify-center text-on-surface hover:border-primary/20 transition-colors mt-2">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<button class="w-10 h-10 bg-primary text-white border border-primary shadow-[0_4px_20px_rgba(15,23,42,0.1)] rounded flex items-center justify-center mt-2 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">draw</span>
+</button>
+</div>
+<!-- Floating Legend -->
+<div class="absolute bottom-4 left-4 bg-surface-container-lowest border border-outline-variant shadow-[0_4px_20px_rgba(15,23,42,0.05)] p-3 rounded z-20">
+<div class="font-label-sm text-label-sm uppercase text-outline mb-2">Zone Legend</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-red-500 border border-red-700 rounded-sm"></div>
+<span class="font-label-md text-label-md">Critical Risk</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-orange-500 border border-orange-700 rounded-sm"></div>
+<span class="font-label-md text-label-md">High Risk</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-green-500 border border-green-700 rounded-sm"></div>
+<span class="font-label-md text-label-md">Safe Zone</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Info Panel & Tools -->
+<div class="w-full sm:w-[360px] h-full bg-surface border-l border-outline-variant flex flex-col shrink-0 z-30 shadow-[-4px_0_20px_rgba(15,23,42,0.02)] overflow-y-auto">
+<!-- Panel Header -->
+<div class="p-gutter border-b border-outline-variant bg-surface-container-lowest sticky top-0 z-10">
+<h2 class="font-title-lg text-title-lg text-primary mb-1">Zone Analysis</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Selected coordinates: 6°12'S 106°48'E</p>
+</div>
+<!-- Risk Score Card -->
+<div class="p-gutter border-b border-outline-variant">
+<div class="bg-surface-container-lowest border border-red-200 rounded p-4 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#DC2626]"></div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<div class="font-label-md text-label-md text-outline uppercase">Computed Risk Score</div>
+<div class="font-display-lg text-display-lg text-primary tracking-tight">87<span class="text-[24px] text-outline">/100</span></div>
+</div>
+<div class="bg-[#DC2626] text-white px-2 py-1 rounded-sm font-label-sm text-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                                Critical
+                            </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3 border-t border-outline-variant pt-3">
+                            Immediate evacuation advised. Zone exhibits high vulnerability due to dense population and proximity to primary hazard faultline.
+                        </p>
+<!-- Mini Bar Chart -->
+<div class="mt-4 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm w-24 text-right">Severity</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-red-500 w-[90%]"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm w-24 text-right">Population</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-orange-500 w-[75%]"></div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm w-24 text-right">Vulnerability</span>
+<div class="flex-1 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-red-400 w-[85%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Manual Marking Tool -->
+<div class="p-gutter border-b border-outline-variant bg-surface">
+<h3 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_location_alt</span>
+                        Manual Zone Entry
+                    </h3>
+<form class="flex flex-col gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Risk Category</label>
+<select class="w-full h-control-height border border-outline-variant rounded bg-surface-container-lowest focus:border-primary focus:ring-0 font-body-md text-body-md px-3 appearance-none">
+<option>Critical (Red)</option>
+<option>High (Orange)</option>
+<option>Elevated (Yellow)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Hazard Type</label>
+<select class="w-full h-control-height border border-outline-variant rounded bg-surface-container-lowest focus:border-primary focus:ring-0 font-body-md text-body-md px-3 appearance-none">
+<option>Flood</option>
+<option>Seismic Activity</option>
+<option>Industrial Incident</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Severity Level</label>
+<input class="w-full accent-primary" max="10" min="1" type="range" value="8"/>
+<div class="flex justify-between mt-1">
+<span class="font-label-sm text-label-sm text-outline">Low (1)</span>
+<span class="font-label-sm text-label-sm text-outline">High (10)</span>
+</div>
+</div>
+<button class="w-full h-control-height bg-primary text-white font-label-md text-label-md rounded flex items-center justify-center gap-2 mt-2 hover:bg-primary/90 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                            Save Zone Marker
+                        </button>
+</form>
+</div>
+<!-- Filters -->
+<div class="p-gutter flex-1 bg-surface-container-low">
+<h3 class="font-title-lg text-title-lg text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Global Filters
+                    </h3>
+<div class="flex flex-col gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[16px]">map</span>
+<select class="w-full h-[36px] pl-9 pr-3 border border-outline-variant rounded bg-surface-container-lowest focus:border-primary focus:ring-0 font-body-md text-body-md appearance-none text-on-surface-variant">
+<option>All Districts</option>
+<option>North Sector</option>
+<option>South Sector</option>
+</select>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[16px]">location_city</span>
+<select class="w-full h-[36px] pl-9 pr-3 border border-outline-variant rounded bg-surface-container-lowest focus:border-primary focus:ring-0 font-body-md text-body-md appearance-none text-on-surface-variant">
+<option>All Villages</option>
+</select>
+</div>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="px-2 py-1 bg-surface-container-lowest border border-outline-variant rounded-sm font-label-sm text-label-sm text-on-surface cursor-pointer hover:border-primary">Flood</span>
+<span class="px-2 py-1 bg-surface-container-lowest border border-outline-variant rounded-sm font-label-sm text-label-sm text-on-surface cursor-pointer hover:border-primary">Seismic</span>
+<span class="px-2 py-1 bg-primary text-white border border-primary rounded-sm font-label-sm text-label-sm cursor-pointer">Critical Risk</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

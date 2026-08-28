@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Evacuation Route Planning - Safe Zones Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#131b2e",
+                      "primary-fixed": "#dae2fd",
+                      "surface-variant": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f6f3f5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#d8e3fb",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#98805d",
+                      "outline": "#76777d",
+                      "on-tertiary-fixed": "#271901",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed": "#111c2d",
+                      "surface-tint": "#565e74",
+                      "secondary": "#545f73",
+                      "tertiary": "#000000",
+                      "background": "#fcf8fa",
+                      "tertiary-fixed": "#fcdeb5",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-background": "#1b1b1d",
+                      "tertiary-container": "#271901",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#3c475a",
+                      "secondary-container": "#d5e0f8",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#131b2e",
+                      "primary-fixed-dim": "#bec6e0",
+                      "inverse-surface": "#303032",
+                      "on-secondary-container": "#586377",
+                      "surface-container-high": "#eae7e9",
+                      "secondary-fixed-dim": "#bcc7de",
+                      "on-surface-variant": "#45464d",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#fcf8fa",
+                      "inverse-primary": "#bec6e0",
+                      "surface-container": "#f0edef",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#7c839b",
+                      "outline-variant": "#c6c6cd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "control-height": "40px",
+                      "container-max": "1440px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "gutter": "16px",
+                      "stack-md": "16px",
+                      "edge-margin": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "title-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "10px",
+                              {
+                                      "lineHeight": "14px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .map-container {
+            background-image: radial-gradient(#e4e2e4 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background h-full flex flex-col antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface dark:bg-primary-container docked full-width top-0 border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center w-full px-edge-margin h-control-height z-50 sticky transition-all duration-200 ease-in-out hidden md:flex">
+<div class="flex items-center gap-gutter">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Safe Zones</span>
+<div class="hidden lg:flex items-center gap-6 ml-stack-lg">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Risk Map</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Capacity</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Evacuation</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Alerts</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Admin</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<!-- Search on right as per JSON -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="h-[32px] w-[200px] pl-8 pr-3 bg-surface-container-low border border-outline-variant rounded text-body-md font-body-md focus:border-primary focus:ring-0 outline-none placeholder:text-on-surface-variant" placeholder="Search coordinates..." type="text"/>
+</div>
+<button class="bg-error text-on-error h-[32px] px-4 rounded font-label-md text-label-md uppercase tracking-wider hover:bg-error-container hover:text-on-error-container transition-colors shadow-sm">
+                Emergency
+            </button>
+</div>
+</nav>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Shared Component - Mobile Only in this layout, typically desktop but top nav is present. Using a condensed version for tools) -->
+<aside class="hidden xl:flex bg-surface dark:bg-primary-container border-r border-outline-variant dark:border-outline flex-col h-full py-stack-md px-stack-sm w-[240px] z-40 overflow-y-auto">
+<div class="mb-stack-lg px-2">
+<h2 class="font-headline-md text-headline-md text-primary">Command Center</h2>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mt-1">Vigilant Operations</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant transition-transform scale-95 active:scale-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="gpp_maybe">gpp_maybe</span>
+                    Risk Zones
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant transition-transform scale-95 active:scale-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="priority_high">priority_high</span>
+                    Priority
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary scale-95 active:scale-100 transition-transform font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="moped" data-weight="fill" style="font-variation-settings: 'FILL' 1;">moped</span>
+                    Relocation
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant transition-transform scale-95 active:scale-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
+                    Analytics
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-on-primary-container hover:bg-surface-container-low hover:bg-surface-container-high dark:hover:bg-primary-fixed-variant transition-transform scale-95 active:scale-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</nav>
+</aside>
+<!-- Main Content Area (GIS Dashboard Layout) -->
+<main class="flex-1 relative flex flex-col md:flex-row overflow-hidden bg-background">
+<!-- Left Data Entry Panel -->
+<div class="w-full md:w-[320px] lg:w-[360px] flex-shrink-0 bg-surface border-r border-outline-variant h-full flex flex-col z-20 shadow-[4px_0_24px_rgba(0,0,0,0.02)] overflow-y-auto">
+<div class="p-gutter border-b border-outline-variant">
+<h1 class="font-title-lg text-title-lg text-primary mb-1">Evacuation Planning</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Configure routing parameters</p>
+</div>
+<div class="p-gutter flex flex-col gap-stack-md">
+<!-- Inputs -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-primary uppercase">Starting Point</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" data-icon="my_location">my_location</span>
+<select class="w-full h-control-height pl-9 pr-8 bg-surface-container-lowest border border-outline-variant rounded font-body-md text-body-md text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none cursor-pointer hover:border-primary/50 transition-colors">
+<option>Sector 4 Habitation</option>
+<option>Sector 7 Industrial</option>
+<option>Residential Block A</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-primary uppercase">Destination (Safe Zone)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" data-icon="flag">flag</span>
+<select class="w-full h-control-height pl-9 pr-8 bg-surface-container-lowest border border-outline-variant rounded font-body-md text-body-md text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none appearance-none cursor-pointer hover:border-primary/50 transition-colors">
+<option>Alpha Command Bunker</option>
+<option>Highland Relief Center</option>
+<option>Coastal Evac Point</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<button class="w-full h-control-height bg-primary text-on-primary rounded font-label-md text-label-md uppercase tracking-wider hover:bg-primary/90 transition-colors mt-2 shadow-sm">
+                        Calculate Routes
+                    </button>
+</div>
+<!-- Route Options -->
+<div class="flex-1 bg-surface-container-low border-t border-outline-variant p-gutter flex flex-col gap-3 overflow-y-auto">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-1">Available Routes</h3>
+<!-- Route A (Recommended) -->
+<div class="bg-surface-container-lowest border border-primary/20 rounded-lg p-3 cursor-pointer hover:border-primary transition-colors shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-[#10B981]"></div>
+<div class="flex justify-between items-start mb-2 pl-2">
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-lg text-title-lg text-primary">Route A</h4>
+<span class="bg-[#10B981] text-white px-1.5 py-0.5 rounded-sm font-label-sm text-label-sm uppercase">Recommended</span>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-0.5">5.2 km • Est. 14 min</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="pl-2 grid grid-cols-2 gap-2 mt-3">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Condition</span>
+<span class="font-body-md text-body-md text-primary font-medium">Good</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Risk Level</span>
+<span class="font-body-md text-body-md text-[#10B981] font-medium">Low</span>
+</div>
+</div>
+</div>
+<!-- Route B (Avoid) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-3 cursor-pointer hover:border-primary/50 transition-colors relative overflow-hidden group opacity-80">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-2 pl-2">
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-lg text-title-lg text-primary">Route B</h4>
+<span class="bg-error text-on-error px-1.5 py-0.5 rounded-sm font-label-sm text-label-sm uppercase">Avoid</span>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-0.5">4.1 km • Est. -- min</div>
+</div>
+</div>
+<div class="pl-2 grid grid-cols-2 gap-2 mt-3">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Condition</span>
+<span class="font-body-md text-body-md text-error font-medium">Damaged</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Risk Level</span>
+<span class="font-body-md text-body-md text-error font-medium">High</span>
+</div>
+</div>
+<div class="pl-2 mt-2 pt-2 border-t border-outline-variant border-dashed">
+<div class="flex items-start gap-1">
+<span class="material-symbols-outlined text-error text-[16px] mt-0.5" data-icon="block">block</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Main arterial blocked at Sec 4 crossing.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Central Map Area -->
+<div class="flex-1 relative bg-surface-container-low map-container overflow-hidden z-10" data-location="Los Angeles" style="">
+<!-- Decorative Map Overlay Image (Simulating GIS Data) -->
+<div class="absolute inset-0 opacity-40 mix-blend-multiply pointer-events-none" data-alt="A highly detailed, top-down satellite view of a modern metropolitan area, rendered in a crisp, technical GIS aesthetic. The map features stark white and light gray city blocks contrasting with dark navy blue waterways. Superimposed on the terrain are subtle, translucent geometric overlays representing data zones, avoiding any bright primary colors to maintain a sophisticated, corporate light-mode dashboard feel. The lighting is flat and uniform, emphasizing clarity and precision over realistic shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAS6SyX4mSUByeXmbOr3Imq714QBwc4QM5z5tcGWLNaRzrDfwK-J-bt61jldEPev8-eD8eE2TIoPbKDqx3biEsqT3LJmDp4ZMLBPCh9un_3XMfRWyVq9hP-dMUFhHmT-QFSHs4Se5Z5Z2ljWzV52QCZNR0Dtn69SAH21jVwvNEI4uehdEcvO9NaaeE7cTdu2oiBHNkZuIQ9AiE2c-EQnITC5_v8TqZrRCndDiTyqrLQsEPuKets-fdM')"></div>
+<!-- Simulated Routes (SVG Overlay) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-10" preserveaspectratio="xMidYMid slice" viewbox="0 0 1000 800">
+<!-- Hazard Zones -->
+<circle cx="600" cy="300" fill="#ba1a1a" fill-opacity="0.1" r="120" stroke="#ba1a1a" stroke-dasharray="4 4" stroke-width="1"></circle>
+<circle cx="300" cy="600" fill="#ba1a1a" fill-opacity="0.1" r="80" stroke="#ba1a1a" stroke-dasharray="4 4" stroke-width="1"></circle>
+<!-- Route B (Avoid - Red) -->
+<path d="M 200 400 L 400 350 L 550 320 L 700 200 L 800 150" fill="none" opacity="0.6" stroke="#ba1a1a" stroke-dasharray="8 8" stroke-width="4"></path>
+<!-- Route A (Recommended - Green) -->
+<path d="M 200 400 L 250 500 L 450 550 L 650 450 L 800 150" fill="none" stroke="#10B981" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"></path>
+<path d="M 200 400 L 250 500 L 450 550 L 650 450 L 800 150" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Nodes -->
+<!-- Start -->
+<circle cx="200" cy="400" fill="#0F172A" r="8" stroke="#ffffff" stroke-width="2"></circle>
+<text fill="#0F172A" font-family="JetBrains Mono" font-size="12" font-weight="bold" x="180" y="380">START</text>
+<!-- End -->
+<circle cx="800" cy="150" fill="#10B981" r="10" stroke="#ffffff" stroke-width="2"></circle>
+<circle cx="800" cy="150" fill="#ffffff" r="4"></circle>
+<text fill="#0F172A" font-family="JetBrains Mono" font-size="12" font-weight="bold" x="820" y="155">SAFE ZONE</text>
+<!-- Blockage on Route B -->
+<g transform="translate(550, 320)">
+<circle cx="0" cy="0" fill="#ffffff" r="12" stroke="#ba1a1a" stroke-width="2"></circle>
+<path d="M -6 -6 L 6 6 M -6 6 L 6 -6" fill="none" stroke="#ba1a1a" stroke-width="2"></path>
+</g>
+</svg>
+<!-- Floating Map Controls -->
+<div class="absolute bottom-gutter right-gutter flex flex-col gap-2 z-30">
+<div class="bg-surface-container-lowest border border-outline-variant rounded shadow-[0_4px_20px_rgba(15,23,42,0.05)] flex flex-col overflow-hidden">
+<button class="w-[40px] h-[40px] flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors border-b border-outline-variant">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-[40px] h-[40px] flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+</div>
+<button class="w-[40px] h-[40px] bg-surface-container-lowest border border-outline-variant rounded shadow-[0_4px_20px_rgba(15,23,42,0.05)] flex items-center justify-center text-primary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</button>
+</div>
+<!-- Map Legend -->
+<div class="absolute top-gutter right-gutter z-30 bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant rounded p-3 shadow-[0_4px_20px_rgba(15,23,42,0.05)] w-[200px]">
+<h4 class="font-label-md text-label-md text-primary uppercase mb-2">Legend</h4>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-4 h-1 bg-[#10B981] rounded-full"></div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Clear Route</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-1 border-t-2 border-dashed border-error"></div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Hazard/Blocked</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full bg-error/10 border border-error border-dashed flex-shrink-0"></div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Risk Zone</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

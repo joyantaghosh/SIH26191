@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relocation Tracking - Safe Zones</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#131b2e",
+                        "primary-fixed": "#dae2fd",
+                        "surface-variant": "#e4e2e4",
+                        "surface-dim": "#dcd9db",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f5",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-bright": "#fcf8fa",
+                        "secondary-fixed": "#d8e3fb",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#98805d",
+                        "outline": "#76777d",
+                        "on-tertiary-fixed": "#271901",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-secondary-fixed": "#111c2d",
+                        "surface-tint": "#565e74",
+                        "secondary": "#545f73",
+                        "tertiary": "#000000",
+                        "background": "#fcf8fa",
+                        "tertiary-fixed": "#fcdeb5",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1b1d",
+                        "on-background": "#1b1b1d",
+                        "tertiary-container": "#271901",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "secondary-container": "#d5e0f8",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#131b2e",
+                        "primary-fixed-dim": "#bec6e0",
+                        "inverse-surface": "#303032",
+                        "on-secondary-container": "#586377",
+                        "surface-container-high": "#eae7e9",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-surface-variant": "#45464d",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fcf8fa",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container": "#f0edef",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "outline-variant": "#c6c6cd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "control-height": "40px",
+                        "container-max": "1440px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "edge-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex overflow-hidden">
+<!-- SideNavBar (Docked Left) -->
+<nav class="hidden md:flex flex-col h-full py-stack-md px-stack-sm bg-surface text-primary font-label-md w-[320px] border-r border-outline-variant flex-shrink-0 z-20">
+<div class="px-4 mb-8">
+<h1 class="font-headline-md text-headline-md text-primary">Safe Zones</h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Command Center</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Vigilant Operations</p>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:bg-surface-container-high transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined" data-icon="gpp_maybe">gpp_maybe</span>
+<span>Risk Zones</span>
+</a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:bg-surface-container-high transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+<span>Priority</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined" data-icon="moped" style="font-variation-settings: 'FILL' 1;">moped</span>
+<span>Relocation</span>
+</a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:bg-surface-container-high transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:bg-surface-container-high transition-transform scale-95 active:scale-100" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto px-4">
+<img alt="User Profile" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A small circular avatar placeholder image showing a generic user silhouette in a professional, minimalist style, suitable for a highly technical dashboard. High contrast, light mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBCWXIL4ZJyt1SepugWSNAIs7ofS-lONJI0nEzsRvkqeohyhFRCb2IQT0xB8r8-Vfs4_ajNGkg9tZOYyRkg11Kxy_ikusicv-dpRm-QfjJJUZbAfQfbo90WZMVr9SVSNYZ0iW2uNWLD6SnzwtdQhb61OlaU4g6iukAXcau2qdQlbf3ioT8a7w1B2z4WX06p3yCLJWzzumYerOAqTYnOYyRWUIZywp7z3JC-NKm-GfRGquDlRzIZEU-"/>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 h-full overflow-hidden relative bg-surface-bright z-10">
+<!-- TopAppBar (Mobile & Web Header equivalent) -->
+<header class="flex justify-between items-center w-full px-edge-margin h-control-height bg-surface text-primary border-b border-outline-variant flex-shrink-0">
+<div class="flex items-center gap-4">
+<!-- Hamburger for mobile, hidden on desktop since sidenav is there -->
+<button class="md:hidden p-2 text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="md:hidden font-headline-md text-headline-md font-bold text-primary">Safe Zones</span>
+<!-- Breadcrumb/Title for desktop -->
+<div class="hidden md:flex items-center gap-2 text-on-surface-variant">
+<span class="font-label-md text-label-md">Command Center</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-label-md text-label-md font-bold text-primary">Relocation Tracking</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-error text-on-error px-4 py-1.5 rounded text-sm font-bold flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+                     Emergency
+                 </button>
+</div>
+</header>
+<!-- Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto p-edge-margin bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-stack-lg border-b border-outline-variant pb-stack-md">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-2">Relocation Operations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Real-time status tracking for designated evacuation zones. Monitor transport progress, capacity alignment, and logistical bottlenecks.</p>
+</div>
+<div class="flex items-center gap-3 font-label-md text-label-md bg-surface-container py-2 px-4 rounded border border-outline-variant">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">update</span>
+<span class="text-on-surface-variant">LAST SYNC:</span>
+<span class="font-bold text-primary">10:42 AM PST</span>
+</div>
+</div>
+<!-- Bento Grid Layout for Status Boards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Column: Pending -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 border-b-2 border-outline-variant pb-2">
+<div class="w-3 h-3 rounded-full bg-outline"></div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Pending Deployment</h3>
+<span class="ml-auto bg-surface-container-high text-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm">1 UNIT</span>
+</div>
+<!-- Card: Village C -->
+<div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start mb-4 border-b border-surface-variant pb-3">
+<div>
+<h4 class="font-title-lg text-title-lg text-primary">Village C Sector</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase">Awaiting Transport</p>
+</div>
+<span class="material-symbols-outlined text-outline">hourglass_empty</span>
+</div>
+<div class="mb-4">
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="text-on-surface-variant">Relocated</span>
+<span class="font-bold text-primary">0 / 1200</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div class="bg-outline h-full" style="width: 0%"></div>
+</div>
+<div class="text-right font-label-sm text-label-sm text-on-surface-variant mt-1">0% Complete</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded border border-surface-variant flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">location_on</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Destination Assignment</div>
+<div class="font-label-md text-label-md text-primary font-bold">Safe Location Z</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: In Progress -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 border-b-2 border-primary/30 pb-2">
+<div class="w-3 h-3 rounded-full bg-[#EAB308]"></div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Transit Operations</h3>
+<span class="ml-auto bg-surface-container-high text-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm">1 UNIT</span>
+</div>
+<!-- Card: Village A -->
+<div class="bg-surface border-2 border-[#EAB308]/20 rounded-lg p-4 shadow-sm relative overflow-hidden group">
+<!-- subtle active state background -->
+<div class="absolute inset-0 bg-[#EAB308]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4 border-b border-surface-variant pb-3">
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-lg text-title-lg text-primary">Village A Sector</h4>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EAB308] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#EAB308]"></span>
+</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 uppercase text-[#CA8A04] font-bold">In Progress</p>
+</div>
+<span class="material-symbols-outlined text-[#EAB308]">sync</span>
+</div>
+<div class="mb-4">
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="text-on-surface-variant">Relocated</span>
+<span class="font-bold text-primary">520 / 850</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div class="bg-[#EAB308] h-full transition-all duration-1000 ease-in-out" style="width: 61%"></div>
+</div>
+<div class="text-right font-label-sm text-label-sm text-on-surface-variant mt-1">61.1% Complete</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded border border-surface-variant flex items-start gap-3">
+<span class="material-symbols-outlined text-[#EAB308] text-[20px]">location_on</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Destination Assignment</div>
+<div class="font-label-md text-label-md text-primary font-bold">Safe Location X</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: Completed -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 border-b-2 border-[#22C55E]/30 pb-2">
+<div class="w-3 h-3 rounded-full bg-[#22C55E]"></div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Secured</h3>
+<span class="ml-auto bg-surface-container-high text-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm">1 UNIT</span>
+</div>
+<!-- Card: Village B -->
+<div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start mb-4 border-b border-surface-variant pb-3">
+<div>
+<h4 class="font-title-lg text-title-lg text-primary">Village B Sector</h4>
+<p class="font-label-sm text-label-sm text-[#16A34A] mt-1 uppercase font-bold">Completed</p>
+</div>
+<span class="material-symbols-outlined text-[#16A34A]">check_circle</span>
+</div>
+<div class="mb-4">
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="text-on-surface-variant">Relocated</span>
+<span class="font-bold text-primary">420 / 420</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div class="bg-[#22C55E] h-full" style="width: 100%"></div>
+</div>
+<div class="text-right font-label-sm text-label-sm text-[#16A34A] mt-1 font-bold">100% Complete</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded border border-surface-variant flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">location_on</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Destination Assignment</div>
+<div class="font-label-md text-label-md text-primary font-bold">Safe Location Y</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer (from JSON) -->
+<footer class="mt-stack-lg border-t border-outline-variant bg-surface-container-lowest full-width bottom-0 flex flex-col md:flex-row justify-between items-center w-full px-edge-margin py-stack-sm text-primary font-label-sm">
+<div class="font-label-md text-label-md font-black mb-4 md:mb-0">Safe Zones</div>
+<div class="text-on-surface-variant mb-4 md:mb-0">© 2024 Safe Zones Intelligence. All Rights Reserved.</div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Support</a>
+<a class="text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100 transition-opacity" href="#">System Status</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

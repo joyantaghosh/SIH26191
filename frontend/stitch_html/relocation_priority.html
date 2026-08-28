@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Relocation Priority - Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#131b2e",
+                      "primary-fixed": "#dae2fd",
+                      "surface-variant": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f6f3f5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-bright": "#fcf8fa",
+                      "secondary-fixed": "#d8e3fb",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#98805d",
+                      "outline": "#76777d",
+                      "on-tertiary-fixed": "#271901",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed": "#111c2d",
+                      "surface-tint": "#565e74",
+                      "secondary": "#545f73",
+                      "tertiary": "#000000",
+                      "background": "#fcf8fa",
+                      "tertiary-fixed": "#fcdeb5",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-background": "#1b1b1d",
+                      "tertiary-container": "#271901",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#3c475a",
+                      "secondary-container": "#d5e0f8",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#131b2e",
+                      "primary-fixed-dim": "#bec6e0",
+                      "inverse-surface": "#303032",
+                      "on-secondary-container": "#586377",
+                      "surface-container-high": "#eae7e9",
+                      "secondary-fixed-dim": "#bcc7de",
+                      "on-surface-variant": "#45464d",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#fcf8fa",
+                      "inverse-primary": "#bec6e0",
+                      "surface-container": "#f0edef",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#7c839b",
+                      "outline-variant": "#c6c6cd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "control-height": "40px",
+                      "container-max": "1440px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "gutter": "16px",
+                      "stack-md": "16px",
+                      "edge-margin": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "title-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "10px",
+                              {
+                                      "lineHeight": "14px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        
+        .expandable-row-content {
+            display: none;
+            transition: all 0.3s ease;
+        }
+        .expanded .expandable-row-content {
+            display: table-row;
+        }
+        .row-chevron {
+            transition: transform 0.3s ease;
+        }
+        .expanded .row-chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row antialiased">
+<!-- Desktop SideNav -->
+<aside class="hidden md:flex flex-col h-full w-[320px] fixed bg-surface border-r border-outline-variant py-stack-md px-stack-sm z-40">
+<div class="px-edge-margin mb-stack-lg">
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Safe Zones</h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Command Center</p>
+</div>
+<nav class="flex-1 space-y-2 px-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="gpp_maybe">gpp_maybe</span>
+<span class="font-label-md text-label-md">Risk Zones</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+<span class="font-label-md text-label-md">Priority</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="moped" style="font-variation-settings: 'FILL' 1;">moped</span>
+<span class="font-label-md text-label-md">Relocation</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-edge-margin">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md">OP</div>
+<div class="font-label-md text-label-md">
+<div>User Profile</div>
+<div class="text-on-surface-variant text-label-sm">Vigilant Operations</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Mobile TopNavBar -->
+<header class="md:hidden flex justify-between items-center w-full px-edge-margin h-control-height bg-surface border-b border-outline-variant sticky top-0 z-40">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Safe Zones</h1>
+<button class="text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[320px] p-edge-margin max-w-container-max mx-auto w-full">
+<!-- Header -->
+<header class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-display-lg text-display-lg md:text-display-lg text-primary mb-2">Relocation Priority Matrix</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Real-time prioritization of habitations requiring immediate evacuation based on multi-factor vulnerability scoring and incoming hazard telemetry.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface border border-outline-variant text-on-surface px-4 py-2 rounded-DEFAULT font-label-md text-label-md hover:border-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filter
+                </button>
+<button class="bg-error text-on-error px-4 py-2 rounded-DEFAULT font-label-md text-label-md hover:bg-on-error-container transition-colors flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+                    Broadcast Alert
+                </button>
+</div>
+</header>
+<!-- Stats Overview Bento -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-lg">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+<div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Critical Immediate</div>
+<div class="font-headline-lg text-headline-lg text-error flex items-baseline gap-2">
+                    12 <span class="font-label-sm text-label-sm text-on-surface-variant">habitations</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+<div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">High Urgent</div>
+<div class="font-headline-lg text-headline-lg text-[#ea580c] flex items-baseline gap-2">
+                    24 <span class="font-label-sm text-label-sm text-on-surface-variant">habitations</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+<div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Moderate Watch</div>
+<div class="font-headline-lg text-headline-lg text-[#ca8a04] flex items-baseline gap-2">
+                    48 <span class="font-label-sm text-label-sm text-on-surface-variant">habitations</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+<div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Available Capacity</div>
+<div class="font-headline-lg text-headline-lg text-primary flex items-baseline gap-2">
+                    14k <span class="font-label-sm text-label-sm text-on-surface-variant">shelter spots</span>
+</div>
+</div>
+</section>
+<!-- Main Data Table -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg shadow-[0px_4px_20px_rgba(15,23,42,0.05)] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant font-label-md text-label-md text-on-surface-variant uppercase">
+<th class="p-4 font-semibold w-12 text-center">Rank</th>
+<th class="p-4 font-semibold">Habitation</th>
+<th class="p-4 font-semibold">Hazard Severity</th>
+<th class="p-4 font-semibold">Vulnerability</th>
+<th class="p-4 font-semibold font-label-md">Time to Impact</th>
+<th class="p-4 font-semibold">Priority Status</th>
+<th class="p-4 font-semibold w-12"></th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-bright cursor-pointer group transition-colors" onclick="this.classList.toggle('expanded')">
+<td class="p-4 text-center font-label-md text-label-md font-bold text-on-surface">01</td>
+<td class="p-4 font-semibold text-primary">Village A</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] font-label-sm text-label-sm uppercase font-bold border border-[#fca5a5]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#dc2626]"></span> Critical
+                                </span>
+</td>
+<td class="p-4 font-medium text-on-surface">High</td>
+<td class="p-4 font-label-md text-label-md text-error">2 hrs</td>
+<td class="p-4">
+<div class="flex items-center gap-2 font-label-md text-label-md text-error font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">warning</span> RED Immediate
+                                </div>
+</td>
+<td class="p-4 text-on-surface-variant">
+<span class="material-symbols-outlined row-chevron group-hover:text-primary">expand_more</span>
+</td>
+</tr>
+<tr class="expandable-row-content bg-surface-container-low">
+<td class="p-0 border-b border-outline-variant" colspan="7">
+<div class="p-edge-margin grid grid-cols-1 md:grid-cols-3 gap-gutter bg-surface-container-low border-l-4 border-error">
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Population Density</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">1,240 (High)</div>
+</div>
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Infrastructure Integrity</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Compromised (Level 3)</div>
+</div>
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Evacuation Routes</div>
+<div class="font-body-md text-body-md font-medium text-error">Route Alpha Blocked</div>
+</div>
+<div class="col-span-full mt-2 pt-2 border-t border-outline-variant/50 flex gap-3">
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-DEFAULT font-label-md text-label-sm hover:bg-on-surface transition-colors">Deploy Transport</button>
+<button class="bg-transparent border border-outline text-on-surface px-3 py-1.5 rounded-DEFAULT font-label-md text-label-sm hover:bg-surface-variant transition-colors">View GIS Map</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-bright cursor-pointer group transition-colors" onclick="this.classList.toggle('expanded')">
+<td class="p-4 text-center font-label-md text-label-md font-bold text-on-surface">02</td>
+<td class="p-4 font-semibold text-primary">Village B</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-[#ffedd5] text-[#9a3412] font-label-sm text-label-sm uppercase font-bold border border-[#fdba74]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span> High
+                                </span>
+</td>
+<td class="p-4 font-medium text-on-surface">High</td>
+<td class="p-4 font-label-md text-label-md text-[#ea580c]">5 hrs</td>
+<td class="p-4">
+<div class="flex items-center gap-2 font-label-md text-label-md text-error font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">error</span> RED Urgent
+                                </div>
+</td>
+<td class="p-4 text-on-surface-variant">
+<span class="material-symbols-outlined row-chevron group-hover:text-primary">expand_more</span>
+</td>
+</tr>
+<tr class="expandable-row-content bg-surface-container-low">
+<td class="p-0 border-b border-outline-variant" colspan="7">
+<div class="p-edge-margin grid grid-cols-1 md:grid-cols-3 gap-gutter bg-surface-container-low border-l-4 border-error">
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Population Density</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">850 (Medium)</div>
+</div>
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Infrastructure Integrity</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Vulnerable (Level 2)</div>
+</div>
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Evacuation Routes</div>
+<div class="font-body-md text-body-md font-medium text-[#ea580c]">Route Beta Congested</div>
+</div>
+<div class="col-span-full mt-2 pt-2 border-t border-outline-variant/50 flex gap-3">
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-DEFAULT font-label-md text-label-sm hover:bg-on-surface transition-colors">Deploy Transport</button>
+<button class="bg-transparent border border-outline text-on-surface px-3 py-1.5 rounded-DEFAULT font-label-md text-label-sm hover:bg-surface-variant transition-colors">View GIS Map</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-bright cursor-pointer group transition-colors" onclick="this.classList.toggle('expanded')">
+<td class="p-4 text-center font-label-md text-label-md font-bold text-on-surface">03</td>
+<td class="p-4 font-semibold text-primary">Village C</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-[#ffedd5] text-[#9a3412] font-label-sm text-label-sm uppercase font-bold border border-[#fdba74]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></span> High
+                                </span>
+</td>
+<td class="p-4 font-medium text-on-surface">Medium</td>
+<td class="p-4 font-label-md text-label-md text-[#ea580c]">1 day</td>
+<td class="p-4">
+<div class="flex items-center gap-2 font-label-md text-label-md text-[#ea580c] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">report_problem</span> ORANGE High
+                                </div>
+</td>
+<td class="p-4 text-on-surface-variant">
+<span class="material-symbols-outlined row-chevron group-hover:text-primary">expand_more</span>
+</td>
+</tr>
+<tr class="expandable-row-content bg-surface-container-low">
+<td class="p-0 border-b border-outline-variant" colspan="7">
+<div class="p-edge-margin grid grid-cols-1 md:grid-cols-3 gap-gutter bg-surface-container-low border-l-4 border-[#ea580c]">
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Population Density</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">420 (Low)</div>
+</div>
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Infrastructure Integrity</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Stable (Level 1)</div>
+</div>
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Evacuation Routes</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Route Gamma Clear</div>
+</div>
+<div class="col-span-full mt-2 pt-2 border-t border-outline-variant/50 flex gap-3">
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-DEFAULT font-label-md text-label-sm hover:bg-on-surface transition-colors">Stage Resources</button>
+<button class="bg-transparent border border-outline text-on-surface px-3 py-1.5 rounded-DEFAULT font-label-md text-label-sm hover:bg-surface-variant transition-colors">View GIS Map</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-bright cursor-pointer group transition-colors" onclick="this.classList.toggle('expanded')">
+<td class="p-4 text-center font-label-md text-label-md font-bold text-on-surface">04</td>
+<td class="p-4 font-semibold text-primary">Village D</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-[#fef9c3] text-[#854d0e] font-label-sm text-label-sm uppercase font-bold border border-[#fde047]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ca8a04]"></span> Medium
+                                </span>
+</td>
+<td class="p-4 font-medium text-on-surface">Low</td>
+<td class="p-4 font-label-md text-label-md text-[#ca8a04]">3 days</td>
+<td class="p-4">
+<div class="flex items-center gap-2 font-label-md text-label-md text-[#ca8a04] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">info</span> YELLOW Moderate
+                                </div>
+</td>
+<td class="p-4 text-on-surface-variant">
+<span class="material-symbols-outlined row-chevron group-hover:text-primary">expand_more</span>
+</td>
+</tr>
+<tr class="expandable-row-content bg-surface-container-low">
+<td class="p-0 border-b border-outline-variant" colspan="7">
+<div class="p-edge-margin grid grid-cols-1 md:grid-cols-3 gap-gutter bg-surface-container-low border-l-4 border-[#ca8a04]">
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Population Density</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">1,100 (High)</div>
+</div>
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Infrastructure Integrity</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">Stable (Level 0)</div>
+</div>
+<div class="space-y-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Evacuation Routes</div>
+<div class="font-body-md text-body-md font-medium text-on-surface">All Routes Clear</div>
+</div>
+<div class="col-span-full mt-2 pt-2 border-t border-outline-variant/50 flex gap-3">
+<button class="bg-transparent border border-outline text-on-surface px-3 py-1.5 rounded-DEFAULT font-label-md text-label-sm hover:bg-surface-variant transition-colors">Monitor Status</button>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface border-t border-outline-variant p-4 flex justify-between items-center text-on-surface-variant font-label-sm">
+<div>Showing 4 of 48 records</div>
+<div class="flex items-center gap-2">
+<button class="p-1 hover:text-primary disabled:opacity-50" disabled=""><span class="material-symbols-outlined text-[18px]">chevron_left</span></button>
+<span class="font-label-md">Page 1 of 12</span>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+</div>
+</section>
+</main>
+</body></html>
