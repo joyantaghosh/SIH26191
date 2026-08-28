@@ -24,7 +24,7 @@ export default function RiskZoneIdPage() {
         </aside>
 
         {/* GIS Canvas Container */}
-        <main className="flex-1 relative bg-[#060906] overflow-hidden flex flex-col lg:flex-row">
+        <main className="flex-1 relative bg-[#060906]/60 backdrop-blur-xs overflow-hidden flex flex-col lg:flex-row">
           <div className="flex-1 h-full relative z-10">
             <img
               className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-35"

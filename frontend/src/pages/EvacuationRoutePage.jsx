@@ -164,7 +164,7 @@ export default function EvacuationRoutePage() {
           </div>
 
           {/* GIS Route SVG Map Overlay */}
-          <div className="flex-1 relative bg-[#060906] overflow-hidden">
+          <div className="flex-1 relative bg-[#060906]/60 backdrop-blur-xs overflow-hidden">
             <img
               className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-35"
               alt="GIS Route Planning Satellite Canvas"

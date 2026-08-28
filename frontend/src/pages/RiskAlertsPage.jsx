@@ -55,7 +55,7 @@ export default function RiskAlertsPage() {
   };
 
   return (
-    <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-72px)] bg-background">
+    <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-72px)] bg-transparent relative z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden">
         {/* SideNavBar */}
         <aside className="hidden md:flex flex-col h-full w-80 bg-surface border-r border-outline-variant p-4 shrink-0 font-mono text-xs">
