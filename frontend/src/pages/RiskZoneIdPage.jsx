@@ -132,6 +132,18 @@ export default function RiskZoneIdPage() {
 
             {/* Map Canvas Visual Area */}
             <div className="flex-1 relative w-full bg-[#060906] overflow-hidden flex items-center justify-center">
+              {/* GIS Dynamic Looping Map Video Layer */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none z-0"
+              >
+                <source src="/hero-section.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#080C08] via-transparent to-[#080C08]/70 pointer-events-none z-0" />
+
               {/* Dynamic Thermal Heatmap Background Layer */}
               <div className="absolute inset-0 pointer-events-none opacity-70 overflow-hidden">
                 <div className="absolute top-1/4 left-1/3 w-[450px] h-[450px] rounded-full bg-radial from-[#DC2626]/30 via-[#DC2626]/10 to-transparent blur-[80px] animate-pulse"></div>

@@ -21,6 +21,18 @@ export default function EvacuationRoutePage() {
         <main className="flex-1 relative flex flex-col lg:flex-row overflow-hidden h-full">
           {/* GIS Route SVG Map Overlay (Left Side Canvas) */}
           <div className="flex-1 relative bg-[#060906] overflow-hidden h-full">
+            {/* GIS Dynamic Looping Map Video Layer */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none z-0"
+            >
+              <source src="/hero-section.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#080C08] via-transparent to-[#080C08]/70 pointer-events-none z-0" />
+
             {/* Cartographic Background Grid Pattern */}
             <div className="absolute inset-0 opacity-20 pointer-events-none">
               <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
