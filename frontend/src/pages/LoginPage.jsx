@@ -5,7 +5,6 @@ import SafeZonesLogo from '../components/SafeZonesLogo';
 export default function LoginPage() {
   const [email, setEmail] = useState('officer@safezones.gov.in');
   const [password, setPassword] = useState('••••••••••••');
-  const [role, setRole] = useState('Cartographic Analyst');
   const [loading, setLoading] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const navigate = useNavigate();
@@ -70,21 +69,36 @@ export default function LoginPage() {
               />
             </div>
 
+            {/* Login with Google Button */}
             <div>
-              <label className="block text-[11px] font-light text-[#777C70] uppercase tracking-[0.16em] mb-2" htmlFor="role">
-                Operational Clearance
+              <label className="block text-[11px] font-light text-[#777C70] uppercase tracking-[0.16em] mb-2">
+                Single Sign-On
               </label>
-              <select
-                className="w-full h-11 px-4 border border-[rgba(228,233,223,0.08)] rounded-[12px] bg-[#080C08] text-[#E4E9DF] focus:border-[#7A9A6E] focus:outline-none transition-colors text-sm font-light cursor-pointer"
-                id="role"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
+              <button
+                type="button"
+                onClick={handleLogin}
+                className="w-full h-11 px-4 border border-[rgba(228,233,223,0.12)] hover:border-[rgba(122,154,110,0.5)] rounded-[12px] bg-[#080C08] hover:bg-[#0D120C] text-[#E4E9DF] transition-all text-xs font-light tracking-wide flex items-center justify-center gap-3 cursor-pointer group shadow-sm"
               >
-                <option value="Cartographic Analyst">Cartographic Analyst</option>
-                <option value="Disaster Telemetry Director">Disaster Telemetry Director</option>
-                <option value="Geospatial Specialist">Geospatial Specialist</option>
-                <option value="Relocation Dispatcher">Relocation Dispatcher</option>
-              </select>
+                <svg className="w-4 h-4 transition-transform group-hover:scale-110" viewBox="0 0 24 24">
+                  <path
+                    fill="#EA4335"
+                    d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"
+                  />
+                  <path
+                    fill="#4285F4"
+                    d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.6 14.8c-.3-.8-.4-1.8-.4-2.8s.1-2 .4-2.8L1.9 6.3C.7 8.7 0 10.3 0 12s.7 3.3 1.9 5.7l3.7-2.9z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.4-6.4-5.2L1.9 16C3.7 19.7 7.5 23 12 23z"
+                  />
+                </svg>
+                <span>Login with Google</span>
+              </button>
             </div>
 
             <button
