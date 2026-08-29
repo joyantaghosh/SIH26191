@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import DashboardSidebar from '../components/DashboardSidebar';
 
 export default function CarryingCapacityPage() {
   const [pop, setPop] = useState(4800);
@@ -21,33 +21,7 @@ export default function CarryingCapacityPage() {
   return (
     <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-96px)] bg-transparent relative z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
-        <aside className="bg-[#0D120C]/90 border-r border-[rgba(228,233,223,0.08)] hidden lg:flex flex-col h-full w-80 p-5 shrink-0">
-          <div className="mb-6 px-2 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full border border-[rgba(122,154,110,0.3)] bg-[#080C08] flex items-center justify-center text-[#86A978]">
-              <span className="material-symbols-outlined text-[20px]">equalizer</span>
-            </div>
-            <div>
-              <div className="font-display font-light text-[#E4E9DF] text-sm">Meridian Telemetry</div>
-              <div className="text-[#777C70] text-[11px]">Capacity Sector</div>
-            </div>
-          </div>
-
-          <nav className="flex flex-col gap-2 flex-1">
-            <Link to="/risk-zone-id" className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-[#777C70] hover:text-[#E4E9DF] hover:bg-[#080C08]/50 transition-colors">
-              <span className="material-symbols-outlined text-[18px]">gpp_maybe</span>
-              <span>Risk Zones</span>
-            </Link>
-            <Link to="/relocation-priority" className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-[#777C70] hover:text-[#E4E9DF] hover:bg-[#080C08]/50 transition-colors">
-              <span className="material-symbols-outlined text-[18px]">priority_high</span>
-              <span>Priority</span>
-            </Link>
-            <Link to="/carrying-capacity" className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] bg-[#080C08] border border-[rgba(122,154,110,0.3)] text-[#86A978] shadow-sm">
-              <span className="material-symbols-outlined text-[18px]">analytics</span>
-              <span>Capacity Analytics</span>
-            </Link>
-          </nav>
-        </aside>
+        <DashboardSidebar />
 
         {/* Main Content Area */}
         <main className="flex-1 overflow-y-auto p-6 md:p-10">

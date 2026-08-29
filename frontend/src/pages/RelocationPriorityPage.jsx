@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import DashboardSidebar from '../components/DashboardSidebar';
 
 export default function RelocationPriorityPage() {
   const [expandedRow, setExpandedRow] = useState('01');
@@ -79,23 +79,7 @@ export default function RelocationPriorityPage() {
   return (
     <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-96px)] bg-transparent relative z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden">
-        {/* SideNav */}
-        <aside className="hidden md:flex flex-col h-full w-80 bg-[#0D120C]/90 border-r border-[rgba(228,233,223,0.08)] p-5 shrink-0">
-          <div className="px-2 mb-6">
-            <span className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E]">Telemetry Rank</span>
-            <h1 className="font-display font-light text-[#E4E9DF] text-base mt-0.5">Priority Matrix</h1>
-          </div>
-          <nav className="flex-1 space-y-2">
-            <Link to="/risk-zone-id" className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-[#777C70] hover:text-[#E4E9DF] hover:bg-[#080C08]/50 transition-colors">
-              <span className="material-symbols-outlined text-[18px]">gpp_maybe</span>
-              <span>Risk Zones</span>
-            </Link>
-            <Link to="/relocation-priority" className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] bg-[#080C08] border border-[rgba(122,154,110,0.3)] text-[#86A978] shadow-sm">
-              <span className="material-symbols-outlined text-[18px]">priority_high</span>
-              <span>Priority Matrix</span>
-            </Link>
-          </nav>
-        </aside>
+        <DashboardSidebar />
 
         {/* Main Content Canvas */}
         <main className="flex-1 p-6 md:p-10 max-w-7xl mx-auto w-full overflow-y-auto">

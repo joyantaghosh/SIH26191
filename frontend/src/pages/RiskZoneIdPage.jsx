@@ -1,27 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import DashboardSidebar from '../components/DashboardSidebar';
 
 export default function RiskZoneIdPage() {
   return (
     <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-transparent relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar Navigation */}
-        <aside className="hidden md:flex flex-col h-full w-60 bg-[#0D120C]/90 border-r border-[rgba(228,233,223,0.08)] p-5 shrink-0 z-40">
-          <div className="mb-6 px-2">
-            <div className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E]">Terrain System</div>
-            <div className="font-display font-light text-[#E4E9DF] text-base mt-0.5">Risk Zone ID</div>
-          </div>
-          <nav className="flex flex-col gap-2 flex-1">
-            <Link to="/risk-zone-id" className="bg-[#080C08] border border-[rgba(122,154,110,0.3)] text-[#86A978] rounded-[12px] flex items-center gap-3 px-3.5 py-2.5 font-light text-xs shadow-sm">
-              <span className="material-symbols-outlined text-[18px]">gpp_maybe</span>
-              <span>Risk Zones</span>
-            </Link>
-            <Link to="/relocation-priority" className="text-[#777C70] hover:text-[#E4E9DF] hover:bg-[#080C08]/50 rounded-[12px] flex items-center gap-3 px-3.5 py-2.5 font-light text-xs transition-colors">
-              <span className="material-symbols-outlined text-[18px]">priority_high</span>
-              <span>Priority</span>
-            </Link>
-          </nav>
-        </aside>
+        <DashboardSidebar />
 
         {/* GIS Canvas Container */}
         <main className="flex-1 relative bg-[#060906]/60 backdrop-blur-xs overflow-hidden flex flex-col lg:flex-row">
