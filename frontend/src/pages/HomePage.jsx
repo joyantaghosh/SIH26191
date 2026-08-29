@@ -64,7 +64,7 @@ export default function HomePage() {
               </Link>
               
               <Link
-                to="/relocation-priority"
+                to="/evacuation-route"
                 className="h-[60px] px-6 text-[#777C70] hover:text-[#B4BBAE] font-light text-[15px] flex items-center justify-center gap-2 transition-colors duration-300 hover:translate-x-1"
               >
                 <span>Relocation Matrix</span>

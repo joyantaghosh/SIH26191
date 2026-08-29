@@ -49,16 +49,9 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate('/login')}
-            className="hidden sm:flex items-center justify-center h-[42px] px-5 border border-[rgba(228,233,223,0.08)] rounded-full text-[#B0B5A8] hover:text-[#E4E9DF] hover:border-[rgba(122,154,110,0.3)] hover:bg-[#0D120C] transition-all text-xs font-light tracking-wide"
-          >
-            Login
-          </button>
-          
-          <button
-            onClick={() => navigate('/login')}
             className="h-[44px] px-6 rounded-full bg-[#6F9164] hover:bg-[#86A978] text-[#0A0E09] font-medium text-xs tracking-wide transition-all shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
           >
-            <span>Request Access</span>
+            <span>Login</span>
             <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
           </button>
 
