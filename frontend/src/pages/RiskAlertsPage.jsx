@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import DashboardSidebar from '../components/DashboardSidebar';
 
 export default function RiskAlertsPage() {
   const [alerts, setAlerts] = useState([
@@ -57,27 +57,8 @@ export default function RiskAlertsPage() {
   return (
     <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-72px)] bg-transparent relative z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden">
-        {/* SideNavBar */}
-        <aside className="hidden md:flex flex-col h-full w-80 bg-surface border-r border-outline-variant p-4 shrink-0 font-mono text-xs">
-          <div className="mb-6 px-2">
-            <div className="font-display font-bold text-primary text-base">Command Center</div>
-            <div className="text-on-surface-variant uppercase mt-1">Vigilant Operations</div>
-          </div>
-          <nav className="flex flex-col gap-1.5 flex-1">
-            <Link to="/risk-zone-id" className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg">
-              <span className="material-symbols-outlined text-[20px]">gpp_maybe</span>
-              <span>Risk Zones</span>
-            </Link>
-            <Link to="/relocation-priority" className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg">
-              <span className="material-symbols-outlined text-[20px]">priority_high</span>
-              <span>Priority Matrix</span>
-            </Link>
-            <Link to="/risk-alerts" className="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container font-semibold rounded-lg shadow-sm">
-              <span className="material-symbols-outlined text-[20px]">add_alert</span>
-              <span>Active Alerts</span>
-            </Link>
-          </nav>
-        </aside>
+        {/* Common Combined Dashboard Sidebar */}
+        <DashboardSidebar />
 
         {/* Main Content Canvas */}
         <main className="flex-1 p-6 md:p-8 max-w-7xl mx-auto w-full overflow-y-auto">

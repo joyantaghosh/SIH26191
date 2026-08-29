@@ -58,72 +58,71 @@ export default function TerrainBackground() {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mouseleave', handleMouseLeave);
 
-    // 4x Amplified Heatmap Blob Nodes (vibrant green/amber spectrum)
+    // Heatmap node sources (green cartographic spectrum)
     const heatNodes = [
-      { xRatio: 0.20, yRatio: 0.25, radius: 520, color: [134, 215, 110], speed: 1.2, phase: 0 },
-      { xRatio: 0.78, yRatio: 0.20, radius: 580, color: [160, 230, 130], speed: 1.0, phase: 1.5 },
-      { xRatio: 0.50, yRatio: 0.55, radius: 640, color: [90, 160, 80], speed: 1.1, phase: 2.8 },
-      { xRatio: 0.82, yRatio: 0.78, radius: 480, color: [140, 210, 120], speed: 1.3, phase: 4.1 },
-      { xRatio: 0.18, yRatio: 0.82, radius: 540, color: [75, 140, 65], speed: 1.0, phase: 5.3 },
-      { xRatio: 0.60, yRatio: 0.35, radius: 450, color: [220, 200, 120], speed: 1.4, phase: 1.1 }, // Gold Core Blob
+      { xRatio: 0.20, yRatio: 0.25, radius: 360, color: [122, 154, 110], speed: 0.7, phase: 0 },
+      { xRatio: 0.78, yRatio: 0.20, radius: 400, color: [134, 169, 120], speed: 0.5, phase: 1.5 },
+      { xRatio: 0.50, yRatio: 0.55, radius: 440, color: [67, 86, 62], speed: 0.6, phase: 2.8 },
+      { xRatio: 0.82, yRatio: 0.78, radius: 340, color: [111, 145, 100], speed: 0.8, phase: 4.1 },
+      { xRatio: 0.18, yRatio: 0.82, radius: 380, color: [45, 65, 40], speed: 0.6, phase: 5.3 },
     ];
 
     let startTime = performance.now();
 
     const render = () => {
       const now = performance.now();
-      const time = (now - startTime) * 0.0018;
+      const time = (now - startTime) * 0.0012;
 
       // Smooth lerp mouse & parallax offsets
-      mouse.currX += (mouse.x - mouse.currX) * 0.09;
-      mouse.currY += (mouse.y - mouse.currY) * 0.09;
+      mouse.currX += (mouse.x - mouse.currX) * 0.08;
+      mouse.currY += (mouse.y - mouse.currY) * 0.08;
       mouse.currOffsetX += (mouse.targetOffsetX - mouse.currOffsetX) * 0.05;
       mouse.currOffsetY += (mouse.targetOffsetY - mouse.currOffsetY) * 0.05;
 
+      // Fade active state if inactive for 3s
       if (now - mouse.lastMove > 3000) {
         mouse.active = false;
       }
 
-      // Base dark background
-      ctx.fillStyle = '#060906';
+      // Base dark background `#080C08`
+      ctx.fillStyle = '#080C08';
       ctx.fillRect(0, 0, width, height);
 
+      // Save context for Parallax translation
       ctx.save();
-      const bgParallaxX = mouse.currOffsetX * 45;
-      const bgParallaxY = mouse.currOffsetY * 30 - scrollY * 0.25;
+      // Background layer shifts slowly (parallax factor 0.3x)
+      const bgParallaxX = mouse.currOffsetX * 35;
+      const bgParallaxY = mouse.currOffsetY * 25 - scrollY * 0.25;
       ctx.translate(bgParallaxX, bgParallaxY);
 
-      // Render 4x Intense Swaying & Distorting Heatmap Blobs
+      // Render Swaying Heatmap Gradient Blobs
       heatNodes.forEach((node, idx) => {
-        // 4x amplified sway displacement
-        const swayX = Math.sin(time * node.speed + node.phase) * 160 + Math.cos(time * 0.8 + idx) * 80;
-        const swayY = Math.cos(time * node.speed * 0.85 + node.phase) * 140 + Math.sin(time * 0.9 + idx) * 70;
+        const swayX = Math.sin(time * node.speed + node.phase) * 90 + Math.cos(time * 0.4 + idx) * 40;
+        const swayY = Math.cos(time * node.speed * 0.85 + node.phase) * 70 + Math.sin(time * 0.5 + idx) * 30;
 
         let nx = node.xRatio * width + swayX;
         let ny = node.yRatio * height + swayY;
 
-        // 4x amplified mouse distortion field (factor = 680)
+        // Dynamic mouse distortion field
         const dx = nx - (mouse.currX - bgParallaxX);
         const dy = ny - (mouse.currY - bgParallaxY);
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxDist = 650;
+        const maxDist = 520;
 
         if (dist < maxDist && dist > 0) {
-          const factor = Math.pow(1 - dist / maxDist, 2) * 680;
+          const factor = Math.pow(1 - dist / maxDist, 2) * 170;
           nx += (dx / dist) * factor;
           ny += (dy / dist) * factor;
         }
 
-        // 4x pulsating radius expansion
-        const currentRadius = node.radius + Math.sin(time * 3.5 + node.phase) * 95;
+        const currentRadius = node.radius + Math.sin(time * 2.2 + node.phase) * 45;
         const grad = ctx.createRadialGradient(nx, ny, 0, nx, ny, currentRadius);
         const [r, g, b] = node.color;
 
-        // 4x opacity intensity boost
-        grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0.72)`);
-        grad.addColorStop(0.3, `rgba(${r}, ${g}, ${b}, 0.45)`);
-        grad.addColorStop(0.65, `rgba(${r}, ${g}, ${b}, 0.18)`);
-        grad.addColorStop(1, 'rgba(6, 9, 6, 0)');
+        grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0.38)`);
+        grad.addColorStop(0.35, `rgba(${r}, ${g}, ${b}, 0.20)`);
+        grad.addColorStop(0.7, `rgba(${r}, ${g}, ${b}, 0.06)`);
+        grad.addColorStop(1, 'rgba(8, 12, 8, 0)');
 
         ctx.fillStyle = grad;
         ctx.beginPath();
@@ -131,19 +130,17 @@ export default function TerrainBackground() {
         ctx.fill();
       });
 
-      // 4x Amplified Interactive Mouse Heat Flare / Core Bubble
+      // Render Interactive Mouse Heat Flare
       const mouseDistFromCenter = Math.sqrt(
         Math.pow(mouse.currX - width / 2, 2) + Math.pow(mouse.currY - height / 2, 2)
       );
-      const mouseIntensity = mouse.active ? 1 : Math.max(0.35, 1 - mouseDistFromCenter / (width * 0.6));
+      const mouseIntensity = mouse.active ? 1 : Math.max(0.2, 1 - mouseDistFromCenter / (width * 0.6));
 
-      // 4x enlarged mouse flare radius (up to 550px)
-      const mouseGlowRad = (480 + Math.sin(time * 5) * 70) * mouseIntensity;
+      const mouseGlowRad = (290 + Math.sin(time * 4) * 30) * mouseIntensity;
       if (mouseGlowRad > 0) {
         const mxCanvas = mouse.currX - bgParallaxX;
         const myCanvas = mouse.currY - bgParallaxY;
 
-        // Outer radiant aura
         const mouseGrad = ctx.createRadialGradient(
           mxCanvas,
           myCanvas,
@@ -152,55 +149,55 @@ export default function TerrainBackground() {
           myCanvas,
           mouseGlowRad
         );
-        mouseGrad.addColorStop(0, `rgba(160, 230, 130, ${0.85 * mouseIntensity})`);
-        mouseGrad.addColorStop(0.25, `rgba(134, 195, 110, ${0.60 * mouseIntensity})`);
-        mouseGrad.addColorStop(0.55, `rgba(80, 140, 70, ${0.32 * mouseIntensity})`);
-        mouseGrad.addColorStop(1, 'rgba(6, 9, 6, 0)');
+        mouseGrad.addColorStop(0, `rgba(134, 169, 120, ${0.55 * mouseIntensity})`);
+        mouseGrad.addColorStop(0.25, `rgba(122, 154, 110, ${0.34 * mouseIntensity})`);
+        mouseGrad.addColorStop(0.55, `rgba(67, 86, 62, ${0.16 * mouseIntensity})`);
+        mouseGrad.addColorStop(1, 'rgba(8, 12, 8, 0)');
 
         ctx.fillStyle = mouseGrad;
         ctx.beginPath();
         ctx.arc(mxCanvas, myCanvas, mouseGlowRad, 0, Math.PI * 2);
         ctx.fill();
 
-        // 4x Intense Hotspot Core (180px radius)
+        // Hotspot core
         const coreGrad = ctx.createRadialGradient(
           mxCanvas,
           myCanvas,
           0,
           mxCanvas,
           myCanvas,
-          160 * mouseIntensity
+          75 * mouseIntensity
         );
-        coreGrad.addColorStop(0, `rgba(245, 235, 170, ${0.95 * mouseIntensity})`);
-        coreGrad.addColorStop(0.4, `rgba(160, 230, 130, ${0.75 * mouseIntensity})`);
-        coreGrad.addColorStop(1, 'rgba(134, 195, 110, 0)');
+        coreGrad.addColorStop(0, `rgba(193, 185, 157, ${0.70 * mouseIntensity})`);
+        coreGrad.addColorStop(0.5, `rgba(134, 169, 120, ${0.38 * mouseIntensity})`);
+        coreGrad.addColorStop(1, 'rgba(122, 154, 110, 0)');
 
         ctx.fillStyle = coreGrad;
         ctx.beginPath();
-        ctx.arc(mxCanvas, myCanvas, 160 * mouseIntensity, 0, Math.PI * 2);
+        ctx.arc(mxCanvas, myCanvas, 75 * mouseIntensity, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // 4x Reactive Distorted Topographic Contour Lines
-      const lineCount = 14;
-      ctx.lineWidth = 1.2;
+      // Draw Distorted Topographic Contour Lines across Heatmap
+      const lineCount = 13;
+      ctx.lineWidth = 1;
 
       for (let i = 0; i < lineCount; i++) {
         const baseY = (height / (lineCount + 1)) * (i + 1);
         ctx.beginPath();
 
-        const alpha = 0.22 + Math.sin(time * 1.5 + i) * 0.08;
-        ctx.strokeStyle = i % 2 === 0 ? `rgba(170, 225, 140, ${alpha + 0.2})` : `rgba(134, 195, 110, ${alpha})`;
+        const alpha = 0.14 + Math.sin(time + i) * 0.05;
+        ctx.strokeStyle = i % 3 === 0 ? `rgba(142, 174, 128, ${alpha + 0.16})` : `rgba(122, 154, 110, ${alpha})`;
 
-        for (let x = -50; x <= width + 50; x += 20) {
-          let wave = Math.sin(x * 0.004 + time * 2.2 + i * 0.6) * 45 + Math.cos(x * 0.008 - time * 1.4) * 25;
+        for (let x = -50; x <= width + 50; x += 25) {
+          let wave = Math.sin(x * 0.003 + time * 1.5 + i * 0.6) * 30 + Math.cos(x * 0.007 - time) * 18;
 
           const mdx = x - (mouse.currX - bgParallaxX);
           const mdy = baseY - (mouse.currY - bgParallaxY);
           const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
 
-          if (mdist < 450) {
-            const push = Math.cos((mdist / 450) * Math.PI) * 110 * mouseIntensity;
+          if (mdist < 380) {
+            const push = Math.cos((mdist / 380) * Math.PI) * 50 * mouseIntensity;
             wave += mdy > 0 ? push : -push;
           }
 
@@ -231,16 +228,16 @@ export default function TerrainBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#060906]">
-      {/* HTML5 Dynamic Interactive Heatmap Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block" />
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#080C08]">
+      {/* HTML5 Dynamic Interactive Canvas with Depth Parallax */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block blur-[0.5px]" />
 
-      {/* Atmospheric Vignette Overlay */}
+      {/* Atmospheric Depth Blur Vignette Overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at center, transparent 30%, rgba(6, 9, 6, 0.65) 95%), linear-gradient(180deg, rgba(6, 9, 6, 0.3) 0%, transparent 40%, rgba(6, 9, 6, 0.75) 100%)',
+            'radial-gradient(ellipse at center, transparent 20%, rgba(6, 9, 6, 0.72) 90%), linear-gradient(180deg, rgba(8, 12, 8, 0.45) 0%, transparent 35%, rgba(8, 12, 8, 0.88) 100%)',
         }}
       />
     </div>

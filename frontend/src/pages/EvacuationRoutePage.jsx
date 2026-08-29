@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import DashboardSidebar from '../components/DashboardSidebar';
 
 export default function EvacuationRoutePage() {
   const [startPoint, setStartPoint] = useState('Sector 4 Habitation');
@@ -15,27 +15,8 @@ export default function EvacuationRoutePage() {
   return (
     <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-transparent relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar Navigation */}
-        <aside className="hidden xl:flex bg-[#0D120C]/90 border-r border-[rgba(228,233,223,0.08)] flex-col h-full p-5 w-60 z-40">
-          <div className="mb-6 px-2">
-            <span className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E]">Terrain Navigation</span>
-            <h2 className="font-display font-light text-[#E4E9DF] text-base mt-0.5">Evacuation Routing</h2>
-          </div>
-          <nav className="flex flex-col gap-2 flex-1">
-            <Link to="/risk-zone-id" className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-[#777C70] hover:text-[#E4E9DF] hover:bg-[#080C08]/50 transition-colors">
-              <span className="material-symbols-outlined text-[18px]">gpp_maybe</span>
-              <span>Risk Zones</span>
-            </Link>
-            <Link to="/relocation-priority" className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-[#777C70] hover:text-[#E4E9DF] hover:bg-[#080C08]/50 transition-colors">
-              <span className="material-symbols-outlined text-[18px]">priority_high</span>
-              <span>Priority</span>
-            </Link>
-            <Link to="/evacuation-route" className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] bg-[#080C08] border border-[rgba(122,154,110,0.3)] text-[#86A978] shadow-sm">
-              <span className="material-symbols-outlined text-[18px]">moped</span>
-              <span>Relocation Routing</span>
-            </Link>
-          </nav>
-        </aside>
+        {/* Common Combined Dashboard Sidebar */}
+        <DashboardSidebar />
 
         {/* Data & Route Configuration Panel */}
         <main className="flex-1 relative flex flex-col md:flex-row overflow-hidden">
