@@ -5,6 +5,9 @@ import SafeZonesLogo from './SafeZonesLogo';
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [emergencyActive, setEmergencyActive] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [navbarHeight, setNavbarHeight] = useState(96); // default height: 96px
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -46,7 +49,10 @@ export default function Navbar() {
 
   return (
     <header className="bg-[#080C08]/95 backdrop-blur border-b border-[rgba(228,233,223,0.055)] w-full sticky top-0 z-50 transition-colors">
-      <div className="flex justify-between items-center w-full px-6 lg:px-[60px] h-[96px] max-w-[1440px] mx-auto">
+      <div 
+        className="flex justify-between items-center w-full px-6 lg:px-[60px] max-w-[1440px] mx-auto transition-[height] duration-150 ease-out relative"
+        style={{ height: `${navbarHeight}px` }}
+      >
         {/* Brand Logo */}
         <Link to="/" onClick={handleHomeClick} className="flex items-center gap-3 group">
           <div className="flex items-center justify-center text-[#86A978] transition-transform group-hover:scale-105">
@@ -106,7 +112,7 @@ export default function Navbar() {
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <button
             onClick={() => navigate('/login')}
             className="h-[44px] px-6 rounded-full bg-[#6F9164] hover:bg-[#86A978] text-[#0A0E09] font-medium text-xs tracking-wide transition-all shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
@@ -127,6 +133,59 @@ export default function Navbar() {
           >
             <span className="material-symbols-outlined text-[18px]">warning</span>
           </button>
+
+          {/* Settings Dropdown Toggle */}
+          <div className="relative">
+            <button
+              onClick={() => setSettingsOpen(!settingsOpen)}
+              title="Navbar Customization Settings"
+              className={`p-2 rounded-full border transition-colors ${
+                settingsOpen
+                  ? 'border-[#7A9A6E] text-[#86A978] bg-[#0D120C]'
+                  : 'border-[rgba(228,233,223,0.08)] text-[#777C70] hover:text-[#E4E9DF]'
+              }`}
+            >
+              <span className="material-symbols-outlined text-[18px]">settings</span>
+            </button>
+
+            {/* Dropdown Menu */}
+            {settingsOpen && (
+              <div className="absolute right-0 mt-3 w-72 bg-[#0D120C] border border-[rgba(122,154,110,0.3)] rounded-[14px] p-4 shadow-[0_16px_40px_rgba(0,0,0,0.85)] backdrop-blur-md z-50 animate-fade-in">
+                <div className="flex items-center justify-between mb-3 pb-2 border-b border-[rgba(228,233,223,0.06)]">
+                  <span className="text-[12px] font-medium text-[#E4E9DF] tracking-wide flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[15px] text-[#86A978]">tune</span>
+                    Navbar Settings
+                  </span>
+                  <span className="text-[11px] font-mono text-[#86A978] bg-[#7A9A6E]/10 px-2 py-0.5 rounded">
+                    {navbarHeight}px
+                  </span>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center text-[11px] text-[#777C70]">
+                    <span>Thickness (Top-to-Bottom)</span>
+                    <span className="text-[#E4E9DF] font-mono font-medium">{navbarHeight}px</span>
+                  </div>
+                  
+                  <input
+                    type="range"
+                    min="40"
+                    max="180"
+                    step="2"
+                    value={navbarHeight}
+                    onChange={(e) => setNavbarHeight(Number(e.target.value))}
+                    className="w-full h-1.5 bg-[#080C08] rounded-lg appearance-none cursor-pointer accent-[#86A978]"
+                  />
+                  
+                  <div className="flex justify-between text-[9px] text-[#565C51] font-mono pt-1">
+                    <span>Min: 40px</span>
+                    <span>Default: 96px</span>
+                    <span>Max: 180px</span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Mobile Menu Button */}
           <button
