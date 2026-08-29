@@ -11,13 +11,12 @@
     letter-spacing: -0.01em;
   }
 
-  @media (pointer: fine) {
-    body, a, button, input, select, textarea, [role="button"] {
-      cursor: none !important;
-    }
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 200;
     color: #E4E9DF;
@@ -37,13 +36,16 @@
   width: 5px;
   height: 5px;
 }
+
 ::-webkit-scrollbar-track {
   background: #060906;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(122, 154, 110, 0.25);
   border-radius: 9999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(134, 169, 120, 0.5);
 }
@@ -72,10 +74,13 @@
 
 /* Terrain Contour & Cartographic Animations (Amplified 3x) */
 @keyframes terrainBreathe {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1) translate(0, 0);
     opacity: 0.65;
   }
+
   50% {
     transform: scale(1.06) translate(14px, -10px);
     opacity: 0.95;
@@ -86,6 +91,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -96,9 +102,11 @@
     transform: translateY(-100%);
     opacity: 0;
   }
+
   50% {
     opacity: 0.7;
   }
+
   100% {
     transform: translateY(800%);
     opacity: 0;
@@ -110,6 +118,7 @@
     opacity: 0;
     transform: translateY(32px) scale(0.97);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -121,6 +130,7 @@
     opacity: 0;
     transform: translateY(-24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -128,20 +138,26 @@
 }
 
 @keyframes floatSlow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-12px) rotate(1deg);
   }
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.7;
     box-shadow: 0 0 10px rgba(122, 154, 110, 0.3);
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     box-shadow: 0 0 32px rgba(134, 169, 120, 0.8), 0 0 12px rgba(220, 38, 38, 0.5);
@@ -153,6 +169,7 @@
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
@@ -188,7 +205,7 @@
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.18) 50%, rgba(255, 255, 255, 0) 100%);
   background-size: 200% 100%;
   animation: shimmer 1.2s infinite;
 }
@@ -196,4 +213,3 @@
 .mg-bg-dark {
   background-color: #080C08;
 }
-

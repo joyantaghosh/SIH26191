@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import RainScreenEffect from '../components/RainScreenEffect';
 
 export default function HomePage() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -20,6 +21,9 @@ export default function HomePage() {
 
   return (
     <div className="flex-grow flex flex-col w-full relative z-10">
+      {/* Rain Screen Water Drop Refraction Effect */}
+      <RainScreenEffect />
+
       {/* Hero Section with Foreground vs Midground Parallax Depth */}
       <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-[60px] pt-[60px] pb-[96px] min-h-[700px] flex flex-col justify-between relative animate-fade-in-up">
         <div className="grid lg:grid-cols-12 gap-12 items-start pt-6">

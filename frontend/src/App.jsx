@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import TerrainBackground from './components/TerrainBackground';
-import CustomCursor from './components/CustomCursor';
 
 // Page Component Imports
 import HomePage from './pages/HomePage';
@@ -18,7 +17,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-[#080C08] text-[#E4E9DF] font-sans antialiased selection:bg-[#7A9A6E] selection:text-[#080C08] relative">
-        <CustomCursor />
         <TerrainBackground />
         <div className="relative z-10 flex flex-col flex-grow">
           <Navbar />
