@@ -55,7 +55,7 @@ export default function RiskAlertsPage() {
   };
 
   return (
-    <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-72px)] bg-transparent relative z-10 font-sans text-xs font-light text-[#E4E9DF]">
+    <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-70px)] bg-transparent relative z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden">
         <DashboardSidebar />
 
