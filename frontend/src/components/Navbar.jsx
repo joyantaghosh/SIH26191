@@ -9,7 +9,6 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Risk Map', path: '/settlement-risk-map' },
     { name: 'Zone ID', path: '/risk-zone-id' },
     { name: 'Capacity', path: '/carrying-capacity' },
     { name: 'Evacuation', path: '/evacuation-route' },

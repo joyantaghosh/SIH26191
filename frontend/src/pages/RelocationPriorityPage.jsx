@@ -257,7 +257,7 @@ export default function RelocationPriorityPage() {
                                     Deploy Transit
                                   </Link>
                                   <Link
-                                    to="/settlement-risk-map"
+                                    to="/risk-zone-id"
                                     className="bg-[#080C08] border border-[rgba(228,233,223,0.08)] text-[#E4E9DF] px-4 py-2 rounded-[12px] text-xs transition-colors"
                                   >
                                     View GIS Map

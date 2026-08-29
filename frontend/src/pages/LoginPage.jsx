@@ -17,7 +17,7 @@ export default function LoginPage() {
       setLoading(false);
       setAuthenticated(true);
       setTimeout(() => {
-        navigate('/settlement-risk-map');
+        navigate('/risk-zone-id');
       }, 800);
     }, 600);
   };

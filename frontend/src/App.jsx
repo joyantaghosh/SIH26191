@@ -23,7 +23,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/settlement-risk-map" element={<SettlementRiskMapPage />} />
+            {/* <Route path="/settlement-risk-map" element={<SettlementRiskMapPage />} /> */}
             <Route path="/risk-zone-id" element={<RiskZoneIdPage />} />
             <Route path="/evacuation-route" element={<EvacuationRoutePage />} />
             <Route path="/carrying-capacity" element={<CarryingCapacityPage />} />

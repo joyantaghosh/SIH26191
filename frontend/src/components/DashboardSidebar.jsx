@@ -13,12 +13,6 @@ export default function DashboardSidebar({ extraContent }) {
       badge: 'GIS Live',
     },
     {
-      label: 'Settlement Risk Map',
-      path: '/settlement-risk-map',
-      icon: 'map',
-      badge: 'Contour',
-    },
-    {
       label: 'Relocation Routing',
       path: '/evacuation-route',
       icon: 'alt_route',
