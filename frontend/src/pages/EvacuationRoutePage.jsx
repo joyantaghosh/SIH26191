@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import LeafletMap from '../components/LeafletMap';
 
 export default function EvacuationRoutePage() {
   const [startPoint, setStartPoint] = useState('Sector 4 Habitation');
@@ -7,98 +8,120 @@ export default function EvacuationRoutePage() {
   const [selectedRoute, setSelectedRoute] = useState('A');
   const [isCalculating, setIsCalculating] = useState(false);
 
+  // Location coordinates for start and destination
+  const locations = {
+    'Sector 4 Habitation': [-6.22, 106.78],
+    'Sector 7 Industrial': [-6.18, 106.82],
+    'Residential Block A': [-6.25, 106.76],
+    'Alpha Command Bunker': [-6.15, 106.88],
+    'Highland Relief Center': [-6.12, 106.85],
+    'Coastal Evac Point': [-6.28, 106.92],
+  };
+
+  // Route waypoints
+  const routeA = useMemo(() => {
+    const start = locations[startPoint] || [-6.22, 106.78];
+    const end = locations[destination] || [-6.15, 106.88];
+    // Generate a safer southern arc route
+    return [
+      start,
+      [start[0] + 0.02, (start[1] + end[1]) / 2 - 0.02],
+      [(start[0] + end[0]) / 2 + 0.03, (start[1] + end[1]) / 2],
+      [end[0] + 0.01, end[1] - 0.03],
+      end,
+    ];
+  }, [startPoint, destination]);
+
+  const routeB = useMemo(() => {
+    const start = locations[startPoint] || [-6.22, 106.78];
+    const end = locations[destination] || [-6.15, 106.88];
+    // Generate a direct but dangerous northern route
+    return [
+      start,
+      [(start[0] + end[0]) / 2 - 0.02, (start[1] + end[1]) / 2 - 0.01],
+      [end[0] - 0.01, end[1] - 0.02],
+      end,
+    ];
+  }, [startPoint, destination]);
+
+  // Hazard zone near the center
+  const hazardCenter = useMemo(() => {
+    const start = locations[startPoint] || [-6.22, 106.78];
+    const end = locations[destination] || [-6.15, 106.88];
+    return [(start[0] + end[0]) / 2 - 0.015, (start[1] + end[1]) / 2];
+  }, [startPoint, destination]);
+
+  const mapCenter = useMemo(() => {
+    const start = locations[startPoint] || [-6.22, 106.78];
+    const end = locations[destination] || [-6.15, 106.88];
+    return [(start[0] + end[0]) / 2, (start[1] + end[1]) / 2];
+  }, [startPoint, destination]);
+
+  const mapMarkers = useMemo(() => [
+    {
+      position: locations[startPoint] || [-6.22, 106.78],
+      label: startPoint,
+      color: '#7A9A6E',
+      popupContent: 'Starting Point',
+    },
+    {
+      position: locations[destination] || [-6.15, 106.88],
+      label: destination,
+      color: '#86A978',
+      popupContent: 'Destination (Safe Zone)',
+    },
+  ], [startPoint, destination]);
+
+  const mapCircles = useMemo(() => [
+    {
+      center: hazardCenter,
+      radius: 1200,
+      color: '#DC2626',
+      fillColor: '#DC2626',
+      fillOpacity: 0.12,
+      label: 'Hazard Zone — Landslide Risk',
+    },
+  ], [hazardCenter]);
+
+  const mapPolylines = useMemo(() => [
+    {
+      positions: routeB,
+      color: '#DC2626',
+      weight: selectedRoute === 'B' ? 5 : 2,
+      dashArray: '8 8',
+      opacity: selectedRoute === 'B' ? 1 : 0.4,
+      label: 'Route B — Blocked (Landslide Hazard)',
+    },
+    {
+      positions: routeA,
+      color: '#7A9A6E',
+      weight: selectedRoute === 'A' ? 6 : 3,
+      opacity: selectedRoute === 'A' ? 1 : 0.6,
+      label: 'Route A — Recommended (Clear Contour)',
+    },
+  ], [routeA, routeB, selectedRoute]);
+
   const handleCalculate = () => {
     setIsCalculating(true);
     setTimeout(() => setIsCalculating(false), 800);
   };
 
   return (
-    <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-[#080C08] relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
+    <div className="flex-grow flex flex-col w-full h-[calc(100vh-70px)] bg-[#080C08] relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden h-full">
         <DashboardSidebar />
 
         {/* Main Workspace Layout (GIS Map Canvas Left, Panel Right) */}
         <main className="flex-1 relative flex flex-col lg:flex-row overflow-hidden h-full">
-          {/* GIS Route SVG Map Overlay (Left Side Canvas) */}
+          {/* Interactive Leaflet Map (Left Side Canvas) */}
           <div className="flex-1 relative bg-[#060906] overflow-hidden h-full">
-            {/* GIS Dynamic Looping Map Video Layer */}
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none z-0"
-            >
-              <source src="/hero-section.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#080C08] via-transparent to-[#080C08]/70 pointer-events-none z-0" />
-
-            {/* Cartographic Background Grid Pattern */}
-            <div className="absolute inset-0 opacity-20 pointer-events-none">
-              <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern id="routeGrid" width="50" height="50" patternUnits="userSpaceOnUse">
-                    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#7A9A6E" strokeWidth="0.5" opacity="0.3" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#routeGrid)" />
-              </svg>
-            </div>
-
-            {/* Interactive Vector SVG Overlay */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice">
-              {/* Hazard Zones */}
-              <circle cx="600" cy="300" r="120" fill="#DC2626" fillOpacity="0.12" stroke="#DC2626" strokeWidth="1" strokeDasharray="4 4" />
-
-              {/* Route B (Red Dashed) */}
-              <path
-                d="M 200 400 L 400 350 L 550 320 L 700 200 L 800 150"
-                fill="none"
-                stroke="#DC2626"
-                strokeWidth={selectedRoute === 'B' ? '5' : '2'}
-                strokeDasharray="6 6"
-                opacity={selectedRoute === 'B' ? '1' : '0.4'}
-              />
-
-              {/* Route A (Green Cartographic Line) */}
-              <path
-                d="M 200 400 L 250 500 L 450 550 L 650 450 L 800 150"
-                fill="none"
-                stroke="#7A9A6E"
-                strokeWidth={selectedRoute === 'A' ? '6' : '3'}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M 200 400 L 250 500 L 450 550 L 650 450 L 800 150"
-                fill="none"
-                stroke="#86A978"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-
-              {/* Nodes */}
-              <circle cx="200" cy="400" r="8" fill="#7A9A6E" stroke="#080C08" strokeWidth="2" />
-              <text x="180" y="375" fill="#E4E9DF" fontSize="12" fontWeight="300">
-                {startPoint.toUpperCase()}
-              </text>
-
-              <circle cx="800" cy="150" r="10" fill="#86A978" stroke="#080C08" strokeWidth="2" />
-              <text x="825" y="155" fill="#E4E9DF" fontSize="12" fontWeight="300">
-                {destination.toUpperCase()}
-              </text>
-            </svg>
-
-            {/* Floating Map Controls */}
-            <div className="absolute bottom-6 right-6 flex flex-col gap-2 z-30">
-              <button className="w-10 h-10 bg-[#080C08] border border-[rgba(228,233,223,0.08)] rounded-[12px] flex items-center justify-center text-[#E4E9DF] hover:border-[rgba(122,154,110,0.3)]">
-                <span className="material-symbols-outlined">add</span>
-              </button>
-              <button className="w-10 h-10 bg-[#080C08] border border-[rgba(228,233,223,0.08)] rounded-[12px] flex items-center justify-center text-[#E4E9DF] hover:border-[rgba(122,154,110,0.3)]">
-                <span className="material-symbols-outlined">remove</span>
-              </button>
-            </div>
+            <LeafletMap
+              center={mapCenter}
+              zoom={13}
+              markers={mapMarkers}
+              circles={mapCircles}
+              polylines={mapPolylines}
+            />
           </div>
 
           {/* Contour Transit Panel (Right Side Sidebar) */}

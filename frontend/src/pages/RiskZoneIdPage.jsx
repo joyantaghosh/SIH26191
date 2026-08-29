@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import LeafletMap from '../components/LeafletMap';
 
 export default function RiskZoneIdPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activePlace, setActivePlace] = useState({
     name: 'Oakhaven Valley Sector',
     coords: "6°12'S 106°48'E",
+    latLng: [-6.2, 106.8],
     score: 87,
     status: 'Critical',
     hazard: 'Flood / Mudslide',
@@ -19,6 +21,7 @@ export default function RiskZoneIdPage() {
     {
       name: 'Oakhaven Valley Sector',
       coords: "6°12'S 106°48'E",
+      latLng: [-6.2, 106.8],
       score: 87,
       status: 'Critical',
       hazard: 'Flood / Mudslide',
@@ -30,6 +33,7 @@ export default function RiskZoneIdPage() {
     {
       name: 'Pine Ridge Coastal Ridge',
       coords: "6°18'S 106°54'E",
+      latLng: [-6.3, 106.9],
       score: 68,
       status: 'Warning',
       hazard: 'Flash Flood',
@@ -41,6 +45,7 @@ export default function RiskZoneIdPage() {
     {
       name: 'Riverbend Refuge East',
       coords: "6°05'S 106°39'E",
+      latLng: [-6.083, 106.65],
       score: 24,
       status: 'Safe',
       hazard: 'Low Risk Contour',
@@ -63,6 +68,7 @@ export default function RiskZoneIdPage() {
       setActivePlace({
         name: searchQuery.trim(),
         coords: "6°15'S 106°50'E",
+        latLng: [-6.25, 106.833],
         score: Math.floor(Math.random() * 40) + 50,
         status: 'Warning',
         hazard: 'Elevated Slope Terrain',
@@ -74,8 +80,43 @@ export default function RiskZoneIdPage() {
     }
   };
 
+  // Map data derived from active place and all sample places
+  const mapMarkers = useMemo(() => {
+    return samplePlaces.map((place) => ({
+      position: place.latLng,
+      label: place.name,
+      color:
+        place.status === 'Critical'
+          ? '#DC2626'
+          : place.status === 'Warning'
+          ? '#C1B99D'
+          : '#7A9A6E',
+      popupContent: `${place.hazard} — Score: ${place.score}/100`,
+    }));
+  }, []);
+
+  const mapCircles = useMemo(() => {
+    return samplePlaces.map((place) => ({
+      center: place.latLng,
+      radius:
+        place.status === 'Critical'
+          ? 800
+          : place.status === 'Warning'
+          ? 500
+          : 300,
+      color:
+        place.status === 'Critical'
+          ? '#DC2626'
+          : place.status === 'Warning'
+          ? '#C1B99D'
+          : '#7A9A6E',
+      fillOpacity: place.name === activePlace.name ? 0.2 : 0.08,
+      label: `${place.name} — ${place.status}`,
+    }));
+  }, [activePlace.name]);
+
   return (
-    <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-[#080C08] relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
+    <div className="flex-grow flex flex-col w-full h-[calc(100vh-70px)] bg-[#080C08] relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden h-full">
         <DashboardSidebar />
 
@@ -130,90 +171,17 @@ export default function RiskZoneIdPage() {
               </div>
             </div>
 
-            {/* Map Canvas Visual Area */}
-            <div className="flex-1 relative w-full bg-[#060906] overflow-hidden flex items-center justify-center">
-              {/* GIS Dynamic Looping Map Video Layer */}
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none z-0"
-              >
-                <source src="/hero-section.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080C08] via-transparent to-[#080C08]/70 pointer-events-none z-0" />
+            {/* Interactive Leaflet Map */}
+            <div className="flex-1 relative w-full overflow-hidden">
+              <LeafletMap
+                center={activePlace.latLng}
+                zoom={13}
+                markers={mapMarkers}
+                circles={mapCircles}
+              />
 
-              {/* Dynamic Thermal Heatmap Background Layer */}
-              <div className="absolute inset-0 pointer-events-none opacity-70 overflow-hidden">
-                <div className="absolute top-1/4 left-1/3 w-[450px] h-[450px] rounded-full bg-radial from-[#DC2626]/30 via-[#DC2626]/10 to-transparent blur-[80px] animate-pulse"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-radial from-[#C1B99D]/25 via-[#C1B99D]/08 to-transparent blur-[100px]"></div>
-                <div className="absolute top-1/3 left-1/6 w-[380px] h-[380px] rounded-full bg-radial from-[#7A9A6E]/30 via-[#7A9A6E]/10 to-transparent blur-[85px]"></div>
-                <div className="absolute bottom-10 left-1/2 w-[420px] h-[420px] rounded-full bg-radial from-[#6F9164]/20 via-[#6F9164]/05 to-transparent blur-[95px]"></div>
-              </div>
-
-              {/* Synthetic Cartographic Grid & Topo SVG Background */}
-              <div className="absolute inset-0 opacity-25 pointer-events-none">
-                <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7A9A6E" strokeWidth="0.5" opacity="0.4" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#grid)" />
-                  {/* Topo contour lines */}
-                  <path d="M 0 100 Q 300 50 600 200 T 1200 150" fill="none" stroke="#7A9A6E" strokeWidth="1" opacity="0.5" />
-                  <path d="M 0 250 Q 400 180 800 350 T 1400 300" fill="none" stroke="#86A978" strokeWidth="1" opacity="0.4" />
-                  <path d="M 0 400 Q 200 500 700 420 T 1500 550" fill="none" stroke="#6F9164" strokeWidth="1" opacity="0.3" />
-                </svg>
-              </div>
-
-              {/* Radar Scan Line */}
-              <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-                <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#7A9A6E]/40 to-transparent animate-scanline"></div>
-              </div>
-
-              {/* Active Place Spotlight Marker */}
-              <div className="relative z-20 flex flex-col items-center animate-bounce-slow">
-                <div className="relative flex items-center justify-center w-28 h-28">
-                  <span
-                    className={`absolute inset-0 rounded-full opacity-40 animate-ping ${
-                      activePlace.status === 'Critical' ? 'bg-[#DC2626]' : activePlace.status === 'Warning' ? 'bg-[#C1B99D]' : 'bg-[#7A9A6E]'
-                    }`}
-                  ></span>
-                  <span
-                    className={`w-14 h-14 rounded-full border-2 border-[#080C08] shadow-2xl flex items-center justify-center ${
-                      activePlace.status === 'Critical'
-                        ? 'bg-[#DC2626] text-white shadow-[0_0_24px_#DC2626]'
-                        : activePlace.status === 'Warning'
-                        ? 'bg-[#C1B99D] text-[#0A0E09]'
-                        : 'bg-[#7A9A6E] text-[#0A0E09]'
-                    }`}
-                  >
-                    <span className="material-symbols-outlined text-[28px]">location_on</span>
-                  </span>
-                </div>
-                <div className="mt-2 bg-[#0D120C]/95 border border-[rgba(122,154,110,0.3)] px-4 py-2 rounded-[12px] text-center shadow-xl backdrop-blur-md">
-                  <p className="font-display font-light text-sm text-[#E4E9DF]">{activePlace.name}</p>
-                  <p className="text-[10px] text-[#777C70] font-mono mt-0.5">{activePlace.coords}</p>
-                </div>
-              </div>
-
-              {/* Zoom Controls */}
-              <div className="absolute top-6 right-6 flex flex-col gap-2 z-20">
-                <button className="w-10 h-10 bg-[#080C08] border border-[rgba(228,233,223,0.08)] rounded-[12px] flex items-center justify-center text-[#E4E9DF] hover:border-[rgba(122,154,110,0.3)]">
-                  <span className="material-symbols-outlined">add</span>
-                </button>
-                <button className="w-10 h-10 bg-[#080C08] border border-[rgba(228,233,223,0.08)] rounded-[12px] flex items-center justify-center text-[#E4E9DF] hover:border-[rgba(122,154,110,0.3)]">
-                  <span className="material-symbols-outlined">remove</span>
-                </button>
-                <button className="w-10 h-10 bg-[#6F9164] text-[#0A0E09] rounded-[12px] flex items-center justify-center shadow-md">
-                  <span className="material-symbols-outlined">my_location</span>
-                </button>
-              </div>
-
-              {/* Legend */}
-              <div className="absolute bottom-6 left-6 bg-[#080C08]/90 border border-[rgba(228,233,223,0.08)] p-4 rounded-[14px] z-20 font-sans text-xs backdrop-blur-md shadow-lg">
+              {/* Legend Overlay */}
+              <div className="absolute bottom-6 left-6 bg-[#080C08]/90 border border-[rgba(228,233,223,0.08)] p-4 rounded-[14px] z-[1000] font-sans text-xs backdrop-blur-md shadow-lg pointer-events-auto">
                 <div className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E] mb-2 font-medium flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#7A9A6E] animate-pulse"></span>
                   Risk Zone Index Legend
