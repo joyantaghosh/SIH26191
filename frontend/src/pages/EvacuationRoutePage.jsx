@@ -143,11 +143,17 @@ export default function EvacuationRoutePage() {
 
           {/* GIS Route SVG Map Overlay */}
           <div className="flex-1 relative bg-[#060906]/60 backdrop-blur-xs overflow-hidden">
-            <img
-              className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-35"
-              alt="GIS Route Planning Satellite Canvas"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS6SyX4mSUByeXmbOr3Imq714QBwc4QM5z5tcGWLNaRzrDfwK-J-bt61jldEPev8-eD8eE2TIoPbKDqx3biEsqT3LJmDp4ZMLBPCh9un_3XMfRWyVq9hP-dMUFhHmT-QFSHs4Se5Z5Z2ljWzV52QCZNR0Dtn69SAH21jVwvNEI4uehdEcvO9NaaeE7cTdu2oiBHNkZuIQ9AiE2c-EQnITC5_v8TqZrRCndDiTyqrLQsEPuKets-fdM"
-            />
+            {/* Cartographic Background Grid Pattern */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+              <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="routeGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+                    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#7A9A6E" strokeWidth="0.5" opacity="0.3" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#routeGrid)" />
+              </svg>
+            </div>
 
             {/* Interactive Vector SVG Overlay */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice">

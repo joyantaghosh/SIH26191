@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import { Link } from 'react-router-dom';
 
 export default function RelocationPriorityPage() {
   const [expandedRow, setExpandedRow] = useState('01');
@@ -66,7 +67,9 @@ export default function RelocationPriorityPage() {
     },
   ];
 
-  const filteredData = priorityData.filter((item) => item.name.toLowerCase().includes(filterText.toLowerCase()));
+  const filteredData = priorityData.filter((item) =>
+    item.name.toLowerCase().includes(filterText.toLowerCase())
+  );
 
   const handleBroadcastAlert = () => {
     setAlertSent(true);
@@ -77,12 +80,12 @@ export default function RelocationPriorityPage() {
   };
 
   return (
-    <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-96px)] bg-transparent relative z-10 font-sans text-xs font-light text-[#E4E9DF]">
-      <div className="flex flex-1 overflow-hidden">
+    <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-[#080C08] relative z-10 font-sans text-xs font-light text-[#E4E9DF] overflow-hidden">
+      <div className="flex flex-1 overflow-hidden h-full">
         <DashboardSidebar />
 
-        {/* Main Content Canvas */}
-        <main className="flex-1 p-6 md:p-10 max-w-7xl mx-auto w-full overflow-y-auto">
+        {/* Main Content Scrollable Area */}
+        <main className="flex-1 p-6 md:p-10 max-w-7xl mx-auto w-full overflow-y-auto h-full">
           {/* Header */}
           <header className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[rgba(228,233,223,0.08)] pb-6">
             <div>
@@ -105,7 +108,7 @@ export default function RelocationPriorityPage() {
               </div>
               <button
                 onClick={() => setShowAlertModal(true)}
-                className="bg-[#DC2626] text-white px-5 h-11 rounded-[17px] text-xs uppercase tracking-wider font-medium hover:bg-red-700 transition-colors flex items-center gap-2 shadow-lg"
+                className="bg-[#DC2626] text-white px-5 h-11 rounded-[14px] text-xs uppercase tracking-wider font-medium hover:bg-red-700 transition-colors flex items-center gap-2 shadow-lg shrink-0"
               >
                 <span className="material-symbols-outlined text-[18px]">campaign</span>
                 Broadcast Alert
@@ -185,7 +188,7 @@ export default function RelocationPriorityPage() {
           </section>
 
           {/* Main Data Table */}
-          <section className="bg-[#0D120C]/90 border border-[rgba(228,233,223,0.08)] rounded-[17px] shadow-xl overflow-hidden backdrop-blur-md">
+          <section className="bg-[#0D120C]/90 border border-[rgba(228,233,223,0.08)] rounded-[17px] shadow-xl overflow-hidden backdrop-blur-md mb-8">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
@@ -276,5 +279,3 @@ export default function RelocationPriorityPage() {
     </div>
   );
 }
-
-

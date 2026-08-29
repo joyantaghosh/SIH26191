@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DashboardSidebar from '../components/DashboardSidebar';
+import { Link } from 'react-router-dom';
 
 export default function SettlementRiskMapPage() {
   const [drawerOpen, setDrawerOpen] = useState(true);
@@ -13,14 +14,83 @@ export default function SettlementRiskMapPage() {
     distance: '0.4 km',
     routeStatus: 'Compromised',
     progress: 35,
+    top: '35%',
+    left: '45%',
   });
 
   const [filterDistrict, setFilterDistrict] = useState('All Districts');
   const [riskFilter, setRiskFilter] = useState('all');
 
+  const settlements = [
+    {
+      id: 'S-9921',
+      name: 'Oakhaven Terrain Sector',
+      risk: 'Critical',
+      population: 1452,
+      score: '94 / 100',
+      hazard: 'Terrain Mudslide',
+      distance: '0.4 km',
+      routeStatus: 'Compromised',
+      progress: 35,
+      top: '35%',
+      left: '45%',
+      district: 'Northern Sector',
+    },
+    {
+      id: 'S-8810',
+      name: 'Pine Ridge Habitation',
+      risk: 'Warning',
+      population: 850,
+      score: '68 / 100',
+      hazard: 'Flash Flood',
+      distance: '1.2 km',
+      routeStatus: 'Clear',
+      progress: 60,
+      top: '60%',
+      left: '65%',
+      district: 'Eastern Valley',
+    },
+    {
+      id: 'S-4402',
+      name: 'Riverbend Shelter Area',
+      risk: 'Safe',
+      population: 3200,
+      score: '15 / 100',
+      hazard: 'Low Risk',
+      distance: '4.8 km',
+      routeStatus: 'Optimal',
+      progress: 90,
+      top: '40%',
+      left: '25%',
+      district: 'Coastal Delta',
+    },
+    {
+      id: 'S-3105',
+      name: 'Highland Ridge West',
+      risk: 'Critical',
+      population: 980,
+      score: '88 / 100',
+      hazard: 'Slope Landslide',
+      distance: '0.7 km',
+      routeStatus: 'Blocked',
+      progress: 20,
+      top: '25%',
+      left: '70%',
+      district: 'Northern Sector',
+    },
+  ];
+
+  const filteredSettlements = settlements.filter((s) => {
+    if (filterDistrict !== 'All Districts' && s.district !== filterDistrict) return false;
+    if (riskFilter === 'high' && s.risk !== 'Critical') return false;
+    if (riskFilter === 'med' && s.risk !== 'Warning') return false;
+    if (riskFilter === 'low' && s.risk !== 'Safe') return false;
+    return true;
+  });
+
   return (
-    <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-transparent relative overflow-hidden z-10">
-      <div className="flex flex-1 overflow-hidden relative">
+    <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-[#080C08] relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
+      <div className="flex flex-1 overflow-hidden h-full">
         <DashboardSidebar
           extraContent={
             <div className="space-y-4">
@@ -71,20 +141,31 @@ export default function SettlementRiskMapPage() {
           }
         />
 
-        {/* Cartographic Terrain Canvas Overlay */}
-        <div className="flex-1 relative bg-[#060906]/60 backdrop-blur-xs h-full overflow-hidden">
-          <img
-            className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-35"
-            alt="Cartographic GIS Satellite Terrain Map"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU2kMUKkTMLoTvz4XMsUjSNSWN1pAPFzvFNees9nE-H6J4cHlYpSgzUofZP5x_PLB_SJRJ63wf4h_YkA3NqmlB2GtIf0u5yA7naskGhiejaPUFTfM-D2EIvVDTQ251y0IrZTt3xh5Ahcb6_zOdKrUdNEJfU-XyLza1lsqIU9Da0XdntFw3uLEpOuFrNtmuAkP7P9hLg8NIsNVVT1sOt5oVE3O751RQ5JHi2_MnXsUhchckuydWi_Ra"
-          />
-
-          {/* Cartographic Scanline & Radar Overlay */}
-          <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-            <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#7A9A6E]/30 to-transparent animate-scanline"></div>
+        {/* Cartographic GIS Interactive Canvas Area */}
+        <div className="flex-1 relative bg-[#060906] h-full overflow-hidden flex items-center justify-center">
+          {/* Topographic Vector SVG Canvas (No Broken Image Links) */}
+          <div className="absolute inset-0 opacity-25 pointer-events-none">
+            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="gisGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+                  <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#7A9A6E" strokeWidth="0.5" opacity="0.3" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#gisGrid)" />
+              {/* Contour Elevation Bands */}
+              <circle cx="45%" cy="35%" r="180" fill="none" stroke="#DC2626" strokeWidth="1" strokeDasharray="6 4" opacity="0.4" />
+              <circle cx="45%" cy="35%" r="300" fill="none" stroke="#C1B99D" strokeWidth="1" strokeDasharray="4 4" opacity="0.3" />
+              <path d="M 50 150 Q 350 100 750 300 T 1350 250" fill="none" stroke="#86A978" strokeWidth="1.5" opacity="0.4" />
+              <path d="M 100 450 Q 500 350 950 500 T 1550 400" fill="none" stroke="#7A9A6E" strokeWidth="1.5" opacity="0.3" />
+            </svg>
           </div>
 
-          {/* Floating Map Controls */}
+          {/* Scanline Radar Sweep */}
+          <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+            <div className="w-full h-1 bg-gradient-to-r from-transparent via-[#7A9A6E]/40 to-transparent animate-scanline"></div>
+          </div>
+
+          {/* Floating Control Toolbar */}
           <div className="absolute top-6 right-6 flex flex-col gap-2 z-20">
             <button className="w-10 h-10 bg-[#080C08] border border-[rgba(228,233,223,0.08)] rounded-[12px] flex items-center justify-center text-[#E4E9DF] hover:border-[rgba(122,154,110,0.3)] hover:scale-105 transition-all">
               <span className="material-symbols-outlined">add</span>
@@ -97,90 +178,54 @@ export default function SettlementRiskMapPage() {
             </button>
           </div>
 
-          {/* Map Marker 1 - Oakhaven Critical */}
-          <button
-            onClick={() => {
-              setSelectedSettlement({
-                id: 'S-9921',
-                name: 'Oakhaven Terrain Sector',
-                risk: 'Critical',
-                population: 1452,
-                score: '94 / 100',
-                hazard: 'Terrain Mudslide',
-                distance: '0.4 km',
-                routeStatus: 'Compromised',
-                progress: 35,
-              });
-              setDrawerOpen(true);
-            }}
-            className="absolute top-[30%] left-[45%] -translate-x-1/2 -translate-y-1/2 group z-20"
-          >
-            <div className="relative flex items-center justify-center w-8 h-8">
-              <span className="absolute inset-0 rounded-full bg-[#DC2626] opacity-50 animate-ping"></span>
-              <span className="relative w-4 h-4 rounded-full bg-[#DC2626] border-2 border-[#080C08] group-hover:scale-125 transition-transform shadow-[0_0_12px_#DC2626]"></span>
-            </div>
-          </button>
+          {/* Interactive Settlement Markers */}
+          {filteredSettlements.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                setSelectedSettlement(item);
+                setDrawerOpen(true);
+              }}
+              style={{ top: item.top, left: item.left }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 group z-20 focus:outline-none"
+            >
+              <div className="relative flex flex-col items-center">
+                <div className="relative flex items-center justify-center w-8 h-8">
+                  {item.risk === 'Critical' && (
+                    <span className="absolute inset-0 rounded-full bg-[#DC2626] opacity-50 animate-ping"></span>
+                  )}
+                  <span
+                    className={`relative w-4 h-4 rounded-full border-2 border-[#080C08] group-hover:scale-125 transition-transform ${
+                      item.risk === 'Critical'
+                        ? 'bg-[#DC2626] shadow-[0_0_12px_#DC2626]'
+                        : item.risk === 'Warning'
+                        ? 'bg-[#C1B99D]'
+                        : 'bg-[#7A9A6E]'
+                    }`}
+                  ></span>
+                </div>
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-[#0D120C]/95 border border-[rgba(228,233,223,0.12)] px-2.5 py-1 rounded-[8px] text-[10px] text-[#E4E9DF] whitespace-nowrap mt-1 shadow-lg pointer-events-none">
+                  {item.name}
+                </div>
+              </div>
+            </button>
+          ))}
 
-          {/* Map Marker 2 - Pine Ridge Warning */}
-          <button
-            onClick={() => {
-              setSelectedSettlement({
-                id: 'S-8810',
-                name: 'Pine Ridge Habitation',
-                risk: 'Warning',
-                population: 850,
-                score: '68 / 100',
-                hazard: 'Flash Flood',
-                distance: '1.2 km',
-                routeStatus: 'Clear',
-                progress: 60,
-              });
-              setDrawerOpen(true);
-            }}
-            className="absolute top-[60%] left-[65%] -translate-x-1/2 -translate-y-1/2 group z-20"
-          >
-            <div className="relative flex items-center justify-center w-6 h-6 hover:scale-125 transition-transform">
-              <span className="relative w-3.5 h-3.5 rounded-full bg-[#C1B99D] border-2 border-[#080C08]"></span>
-            </div>
-          </button>
-
-          {/* Map Marker 3 - Riverbend Safe */}
-          <button
-            onClick={() => {
-              setSelectedSettlement({
-                id: 'S-4402',
-                name: 'Riverbend Shelter Area',
-                risk: 'Safe',
-                population: 3200,
-                score: '15 / 100',
-                hazard: 'Low Risk',
-                distance: '4.8 km',
-                routeStatus: 'Optimal',
-                progress: 90,
-              });
-              setDrawerOpen(true);
-            }}
-            className="absolute top-[40%] left-[25%] -translate-x-1/2 -translate-y-1/2 group z-20"
-          >
-            <div className="relative flex items-center justify-center w-6 h-6 hover:scale-125 transition-transform">
-              <span className="relative w-3.5 h-3.5 rounded-full bg-[#7A9A6E] border-2 border-[#080C08]"></span>
-            </div>
-          </button>
-
-          {/* Contextual Details Drawer */}
-          {drawerOpen && (
+          {/* Details Drawer */}
+          {drawerOpen && selectedSettlement && (
             <div className="absolute top-6 bottom-6 right-6 w-80 md:w-96 bg-[#0D120C]/95 border border-[rgba(122,154,110,0.2)] shadow-2xl rounded-[17px] flex flex-col z-30 backdrop-blur-md">
-              {/* Header */}
+              {/* Drawer Header */}
               <div className="p-5 border-b border-[rgba(228,233,223,0.08)] flex justify-between items-start">
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
                     <span
-                      className={`px-2.5 py-0.5 rounded-full font-sans text-[10px] uppercase tracking-wider font-medium text-[#0A0E09] ${selectedSettlement.risk === 'Critical'
+                      className={`px-2.5 py-0.5 rounded-full font-sans text-[10px] uppercase tracking-wider font-medium ${
+                        selectedSettlement.risk === 'Critical'
                           ? 'bg-[#DC2626] text-white'
                           : selectedSettlement.risk === 'Warning'
-                            ? 'bg-[#C1B99D]'
-                            : 'bg-[#86A978]'
-                        }`}
+                          ? 'bg-[#C1B99D] text-[#0A0E09]'
+                          : 'bg-[#86A978] text-[#0A0E09]'
+                      }`}
                     >
                       {selectedSettlement.risk}
                     </span>
@@ -193,7 +238,7 @@ export default function SettlementRiskMapPage() {
                 </button>
               </div>
 
-              {/* Drawer Content */}
+              {/* Drawer Body */}
               <div className="p-5 flex-1 overflow-y-auto space-y-5 font-sans text-xs font-light">
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-3">
@@ -207,7 +252,7 @@ export default function SettlementRiskMapPage() {
                   </div>
                 </div>
 
-                {/* Specs */}
+                {/* Details */}
                 <div className="space-y-3">
                   <div className="flex justify-between items-center py-2 border-b border-[rgba(228,233,223,0.06)]">
                     <span className="text-[11px] uppercase text-[#777C70]">Hazard Type</span>
@@ -238,7 +283,7 @@ export default function SettlementRiskMapPage() {
                 </div>
               </div>
 
-              {/* Action */}
+              {/* Drawer Footer Action */}
               <div className="p-4 border-t border-[rgba(228,233,223,0.08)] bg-[#080C08] rounded-b-[17px]">
                 <Link
                   to="/evacuation-route"
@@ -255,4 +300,3 @@ export default function SettlementRiskMapPage() {
     </div>
   );
 }
-

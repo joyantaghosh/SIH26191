@@ -81,11 +81,19 @@ export default function HomePage() {
               transformStyle: 'preserve-3d',
             }}
           >
-            <img
-              className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:scale-105 transition-transform duration-700"
-              alt="Cartographic Terrain Visualization"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoqddqtNvw7G19DsMeGja1zEfz3eOAtbmrP_KK5NPhhD6pgbYBJi1zf71nVOa1ftxUgookM2u4VPz2RgV4xoJb4_IOTvZ67MDkgBKLPQB3sVv_DybYB9Q90iuAQOUyYK-XfFFXNzq8Mi6vUycempL4E0DT_z74e3PbBGrNK18FVWNdzh1aV1aQ5f9S6_uq3AQMRLuKywPLN28ES6lSfj6jWNOn9AWafaMQADHHV_tXd-m-y9VAFWWa"
-            />
+            {/* Vector Topo Grid Pattern */}
+            <div className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700 pointer-events-none">
+              <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="homeGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7A9A6E" strokeWidth="0.5" opacity="0.3" />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#homeGrid)" />
+                <circle cx="50%" cy="50%" r="140" fill="none" stroke="#86A978" strokeWidth="1" strokeDasharray="6 4" opacity="0.5" />
+                <circle cx="50%" cy="50%" r="220" fill="none" stroke="#7A9A6E" strokeWidth="1" strokeDasharray="4 4" opacity="0.3" />
+              </svg>
+            </div>
 
             {/* Cartographic Legend (Floating Sub-plane) */}
             <div 
