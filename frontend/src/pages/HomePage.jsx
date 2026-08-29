@@ -81,23 +81,23 @@ export default function HomePage() {
               transformStyle: 'preserve-3d',
             }}
           >
-            {/* Vector Topo Grid Pattern */}
-            <div className="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-700 pointer-events-none">
-              <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <pattern id="homeGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7A9A6E" strokeWidth="0.5" opacity="0.3" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#homeGrid)" />
-                <circle cx="50%" cy="50%" r="140" fill="none" stroke="#86A978" strokeWidth="1" strokeDasharray="6 4" opacity="0.5" />
-                <circle cx="50%" cy="50%" r="220" fill="none" stroke="#7A9A6E" strokeWidth="1" strokeDasharray="4 4" opacity="0.3" />
-              </svg>
-            </div>
+            {/* Looping Background Video */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+            >
+              <source src="/hero-section.mp4" type="video/mp4" />
+            </video>
+
+            {/* Subtle Theme Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#080C08]/80 via-transparent to-[#080C08]/30 pointer-events-none" />
 
             {/* Cartographic Legend (Floating Sub-plane) */}
             <div 
-              className="absolute top-5 left-5 bg-[#080C08]/90 border border-[rgba(228,233,223,0.12)] p-4 rounded-[12px] flex flex-col gap-2.5 font-sans text-xs font-light backdrop-blur-lg shadow-[0_16px_40px_rgba(0,0,0,0.6)] animate-float-slow"
+              className="absolute top-5 left-5 bg-[#080C08]/90 border border-[rgba(228,233,223,0.12)] p-4 rounded-[12px] flex flex-col gap-2.5 font-sans text-xs font-light backdrop-blur-lg shadow-[0_16px_40px_rgba(0,0,0,0.6)] animate-float-slow z-10"
               style={{
                 transform: `translate3d(${mousePos.x * 12}px, ${mousePos.y * 10}px, 20px)`,
               }}
@@ -121,7 +121,7 @@ export default function HomePage() {
             </div>
 
             {/* Rotating Vector Reticle */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40 z-10">
               <div className="w-40 h-40 border border-dashed border-[rgba(122,154,110,0.5)] rounded-full flex items-center justify-center animate-radar-sweep">
                 <div className="w-20 h-20 border border-[rgba(134,169,120,0.7)] rounded-full"></div>
               </div>
