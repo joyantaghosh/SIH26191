@@ -42,9 +42,8 @@ export default {
         "risk-orange": "#86A978",
       },
       fontFamily: {
-        sans: ['"Hanken Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['"Hanken Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
-        body: ['"Hanken Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        body: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       letterSpacing: {

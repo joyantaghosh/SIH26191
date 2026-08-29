@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DashboardSidebar from '../components/DashboardSidebar';
+import { Link } from 'react-router-dom';
 
 export default function SettlementRiskMapPage() {
   const [drawerOpen, setDrawerOpen] = useState(true);
@@ -21,51 +21,79 @@ export default function SettlementRiskMapPage() {
   return (
     <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-transparent relative overflow-hidden z-10">
       <div className="flex flex-1 overflow-hidden relative">
-        {/* Common Combined Dashboard Sidebar */}
-        <DashboardSidebar />
+        {/* Sidebar Filters */}
+        <aside className="hidden md:flex flex-col h-full w-80 bg-[#0D120C]/90 border-r border-[rgba(228,233,223,0.08)] p-6 flex-shrink-0 z-30 font-sans text-xs font-light">
+          <div className="mb-6">
+            <span className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E]">Cartographic Map</span>
+            <h2 className="font-display font-light text-[#E4E9DF] text-xl leading-tight mt-1">Settlement Risk Map</h2>
+            <p className="font-sans text-[11px] text-[#777C70] mt-1">Sub-meter Contour Telemetry</p>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="space-y-2 mb-6">
+            <Link to="/risk-zone-id" className="flex items-center gap-3 px-4 py-2.5 bg-[#080C08] border border-[rgba(122,154,110,0.2)] text-[#86A978] rounded-[12px] font-light text-xs transition-colors">
+              <span className="material-symbols-outlined text-[18px]">gpp_maybe</span>
+              <span>Risk Zones Overview</span>
+            </Link>
+            <Link to="/relocation-priority" className="flex items-center gap-3 px-4 py-2.5 text-[#777C70] hover:text-[#E4E9DF] hover:bg-[#080C08]/50 rounded-[12px] font-light text-xs transition-colors">
+              <span className="material-symbols-outlined text-[18px]">priority_high</span>
+              <span>Priority Matrix</span>
+            </Link>
+            <Link to="/evacuation-route" className="flex items-center gap-3 px-4 py-2.5 text-[#777C70] hover:text-[#E4E9DF] hover:bg-[#080C08]/50 rounded-[12px] font-light text-xs transition-colors">
+              <span className="material-symbols-outlined text-[18px]">alt_route</span>
+              <span>Evacuation Routes</span>
+            </Link>
+          </nav>
+
+          {/* Active Filters */}
+          <div className="mt-auto border-t border-[rgba(228,233,223,0.08)] pt-5 space-y-4">
+            <h3 className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E] font-medium">Contour Filters</h3>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-[11px] text-[#777C70]">District Zone</label>
+              <select
+                value={filterDistrict}
+                onChange={(e) => setFilterDistrict(e.target.value)}
+                className="h-10 border border-[rgba(228,233,223,0.08)] rounded-[12px] bg-[#080C08] text-[#E4E9DF] text-xs font-light px-3 w-full outline-none focus:border-[#7A9A6E]"
+              >
+                <option value="All Districts">All Districts</option>
+                <option value="Northern Sector">Northern Sector</option>
+                <option value="Eastern Valley">Eastern Valley</option>
+                <option value="Coastal Delta">Coastal Delta</option>
+              </select>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-[11px] text-[#777C70]">Risk Level Filter</label>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setRiskFilter(riskFilter === 'high' ? 'all' : 'high')}
+                  className={`flex-1 border rounded-[10px] h-9 text-[10px] uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors ${riskFilter === 'high' ? 'bg-[#DC2626]/20 text-[#DC2626] border-[#DC2626]' : 'bg-[#080C08] border-[rgba(228,233,223,0.08)] text-[#777C70]'
+                    }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]"></span> High
+                </button>
+                <button
+                  onClick={() => setRiskFilter(riskFilter === 'med' ? 'all' : 'med')}
+                  className={`flex-1 border rounded-[10px] h-9 text-[10px] uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors ${riskFilter === 'med' ? 'bg-[#C1B99D]/20 text-[#C1B99D] border-[#C1B99D]' : 'bg-[#080C08] border-[rgba(228,233,223,0.08)] text-[#777C70]'
+                    }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C1B99D]"></span> Med
+                </button>
+                <button
+                  onClick={() => setRiskFilter(riskFilter === 'low' ? 'all' : 'low')}
+                  className={`flex-1 border rounded-[10px] h-9 text-[10px] uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors ${riskFilter === 'low' ? 'bg-[#7A9A6E]/20 text-[#7A9A6E] border-[#7A9A6E]' : 'bg-[#080C08] border-[rgba(228,233,223,0.08)] text-[#777C70]'
+                    }`}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7A9A6E]"></span> Low
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
 
         {/* Cartographic Terrain Canvas Overlay */}
         <div className="flex-1 relative bg-[#060906]/60 backdrop-blur-xs h-full overflow-hidden">
-          {/* Floating Map Filter Bar */}
-          <div className="absolute top-6 left-6 z-20 flex items-center gap-3 bg-[#080C08]/90 border border-[rgba(228,233,223,0.12)] p-2.5 rounded-[14px] backdrop-blur-md shadow-[0_12px_32px_rgba(0,0,0,0.6)]">
-            <select
-              value={filterDistrict}
-              onChange={(e) => setFilterDistrict(e.target.value)}
-              className="h-8 border border-[rgba(228,233,223,0.08)] rounded-[10px] bg-[#0D120C] text-[#E4E9DF] text-xs font-light px-3 outline-none focus:border-[#7A9A6E]"
-            >
-              <option value="All Districts">All Districts</option>
-              <option value="Northern Sector">Northern Sector</option>
-              <option value="Eastern Valley">Eastern Valley</option>
-              <option value="Coastal Delta">Coastal Delta</option>
-            </select>
-
-            <div className="flex items-center gap-1.5 border-l border-[rgba(228,233,223,0.08)] pl-3">
-              <button
-                onClick={() => setRiskFilter(riskFilter === 'high' ? 'all' : 'high')}
-                className={`px-2.5 h-8 border rounded-[8px] text-[10px] uppercase tracking-wider flex items-center gap-1.5 transition-colors ${
-                  riskFilter === 'high' ? 'bg-[#DC2626]/20 text-[#DC2626] border-[#DC2626]' : 'bg-[#0D120C] border-[rgba(228,233,223,0.08)] text-[#777C70]'
-                }`}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#DC2626]"></span> High
-              </button>
-              <button
-                onClick={() => setRiskFilter(riskFilter === 'med' ? 'all' : 'med')}
-                className={`px-2.5 h-8 border rounded-[8px] text-[10px] uppercase tracking-wider flex items-center gap-1.5 transition-colors ${
-                  riskFilter === 'med' ? 'bg-[#C1B99D]/20 text-[#C1B99D] border-[#C1B99D]' : 'bg-[#0D120C] border-[rgba(228,233,223,0.08)] text-[#777C70]'
-                }`}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#C1B99D]"></span> Med
-              </button>
-              <button
-                onClick={() => setRiskFilter(riskFilter === 'low' ? 'all' : 'low')}
-                className={`px-2.5 h-8 border rounded-[8px] text-[10px] uppercase tracking-wider flex items-center gap-1.5 transition-colors ${
-                  riskFilter === 'low' ? 'bg-[#7A9A6E]/20 text-[#7A9A6E] border-[#7A9A6E]' : 'bg-[#0D120C] border-[rgba(228,233,223,0.08)] text-[#777C70]'
-                }`}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#7A9A6E]"></span> Low
-              </button>
-            </div>
-          </div>
           <img
             className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-35"
             alt="Cartographic GIS Satellite Terrain Map"
@@ -168,13 +196,12 @@ export default function SettlementRiskMapPage() {
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
                     <span
-                      className={`px-2.5 py-0.5 rounded-full font-sans text-[10px] uppercase tracking-wider font-medium text-[#0A0E09] ${
-                        selectedSettlement.risk === 'Critical'
+                      className={`px-2.5 py-0.5 rounded-full font-sans text-[10px] uppercase tracking-wider font-medium text-[#0A0E09] ${selectedSettlement.risk === 'Critical'
                           ? 'bg-[#DC2626] text-white'
                           : selectedSettlement.risk === 'Warning'
-                          ? 'bg-[#C1B99D]'
-                          : 'bg-[#86A978]'
-                      }`}
+                            ? 'bg-[#C1B99D]'
+                            : 'bg-[#86A978]'
+                        }`}
                     >
                       {selectedSettlement.risk}
                     </span>
@@ -249,3 +276,4 @@ export default function SettlementRiskMapPage() {
     </div>
   );
 }
+

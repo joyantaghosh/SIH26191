@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DashboardSidebar from '../components/DashboardSidebar';
+import { Link } from 'react-router-dom';
 
 export default function RiskAlertsPage() {
   const [alerts, setAlerts] = useState([
@@ -57,8 +57,27 @@ export default function RiskAlertsPage() {
   return (
     <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-72px)] bg-transparent relative z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden">
-        {/* Common Combined Dashboard Sidebar */}
-        <DashboardSidebar />
+        {/* SideNavBar */}
+        <aside className="hidden md:flex flex-col h-full w-80 bg-surface border-r border-outline-variant p-4 shrink-0 font-mono text-xs">
+          <div className="mb-6 px-2">
+            <div className="font-display font-bold text-primary text-base">Command Center</div>
+            <div className="text-on-surface-variant uppercase mt-1">Vigilant Operations</div>
+          </div>
+          <nav className="flex flex-col gap-1.5 flex-1">
+            <Link to="/risk-zone-id" className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg">
+              <span className="material-symbols-outlined text-[20px]">gpp_maybe</span>
+              <span>Risk Zones</span>
+            </Link>
+            <Link to="/relocation-priority" className="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg">
+              <span className="material-symbols-outlined text-[20px]">priority_high</span>
+              <span>Priority Matrix</span>
+            </Link>
+            <Link to="/risk-alerts" className="flex items-center gap-3 p-3 bg-secondary-container text-on-secondary-container font-semibold rounded-lg shadow-sm">
+              <span className="material-symbols-outlined text-[20px]">add_alert</span>
+              <span>Active Alerts</span>
+            </Link>
+          </nav>
+        </aside>
 
         {/* Main Content Canvas */}
         <main className="flex-1 p-6 md:p-8 max-w-7xl mx-auto w-full overflow-y-auto">
@@ -88,9 +107,8 @@ export default function RiskAlertsPage() {
               {alerts.map((alert) => (
                 <div
                   key={alert.id}
-                  className={`bg-surface border-l-4 rounded-xl p-5 shadow-sm relative overflow-hidden transition-all ${
-                    alert.acknowledged ? 'opacity-60 border-l-gray-400' : ''
-                  }`}
+                  className={`bg-surface border-l-4 rounded-xl p-5 shadow-sm relative overflow-hidden transition-all ${alert.acknowledged ? 'opacity-60 border-l-gray-400' : ''
+                    }`}
                   style={{ borderLeftColor: alert.acknowledged ? '#94a3b8' : alert.color }}
                 >
                   <div
@@ -163,15 +181,14 @@ export default function RiskAlertsPage() {
                           key={lvl}
                           type="button"
                           onClick={() => setSeverity(lvl)}
-                          className={`flex-1 py-2 border rounded font-mono text-xs uppercase font-bold transition-colors ${
-                            severity === lvl
+                          className={`flex-1 py-2 border rounded font-mono text-xs uppercase font-bold transition-colors ${severity === lvl
                               ? lvl === 'critical'
                                 ? 'bg-[#DC2626] text-white border-[#DC2626]'
                                 : lvl === 'high'
-                                ? 'bg-[#f97316] text-white border-[#f97316]'
-                                : 'bg-[#eab308] text-white border-[#eab308]'
+                                  ? 'bg-[#f97316] text-white border-[#f97316]'
+                                  : 'bg-[#eab308] text-white border-[#eab308]'
                               : 'bg-surface border-outline-variant text-on-surface-variant'
-                          }`}
+                            }`}
                         >
                           {lvl}
                         </button>
@@ -232,3 +249,5 @@ export default function RiskAlertsPage() {
     </div>
   );
 }
+
+
