@@ -42,6 +42,7 @@ export default {
         "risk-orange": "#86A978",
       },
       fontFamily: {
+        sans: ['Inter', 'Helvetica Neue', 'Arial', 'system-ui', 'sans-serif'],
         display: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
         body: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
@@ -49,7 +50,12 @@ export default {
       letterSpacing: {
         'eyebrow': '0.13em',
         'label': '0.16em',
-        'display': '-0.04em',
+        'display-xl': '-0.045em',
+        'display-lg': '-0.04em',
+        'display-md': '-0.035em',
+        'heading-lg': '-0.025em',
+        'heading-md': '-0.02em',
+        'metric': '-0.035em',
       },
       borderRadius: {
         'mg-card': '17px',
