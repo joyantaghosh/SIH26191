@@ -25,9 +25,6 @@ export default function Navbar() {
           <div className="flex items-center justify-center text-[#86A978] transition-transform group-hover:scale-105">
             <SafeZonesLogo className="h-8 w-auto text-[#86A978]" color="#86A978" />
           </div>
-          <span className="font-display text-[22px] font-light text-[#DDE3D8] tracking-tight">
-            Safe <span className="text-[#86A978] font-normal">Zones</span>
-          </span>
           <span className="text-[11px] font-mono font-light px-2.5 py-0.5 rounded-full border border-[rgba(228,233,223,0.08)] bg-[#0D120C] text-[#777C70] tracking-wider uppercase hidden sm:inline-block">
             Cartographic TERRAIN
           </span>

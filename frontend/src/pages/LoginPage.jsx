@@ -26,10 +26,9 @@ export default function LoginPage() {
     <div className="flex-grow flex items-center justify-center p-6 bg-transparent font-sans text-[#E4E9DF] relative z-10">
       <div className="w-full max-w-[440px] bg-[#0D120C]/90 rounded-[17px] border border-[rgba(122,154,110,0.18)] shadow-[0_20px_60px_rgba(0,0,0,0.5)] p-8 sm:p-10 backdrop-blur-md">
         <div className="text-center mb-8 flex flex-col items-center">
-          <div className="mb-4 text-[#86A978]">
-            <SafeZonesLogo className="h-12 w-auto text-[#86A978]" color="#86A978" />
+          <div className="mb-2 text-[#86A978]">
+            <SafeZonesLogo className="h-14 w-auto text-[#86A978]" color="#86A978" />
           </div>
-          <h1 className="font-display text-[26px] font-light text-[#E4E9DF] tracking-tight">Safe Zones</h1>
           <p className="font-sans text-xs font-light text-[#777C70] uppercase tracking-[0.16em] mt-1.5">
             Terrain Access Authentication
           </p>

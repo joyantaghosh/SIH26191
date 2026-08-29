@@ -81,7 +81,7 @@ export default function DashboardSidebar({ extraContent }) {
             </span>
           </div>
           <h2 className="font-display font-light text-[#E4E9DF] text-lg leading-tight">
-            Safe Zones <span className="text-[#86A978]">Telemetry</span>
+            <span className="text-[#86A978]">Telemetry</span> Protocol
           </h2>
           <p className="text-[11px] text-[#777C70] mt-0.5 font-light">
             Real-time Geospatial Protocol
