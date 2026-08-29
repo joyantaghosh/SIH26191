@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import SafeZonesLogo from './SafeZonesLogo';
 
 export default function DashboardSidebar({ extraContent }) {
   const location = useLocation();
@@ -51,7 +50,7 @@ export default function DashboardSidebar({ extraContent }) {
       {/* Mobile Drawer Toggle Header */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 bg-[#0D120C] border-b border-[rgba(228,233,223,0.08)] z-30 shrink-0">
         <div className="flex items-center gap-2">
-          <SafeZonesLogo className="h-4 w-auto text-[#86A978]" color="#86A978" />
+          <span className="w-2 h-2 rounded-full bg-[#7A9A6E] animate-pulse"></span>
           <span className="text-[11px] font-light uppercase tracking-[0.16em] text-[#E4E9DF]">
             Dashboard Navigation
           </span>
@@ -74,8 +73,8 @@ export default function DashboardSidebar({ extraContent }) {
       >
         {/* Header Branding */}
         <div className="mb-6 px-1 border-b border-[rgba(228,233,223,0.06)] pb-4">
-          <div className="flex items-center gap-2 mb-2">
-            <SafeZonesLogo className="h-6 w-auto text-[#86A978]" color="#86A978" />
+          <div className="flex items-center gap-2 mb-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#7A9A6E] animate-pulse"></span>
             <span className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E] font-medium">
               Dashboard Navigation
             </span>
