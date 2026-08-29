@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SafeZonesLogo from '../components/SafeZonesLogo';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('officer@meridiangeo.gov.in');
+  const [email, setEmail] = useState('officer@safezones.gov.in');
   const [password, setPassword] = useState('••••••••••••');
   const [role, setRole] = useState('Cartographic Analyst');
   const [loading, setLoading] = useState(false);
@@ -25,10 +26,10 @@ export default function LoginPage() {
     <div className="flex-grow flex items-center justify-center p-6 bg-transparent font-sans text-[#E4E9DF] relative z-10">
       <div className="w-full max-w-[440px] bg-[#0D120C]/90 rounded-[17px] border border-[rgba(122,154,110,0.18)] shadow-[0_20px_60px_rgba(0,0,0,0.5)] p-8 sm:p-10 backdrop-blur-md">
         <div className="text-center mb-8 flex flex-col items-center">
-          <div className="w-12 h-12 rounded-full border border-[rgba(122,154,110,0.3)] bg-[#080C08] flex items-center justify-center text-[#86A978] mb-4">
-            <span className="material-symbols-outlined text-[24px]">explore</span>
+          <div className="mb-4 text-[#86A978]">
+            <SafeZonesLogo className="h-12 w-auto text-[#86A978]" color="#86A978" />
           </div>
-          <h1 className="font-display text-[26px] font-light text-[#E4E9DF] tracking-tight">Meridian Geo</h1>
+          <h1 className="font-display text-[26px] font-light text-[#E4E9DF] tracking-tight">Safe Zones</h1>
           <p className="font-sans text-xs font-light text-[#777C70] uppercase tracking-[0.16em] mt-1.5">
             Terrain Access Authentication
           </p>

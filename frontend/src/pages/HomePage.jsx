@@ -39,7 +39,7 @@ export default function HomePage() {
             <div className="flex items-center gap-4 mb-10">
               <span className="w-9 h-[1px] bg-[#7A9A6E] animate-pulse"></span>
               <span className="font-sans text-[13px] font-normal tracking-[0.13em] text-[#7A9A6E] uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                Meridian Geo — Cartographic Terrain Protocol
+                Safe Zones — Cartographic Terrain Protocol
               </span>
             </div>
 
