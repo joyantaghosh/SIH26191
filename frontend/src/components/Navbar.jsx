@@ -1,26 +1,54 @@
-import React, { useState } from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import SafeZonesLogo from './SafeZonesLogo';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [emergencyActive, setEmergencyActive] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Zone ID', path: '/risk-zone-id' },
-    { name: 'Capacity', path: '/carrying-capacity' },
-    { name: 'Evacuation', path: '/evacuation-route' },
-    { name: 'Priority', path: '/relocation-priority' },
-    { name: 'Alerts', path: '/risk-alerts' },
-  ];
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const id = location.state.scrollTo;
+      setTimeout(() => {
+        const el = document.getElementById(id) || document.getElementById('footer');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+      }, 150);
+    }
+  }, [location]);
+
+  const handleScrollTo = (id) => {
+    setMobileMenuOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+    } else {
+      const el = document.getElementById(id) || document.getElementById('footer');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleHomeClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="bg-[#080C08]/95 backdrop-blur border-b border-[rgba(228,233,223,0.055)] w-full sticky top-0 z-50 transition-colors">
       <div className="flex justify-between items-center w-full px-6 lg:px-[60px] h-[96px] max-w-[1440px] mx-auto">
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" onClick={handleHomeClick} className="flex items-center gap-3 group">
           <div className="flex items-center justify-center text-[#86A978] transition-transform group-hover:scale-105">
             <SafeZonesLogo className="h-8 w-auto text-[#86A978]" color="#86A978" />
           </div>
@@ -28,21 +56,53 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <nav className="hidden lg:flex items-center gap-[32px] xl:gap-[42px] h-full">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `text-[15px] font-light transition-colors tracking-tight ${
-                  isActive
-                    ? 'text-[#C1C8BB] font-normal border-b border-[#7A9A6E] pb-1'
-                    : 'text-[#777C70] hover:text-[#C1C8BB]'
-                }`
-              }
-            >
-              {item.name}
-            </NavLink>
-          ))}
+          <NavLink
+            to="/"
+            onClick={handleHomeClick}
+            className={({ isActive }) =>
+              `text-[15px] font-light transition-colors tracking-tight ${
+                isActive
+                  ? 'text-[#C1C8BB] font-normal border-b border-[#7A9A6E] pb-1'
+                  : 'text-[#777C70] hover:text-[#C1C8BB]'
+              }`
+            }
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/risk-zone-id"
+            className={({ isActive }) =>
+              `text-[15px] font-light transition-colors tracking-tight ${
+                isActive
+                  ? 'text-[#C1C8BB] font-normal border-b border-[#7A9A6E] pb-1'
+                  : 'text-[#777C70] hover:text-[#C1C8BB]'
+              }`
+            }
+          >
+            Dashboard
+          </NavLink>
+
+          <button
+            onClick={() => handleScrollTo('privacy')}
+            className="text-[15px] font-light text-[#777C70] hover:text-[#C1C8BB] transition-colors tracking-tight"
+          >
+            Privacy Policy
+          </button>
+
+          <button
+            onClick={() => handleScrollTo('about')}
+            className="text-[15px] font-light text-[#777C70] hover:text-[#C1C8BB] transition-colors tracking-tight"
+          >
+            About
+          </button>
+
+          <button
+            onClick={() => handleScrollTo('contact')}
+            className="text-[15px] font-light text-[#777C70] hover:text-[#C1C8BB] transition-colors tracking-tight"
+          >
+            Contact
+          </button>
         </nav>
 
         {/* Action Controls */}
@@ -94,21 +154,51 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#080C08] border-b border-[rgba(228,233,223,0.08)] px-6 py-6 flex flex-col gap-3">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={() => setMobileMenuOpen(false)}
-              className={({ isActive }) =>
-                `py-2 text-base font-light transition-colors ${
-                  isActive ? 'text-[#86A978] font-normal' : 'text-[#777C70]'
-                }`
-              }
-            >
-              {item.name}
-            </NavLink>
-          ))}
+        <div className="lg:hidden bg-[#080C08] border-b border-[rgba(228,233,223,0.08)] px-6 py-6 flex flex-col gap-4">
+          <NavLink
+            to="/"
+            onClick={handleHomeClick}
+            className={({ isActive }) =>
+              `py-2 text-base font-light transition-colors ${
+                isActive ? 'text-[#86A978] font-normal' : 'text-[#777C70]'
+              }`
+            }
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/risk-zone-id"
+            onClick={() => setMobileMenuOpen(false)}
+            className={({ isActive }) =>
+              `py-2 text-base font-light transition-colors ${
+                isActive ? 'text-[#86A978] font-normal' : 'text-[#777C70]'
+              }`
+            }
+          >
+            Dashboard
+          </NavLink>
+
+          <button
+            onClick={() => handleScrollTo('privacy')}
+            className="py-2 text-left text-base font-light text-[#777C70] hover:text-[#86A978] transition-colors"
+          >
+            Privacy Policy
+          </button>
+
+          <button
+            onClick={() => handleScrollTo('about')}
+            className="py-2 text-left text-base font-light text-[#777C70] hover:text-[#86A978] transition-colors"
+          >
+            About
+          </button>
+
+          <button
+            onClick={() => handleScrollTo('contact')}
+            className="py-2 text-left text-base font-light text-[#777C70] hover:text-[#86A978] transition-colors"
+          >
+            Contact
+          </button>
         </div>
       )}
     </header>
