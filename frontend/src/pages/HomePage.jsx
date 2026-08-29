@@ -95,30 +95,7 @@ export default function HomePage() {
             {/* Subtle Theme Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#080C08]/80 via-transparent to-[#080C08]/30 pointer-events-none" />
 
-            {/* Cartographic Legend (Floating Sub-plane) */}
-            <div 
-              className="absolute top-5 left-5 bg-[#080C08]/90 border border-[rgba(228,233,223,0.12)] p-4 rounded-[12px] flex flex-col gap-2.5 font-sans text-xs font-light backdrop-blur-lg shadow-[0_16px_40px_rgba(0,0,0,0.6)] animate-float-slow z-10"
-              style={{
-                transform: `translate3d(${mousePos.x * 12}px, ${mousePos.y * 10}px, 20px)`,
-              }}
-            >
-              <div className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E] font-medium mb-1 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#7A9A6E] animate-ping"></span>
-                Contour Telemetry
-              </div>
-              <div className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[#DC2626] animate-pulse"></span>
-                <span className="text-[#E4E9DF]">Critical Hazard Contour</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[#C1B99D]"></span>
-                <span className="text-[#B0B5A8]">Vulnerable Basin</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[#7A9A6E]"></span>
-                <span className="text-[#B0B5A8]">Nominal Safe Ridge</span>
-              </div>
-            </div>
+
 
             {/* Rotating Vector Reticle */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40 z-10">
