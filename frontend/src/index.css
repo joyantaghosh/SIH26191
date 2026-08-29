@@ -9,6 +9,11 @@
     font-family: 'Inter', 'Helvetica Neue', Arial, system-ui, -apple-system, sans-serif;
     font-weight: 300;
     letter-spacing: -0.01em;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
   }
 
   h1,
@@ -20,6 +25,29 @@
     font-family: 'Inter', 'Helvetica Neue', Arial, system-ui, -apple-system, sans-serif;
     font-weight: 200;
     color: #E4E9DF;
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  p, span, div, section, img, video {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+  }
+
+  button, a, label {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    cursor: pointer;
+  }
+
+  input, textarea {
+    cursor: text;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
   }
 }
 

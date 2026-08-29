@@ -25,7 +25,7 @@ export default function HomePage() {
       <RainScreenEffect />
 
       {/* Hero Section with Foreground vs Midground Parallax Depth */}
-      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-[60px] pt-[60px] pb-[96px] min-h-[700px] flex flex-col justify-between relative animate-fade-in-up">
+      <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-[60px] pt-[60px] pb-[96px] min-h-[700px] flex flex-col justify-between relative animate-fade-in-up select-none">
         <div className="grid lg:grid-cols-12 gap-12 items-start pt-6">
           
           {/* FOREGROUND LAYER 1: Editorial Content Column (Foreground Floating Plane) */}

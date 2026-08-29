@@ -75,7 +75,7 @@ export default function RiskZoneIdPage() {
   };
 
   return (
-    <div className="flex-grow flex flex-col w-full min-h-[calc(100vh-70px)] bg-transparent relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
+    <div className="flex-grow flex flex-col w-full h-[calc(100vh-96px)] bg-[#080C08] relative overflow-hidden z-10 font-sans text-xs font-light text-[#E4E9DF]">
       <div className="flex flex-1 overflow-hidden h-full">
         <DashboardSidebar />
 
