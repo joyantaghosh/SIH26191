@@ -85,8 +85,24 @@ export default function RelocationPriorityPage() {
         <DashboardSidebar />
 
         {/* Main Content Scrollable Area */}
-        <main className="flex-1 p-6 md:p-10 max-w-7xl mx-auto w-full overflow-y-auto h-full">
-          {/* Header */}
+        <main className="flex-1 p-6 md:p-10 max-w-7xl mx-auto w-full overflow-y-auto h-full relative">
+          {/* Cartographic Heatmap Background Layer */}
+          <div className="absolute inset-0 pointer-events-none opacity-40 overflow-hidden z-0">
+            <div className="absolute top-10 left-1/4 w-[500px] h-[500px] rounded-full bg-[#DC2626]/20 blur-[100px] animate-pulse"></div>
+            <div className="absolute top-1/3 right-10 w-[450px] h-[450px] rounded-full bg-[#C1B99D]/18 blur-[90px]"></div>
+            <div className="absolute bottom-10 left-10 w-[550px] h-[550px] rounded-full bg-[#7A9A6E]/20 blur-[110px]"></div>
+            <svg className="w-full h-full absolute inset-0 opacity-20" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="priorityGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7A9A6E" strokeWidth="0.5" opacity="0.3" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#priorityGrid)" />
+            </svg>
+          </div>
+
+          <div className="relative z-10">
+            {/* Header */}
           <header className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[rgba(228,233,223,0.08)] pb-6">
             <div>
               <span className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E]">Geospatial Priority Index</span>
@@ -274,7 +290,8 @@ export default function RelocationPriorityPage() {
               </table>
             </div>
           </section>
-        </main>
+        </div>
+      </main>
       </div>
     </div>
   );

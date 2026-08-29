@@ -132,8 +132,16 @@ export default function RiskZoneIdPage() {
 
             {/* Map Canvas Visual Area */}
             <div className="flex-1 relative w-full bg-[#060906] overflow-hidden flex items-center justify-center">
+              {/* Dynamic Thermal Heatmap Background Layer */}
+              <div className="absolute inset-0 pointer-events-none opacity-70 overflow-hidden">
+                <div className="absolute top-1/4 left-1/3 w-[450px] h-[450px] rounded-full bg-radial from-[#DC2626]/30 via-[#DC2626]/10 to-transparent blur-[80px] animate-pulse"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-radial from-[#C1B99D]/25 via-[#C1B99D]/08 to-transparent blur-[100px]"></div>
+                <div className="absolute top-1/3 left-1/6 w-[380px] h-[380px] rounded-full bg-radial from-[#7A9A6E]/30 via-[#7A9A6E]/10 to-transparent blur-[85px]"></div>
+                <div className="absolute bottom-10 left-1/2 w-[420px] h-[420px] rounded-full bg-radial from-[#6F9164]/20 via-[#6F9164]/05 to-transparent blur-[95px]"></div>
+              </div>
+
               {/* Synthetic Cartographic Grid & Topo SVG Background */}
-              <div className="absolute inset-0 opacity-20 pointer-events-none">
+              <div className="absolute inset-0 opacity-25 pointer-events-none">
                 <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
