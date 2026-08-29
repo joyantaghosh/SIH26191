@@ -12,6 +12,7 @@ export default function Navbar() {
     { name: 'Zone ID', path: '/risk-zone-id' },
     { name: 'Capacity', path: '/carrying-capacity' },
     { name: 'Evacuation', path: '/evacuation-route' },
+    { name: 'Priority', path: '/relocation-priority' },
     { name: 'Alerts', path: '/risk-alerts' },
   ];
 
