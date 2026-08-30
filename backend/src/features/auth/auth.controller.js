@@ -83,7 +83,8 @@ export const googleCallback = asyncHandler(async (req, res) => {
 
   // Redirect to the frontend with tokens in the query string so an SPA can
   // pick them up, while cookies are also set for same-site usage.
-  const redirectUrl = new URL('/oauth/success', process.env.CLIENT_URL);
+  const clientBase = (process.env.CLIENT_URL && process.env.CLIENT_URL.trim()) || 'http://localhost:5173';
+  const redirectUrl = new URL('/oauth/success', clientBase);
   redirectUrl.searchParams.set('accessToken', tokens.accessToken);
   redirectUrl.searchParams.set('refreshToken', tokens.refreshToken);
 
@@ -94,6 +95,7 @@ export const googleCallback = asyncHandler(async (req, res) => {
   }
 
   return res.redirect(redirectUrl.toString());
+
 });
 
 export default {
