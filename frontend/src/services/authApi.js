@@ -76,21 +76,22 @@ export async function authFetch(path, options = {}) {
   return data;
 }
 
-/**
- * User Login
- */
-export async function loginUser(email, password) {
+export async function registerUser({ name, email, password }) {
   const base = getBaseUrl();
-  const res = await fetch(`${base}/auth/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({ email, password }),
-    credentials: 'include',
-  });
+  let res;
+  try {
+    res = await fetch(`${base}/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ name, email, password }),
+    });
+  } catch (netErr) {
+    throw new Error('Unable to connect to authentication server. Please verify backend deployment is running.');
+  }
 
   const body = await res.json().catch(() => ({}));
   if (!res.ok) {
-    throw new Error(body.message || 'Login failed. Please check your credentials.');
+    throw new Error(body.message || 'Registration failed. Password must have 8+ characters, 1 uppercase and 1 number.');
   }
 
   const payload = body.data || body;
@@ -104,21 +105,22 @@ export async function loginUser(email, password) {
   return { user, accessToken };
 }
 
-/**
- * User Registration
- */
-export async function registerUser({ name, email, password }) {
+export async function loginUser(email, password) {
   const base = getBaseUrl();
-  const res = await fetch(`${base}/auth/register`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({ name, email, password }),
-    credentials: 'include',
-  });
+  let res;
+  try {
+    res = await fetch(`${base}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+  } catch (netErr) {
+    throw new Error('Unable to connect to authentication server. Please verify backend deployment is running.');
+  }
 
   const body = await res.json().catch(() => ({}));
   if (!res.ok) {
-    throw new Error(body.message || 'Registration failed. Please check your input.');
+    throw new Error(body.message || 'Login failed. Please check your credentials.');
   }
 
   const payload = body.data || body;
