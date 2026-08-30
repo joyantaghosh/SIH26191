@@ -188,12 +188,14 @@ npm run preview
 If connecting to a custom backend endpoint or third-party GIS tile provider, create a `.env` file in the `frontend/` root:
 
 ```env
-# Backend API Base URL
-VITE_API_BASE_URL=http://localhost:5000/api/v1
+# Backend API Base URL (Render Cloud Deployment)
+VITE_API_BASE_URL=https://safezones-backend.onrender.com/api/v1
+VITE_API_URL=https://safezones-backend.onrender.com/api/v1
 
 # Optional: Custom Map Tile Provider (Default uses CartoDB Dark Matter / OpenStreetMap)
 VITE_MAP_TILE_URL=https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png
 ```
+
 
 ---
 

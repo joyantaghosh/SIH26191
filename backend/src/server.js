@@ -12,9 +12,11 @@ const startServer = async () => {
   // Initialize automated real-time weather & hazard alert cron scheduler
   startWeatherAlertScheduler();
 
-  const server = app.listen(process.env.PORT, () => {
-    console.log(`[server] Running in ${process.env.NODE_ENV} mode on port ${process.env.PORT}`);
+  const port = process.env.PORT || 5000;
+  const server = app.listen(port, () => {
+    console.log(`[server] Running in ${process.env.NODE_ENV || 'production'} mode on port ${port}`);
   });
+
 
   const shutdown = (signal) => {
     console.log(`[server] ${signal} received. Shutting down gracefully...`);
