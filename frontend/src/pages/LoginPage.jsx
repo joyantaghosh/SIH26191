@@ -38,7 +38,16 @@ export default function LoginPage() {
       }, 700);
     } catch (err) {
       console.error('[LoginPage] Auth error:', err.message);
-      setErrorMsg(err.message || 'Authentication failed. Please verify credentials.');
+      const isConflict =
+        err.message?.toLowerCase().includes('already exists') ||
+        err.message?.toLowerCase().includes('already registered') ||
+        err.message?.toLowerCase().includes('conflict');
+
+      if (isConflict) {
+        setErrorMsg('This officer email is already registered. Please switch to the Sign In tab.');
+      } else {
+        setErrorMsg(err.message || 'Authentication failed. Please verify credentials.');
+      }
     } finally {
       setLoading(false);
     }
@@ -54,6 +63,7 @@ export default function LoginPage() {
     setPassword('OfficerPass123!');
     setErrorMsg(null);
   };
+
 
   return (
     <div className="flex-grow flex items-center justify-center p-6 bg-transparent font-sans text-[#E4E9DF] relative z-10 min-h-[calc(100vh-70px)]">
@@ -108,11 +118,26 @@ export default function LoginPage() {
 
         {/* Error Alert Box */}
         {errorMsg && (
-          <div className="mb-5 p-3.5 bg-[#EF4444]/15 border border-[#EF4444]/40 rounded-[12px] text-[#EF4444] text-xs font-mono flex items-center gap-2">
-            <span className="material-symbols-outlined text-[18px]">error</span>
-            <span>{errorMsg}</span>
+          <div className="mb-5 p-3.5 bg-[#EF4444]/15 border border-[#EF4444]/40 rounded-[12px] text-[#EF4444] text-xs font-mono flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[18px]">error</span>
+              <span>{errorMsg}</span>
+            </div>
+            {isRegister && errorMsg.includes('already registered') && (
+              <button
+                type="button"
+                onClick={() => {
+                  setIsRegister(false);
+                  setErrorMsg(null);
+                }}
+                className="self-start px-3 py-1 bg-[#1D2A1B] hover:bg-[#7A9A6E] text-[#86A978] hover:text-[#080C08] border border-[rgba(122,154,110,0.3)] rounded-[8px] text-[11px] font-semibold uppercase tracking-wider transition-all"
+              >
+                ➔ Switch to Sign In Tab
+              </button>
+            )}
           </div>
         )}
+
 
         {/* Success Splash */}
         {authSuccess ? (
