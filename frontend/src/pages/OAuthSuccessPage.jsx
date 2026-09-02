@@ -12,6 +12,10 @@ export default function OAuthSuccessPage() {
     const refreshToken = searchParams.get('refreshToken');
 
     if (accessToken) {
+      // Store refresh token so sessions survive beyond 15-min access token TTL
+      if (refreshToken) {
+        localStorage.setItem('safezones_refresh_token', refreshToken);
+      }
       handleOAuthSuccess(accessToken);
       navigate('/risk-zone-id', { replace: true });
     } else {

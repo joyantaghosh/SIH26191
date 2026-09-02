@@ -12,7 +12,7 @@ const ACCESS_COOKIE_NAME = 'accessToken';
 const cookieOptions = {
   httpOnly: true,
   secure: process.env.NODE_ENV === 'production',
-  sameSite: 'lax',
+  sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
 };
 
 const setAuthCookies = (res, { accessToken, refreshToken }) => {
