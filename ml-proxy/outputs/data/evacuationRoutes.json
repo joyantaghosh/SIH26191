@@ -1,0 +1,5152 @@
+[
+  {
+    "routeId": "ROUTE-87C4844C",
+    "zoneId": "ZONE-7F24D4C1",
+    "region": "Aizawl, Mizoram, India",
+    "routeName": "Aizawl Arterial Evacuation Highway Corridor",
+    "originName": "Aizawl High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      92.72,
+      23.73
+    ],
+    "originLatLng": [
+      23.73,
+      92.72
+    ],
+    "destinationName": "Aizawl High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 68309,
+    "destinationMaxCapacity": 409867,
+    "destinationCoordinates": [
+      92.60259,
+      23.65375
+    ],
+    "destinationLatLng": [
+      23.65375,
+      92.60259
+    ],
+    "waypoints": [
+      [
+        23.73,
+        92.72
+      ],
+      [
+        23.72003,
+        92.70978
+      ],
+      [
+        23.70735,
+        92.70133
+      ],
+      [
+        23.69063,
+        92.69549
+      ],
+      [
+        23.67077,
+        92.69169
+      ],
+      [
+        23.65078,
+        92.68798
+      ],
+      [
+        23.63482,
+        92.68166
+      ],
+      [
+        23.62663,
+        92.67028
+      ],
+      [
+        23.6281,
+        92.65264
+      ],
+      [
+        23.63832,
+        92.6293
+      ],
+      [
+        23.65375,
+        92.60259
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Aizawl Emergency Assembly Point",
+        "latLng": [
+          23.70735,
+          92.70133
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          23.65078,
+          92.68798
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          23.6281,
+          92.65264
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 16.1,
+    "estimatedTransitMinutes": 45,
+    "safetyScore": 8.4,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-93F51A07",
+    "zoneId": "ZONE-17582CBA",
+    "region": "Ambala, Haryana, India",
+    "routeName": "Ambala Arterial Evacuation Highway Corridor",
+    "originName": "Ambala High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      76.78,
+      30.38
+    ],
+    "originLatLng": [
+      30.38,
+      76.78
+    ],
+    "destinationName": "Ambala High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 68174,
+    "destinationMaxCapacity": 409065,
+    "destinationCoordinates": [
+      76.62238,
+      30.44368
+    ],
+    "destinationLatLng": [
+      30.44368,
+      76.62238
+    ],
+    "waypoints": [
+      [
+        30.38,
+        76.78
+      ],
+      [
+        30.41731,
+        76.77674
+      ],
+      [
+        30.44765,
+        76.77066
+      ],
+      [
+        30.46622,
+        76.75983
+      ],
+      [
+        30.47184,
+        76.74376
+      ],
+      [
+        30.46701,
+        76.72348
+      ],
+      [
+        30.45678,
+        76.70101
+      ],
+      [
+        30.44672,
+        76.67861
+      ],
+      [
+        30.44088,
+        76.65792
+      ],
+      [
+        30.44046,
+        76.63941
+      ],
+      [
+        30.44368,
+        76.62238
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Ambala Emergency Assembly Point",
+        "latLng": [
+          30.44765,
+          76.77066
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          30.46701,
+          76.72348
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          30.44088,
+          76.65792
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 18.5,
+    "estimatedTransitMinutes": 50,
+    "safetyScore": 8.7,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-E2E993EC",
+    "zoneId": "ZONE-55DB4D9B",
+    "region": "Anantnag, Jammu and Kashmir, India",
+    "routeName": "Anantnag Arterial Evacuation Highway Corridor",
+    "originName": "Anantnag High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      75.15,
+      33.73
+    ],
+    "originLatLng": [
+      33.73,
+      75.15
+    ],
+    "destinationName": "Anantnag High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 47558,
+    "destinationMaxCapacity": 285360,
+    "destinationCoordinates": [
+      75.04963,
+      33.84147
+    ],
+    "destinationLatLng": [
+      33.84147,
+      75.04963
+    ],
+    "waypoints": [
+      [
+        33.73,
+        75.15
+      ],
+      [
+        33.76085,
+        75.16185
+      ],
+      [
+        33.78726,
+        75.16876
+      ],
+      [
+        33.80618,
+        75.16735
+      ],
+      [
+        33.81685,
+        75.15679
+      ],
+      [
+        33.82086,
+        75.13883
+      ],
+      [
+        33.82144,
+        75.11705
+      ],
+      [
+        33.82213,
+        75.0954
+      ],
+      [
+        33.82551,
+        75.07673
+      ],
+      [
+        33.83233,
+        75.0619
+      ],
+      [
+        33.84147,
+        75.04963
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Anantnag Emergency Assembly Point",
+        "latLng": [
+          33.78726,
+          75.16876
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          33.82086,
+          75.13883
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          33.82551,
+          75.07673
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 16.9,
+    "estimatedTransitMinutes": 47,
+    "safetyScore": 8.5,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-F066F269",
+    "zoneId": "ZONE-8915D2BE",
+    "region": "Assam, India",
+    "routeName": "Assam Arterial Evacuation Highway Corridor",
+    "originName": "Assam High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      91.7362,
+      26.1445
+    ],
+    "originLatLng": [
+      26.1445,
+      91.7362
+    ],
+    "destinationName": "Assam High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 300000,
+    "destinationMaxCapacity": 1800000,
+    "destinationCoordinates": [
+      91.72574,
+      26.29413
+    ],
+    "destinationLatLng": [
+      26.29413,
+      91.72574
+    ],
+    "waypoints": [
+      [
+        26.1445,
+        91.7362
+      ],
+      [
+        26.16152,
+        91.76453
+      ],
+      [
+        26.17807,
+        91.78624
+      ],
+      [
+        26.19384,
+        91.79678
+      ],
+      [
+        26.20876,
+        91.79502
+      ],
+      [
+        26.22298,
+        91.78334
+      ],
+      [
+        26.23684,
+        91.76654
+      ],
+      [
+        26.25071,
+        91.7499
+      ],
+      [
+        26.26486,
+        91.73727
+      ],
+      [
+        26.27938,
+        91.72978
+      ],
+      [
+        26.29413,
+        91.72574
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Assam Emergency Assembly Point",
+        "latLng": [
+          26.17807,
+          91.78624
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          26.22298,
+          91.78334
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          26.26486,
+          91.73727
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 24.9,
+    "estimatedTransitMinutes": 64,
+    "safetyScore": 9.5,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-F953F8A9",
+    "zoneId": "ZONE-BMR9104H",
+    "region": "Barmer, Rajasthan, India",
+    "routeName": "Barmer Arterial Evacuation Highway Corridor",
+    "originName": "Barmer High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      71.3967,
+      25.75
+    ],
+    "originLatLng": [
+      25.75,
+      71.3967
+    ],
+    "destinationName": "Barmer High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 520746,
+    "destinationMaxCapacity": 3124497,
+    "destinationCoordinates": [
+      71.48847,
+      25.88106
+    ],
+    "destinationLatLng": [
+      25.88106,
+      71.48847
+    ],
+    "waypoints": [
+      [
+        25.75,
+        71.3967
+      ],
+      [
+        25.76494,
+        71.40326
+      ],
+      [
+        25.782,
+        71.40679
+      ],
+      [
+        25.80221,
+        71.40582
+      ],
+      [
+        25.82488,
+        71.40134
+      ],
+      [
+        25.84765,
+        71.39671
+      ],
+      [
+        25.86727,
+        71.39658
+      ],
+      [
+        25.88082,
+        71.40513
+      ],
+      [
+        25.88682,
+        71.42446
+      ],
+      [
+        25.88597,
+        71.45356
+      ],
+      [
+        25.88106,
+        71.48847
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Barmer Emergency Assembly Point",
+        "latLng": [
+          25.782,
+          71.40679
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          25.84765,
+          71.39671
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          25.88682,
+          71.42446
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 21.7,
+    "estimatedTransitMinutes": 57,
+    "safetyScore": 9.1,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-0ADB026C",
+    "zoneId": "ZONE-36162539",
+    "region": "Bhadrachalam, Telangana, India",
+    "routeName": "Bhadrachalam Arterial Evacuation Highway Corridor",
+    "originName": "Bhadrachalam High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      80.89,
+      17.67
+    ],
+    "originLatLng": [
+      17.67,
+      80.89
+    ],
+    "destinationName": "Bhadrachalam High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 35719,
+    "destinationMaxCapacity": 214334,
+    "destinationCoordinates": [
+      81.04096,
+      17.57196
+    ],
+    "destinationLatLng": [
+      17.57196,
+      81.04096
+    ],
+    "waypoints": [
+      [
+        17.67,
+        80.89
+      ],
+      [
+        17.66321,
+        80.90706
+      ],
+      [
+        17.65991,
+        80.92638
+      ],
+      [
+        17.6618,
+        80.94906
+      ],
+      [
+        17.66772,
+        80.97437
+      ],
+      [
+        17.67382,
+        80.99979
+      ],
+      [
+        17.67474,
+        81.02185
+      ],
+      [
+        17.66565,
+        81.03742
+      ],
+      [
+        17.64416,
+        81.04492
+      ],
+      [
+        17.6114,
+        81.04511
+      ],
+      [
+        17.57196,
+        81.04096
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Bhadrachalam Emergency Assembly Point",
+        "latLng": [
+          17.65991,
+          80.92638
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          17.67382,
+          80.99979
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          17.64416,
+          81.04492
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 19.3,
+    "estimatedTransitMinutes": 52,
+    "safetyScore": 8.8,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-AFE2FC5C",
+    "zoneId": "ZONE-C9A093A4",
+    "region": "Bharuch, Gujarat, India",
+    "routeName": "Bharuch Arterial Evacuation Highway Corridor",
+    "originName": "Bharuch High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      73.0,
+      21.71
+    ],
+    "originLatLng": [
+      21.71,
+      73.0
+    ],
+    "destinationName": "Bharuch High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 69197,
+    "destinationMaxCapacity": 415185,
+    "destinationCoordinates": [
+      73.19633,
+      21.74816
+    ],
+    "destinationLatLng": [
+      21.74816,
+      73.19633
+    ],
+    "waypoints": [
+      [
+        21.71,
+        73.0
+      ],
+      [
+        21.71774,
+        73.01887
+      ],
+      [
+        21.73001,
+        73.03686
+      ],
+      [
+        21.74903,
+        73.05354
+      ],
+      [
+        21.77331,
+        73.06919
+      ],
+      [
+        21.7978,
+        73.08481
+      ],
+      [
+        21.81556,
+        73.10173
+      ],
+      [
+        21.82031,
+        73.12118
+      ],
+      [
+        21.80893,
+        73.14377
+      ],
+      [
+        21.78289,
+        73.16921
+      ],
+      [
+        21.74816,
+        73.19633
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Bharuch Emergency Assembly Point",
+        "latLng": [
+          21.73001,
+          73.03686
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          21.7978,
+          73.08481
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          21.80893,
+          73.14377
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 20.9,
+    "estimatedTransitMinutes": 55,
+    "safetyScore": 9.0,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-C6CE8432",
+    "zoneId": "ZONE-30EA8E55",
+    "region": "Bihar, India",
+    "routeName": "Bihar Arterial Evacuation Highway Corridor",
+    "originName": "Bihar High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      85.1376,
+      25.5941
+    ],
+    "originLatLng": [
+      25.5941,
+      85.1376
+    ],
+    "destinationName": "Bihar High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 26145059,
+    "destinationMaxCapacity": 156870369,
+    "destinationCoordinates": [
+      85.23863,
+      25.67591
+    ],
+    "destinationLatLng": [
+      25.67591,
+      85.23863
+    ],
+    "waypoints": [
+      [
+        25.5941,
+        85.1376
+      ],
+      [
+        25.6043,
+        85.14607
+      ],
+      [
+        25.61683,
+        85.15265
+      ],
+      [
+        25.63284,
+        85.15641
+      ],
+      [
+        25.65155,
+        85.15799
+      ],
+      [
+        25.67037,
+        85.15948
+      ],
+      [
+        25.68572,
+        85.16377
+      ],
+      [
+        25.69439,
+        85.17349
+      ],
+      [
+        25.69475,
+        85.18992
+      ],
+      [
+        25.68756,
+        85.21247
+      ],
+      [
+        25.67591,
+        85.23863
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Bihar Emergency Assembly Point",
+        "latLng": [
+          25.61683,
+          85.15265
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          25.67037,
+          85.15948
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          25.69475,
+          85.18992
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 15.3,
+    "estimatedTransitMinutes": 43,
+    "safetyScore": 8.3,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-08646175",
+    "zoneId": "ZONE-CCH7734D",
+    "region": "Cachar, Assam, India",
+    "routeName": "Cachar Arterial Evacuation Highway Corridor",
+    "originName": "Cachar High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      92.7976,
+      24.8333
+    ],
+    "originLatLng": [
+      24.8333,
+      92.7976
+    ],
+    "destinationName": "Cachar High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 347322,
+    "destinationMaxCapacity": 2083939,
+    "destinationCoordinates": [
+      92.92538,
+      24.73701
+    ],
+    "destinationLatLng": [
+      24.73701,
+      92.92538
+    ],
+    "waypoints": [
+      [
+        24.8333,
+        92.7976
+      ],
+      [
+        24.82623,
+        92.8123
+      ],
+      [
+        24.8221,
+        92.82923
+      ],
+      [
+        24.82237,
+        92.84946
+      ],
+      [
+        24.82605,
+        92.87227
+      ],
+      [
+        24.82988,
+        92.89519
+      ],
+      [
+        24.82933,
+        92.91481
+      ],
+      [
+        24.82031,
+        92.92805
+      ],
+      [
+        24.80078,
+        92.93337
+      ],
+      [
+        24.77173,
+        92.93151
+      ],
+      [
+        24.73701,
+        92.92538
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Cachar Emergency Assembly Point",
+        "latLng": [
+          24.8221,
+          92.82923
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          24.82988,
+          92.89519
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          24.80078,
+          92.93337
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 17.7,
+    "estimatedTransitMinutes": 48,
+    "safetyScore": 8.6,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-59489172",
+    "zoneId": "ZONE-CHM8301B",
+    "region": "Chamoli, Uttarakhand, India",
+    "routeName": "Chamoli Arterial Evacuation Highway Corridor",
+    "originName": "Chamoli High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      79.33,
+      30.4
+    ],
+    "originLatLng": [
+      30.4,
+      79.33
+    ],
+    "destinationName": "Chamoli High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 78320,
+    "destinationMaxCapacity": 469920,
+    "destinationCoordinates": [
+      79.17025,
+      30.45814
+    ],
+    "destinationLatLng": [
+      30.45814,
+      79.17025
+    ],
+    "waypoints": [
+      [
+        30.4,
+        79.33
+      ],
+      [
+        30.43718,
+        79.32544
+      ],
+      [
+        30.46728,
+        79.31831
+      ],
+      [
+        30.48547,
+        79.30683
+      ],
+      [
+        30.49052,
+        79.29058
+      ],
+      [
+        30.48498,
+        79.27047
+      ],
+      [
+        30.47398,
+        79.24838
+      ],
+      [
+        30.46314,
+        79.22634
+      ],
+      [
+        30.45659,
+        79.20587
+      ],
+      [
+        30.45552,
+        79.18739
+      ],
+      [
+        30.45814,
+        79.17025
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Chamoli Emergency Assembly Point",
+        "latLng": [
+          30.46728,
+          79.31831
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          30.48498,
+          79.27047
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          30.45659,
+          79.20587
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 22.5,
+    "estimatedTransitMinutes": 59,
+    "safetyScore": 9.2,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-06E75268",
+    "zoneId": "ZONE-811E8DD4",
+    "region": "Chiplun, Maharashtra, India",
+    "routeName": "Chiplun Arterial Evacuation Highway Corridor",
+    "originName": "Chiplun High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      73.52,
+      17.53
+    ],
+    "originLatLng": [
+      17.53,
+      73.52
+    ],
+    "destinationName": "Chiplun High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 26521,
+    "destinationMaxCapacity": 159144,
+    "destinationCoordinates": [
+      73.64958,
+      17.39104
+    ],
+    "destinationLatLng": [
+      17.39104,
+      73.64958
+    ],
+    "waypoints": [
+      [
+        17.53,
+        73.52
+      ],
+      [
+        17.51869,
+        73.53574
+      ],
+      [
+        17.51038,
+        73.55468
+      ],
+      [
+        17.50652,
+        73.5784
+      ],
+      [
+        17.50612,
+        73.60584
+      ],
+      [
+        17.50587,
+        73.63343
+      ],
+      [
+        17.50118,
+        73.65626
+      ],
+      [
+        17.48791,
+        73.66988
+      ],
+      [
+        17.46398,
+        73.67208
+      ],
+      [
+        17.43038,
+        73.6639
+      ],
+      [
+        17.39104,
+        73.64958
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Chiplun Emergency Assembly Point",
+        "latLng": [
+          17.51038,
+          73.55468
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          17.50587,
+          73.63343
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          17.46398,
+          73.67208
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 16.1,
+    "estimatedTransitMinutes": 45,
+    "safetyScore": 8.4,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-7235BC77",
+    "zoneId": "ZONE-4488C9B4",
+    "region": "Chitwan, Nepal",
+    "routeName": "Chitwan Arterial Evacuation Highway Corridor",
+    "originName": "Chitwan High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      84.5167,
+      27.5833
+    ],
+    "originLatLng": [
+      27.5833,
+      84.5167
+    ],
+    "destinationName": "Chitwan High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 143968,
+    "destinationMaxCapacity": 863827,
+    "destinationCoordinates": [
+      84.43721,
+      27.45609
+    ],
+    "destinationLatLng": [
+      27.45609,
+      84.43721
+    ],
+    "waypoints": [
+      [
+        27.5833,
+        84.5167
+      ],
+      [
+        27.58618,
+        84.48378
+      ],
+      [
+        27.58555,
+        84.45648
+      ],
+      [
+        27.57898,
+        84.43869
+      ],
+      [
+        27.56588,
+        84.43134
+      ],
+      [
+        27.54752,
+        84.43243
+      ],
+      [
+        27.52643,
+        84.43788
+      ],
+      [
+        27.50542,
+        84.44318
+      ],
+      [
+        27.48655,
+        84.44509
+      ],
+      [
+        27.4704,
+        84.44262
+      ],
+      [
+        27.45609,
+        84.43721
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Chitwan Emergency Assembly Point",
+        "latLng": [
+          27.58555,
+          84.45648
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          27.54752,
+          84.43243
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          27.48655,
+          84.44509
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 24.9,
+    "estimatedTransitMinutes": 64,
+    "safetyScore": 9.5,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-3A6AE62E",
+    "zoneId": "ZONE-AD754E3A",
+    "region": "Cuddalore, Tamil Nadu, India",
+    "routeName": "Cuddalore Arterial Evacuation Highway Corridor",
+    "originName": "Cuddalore High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      79.77,
+      11.75
+    ],
+    "originLatLng": [
+      11.75,
+      79.77
+    ],
+    "destinationName": "Cuddalore High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 62439,
+    "destinationMaxCapacity": 374654,
+    "destinationCoordinates": [
+      79.75867,
+      11.87951
+    ],
+    "destinationLatLng": [
+      11.87951,
+      79.75867
+    ],
+    "waypoints": [
+      [
+        11.75,
+        79.77
+      ],
+      [
+        11.76272,
+        79.76628
+      ],
+      [
+        11.77519,
+        79.75957
+      ],
+      [
+        11.78726,
+        79.74841
+      ],
+      [
+        11.79903,
+        79.73378
+      ],
+      [
+        11.81079,
+        79.71901
+      ],
+      [
+        11.82294,
+        79.70867
+      ],
+      [
+        11.83583,
+        79.70692
+      ],
+      [
+        11.84966,
+        79.71582
+      ],
+      [
+        11.86433,
+        79.73438
+      ],
+      [
+        11.87951,
+        79.75867
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Cuddalore Emergency Assembly Point",
+        "latLng": [
+          11.77519,
+          79.75957
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          11.81079,
+          79.71901
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          11.84966,
+          79.71582
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 19.3,
+    "estimatedTransitMinutes": 52,
+    "safetyScore": 8.8,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-52A328B4",
+    "zoneId": "ZONE-D7E2B890",
+    "region": "Darbhanga, Bihar, India",
+    "routeName": "Darbhanga Arterial Evacuation Highway Corridor",
+    "originName": "Darbhanga High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      85.89,
+      26.15
+    ],
+    "originLatLng": [
+      26.15,
+      85.89
+    ],
+    "destinationName": "Darbhanga High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 57228,
+    "destinationMaxCapacity": 343368,
+    "destinationCoordinates": [
+      85.8778,
+      26.28947
+    ],
+    "destinationLatLng": [
+      26.28947,
+      85.8778
+    ],
+    "waypoints": [
+      [
+        26.15,
+        85.89
+      ],
+      [
+        26.1637,
+        85.88599
+      ],
+      [
+        26.17712,
+        85.87876
+      ],
+      [
+        26.19013,
+        85.86674
+      ],
+      [
+        26.2028,
+        85.85099
+      ],
+      [
+        26.21546,
+        85.83509
+      ],
+      [
+        26.22855,
+        85.82396
+      ],
+      [
+        26.24243,
+        85.82207
+      ],
+      [
+        26.25733,
+        85.83165
+      ],
+      [
+        26.27313,
+        85.85164
+      ],
+      [
+        26.28947,
+        85.8778
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Darbhanga Emergency Assembly Point",
+        "latLng": [
+          26.17712,
+          85.87876
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          26.21546,
+          85.83509
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          26.25733,
+          85.83165
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 16.1,
+    "estimatedTransitMinutes": 45,
+    "safetyScore": 8.4,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-A1713C1B",
+    "zoneId": "ZONE-DAR5192C",
+    "region": "Darjeeling, West Bengal, India",
+    "routeName": "Darjeeling Arterial Evacuation Highway Corridor",
+    "originName": "Darjeeling High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      88.2627,
+      27.041
+    ],
+    "originLatLng": [
+      27.041,
+      88.2627
+    ],
+    "destinationName": "Darjeeling High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 369361,
+    "destinationMaxCapacity": 2216184,
+    "destinationCoordinates": [
+      88.10309,
+      27.02984
+    ],
+    "destinationLatLng": [
+      27.02984,
+      88.10309
+    ],
+    "waypoints": [
+      [
+        27.041,
+        88.2627
+      ],
+      [
+        27.07122,
+        88.24455
+      ],
+      [
+        27.09437,
+        88.22689
+      ],
+      [
+        27.10562,
+        88.21006
+      ],
+      [
+        27.10374,
+        88.19416
+      ],
+      [
+        27.09128,
+        88.17899
+      ],
+      [
+        27.07336,
+        88.1642
+      ],
+      [
+        27.05561,
+        88.14941
+      ],
+      [
+        27.04214,
+        88.13431
+      ],
+      [
+        27.03415,
+        88.11883
+      ],
+      [
+        27.02984,
+        88.10309
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Darjeeling Emergency Assembly Point",
+        "latLng": [
+          27.09437,
+          88.22689
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          27.09128,
+          88.17899
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          27.04214,
+          88.13431
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 21.7,
+    "estimatedTransitMinutes": 57,
+    "safetyScore": 9.1,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-178EAE84",
+    "zoneId": "ZONE-DA8C3B3C",
+    "region": "Gangtok, Sikkim, India",
+    "routeName": "Gangtok Arterial Evacuation Highway Corridor",
+    "originName": "Gangtok High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      88.61,
+      27.34
+    ],
+    "originLatLng": [
+      27.34,
+      88.61
+    ],
+    "destinationName": "Gangtok High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 66344,
+    "destinationMaxCapacity": 398078,
+    "destinationCoordinates": [
+      88.44419,
+      27.22816
+    ],
+    "destinationLatLng": [
+      27.22816,
+      88.44419
+    ],
+    "waypoints": [
+      [
+        27.34,
+        88.61
+      ],
+      [
+        27.36137,
+        88.57146
+      ],
+      [
+        27.3754,
+        88.53787
+      ],
+      [
+        27.37705,
+        88.51263
+      ],
+      [
+        27.36508,
+        88.49659
+      ],
+      [
+        27.34211,
+        88.48795
+      ],
+      [
+        27.31347,
+        88.48315
+      ],
+      [
+        27.28501,
+        88.47822
+      ],
+      [
+        27.26099,
+        88.4703
+      ],
+      [
+        27.24266,
+        88.45854
+      ],
+      [
+        27.22816,
+        88.44419
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Gangtok Emergency Assembly Point",
+        "latLng": [
+          27.3754,
+          88.53787
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          27.34211,
+          88.48795
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          27.26099,
+          88.4703
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 16.9,
+    "estimatedTransitMinutes": 47,
+    "safetyScore": 8.5,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-4ACF1458",
+    "zoneId": "ZONE-36F6C5FB",
+    "region": "Gorakhpur, Uttar Pradesh, India",
+    "routeName": "Gorakhpur Arterial Evacuation Highway Corridor",
+    "originName": "Gorakhpur High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      83.37,
+      26.76
+    ],
+    "originLatLng": [
+      26.76,
+      83.37
+    ],
+    "destinationName": "Gorakhpur High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 27203,
+    "destinationMaxCapacity": 163238,
+    "destinationCoordinates": [
+      83.2147,
+      26.82915
+    ],
+    "destinationLatLng": [
+      26.82915,
+      83.2147
+    ],
+    "waypoints": [
+      [
+        26.76,
+        83.37
+      ],
+      [
+        26.7974,
+        83.36805
+      ],
+      [
+        26.82793,
+        83.36303
+      ],
+      [
+        26.84687,
+        83.35286
+      ],
+      [
+        26.85305,
+        83.33699
+      ],
+      [
+        26.84893,
+        83.31655
+      ],
+      [
+        26.83949,
+        83.29374
+      ],
+      [
+        26.83022,
+        83.27101
+      ],
+      [
+        26.82511,
+        83.25012
+      ],
+      [
+        26.82534,
+        83.23161
+      ],
+      [
+        26.82915,
+        83.2147
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Gorakhpur Emergency Assembly Point",
+        "latLng": [
+          26.82793,
+          83.36303
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          26.84893,
+          83.31655
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          26.82511,
+          83.25012
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 18.5,
+    "estimatedTransitMinutes": 50,
+    "safetyScore": 8.7,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-E89BB682",
+    "zoneId": "ZONE-15EDC4C9",
+    "region": "Gujarat, India",
+    "routeName": "Gujarat Arterial Evacuation Highway Corridor",
+    "originName": "Gujarat High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      72.9,
+      21.05
+    ],
+    "originLatLng": [
+      21.05,
+      72.9
+    ],
+    "destinationName": "Gujarat High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 77000,
+    "destinationMaxCapacity": 462000,
+    "destinationCoordinates": [
+      72.9803,
+      20.93532
+    ],
+    "destinationLatLng": [
+      20.93532,
+      72.9803
+    ],
+    "waypoints": [
+      [
+        21.05,
+        72.9
+      ],
+      [
+        21.04014,
+        72.91032
+      ],
+      [
+        21.03213,
+        72.92329
+      ],
+      [
+        21.02688,
+        72.9402
+      ],
+      [
+        21.02378,
+        72.96018
+      ],
+      [
+        21.02076,
+        72.98029
+      ],
+      [
+        21.015,
+        72.99646
+      ],
+      [
+        21.00392,
+        73.00504
+      ],
+      [
+        20.98623,
+        73.00419
+      ],
+      [
+        20.96255,
+        72.99478
+      ],
+      [
+        20.93532,
+        72.9803
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Gujarat Emergency Assembly Point",
+        "latLng": [
+          21.03213,
+          72.92329
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          21.02076,
+          72.98029
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          20.98623,
+          73.00419
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 20.1,
+    "estimatedTransitMinutes": 54,
+    "safetyScore": 8.9,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-1A293750",
+    "zoneId": "ZONE-7F4EEDC5",
+    "region": "Himachal Pradesh, India",
+    "routeName": "Himachal Pradesh Arterial Evacuation Highway Corridor",
+    "originName": "Himachal Pradesh High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      76.9261,
+      31.7089
+    ],
+    "originLatLng": [
+      31.7089,
+      76.9261
+    ],
+    "destinationName": "Himachal Pradesh High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 70000,
+    "destinationMaxCapacity": 420000,
+    "destinationCoordinates": [
+      76.98424,
+      31.54915
+    ],
+    "destinationLatLng": [
+      31.54915,
+      76.98424
+    ],
+    "waypoints": [
+      [
+        31.7089,
+        76.9261
+      ],
+      [
+        31.68151,
+        76.90055
+      ],
+      [
+        31.65669,
+        76.88207
+      ],
+      [
+        31.63622,
+        76.87552
+      ],
+      [
+        31.62052,
+        76.8821
+      ],
+      [
+        31.60868,
+        76.89926
+      ],
+      [
+        31.59882,
+        76.92189
+      ],
+      [
+        31.58891,
+        76.94435
+      ],
+      [
+        31.57743,
+        76.96254
+      ],
+      [
+        31.56396,
+        76.97523
+      ],
+      [
+        31.54915,
+        76.98424
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Himachal Pradesh Emergency Assembly Point",
+        "latLng": [
+          31.65669,
+          76.88207
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          31.60868,
+          76.89926
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          31.57743,
+          76.96254
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 22.5,
+    "estimatedTransitMinutes": 59,
+    "safetyScore": 9.2,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-D24F7D99",
+    "zoneId": "ZONE-4876FF38",
+    "region": "Idukki, Kerala, India",
+    "routeName": "Idukki Arterial Evacuation Highway Corridor",
+    "originName": "Idukki High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      76.98,
+      9.849
+    ],
+    "originLatLng": [
+      9.849,
+      76.98
+    ],
+    "destinationName": "Idukki High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 18745,
+    "destinationMaxCapacity": 112488,
+    "destinationCoordinates": [
+      76.95909,
+      9.6501
+    ],
+    "destinationLatLng": [
+      9.6501,
+      76.95909
+    ],
+    "waypoints": [
+      [
+        9.849,
+        76.98
+      ],
+      [
+        9.83322,
+        76.93886
+      ],
+      [
+        9.8165,
+        76.90652
+      ],
+      [
+        9.79823,
+        76.88903
+      ],
+      [
+        9.77824,
+        76.88789
+      ],
+      [
+        9.75687,
+        76.89993
+      ],
+      [
+        9.73478,
+        76.91878
+      ],
+      [
+        9.71271,
+        76.93742
+      ],
+      [
+        9.6912,
+        76.95073
+      ],
+      [
+        9.67041,
+        76.95721
+      ],
+      [
+        9.6501,
+        76.95909
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Idukki Emergency Assembly Point",
+        "latLng": [
+          9.8165,
+          76.90652
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          9.75687,
+          76.89993
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          9.6912,
+          76.95073
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 16.9,
+    "estimatedTransitMinutes": 47,
+    "safetyScore": 8.5,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-4A62B207",
+    "zoneId": "ZONE-A08DE16E",
+    "region": "Imphal, Manipur, India",
+    "routeName": "Imphal Arterial Evacuation Highway Corridor",
+    "originName": "Imphal High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      93.94,
+      24.82
+    ],
+    "originLatLng": [
+      24.82,
+      93.94
+    ],
+    "destinationName": "Imphal High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 22606,
+    "destinationMaxCapacity": 135648,
+    "destinationCoordinates": [
+      94.08184,
+      24.70918
+    ],
+    "destinationLatLng": [
+      24.70918,
+      94.08184
+    ],
+    "waypoints": [
+      [
+        24.82,
+        93.94
+      ],
+      [
+        24.78107,
+        93.93243
+      ],
+      [
+        24.74842,
+        93.92976
+      ],
+      [
+        24.72636,
+        93.93536
+      ],
+      [
+        24.71595,
+        93.95008
+      ],
+      [
+        24.71495,
+        93.97213
+      ],
+      [
+        24.7188,
+        93.99799
+      ],
+      [
+        24.7225,
+        94.02372
+      ],
+      [
+        24.7224,
+        94.04648
+      ],
+      [
+        24.71743,
+        94.06544
+      ],
+      [
+        24.70918,
+        94.08184
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Imphal Emergency Assembly Point",
+        "latLng": [
+          24.74842,
+          93.92976
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          24.71495,
+          93.97213
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          24.7224,
+          94.04648
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 23.3,
+    "estimatedTransitMinutes": 61,
+    "safetyScore": 9.3,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-EF2843F3",
+    "zoneId": "ZONE-2A4001F0",
+    "region": "Indore, Madhya Pradesh, India",
+    "routeName": "Indore Arterial Evacuation Highway Corridor",
+    "originName": "Indore High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      75.86,
+      22.72
+    ],
+    "originLatLng": [
+      22.72,
+      75.86
+    ],
+    "destinationName": "Indore High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 34017,
+    "destinationMaxCapacity": 204110,
+    "destinationCoordinates": [
+      75.80006,
+      22.86835
+    ],
+    "destinationLatLng": [
+      22.86835,
+      75.80006
+    ],
+    "waypoints": [
+      [
+        22.72,
+        75.86
+      ],
+      [
+        22.7466,
+        75.88313
+      ],
+      [
+        22.77055,
+        75.89969
+      ],
+      [
+        22.79003,
+        75.90519
+      ],
+      [
+        22.80458,
+        75.89848
+      ],
+      [
+        22.81515,
+        75.88195
+      ],
+      [
+        22.82368,
+        75.86034
+      ],
+      [
+        22.83227,
+        75.83888
+      ],
+      [
+        22.84246,
+        75.8214
+      ],
+      [
+        22.85471,
+        75.80902
+      ],
+      [
+        22.86835,
+        75.80006
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Indore Emergency Assembly Point",
+        "latLng": [
+          22.77055,
+          75.89969
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          22.81515,
+          75.88195
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          22.84246,
+          75.8214
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 17.7,
+    "estimatedTransitMinutes": 48,
+    "safetyScore": 8.6,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-25AA0482",
+    "zoneId": "ZONE-27F52735",
+    "region": "Itanagar, Arunachal Pradesh, India",
+    "routeName": "Itanagar Arterial Evacuation Highway Corridor",
+    "originName": "Itanagar High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      93.61,
+      27.08
+    ],
+    "originLatLng": [
+      27.08,
+      93.61
+    ],
+    "destinationName": "Itanagar High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 74959,
+    "destinationMaxCapacity": 449774,
+    "destinationCoordinates": [
+      93.42185,
+      27.05356
+    ],
+    "destinationLatLng": [
+      27.05356,
+      93.42185
+    ],
+    "waypoints": [
+      [
+        27.08,
+        93.61
+      ],
+      [
+        27.11429,
+        93.58599
+      ],
+      [
+        27.14026,
+        93.56316
+      ],
+      [
+        27.15218,
+        93.5423
+      ],
+      [
+        27.14864,
+        93.52361
+      ],
+      [
+        27.13263,
+        93.50667
+      ],
+      [
+        27.11018,
+        93.49064
+      ],
+      [
+        27.08793,
+        93.47458
+      ],
+      [
+        27.07071,
+        93.45781
+      ],
+      [
+        27.05996,
+        93.44014
+      ],
+      [
+        27.05356,
+        93.42185
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Itanagar Emergency Assembly Point",
+        "latLng": [
+          27.14026,
+          93.56316
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          27.13263,
+          93.50667
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          27.07071,
+          93.45781
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 24.1,
+    "estimatedTransitMinutes": 63,
+    "safetyScore": 9.4,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-9A57A190",
+    "zoneId": "ZONE-9390D319",
+    "region": "Jaisalmer, Rajasthan, India",
+    "routeName": "Jaisalmer Arterial Evacuation Highway Corridor",
+    "originName": "Jaisalmer High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      70.91,
+      26.92
+    ],
+    "originLatLng": [
+      26.92,
+      70.91
+    ],
+    "destinationName": "Jaisalmer High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 18336,
+    "destinationMaxCapacity": 110030,
+    "destinationCoordinates": [
+      70.71195,
+      26.94783
+    ],
+    "destinationLatLng": [
+      26.94783,
+      70.71195
+    ],
+    "waypoints": [
+      [
+        26.92,
+        70.91
+      ],
+      [
+        26.96166,
+        70.89566
+      ],
+      [
+        26.99456,
+        70.88009
+      ],
+      [
+        27.01268,
+        70.86244
+      ],
+      [
+        27.01452,
+        70.8425
+      ],
+      [
+        27.00323,
+        70.82072
+      ],
+      [
+        26.98516,
+        70.79798
+      ],
+      [
+        26.96731,
+        70.77528
+      ],
+      [
+        26.95475,
+        70.75332
+      ],
+      [
+        26.94901,
+        70.73231
+      ],
+      [
+        26.94783,
+        70.71195
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Jaisalmer Emergency Assembly Point",
+        "latLng": [
+          26.99456,
+          70.88009
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          27.00323,
+          70.82072
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          26.95475,
+          70.75332
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 20.9,
+    "estimatedTransitMinutes": 55,
+    "safetyScore": 9.0,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-1A4D6838",
+    "zoneId": "ZONE-JSH1029E",
+    "region": "Joshimath, Uttarakhand, India",
+    "routeName": "Joshimath Arterial Evacuation Highway Corridor",
+    "originName": "Joshimath High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      79.5667,
+      30.55
+    ],
+    "originLatLng": [
+      30.55,
+      79.5667
+    ],
+    "destinationName": "Joshimath High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 4600,
+    "destinationMaxCapacity": 27600,
+    "destinationCoordinates": [
+      79.39735,
+      30.56482
+    ],
+    "destinationLatLng": [
+      30.56482,
+      79.39735
+    ],
+    "waypoints": [
+      [
+        30.55,
+        79.5667
+      ],
+      [
+        30.5481,
+        79.54947
+      ],
+      [
+        30.54228,
+        79.5319
+      ],
+      [
+        30.53065,
+        79.51381
+      ],
+      [
+        30.51449,
+        79.49533
+      ],
+      [
+        30.49814,
+        79.47684
+      ],
+      [
+        30.48759,
+        79.45885
+      ],
+      [
+        30.48826,
+        79.44184
+      ],
+      [
+        30.50286,
+        79.42606
+      ],
+      [
+        30.53009,
+        79.41138
+      ],
+      [
+        30.56482,
+        79.39735
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Joshimath Emergency Assembly Point",
+        "latLng": [
+          30.54228,
+          79.5319
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          30.49814,
+          79.47684
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          30.50286,
+          79.42606
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 22.5,
+    "estimatedTransitMinutes": 59,
+    "safetyScore": 9.2,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-21C1F5B3",
+    "zoneId": "ZONE-8773563F",
+    "region": "Kathmandu Valley, Nepal",
+    "routeName": "Kathmandu Valley Arterial Evacuation Highway Corridor",
+    "originName": "Kathmandu Valley High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      85.309,
+      27.704
+    ],
+    "originLatLng": [
+      27.704,
+      85.309
+    ],
+    "destinationName": "Kathmandu Valley High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 700000,
+    "destinationMaxCapacity": 4200000,
+    "destinationCoordinates": [
+      85.23718,
+      27.50666
+    ],
+    "destinationLatLng": [
+      27.50666,
+      85.23718
+    ],
+    "waypoints": [
+      [
+        27.704,
+        85.309
+      ],
+      [
+        27.69837,
+        85.26308
+      ],
+      [
+        27.68955,
+        85.22589
+      ],
+      [
+        27.67538,
+        85.20342
+      ],
+      [
+        27.6553,
+        85.19718
+      ],
+      [
+        27.63047,
+        85.20402
+      ],
+      [
+        27.60317,
+        85.21762
+      ],
+      [
+        27.57595,
+        85.231
+      ],
+      [
+        27.55066,
+        85.2391
+      ],
+      [
+        27.52783,
+        85.24042
+      ],
+      [
+        27.50666,
+        85.23718
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Kathmandu Valley Emergency Assembly Point",
+        "latLng": [
+          27.68955,
+          85.22589
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          27.63047,
+          85.20402
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          27.55066,
+          85.2391
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 17.7,
+    "estimatedTransitMinutes": 48,
+    "safetyScore": 8.6,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-BA5AAA07",
+    "zoneId": "ZONE-627F9374",
+    "region": "Kendrapara, Odisha, India",
+    "routeName": "Kendrapara Arterial Evacuation Highway Corridor",
+    "originName": "Kendrapara High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      86.42,
+      20.5
+    ],
+    "originLatLng": [
+      20.5,
+      86.42
+    ],
+    "destinationName": "Kendrapara High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 41502,
+    "destinationMaxCapacity": 249019,
+    "destinationCoordinates": [
+      86.36528,
+      20.34965
+    ],
+    "destinationLatLng": [
+      20.34965,
+      86.36528
+    ],
+    "waypoints": [
+      [
+        20.5,
+        86.42
+      ],
+      [
+        20.49571,
+        86.38501
+      ],
+      [
+        20.48899,
+        86.35668
+      ],
+      [
+        20.4782,
+        86.33956
+      ],
+      [
+        20.4629,
+        86.33481
+      ],
+      [
+        20.44398,
+        86.34002
+      ],
+      [
+        20.42318,
+        86.35038
+      ],
+      [
+        20.40244,
+        86.36057
+      ],
+      [
+        20.38317,
+        86.36674
+      ],
+      [
+        20.36578,
+        86.36775
+      ],
+      [
+        20.34965,
+        86.36528
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Kendrapara Emergency Assembly Point",
+        "latLng": [
+          20.48899,
+          86.35668
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          20.44398,
+          86.34002
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          20.38317,
+          86.36674
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 25.7,
+    "estimatedTransitMinutes": 66,
+    "safetyScore": 9.6,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-267BCFFA",
+    "zoneId": "ZONE-F7EFA2DD",
+    "region": "Kodagu, Karnataka, India",
+    "routeName": "Kodagu Arterial Evacuation Highway Corridor",
+    "originName": "Kodagu High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      75.74,
+      12.42
+    ],
+    "originLatLng": [
+      12.42,
+      75.74
+    ],
+    "destinationName": "Kodagu High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 36426,
+    "destinationMaxCapacity": 218558,
+    "destinationCoordinates": [
+      75.58783,
+      12.46944
+    ],
+    "destinationLatLng": [
+      12.46944,
+      75.58783
+    ],
+    "waypoints": [
+      [
+        12.42,
+        75.74
+      ],
+      [
+        12.45482,
+        75.73449
+      ],
+      [
+        12.4829,
+        75.72679
+      ],
+      [
+        12.49963,
+        75.7154
+      ],
+      [
+        12.50385,
+        75.69995
+      ],
+      [
+        12.49798,
+        75.68122
+      ],
+      [
+        12.4869,
+        75.6608
+      ],
+      [
+        12.47599,
+        75.64043
+      ],
+      [
+        12.46915,
+        75.62138
+      ],
+      [
+        12.46754,
+        75.60404
+      ],
+      [
+        12.46944,
+        75.58783
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Kodagu Emergency Assembly Point",
+        "latLng": [
+          12.4829,
+          75.72679
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          12.49798,
+          75.68122
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          12.46915,
+          75.62138
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 21.7,
+    "estimatedTransitMinutes": 57,
+    "safetyScore": 9.1,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-DAF545D6",
+    "zoneId": "ZONE-CF1F01BD",
+    "region": "Korba, Chhattisgarh, India",
+    "routeName": "Korba Arterial Evacuation Highway Corridor",
+    "originName": "Korba High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      82.75,
+      22.36
+    ],
+    "originLatLng": [
+      22.36,
+      82.75
+    ],
+    "destinationName": "Korba High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 37467,
+    "destinationMaxCapacity": 224808,
+    "destinationCoordinates": [
+      82.78871,
+      22.51525
+    ],
+    "destinationLatLng": [
+      22.51525,
+      82.78871
+    ],
+    "waypoints": [
+      [
+        22.36,
+        82.75
+      ],
+      [
+        22.36793,
+        82.78435
+      ],
+      [
+        22.37756,
+        82.81183
+      ],
+      [
+        22.39009,
+        82.82772
+      ],
+      [
+        22.4058,
+        82.83085
+      ],
+      [
+        22.42408,
+        82.82369
+      ],
+      [
+        22.44368,
+        82.81122
+      ],
+      [
+        22.46324,
+        82.79891
+      ],
+      [
+        22.48176,
+        82.79076
+      ],
+      [
+        22.49895,
+        82.78794
+      ],
+      [
+        22.51525,
+        82.78871
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Korba Emergency Assembly Point",
+        "latLng": [
+          22.37756,
+          82.81183
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          22.42408,
+          82.82369
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          22.48176,
+          82.79076
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 21.7,
+    "estimatedTransitMinutes": 57,
+    "safetyScore": 9.1,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-6790B7DA",
+    "zoneId": "ZONE-E17F15F5",
+    "region": "Kullu, Himachal Pradesh, India",
+    "routeName": "Kullu Arterial Evacuation Highway Corridor",
+    "originName": "Kullu High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      77.11,
+      31.96
+    ],
+    "originLatLng": [
+      31.96,
+      77.11
+    ],
+    "destinationName": "Kullu High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 20043,
+    "destinationMaxCapacity": 120278,
+    "destinationCoordinates": [
+      77.19632,
+      31.87664
+    ],
+    "destinationLatLng": [
+      31.87664,
+      77.19632
+    ],
+    "waypoints": [
+      [
+        31.96,
+        77.11
+      ],
+      [
+        31.93472,
+        77.10227
+      ],
+      [
+        31.91326,
+        77.09822
+      ],
+      [
+        31.89824,
+        77.1004
+      ],
+      [
+        31.89031,
+        77.10943
+      ],
+      [
+        31.88811,
+        77.12398
+      ],
+      [
+        31.88886,
+        77.14139
+      ],
+      [
+        31.88952,
+        77.15871
+      ],
+      [
+        31.88787,
+        77.1738
+      ],
+      [
+        31.88325,
+        77.18602
+      ],
+      [
+        31.87664,
+        77.19632
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Kullu Emergency Assembly Point",
+        "latLng": [
+          31.91326,
+          77.09822
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          31.88811,
+          77.12398
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          31.88787,
+          77.1738
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 14.5,
+    "estimatedTransitMinutes": 41,
+    "safetyScore": 8.2,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-517D24AE",
+    "zoneId": "ZONE-KTC4012I",
+    "region": "Kutch, Gujarat, India",
+    "routeName": "Kutch Arterial Evacuation Highway Corridor",
+    "originName": "Kutch High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      69.6667,
+      23.25
+    ],
+    "originLatLng": [
+      23.25,
+      69.6667
+    ],
+    "destinationName": "Kutch High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 418470,
+    "destinationMaxCapacity": 2510841,
+    "destinationCoordinates": [
+      69.50249,
+      23.294
+    ],
+    "destinationLatLng": [
+      23.294,
+      69.50249
+    ],
+    "waypoints": [
+      [
+        23.25,
+        69.6667
+      ],
+      [
+        23.25112,
+        69.6494
+      ],
+      [
+        23.24844,
+        69.63108
+      ],
+      [
+        23.24013,
+        69.61126
+      ],
+      [
+        23.22742,
+        69.59025
+      ],
+      [
+        23.21453,
+        69.5692
+      ],
+      [
+        23.20726,
+        69.54965
+      ],
+      [
+        23.21088,
+        69.53302
+      ],
+      [
+        23.22799,
+        69.52
+      ],
+      [
+        23.25736,
+        69.51027
+      ],
+      [
+        23.294,
+        69.50249
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Kutch Emergency Assembly Point",
+        "latLng": [
+          23.24844,
+          69.63108
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          23.21453,
+          69.5692
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          23.22799,
+          69.52
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 18.5,
+    "estimatedTransitMinutes": 50,
+    "safetyScore": 8.7,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-E08EFECD",
+    "zoneId": "ZONE-LEH8803J",
+    "region": "Leh, Ladakh, India",
+    "routeName": "Leh Arterial Evacuation Highway Corridor",
+    "originName": "Leh High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      77.5771,
+      34.1526
+    ],
+    "originLatLng": [
+      34.1526,
+      77.5771
+    ],
+    "destinationName": "Leh High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 26693,
+    "destinationMaxCapacity": 160180,
+    "destinationCoordinates": [
+      77.3679,
+      34.1709
+    ],
+    "destinationLatLng": [
+      34.1709,
+      77.3679
+    ],
+    "waypoints": [
+      [
+        34.1526,
+        77.5771
+      ],
+      [
+        34.15025,
+        77.55581
+      ],
+      [
+        34.14307,
+        77.53411
+      ],
+      [
+        34.1287,
+        77.51177
+      ],
+      [
+        34.10873,
+        77.48894
+      ],
+      [
+        34.08853,
+        77.46609
+      ],
+      [
+        34.0755,
+        77.44388
+      ],
+      [
+        34.07633,
+        77.42287
+      ],
+      [
+        34.09436,
+        77.40336
+      ],
+      [
+        34.128,
+        77.38523
+      ],
+      [
+        34.1709,
+        77.3679
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Leh Emergency Assembly Point",
+        "latLng": [
+          34.14307,
+          77.53411
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          34.08853,
+          77.46609
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          34.09436,
+          77.40336
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 25.7,
+    "estimatedTransitMinutes": 66,
+    "safetyScore": 9.6,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-D99C9F56",
+    "zoneId": "ZONE-57F64B95",
+    "region": "Majuli, Assam, India",
+    "routeName": "Majuli Arterial Evacuation Highway Corridor",
+    "originName": "Majuli High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      94.17,
+      26.95
+    ],
+    "originLatLng": [
+      26.95,
+      94.17
+    ],
+    "destinationName": "Majuli High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 4965,
+    "destinationMaxCapacity": 231840,
+    "destinationCoordinates": [
+      94.05046,
+      26.96046
+    ],
+    "destinationLatLng": [
+      26.96046,
+      94.05046
+    ],
+    "waypoints": [
+      [
+        26.95,
+        94.17
+      ],
+      [
+        26.94866,
+        94.15784
+      ],
+      [
+        26.94455,
+        94.14543
+      ],
+      [
+        26.93634,
+        94.13267
+      ],
+      [
+        26.92493,
+        94.11962
+      ],
+      [
+        26.91339,
+        94.10657
+      ],
+      [
+        26.90595,
+        94.09387
+      ],
+      [
+        26.90642,
+        94.08187
+      ],
+      [
+        26.91672,
+        94.07072
+      ],
+      [
+        26.93595,
+        94.06036
+      ],
+      [
+        26.96046,
+        94.05046
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Majuli Emergency Assembly Point",
+        "latLng": [
+          26.94455,
+          94.14543
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          26.91339,
+          94.10657
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          26.91672,
+          94.07072
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 14.5,
+    "estimatedTransitMinutes": 41,
+    "safetyScore": 8.2,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-C78FFF6E",
+    "zoneId": "ZONE-834D8FAD",
+    "region": "Mon, Nagaland, India",
+    "routeName": "Mon Arterial Evacuation Highway Corridor",
+    "originName": "Mon High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      95.06,
+      26.75
+    ],
+    "originLatLng": [
+      26.75,
+      95.06
+    ],
+    "destinationName": "Mon High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 16124,
+    "destinationMaxCapacity": 96744,
+    "destinationCoordinates": [
+      94.93312,
+      26.80917
+    ],
+    "destinationLatLng": [
+      26.80917,
+      94.93312
+    ],
+    "waypoints": [
+      [
+        26.75,
+        95.06
+      ],
+      [
+        26.75338,
+        95.04613
+      ],
+      [
+        26.75383,
+        95.03089
+      ],
+      [
+        26.74992,
+        95.01362
+      ],
+      [
+        26.74262,
+        94.99477
+      ],
+      [
+        26.73518,
+        94.97585
+      ],
+      [
+        26.73208,
+        94.95896
+      ],
+      [
+        26.73739,
+        94.94599
+      ],
+      [
+        26.75313,
+        94.93788
+      ],
+      [
+        26.77834,
+        94.93419
+      ],
+      [
+        26.80917,
+        94.93312
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Mon Emergency Assembly Point",
+        "latLng": [
+          26.75383,
+          95.03089
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          26.73518,
+          94.97585
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          26.75313,
+          94.93788
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 24.1,
+    "estimatedTransitMinutes": 63,
+    "safetyScore": 9.4,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-379C332A",
+    "zoneId": "ZONE-02D53772",
+    "region": "Mustang, Nepal",
+    "routeName": "Mustang Arterial Evacuation Highway Corridor",
+    "originName": "Mustang High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      83.725,
+      28.7833
+    ],
+    "originLatLng": [
+      28.7833,
+      83.725
+    ],
+    "destinationName": "Mustang High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 2890,
+    "destinationMaxCapacity": 17342,
+    "destinationCoordinates": [
+      83.93487,
+      28.77597
+    ],
+    "destinationLatLng": [
+      28.77597,
+      83.93487
+    ],
+    "waypoints": [
+      [
+        28.7833,
+        83.725
+      ],
+      [
+        28.74136,
+        83.74455
+      ],
+      [
+        28.70872,
+        83.76442
+      ],
+      [
+        28.69174,
+        83.78484
+      ],
+      [
+        28.692,
+        83.80586
+      ],
+      [
+        28.70618,
+        83.82737
+      ],
+      [
+        28.72755,
+        83.84913
+      ],
+      [
+        28.74868,
+        83.87088
+      ],
+      [
+        28.7642,
+        83.89243
+      ],
+      [
+        28.77251,
+        83.91374
+      ],
+      [
+        28.77597,
+        83.93487
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Mustang Emergency Assembly Point",
+        "latLng": [
+          28.70872,
+          83.76442
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          28.70618,
+          83.82737
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          28.7642,
+          83.89243
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 25.7,
+    "estimatedTransitMinutes": 66,
+    "safetyScore": 9.6,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-0401F73B",
+    "zoneId": "ZONE-7905515B",
+    "region": "North Goa, Goa, India",
+    "routeName": "North Goa Arterial Evacuation Highway Corridor",
+    "originName": "North Goa High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      73.81,
+      15.55
+    ],
+    "originLatLng": [
+      15.55,
+      73.81
+    ],
+    "destinationName": "North Goa High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 61441,
+    "destinationMaxCapacity": 368649,
+    "destinationCoordinates": [
+      73.72548,
+      15.73126
+    ],
+    "destinationLatLng": [
+      15.73126,
+      73.72548
+    ],
+    "waypoints": [
+      [
+        15.55,
+        73.81
+      ],
+      [
+        15.56644,
+        73.79792
+      ],
+      [
+        15.58092,
+        73.78166
+      ],
+      [
+        15.5925,
+        73.75918
+      ],
+      [
+        15.60182,
+        73.73184
+      ],
+      [
+        15.61105,
+        73.7043
+      ],
+      [
+        15.62317,
+        73.68297
+      ],
+      [
+        15.64089,
+        73.67365
+      ],
+      [
+        15.66556,
+        73.67924
+      ],
+      [
+        15.69654,
+        73.69835
+      ],
+      [
+        15.73126,
+        73.72548
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "North Goa Emergency Assembly Point",
+        "latLng": [
+          15.58092,
+          73.78166
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          15.61105,
+          73.7043
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          15.66556,
+          73.67924
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 16.9,
+    "estimatedTransitMinutes": 47,
+    "safetyScore": 8.5,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-FD890997",
+    "zoneId": "ZONE-9195C606",
+    "region": "Pithoragarh, Uttarakhand, India",
+    "routeName": "Pithoragarh Arterial Evacuation Highway Corridor",
+    "originName": "Pithoragarh High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      80.22,
+      29.58
+    ],
+    "originLatLng": [
+      29.58,
+      80.22
+    ],
+    "destinationName": "Pithoragarh High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 77406,
+    "destinationMaxCapacity": 464452,
+    "destinationCoordinates": [
+      80.25119,
+      29.72672
+    ],
+    "destinationLatLng": [
+      29.72672,
+      80.25119
+    ],
+    "waypoints": [
+      [
+        29.58,
+        80.22
+      ],
+      [
+        29.58855,
+        80.25192
+      ],
+      [
+        29.59848,
+        80.27735
+      ],
+      [
+        29.61073,
+        80.29183
+      ],
+      [
+        29.62556,
+        80.29425
+      ],
+      [
+        29.64244,
+        80.28695
+      ],
+      [
+        29.6604,
+        80.27462
+      ],
+      [
+        29.67832,
+        80.26245
+      ],
+      [
+        29.69541,
+        80.25421
+      ],
+      [
+        29.71142,
+        80.251
+      ],
+      [
+        29.72672,
+        80.25119
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Pithoragarh Emergency Assembly Point",
+        "latLng": [
+          29.59848,
+          80.27735
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          29.64244,
+          80.28695
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          29.69541,
+          80.25421
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 24.9,
+    "estimatedTransitMinutes": 64,
+    "safetyScore": 9.5,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-43BD519D",
+    "zoneId": "ZONE-834403E5",
+    "region": "Pokhara, Nepal",
+    "routeName": "Pokhara Arterial Evacuation Highway Corridor",
+    "originName": "Pokhara High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      83.96851,
+      28.26689
+    ],
+    "originLatLng": [
+      28.26689,
+      83.96851
+    ],
+    "destinationName": "Pokhara High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 102700,
+    "destinationMaxCapacity": 616204,
+    "destinationCoordinates": [
+      84.05668,
+      28.14554
+    ],
+    "destinationLatLng": [
+      28.14554,
+      84.05668
+    ],
+    "waypoints": [
+      [
+        28.26689,
+        83.96851
+      ],
+      [
+        28.23745,
+        83.9535
+      ],
+      [
+        28.2119,
+        83.94387
+      ],
+      [
+        28.19294,
+        83.94329
+      ],
+      [
+        28.18123,
+        83.95269
+      ],
+      [
+        28.17536,
+        83.97012
+      ],
+      [
+        28.1725,
+        83.99172
+      ],
+      [
+        28.16956,
+        84.01318
+      ],
+      [
+        28.16425,
+        84.03139
+      ],
+      [
+        28.15591,
+        84.04544
+      ],
+      [
+        28.14554,
+        84.05668
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Pokhara Emergency Assembly Point",
+        "latLng": [
+          28.2119,
+          83.94387
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          28.17536,
+          83.97012
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          28.16425,
+          84.03139
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 20.9,
+    "estimatedTransitMinutes": 55,
+    "safetyScore": 9.0,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-3D4ABA65",
+    "zoneId": "ZONE-30CD2338",
+    "region": "Port Blair, Andaman and Nicobar Islands, India",
+    "routeName": "Port Blair Arterial Evacuation Highway Corridor",
+    "originName": "Port Blair High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      92.73,
+      11.62
+    ],
+    "originLatLng": [
+      11.62,
+      92.73
+    ],
+    "destinationName": "Port Blair High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 69358,
+    "destinationMaxCapacity": 416164,
+    "destinationCoordinates": [
+      92.75644,
+      11.80815
+    ],
+    "destinationLatLng": [
+      11.80815,
+      92.75644
+    ],
+    "waypoints": [
+      [
+        11.62,
+        92.73
+      ],
+      [
+        11.63362,
+        92.76958
+      ],
+      [
+        11.64842,
+        92.80084
+      ],
+      [
+        11.66519,
+        92.81805
+      ],
+      [
+        11.68413,
+        92.81979
+      ],
+      [
+        11.70482,
+        92.80907
+      ],
+      [
+        11.72642,
+        92.7919
+      ],
+      [
+        11.74799,
+        92.77494
+      ],
+      [
+        11.76885,
+        92.76302
+      ],
+      [
+        11.78881,
+        92.75756
+      ],
+      [
+        11.80815,
+        92.75644
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Port Blair Emergency Assembly Point",
+        "latLng": [
+          11.64842,
+          92.80084
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          11.70482,
+          92.80907
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          11.76885,
+          92.76302
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 16.1,
+    "estimatedTransitMinutes": 45,
+    "safetyScore": 8.4,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-DE1B519C",
+    "zoneId": "ZONE-PRI6610F",
+    "region": "Puri, Odisha, India",
+    "routeName": "Puri Arterial Evacuation Highway Corridor",
+    "originName": "Puri High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      85.8312,
+      19.8135
+    ],
+    "originLatLng": [
+      19.8135,
+      85.8312
+    ],
+    "destinationName": "Puri High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 339743,
+    "destinationMaxCapacity": 2038473,
+    "destinationCoordinates": [
+      85.71122,
+      19.81141
+    ],
+    "destinationLatLng": [
+      19.81141,
+      85.71122
+    ],
+    "waypoints": [
+      [
+        19.8135,
+        85.8312
+      ],
+      [
+        19.81089,
+        85.81924
+      ],
+      [
+        19.80552,
+        85.80734
+      ],
+      [
+        19.79602,
+        85.7955
+      ],
+      [
+        19.7833,
+        85.78372
+      ],
+      [
+        19.77046,
+        85.77194
+      ],
+      [
+        19.76173,
+        85.76009
+      ],
+      [
+        19.76095,
+        85.7481
+      ],
+      [
+        19.77003,
+        85.73594
+      ],
+      [
+        19.78806,
+        85.72363
+      ],
+      [
+        19.81141,
+        85.71122
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Puri Emergency Assembly Point",
+        "latLng": [
+          19.80552,
+          85.80734
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          19.77046,
+          85.77194
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          19.77003,
+          85.73594
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 14.5,
+    "estimatedTransitMinutes": 41,
+    "safetyScore": 8.2,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-4B6D0EC8",
+    "zoneId": "ZONE-F9275DC7",
+    "region": "Ranchi, Jharkhand, India",
+    "routeName": "Ranchi Arterial Evacuation Highway Corridor",
+    "originName": "Ranchi High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      85.31,
+      23.34
+    ],
+    "originLatLng": [
+      23.34,
+      85.31
+    ],
+    "destinationName": "Ranchi High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 59155,
+    "destinationMaxCapacity": 354940,
+    "destinationCoordinates": [
+      85.16082,
+      23.35568
+    ],
+    "destinationLatLng": [
+      23.35568,
+      85.16082
+    ],
+    "waypoints": [
+      [
+        23.34,
+        85.31
+      ],
+      [
+        23.37086,
+        85.29816
+      ],
+      [
+        23.39511,
+        85.28563
+      ],
+      [
+        23.40823,
+        85.27192
+      ],
+      [
+        23.40908,
+        85.25693
+      ],
+      [
+        23.40005,
+        85.2409
+      ],
+      [
+        23.38591,
+        85.22433
+      ],
+      [
+        23.37194,
+        85.20778
+      ],
+      [
+        23.36195,
+        85.19164
+      ],
+      [
+        23.35709,
+        85.17605
+      ],
+      [
+        23.35568,
+        85.16082
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Ranchi Emergency Assembly Point",
+        "latLng": [
+          23.39511,
+          85.28563
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          23.40005,
+          85.2409
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          23.36195,
+          85.19164
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 20.9,
+    "estimatedTransitMinutes": 55,
+    "safetyScore": 9.0,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-3FA8DB1C",
+    "zoneId": "ZONE-43153C1D",
+    "region": "Rupnagar, Punjab, India",
+    "routeName": "Rupnagar Arterial Evacuation Highway Corridor",
+    "originName": "Rupnagar High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      76.52,
+      30.97
+    ],
+    "originLatLng": [
+      30.97,
+      76.52
+    ],
+    "destinationName": "Rupnagar High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 32631,
+    "destinationMaxCapacity": 195796,
+    "destinationCoordinates": [
+      76.42416,
+      30.89778
+    ],
+    "destinationLatLng": [
+      30.89778,
+      76.42416
+    ],
+    "waypoints": [
+      [
+        30.97,
+        76.52
+      ],
+      [
+        30.96086,
+        76.51186
+      ],
+      [
+        30.94951,
+        76.50539
+      ],
+      [
+        30.93487,
+        76.50139
+      ],
+      [
+        30.91766,
+        76.49934
+      ],
+      [
+        30.90035,
+        76.49736
+      ],
+      [
+        30.88632,
+        76.4929
+      ],
+      [
+        30.87864,
+        76.48366
+      ],
+      [
+        30.87883,
+        76.46849
+      ],
+      [
+        30.88619,
+        76.44792
+      ],
+      [
+        30.89778,
+        76.42416
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Rupnagar Emergency Assembly Point",
+        "latLng": [
+          30.94951,
+          76.50539
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          30.90035,
+          76.49736
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          30.87883,
+          76.46849
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 22.5,
+    "estimatedTransitMinutes": 59,
+    "safetyScore": 9.2,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-07DFFF6A",
+    "zoneId": "ZONE-SML3021G",
+    "region": "Shimla, Himachal Pradesh, India",
+    "routeName": "Shimla Arterial Evacuation Highway Corridor",
+    "originName": "Shimla High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      77.1734,
+      31.1048
+    ],
+    "originLatLng": [
+      31.1048,
+      77.1734
+    ],
+    "destinationName": "Shimla High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 162799,
+    "destinationMaxCapacity": 976809,
+    "destinationCoordinates": [
+      77.04484,
+      30.95159
+    ],
+    "destinationLatLng": [
+      30.95159,
+      77.04484
+    ],
+    "waypoints": [
+      [
+        31.1048,
+        77.1734
+      ],
+      [
+        31.11472,
+        77.13047
+      ],
+      [
+        31.11895,
+        77.09431
+      ],
+      [
+        31.11358,
+        77.06959
+      ],
+      [
+        31.09764,
+        77.05747
+      ],
+      [
+        31.07319,
+        77.0555
+      ],
+      [
+        31.04433,
+        77.05877
+      ],
+      [
+        31.01562,
+        77.06188
+      ],
+      [
+        30.99034,
+        77.06089
+      ],
+      [
+        30.96948,
+        77.05463
+      ],
+      [
+        30.95159,
+        77.04484
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Shimla Emergency Assembly Point",
+        "latLng": [
+          31.11895,
+          77.09431
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          31.07319,
+          77.0555
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          30.99034,
+          77.06089
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 20.9,
+    "estimatedTransitMinutes": 55,
+    "safetyScore": 9.0,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-7E7CD01D",
+    "zoneId": "ZONE-900AED0E",
+    "region": "Sohra, Meghalaya, India",
+    "routeName": "Sohra Arterial Evacuation Highway Corridor",
+    "originName": "Sohra High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      91.73,
+      25.27
+    ],
+    "originLatLng": [
+      25.27,
+      91.73
+    ],
+    "destinationName": "Sohra High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 19513,
+    "destinationMaxCapacity": 117100,
+    "destinationCoordinates": [
+      91.87888,
+      25.28828
+    ],
+    "destinationLatLng": [
+      25.28828,
+      91.87888
+    ],
+    "waypoints": [
+      [
+        25.27,
+        91.73
+      ],
+      [
+        25.2748,
+        91.74452
+      ],
+      [
+        25.28305,
+        91.75862
+      ],
+      [
+        25.2964,
+        91.7721
+      ],
+      [
+        25.31374,
+        91.78508
+      ],
+      [
+        25.33125,
+        91.79804
+      ],
+      [
+        25.34365,
+        91.81163
+      ],
+      [
+        25.34619,
+        91.82643
+      ],
+      [
+        25.33649,
+        91.84274
+      ],
+      [
+        25.31568,
+        91.8604
+      ],
+      [
+        25.28828,
+        91.87888
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Sohra Emergency Assembly Point",
+        "latLng": [
+          25.28305,
+          91.75862
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          25.33125,
+          91.79804
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          25.33649,
+          91.84274
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 20.9,
+    "estimatedTransitMinutes": 55,
+    "safetyScore": 9.0,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-F5A3DED3",
+    "zoneId": "ZONE-66D13AE1",
+    "region": "Solukhumbu, Nepal",
+    "routeName": "Solukhumbu Arterial Evacuation Highway Corridor",
+    "originName": "Solukhumbu High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      86.661108,
+      27.790973
+    ],
+    "originLatLng": [
+      27.790973,
+      86.661108
+    ],
+    "destinationName": "Solukhumbu High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 20966,
+    "destinationMaxCapacity": 125817,
+    "destinationCoordinates": [
+      86.63821,
+      27.67318
+    ],
+    "destinationLatLng": [
+      27.67318,
+      86.63821
+    ],
+    "waypoints": [
+      [
+        27.79097,
+        86.66111
+      ],
+      [
+        27.77874,
+        86.66117
+      ],
+      [
+        27.76597,
+        86.66396
+      ],
+      [
+        27.75242,
+        86.67079
+      ],
+      [
+        27.73825,
+        86.68077
+      ],
+      [
+        27.72406,
+        86.69089
+      ],
+      [
+        27.71066,
+        86.69696
+      ],
+      [
+        27.69877,
+        86.69524
+      ],
+      [
+        27.68876,
+        86.68383
+      ],
+      [
+        27.68046,
+        86.66363
+      ],
+      [
+        27.67318,
+        86.63821
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Solukhumbu Emergency Assembly Point",
+        "latLng": [
+          27.76597,
+          86.66396
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          27.72406,
+          86.69089
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          27.68876,
+          86.68383
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 14.5,
+    "estimatedTransitMinutes": 41,
+    "safetyScore": 8.2,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-C5E5E378",
+    "zoneId": "ZONE-3D1937AC",
+    "region": "Sundarbans, West Bengal, India",
+    "routeName": "Sundarbans Arterial Evacuation Highway Corridor",
+    "originName": "Sundarbans High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      88.9,
+      21.95
+    ],
+    "originLatLng": [
+      21.95,
+      88.9
+    ],
+    "destinationName": "Sundarbans High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 74759,
+    "destinationMaxCapacity": 448555,
+    "destinationCoordinates": [
+      89.03926,
+      22.04751
+    ],
+    "destinationLatLng": [
+      22.04751,
+      89.03926
+    ],
+    "waypoints": [
+      [
+        21.95,
+        88.9
+      ],
+      [
+        21.96253,
+        88.91198
+      ],
+      [
+        21.97828,
+        88.9217
+      ],
+      [
+        21.99882,
+        88.92808
+      ],
+      [
+        22.02308,
+        88.93184
+      ],
+      [
+        22.0475,
+        88.9355
+      ],
+      [
+        22.06714,
+        88.9425
+      ],
+      [
+        22.07756,
+        88.95596
+      ],
+      [
+        22.07652,
+        88.97744
+      ],
+      [
+        22.0651,
+        89.00619
+      ],
+      [
+        22.04751,
+        89.03926
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Sundarbans Emergency Assembly Point",
+        "latLng": [
+          21.97828,
+          88.9217
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          22.0475,
+          88.9355
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          22.07652,
+          88.97744
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 18.5,
+    "estimatedTransitMinutes": 50,
+    "safetyScore": 8.7,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-CC8D3470",
+    "zoneId": "ZONE-E67CA0A9",
+    "region": "Unakoti, Tripura, India",
+    "routeName": "Unakoti Arterial Evacuation Highway Corridor",
+    "originName": "Unakoti High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      92.02,
+      24.33
+    ],
+    "originLatLng": [
+      24.33,
+      92.02
+    ],
+    "destinationName": "Unakoti High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 36123,
+    "destinationMaxCapacity": 216753,
+    "destinationCoordinates": [
+      92.03099,
+      24.12029
+    ],
+    "destinationLatLng": [
+      24.12029,
+      92.03099
+    ],
+    "waypoints": [
+      [
+        24.33,
+        92.02
+      ],
+      [
+        24.30925,
+        92.02529
+      ],
+      [
+        24.28875,
+        92.03542
+      ],
+      [
+        24.26863,
+        92.05276
+      ],
+      [
+        24.24881,
+        92.07571
+      ],
+      [
+        24.22899,
+        92.09889
+      ],
+      [
+        24.2088,
+        92.11489
+      ],
+      [
+        24.18788,
+        92.11699
+      ],
+      [
+        24.16606,
+        92.10185
+      ],
+      [
+        24.14342,
+        92.07106
+      ],
+      [
+        24.12029,
+        92.03099
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Unakoti Emergency Assembly Point",
+        "latLng": [
+          24.28875,
+          92.03542
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          24.22899,
+          92.09889
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          24.16606,
+          92.10185
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 25.7,
+    "estimatedTransitMinutes": 66,
+    "safetyScore": 9.6,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-433E8B0E",
+    "zoneId": "ZONE-69704DA9",
+    "region": "Uttarakhand, India",
+    "routeName": "Uttarakhand Arterial Evacuation Highway Corridor",
+    "originName": "Uttarakhand High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      78.98,
+      30.28
+    ],
+    "originLatLng": [
+      30.28,
+      78.98
+    ],
+    "destinationName": "Uttarakhand High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 150000,
+    "destinationMaxCapacity": 900000,
+    "destinationCoordinates": [
+      78.85279,
+      30.35949
+    ],
+    "destinationLatLng": [
+      30.35949,
+      78.85279
+    ],
+    "waypoints": [
+      [
+        30.28,
+        78.98
+      ],
+      [
+        30.31292,
+        78.98288
+      ],
+      [
+        30.34022,
+        78.98225
+      ],
+      [
+        30.35801,
+        78.97568
+      ],
+      [
+        30.36536,
+        78.96258
+      ],
+      [
+        30.36427,
+        78.94422
+      ],
+      [
+        30.35882,
+        78.92313
+      ],
+      [
+        30.35352,
+        78.90212
+      ],
+      [
+        30.35161,
+        78.88325
+      ],
+      [
+        30.35408,
+        78.8671
+      ],
+      [
+        30.35949,
+        78.85279
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Uttarakhand Emergency Assembly Point",
+        "latLng": [
+          30.34022,
+          78.98225
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          30.36427,
+          78.94422
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          30.35161,
+          78.88325
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 24.9,
+    "estimatedTransitMinutes": 64,
+    "safetyScore": 9.5,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-766ED888",
+    "zoneId": "ZONE-B7566FA2",
+    "region": "Visakhapatnam, Andhra Pradesh, India",
+    "routeName": "Visakhapatnam Arterial Evacuation Highway Corridor",
+    "originName": "Visakhapatnam High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      83.22,
+      17.69
+    ],
+    "originLatLng": [
+      17.69,
+      83.22
+    ],
+    "destinationName": "Visakhapatnam High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 24299,
+    "destinationMaxCapacity": 145809,
+    "destinationCoordinates": [
+      83.33143,
+      17.62305
+    ],
+    "destinationLatLng": [
+      17.62305,
+      83.33143
+    ],
+    "waypoints": [
+      [
+        17.69,
+        83.22
+      ],
+      [
+        17.68553,
+        83.23248
+      ],
+      [
+        17.68364,
+        83.24651
+      ],
+      [
+        17.68557,
+        83.26284
+      ],
+      [
+        17.69049,
+        83.28095
+      ],
+      [
+        17.69553,
+        83.29915
+      ],
+      [
+        17.69675,
+        83.31505
+      ],
+      [
+        17.69058,
+        83.32651
+      ],
+      [
+        17.67526,
+        83.33247
+      ],
+      [
+        17.65162,
+        83.33343
+      ],
+      [
+        17.62305,
+        83.33143
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Visakhapatnam Emergency Assembly Point",
+        "latLng": [
+          17.68364,
+          83.24651
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          17.69553,
+          83.29915
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          17.67526,
+          83.33247
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 23.3,
+    "estimatedTransitMinutes": 61,
+    "safetyScore": 9.3,
+    "status": "ACTIVE_SAFE"
+  },
+  {
+    "routeId": "ROUTE-7001BD3F",
+    "zoneId": "ZONE-WYN4921A",
+    "region": "Wayanad, Kerala, India",
+    "routeName": "Wayanad Arterial Evacuation Highway Corridor",
+    "originName": "Wayanad High-Risk Vulnerable Sector",
+    "originCoordinates": [
+      76.132,
+      11.605
+    ],
+    "originLatLng": [
+      11.605,
+      76.132
+    ],
+    "destinationName": "Wayanad High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskLevel": "LOW (1.8 / 10.0)",
+    "destinationAvailableCapacity": 163484,
+    "destinationMaxCapacity": 980904,
+    "destinationCoordinates": [
+      76.15631,
+      11.74287
+    ],
+    "destinationLatLng": [
+      11.74287,
+      76.15631
+    ],
+    "waypoints": [
+      [
+        11.605,
+        76.132
+      ],
+      [
+        11.61401,
+        76.1615
+      ],
+      [
+        11.6241,
+        76.18489
+      ],
+      [
+        11.63601,
+        76.198
+      ],
+      [
+        11.64991,
+        76.19977
+      ],
+      [
+        11.66543,
+        76.19241
+      ],
+      [
+        11.68177,
+        76.18032
+      ],
+      [
+        11.69809,
+        76.16839
+      ],
+      [
+        11.71376,
+        76.16014
+      ],
+      [
+        11.7286,
+        76.15663
+      ],
+      [
+        11.74287,
+        76.15631
+      ]
+    ],
+    "checkpoints": [
+      {
+        "name": "Wayanad Emergency Assembly Point",
+        "latLng": [
+          11.6241,
+          76.18489
+        ],
+        "status": "CLEAR"
+      },
+      {
+        "name": "River Bridge Highway Bypass",
+        "latLng": [
+          11.66543,
+          76.19241
+        ],
+        "status": "MONITORED"
+      },
+      {
+        "name": "High-Ground Pass Entry",
+        "latLng": [
+          11.71376,
+          76.16014
+        ],
+        "status": "CLEAR"
+      }
+    ],
+    "distanceKm": 24.1,
+    "estimatedTransitMinutes": 63,
+    "safetyScore": 9.4,
+    "status": "ACTIVE_SAFE"
+  }
+]

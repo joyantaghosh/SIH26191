@@ -1,11 +1,83 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { CapacitySector, CapacityAssessment, seedCapacitySectors } from './capacity.model.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ML_CAPACITY_PATH = path.resolve(__dirname, '../../../../ml-proxy/outputs/data/carryingCapacity.json');
 
 export async function ensureSeedData() {
   const count = await CapacitySector.countDocuments();
   if (count === 0) {
-    await CapacitySector.insertMany(seedCapacitySectors);
+    let seeded = false;
+    if (fs.existsSync(ML_CAPACITY_PATH)) {
+      try {
+        const raw = fs.readFileSync(ML_CAPACITY_PATH, 'utf-8');
+        const list = JSON.parse(raw);
+        if (Array.isArray(list) && list.length > 0) {
+          const sectors = list.map((item) => {
+            const pop = item.population || 50000;
+            const maxCap = item.maxSafeCapacity || Math.round(pop * 1.2);
+            const region = item.sectorName ? item.sectorName.replace(/Carrying Capacity Sector/i, '').trim() : 'Disaster Zone';
+            return {
+              sectorId: item.assessmentId,
+              name: item.sectorName,
+              region,
+              currentPopulation: pop,
+              landHectares: Math.max(100, Math.round(pop / 15)),
+              waterSupplyLitersDay: pop * 28,
+              electricitySupplyMw: Math.max(15, Math.round(pop / 5000)),
+              housingUnits: Math.max(100, Math.round(pop / 3.5)),
+              medicalBeds: Math.max(50, Math.round(maxCap / 18.5)),
+              slopeStabilityRating: item.stressLevel === 'CRITICAL' ? 62 : item.stressLevel === 'HIGH' ? 74 : 88,
+              status: item.stressLevel === 'CRITICAL' ? 'Critical Stress' : item.stressLevel === 'HIGH' ? 'High Load Sector' : 'Sector Nominal',
+              isActive: true,
+            };
+          });
+
+          await CapacitySector.insertMany(sectors);
+          console.log(`[seed:capacity] Inserted ${sectors.length} ML capacity sectors`);
+          seeded = true;
+
+          // Also insert initial assessments
+          const assessments = list.map((item) => ({
+            assessmentId: item.assessmentId,
+            sectorName: item.sectorName,
+            inputParameters: {
+              population: item.population,
+              landHectares: Math.max(100, Math.round(item.population / 15)),
+              waterSupplyLitersDay: item.population * 28,
+              housingUnits: Math.max(100, Math.round(item.population / 3.5)),
+              medicalBeds: Math.max(50, Math.round(item.maxSafeCapacity / 18.5)),
+            },
+            calculatedMetrics: {
+              maxSafeCapacity: item.maxSafeCapacity,
+              availableCapacity: item.availableCapacity,
+              populationSaturationPercent: Number(((item.population / item.maxSafeCapacity) * 100).toFixed(1)),
+              waterUtilizationPercent: 78,
+              housingUtilizationPercent: 82,
+              healthUtilizationPercent: 75,
+              stressLevel: item.stressLevel === 'HIGH' ? 'ELEVATED' : item.stressLevel,
+            },
+            recommendations: [
+              'Maintain active groundwater and relief supply monitoring.',
+              'Prepare auxiliary high-ground shelter overflow reserves.',
+            ],
+          }));
+
+          await CapacityAssessment.insertMany(assessments);
+        }
+      } catch (err) {
+        console.warn('[seed:capacity] Could not seed from ML data:', err.message);
+      }
+    }
+    if (!seeded) {
+      await CapacitySector.insertMany(seedCapacitySectors);
+    }
   }
 }
+
 
 export async function getCapacitySectors() {
   await ensureSeedData();

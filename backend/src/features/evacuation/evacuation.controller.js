@@ -10,6 +10,14 @@ export const getOptions = asyncHandler(async (req, res) => {
   );
 });
 
+export const getRoutes = asyncHandler(async (req, res) => {
+  const routes = await evacuationService.getEvacuationRoutes(req.query);
+  res.status(httpStatusCodes.OK).json(
+    new ApiResponse(httpStatusCodes.OK, routes, 'Precomputed evacuation corridors retrieved successfully')
+  );
+});
+
+
 export const calculate = asyncHandler(async (req, res) => {
   const { startPoint, destination } = req.body;
   const result = await evacuationService.calculateEvacuationRoute(startPoint, destination);
@@ -28,6 +36,8 @@ export const listPlans = asyncHandler(async (req, res) => {
 
 export default {
   getOptions,
+  getRoutes,
   calculate,
   listPlans,
 };
+

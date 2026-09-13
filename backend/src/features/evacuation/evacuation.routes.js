@@ -6,6 +6,10 @@ const router = Router();
 // GET /api/v1/evacuation/options - Get origins, relief centers & hazard points
 router.get('/options', controller.getOptions);
 
+// GET /api/v1/evacuation/routes - Precomputed evacuation routes and waypoints
+router.get('/routes', controller.getRoutes);
+
+
 // POST /api/v1/evacuation/calculate - Calculate scored evacuation corridors
 router.post('/calculate', controller.calculate);
 

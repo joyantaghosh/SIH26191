@@ -10,6 +10,14 @@ export const getOptions = asyncHandler(async (req, res) => {
   );
 });
 
+export const getPriorities = asyncHandler(async (req, res) => {
+  const priorities = await relocationService.getRelocationPriorities(req.query);
+  res.status(httpStatusCodes.OK).json(
+    new ApiResponse(httpStatusCodes.OK, priorities, 'Relocation priority matrix fetched successfully')
+  );
+});
+
+
 export const calculate = asyncHandler(async (req, res) => {
   const { startLocationId, destinationLocationId } = req.body;
   const result = await relocationService.calculateRelocation(startLocationId, destinationLocationId);
@@ -35,7 +43,9 @@ export const getById = asyncHandler(async (req, res) => {
 
 export default {
   getOptions,
+  getPriorities,
   calculate,
   getHistory,
   getById,
 };
+

@@ -1,8 +1,14 @@
-import mongoose from 'mongoose';
-import { RelocationLocation, RelocationRequest, seedLocations, seedRiskZones } from './relocation.model.js';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { RelocationLocation, RelocationRequest, RelocationPriority, seedLocations, seedRiskZones } from './relocation.model.js';
 import { RiskZone } from '../riskZones/riskZone.model.js';
 import { ApiError } from '../../common/utils/ApiError.js';
 import { httpStatusCodes } from '../../common/constants/httpStatusCodes.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ML_DATA_PATH = path.resolve(__dirname, '../../../../ml-proxy/outputs/data/relocationPriorities.json');
 
 const toRadians = (value) => (value * Math.PI) / 180;
 
@@ -83,11 +89,88 @@ const midpoint = (a, b) => ({
 const round = (value) => Math.round(value * 10) / 10;
 
 export async function ensureSeedData() {
-  const count = await RelocationLocation.countDocuments();
-  if (count === 0) {
+
+  const [locCount, prioCount] = await Promise.all([
+    RelocationLocation.countDocuments(),
+    RelocationPriority.countDocuments(),
+  ]);
+
+  if (prioCount === 0) {
+    try {
+      if (fs.existsSync(ML_DATA_PATH)) {
+        const raw = fs.readFileSync(ML_DATA_PATH, 'utf-8');
+        const list = JSON.parse(raw);
+        if (Array.isArray(list) && list.length > 0) {
+          await RelocationPriority.insertMany(list);
+          console.log(`[seed:relocation] Inserted ${list.length} ML relocation priorities`);
+
+          // Also populate RelocationLocation start and safe points from ML data
+          if (locCount === 0) {
+            const locs = [];
+            const seen = new Set();
+            for (const item of list) {
+              if (item.habitationName && item.originLatLng?.length === 2 && !seen.has(item.habitationName)) {
+                seen.add(item.habitationName);
+                locs.push({
+                  name: item.habitationName,
+                  category: 'start',
+                  latitude: item.originLatLng[0],
+                  longitude: item.originLatLng[1],
+                  capacity: null,
+                  currentOccupancy: item.vulnerablePopulation,
+                });
+              }
+              if (item.destinationRefugeSector && item.destinationLatLng?.length === 2 && !seen.has(item.destinationRefugeSector)) {
+                seen.add(item.destinationRefugeSector);
+                locs.push({
+                  name: item.destinationRefugeSector,
+                  category: 'safe',
+                  latitude: item.destinationLatLng[0],
+                  longitude: item.destinationLatLng[1],
+                  capacity: item.availableShelterCapacity || 25000,
+                  currentOccupancy: item.allocatedShelterBeds || 5000,
+                });
+              }
+            }
+            if (locs.length > 0) {
+              await RelocationLocation.insertMany(locs);
+              console.log(`[seed:relocation] Inserted ${locs.length} ML relocation locations`);
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.warn('[seed:relocation] Could not seed from ML data:', err.message);
+    }
+  }
+
+  if ((await RelocationLocation.countDocuments()) === 0) {
     await RelocationLocation.insertMany(seedLocations);
   }
 }
+
+export async function getRelocationPriorities(query = {}) {
+  await ensureSeedData();
+
+  const filter = {};
+  if (query.tier) {
+    filter.priorityTier = query.tier;
+  }
+  if (query.status) {
+    filter.status = query.status;
+  }
+  if (query.search) {
+    filter.$or = [
+      { habitationName: new RegExp(query.search, 'i') },
+      { region: new RegExp(query.search, 'i') },
+      { destinationRefugeSector: new RegExp(query.search, 'i') },
+      { zoneId: new RegExp(query.search, 'i') },
+    ];
+  }
+
+  return RelocationPriority.find(filter).sort({ priorityRank: 1 }).lean();
+}
+
 
 export async function getRelocationOptions() {
   await ensureSeedData();
@@ -315,7 +398,9 @@ export async function getRelocationById(id) {
 export default {
   ensureSeedData,
   getRelocationOptions,
+  getRelocationPriorities,
   calculateRelocation,
   getRecentRelocations,
   getRelocationById,
 };
+

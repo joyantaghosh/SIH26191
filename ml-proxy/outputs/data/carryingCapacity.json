@@ -1,0 +1,402 @@
+[
+  {
+    "assessmentId": "CAP-AIZAWL-904",
+    "sectorName": "Aizawl Carrying Capacity Sector",
+    "population": 341558,
+    "maxSafeCapacity": 409867,
+    "availableCapacity": 68309,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-AMBALA-266",
+    "sectorName": "Ambala Carrying Capacity Sector",
+    "population": 340891,
+    "maxSafeCapacity": 409065,
+    "availableCapacity": 68174,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-ANANTNAG-174",
+    "sectorName": "Anantnag Carrying Capacity Sector",
+    "population": 237802,
+    "maxSafeCapacity": 285360,
+    "availableCapacity": 47558,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-ASSAM-437",
+    "sectorName": "Assam Carrying Capacity Sector",
+    "population": 1500000,
+    "maxSafeCapacity": 1800000,
+    "availableCapacity": 300000,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-BARMER-260",
+    "sectorName": "Barmer Carrying Capacity Sector",
+    "population": 2603751,
+    "maxSafeCapacity": 3124497,
+    "availableCapacity": 520746,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-BHADRACH-313",
+    "sectorName": "Bhadrachalam Carrying Capacity Sector",
+    "population": 178615,
+    "maxSafeCapacity": 214334,
+    "availableCapacity": 35719,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-BHARUCH-589",
+    "sectorName": "Bharuch Carrying Capacity Sector",
+    "population": 345988,
+    "maxSafeCapacity": 415185,
+    "availableCapacity": 69197,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-BIHAR-395",
+    "sectorName": "Bihar Carrying Capacity Sector",
+    "population": 130725310,
+    "maxSafeCapacity": 156870369,
+    "availableCapacity": 26145059,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-CACHAR-110",
+    "sectorName": "Cachar Carrying Capacity Sector",
+    "population": 1736617,
+    "maxSafeCapacity": 2083939,
+    "availableCapacity": 347322,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-CHAMOLI-557",
+    "sectorName": "Chamoli Carrying Capacity Sector",
+    "population": 391600,
+    "maxSafeCapacity": 469920,
+    "availableCapacity": 78320,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-CHIPLUN-218",
+    "sectorName": "Chiplun Carrying Capacity Sector",
+    "population": 132623,
+    "maxSafeCapacity": 159144,
+    "availableCapacity": 26521,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-CHITWAN-551",
+    "sectorName": "Chitwan Carrying Capacity Sector",
+    "population": 719859,
+    "maxSafeCapacity": 863827,
+    "availableCapacity": 143968,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-CUDDALOR-618",
+    "sectorName": "Cuddalore Carrying Capacity Sector",
+    "population": 312215,
+    "maxSafeCapacity": 374654,
+    "availableCapacity": 62439,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-DARBHANG-646",
+    "sectorName": "Darbhanga Carrying Capacity Sector",
+    "population": 286140,
+    "maxSafeCapacity": 343368,
+    "availableCapacity": 57228,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-DARJEELI-241",
+    "sectorName": "Darjeeling Carrying Capacity Sector",
+    "population": 1846823,
+    "maxSafeCapacity": 2216184,
+    "availableCapacity": 369361,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-GANGTOK-545",
+    "sectorName": "Gangtok Carrying Capacity Sector",
+    "population": 331734,
+    "maxSafeCapacity": 398078,
+    "availableCapacity": 66344,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-GORAKHPU-595",
+    "sectorName": "Gorakhpur Carrying Capacity Sector",
+    "population": 136035,
+    "maxSafeCapacity": 163238,
+    "availableCapacity": 27203,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-GUJARAT-562",
+    "sectorName": "Gujarat Carrying Capacity Sector",
+    "population": 385000,
+    "maxSafeCapacity": 462000,
+    "availableCapacity": 77000,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-HIMACHAL-342",
+    "sectorName": "Himachal Pradesh Carrying Capacity Sector",
+    "population": 350000,
+    "maxSafeCapacity": 420000,
+    "availableCapacity": 70000,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-IDUKKI-420",
+    "sectorName": "Idukki Carrying Capacity Sector",
+    "population": 93743,
+    "maxSafeCapacity": 112488,
+    "availableCapacity": 18745,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-IMPHAL-717",
+    "sectorName": "Imphal Carrying Capacity Sector",
+    "population": 113042,
+    "maxSafeCapacity": 135648,
+    "availableCapacity": 22606,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-INDORE-370",
+    "sectorName": "Indore Carrying Capacity Sector",
+    "population": 170093,
+    "maxSafeCapacity": 204110,
+    "availableCapacity": 34017,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-ITANAGAR-236",
+    "sectorName": "Itanagar Carrying Capacity Sector",
+    "population": 374815,
+    "maxSafeCapacity": 449774,
+    "availableCapacity": 74959,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-JAISALME-176",
+    "sectorName": "Jaisalmer Carrying Capacity Sector",
+    "population": 91694,
+    "maxSafeCapacity": 110030,
+    "availableCapacity": 18336,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-JOSHIMAT-814",
+    "sectorName": "Joshimath Carrying Capacity Sector",
+    "population": 23000,
+    "maxSafeCapacity": 27600,
+    "availableCapacity": 4600,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-KATHMAND-363",
+    "sectorName": "Kathmandu Valley Carrying Capacity Sector",
+    "population": 3500000,
+    "maxSafeCapacity": 4200000,
+    "availableCapacity": 700000,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-KENDRAPA-635",
+    "sectorName": "Kendrapara Carrying Capacity Sector",
+    "population": 207517,
+    "maxSafeCapacity": 249019,
+    "availableCapacity": 41502,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-KODAGU-685",
+    "sectorName": "Kodagu Carrying Capacity Sector",
+    "population": 182132,
+    "maxSafeCapacity": 218558,
+    "availableCapacity": 36426,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-KORBA-947",
+    "sectorName": "Korba Carrying Capacity Sector",
+    "population": 187341,
+    "maxSafeCapacity": 224808,
+    "availableCapacity": 37467,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-KULLU-523",
+    "sectorName": "Kullu Carrying Capacity Sector",
+    "population": 100235,
+    "maxSafeCapacity": 120278,
+    "availableCapacity": 20043,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-KUTCH-846",
+    "sectorName": "Kutch Carrying Capacity Sector",
+    "population": 2092371,
+    "maxSafeCapacity": 2510841,
+    "availableCapacity": 418470,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-LEH-731",
+    "sectorName": "Leh Carrying Capacity Sector",
+    "population": 133487,
+    "maxSafeCapacity": 160180,
+    "availableCapacity": 26693,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-MAJULI-367",
+    "sectorName": "Majuli Multi-Hazard Disaster Assessment Sector",
+    "population": 226875,
+    "maxSafeCapacity": 231840,
+    "availableCapacity": 4965,
+    "stressLevel": "CRITICAL"
+  },
+  {
+    "assessmentId": "CAP-MON-791",
+    "sectorName": "Mon Carrying Capacity Sector",
+    "population": 80620,
+    "maxSafeCapacity": 96744,
+    "availableCapacity": 16124,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-MUSTANG-508",
+    "sectorName": "Mustang Carrying Capacity Sector",
+    "population": 14452,
+    "maxSafeCapacity": 17342,
+    "availableCapacity": 2890,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-NORTHGOA-346",
+    "sectorName": "North Goa Carrying Capacity Sector",
+    "population": 307208,
+    "maxSafeCapacity": 368649,
+    "availableCapacity": 61441,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-PITHORAG-435",
+    "sectorName": "Pithoragarh Carrying Capacity Sector",
+    "population": 387046,
+    "maxSafeCapacity": 464452,
+    "availableCapacity": 77406,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-POKHARA-553",
+    "sectorName": "Pokhara Carrying Capacity Sector",
+    "population": 513504,
+    "maxSafeCapacity": 616204,
+    "availableCapacity": 102700,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-PORTBLAI-884",
+    "sectorName": "Port Blair Carrying Capacity Sector",
+    "population": 346806,
+    "maxSafeCapacity": 416164,
+    "availableCapacity": 69358,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-PURI-755",
+    "sectorName": "Puri Carrying Capacity Sector",
+    "population": 1698730,
+    "maxSafeCapacity": 2038473,
+    "availableCapacity": 339743,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-RANCHI-388",
+    "sectorName": "Ranchi Carrying Capacity Sector",
+    "population": 295785,
+    "maxSafeCapacity": 354940,
+    "availableCapacity": 59155,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-RUPNAGAR-610",
+    "sectorName": "Rupnagar Carrying Capacity Sector",
+    "population": 163165,
+    "maxSafeCapacity": 195796,
+    "availableCapacity": 32631,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-SHIMLA-169",
+    "sectorName": "Shimla Carrying Capacity Sector",
+    "population": 814010,
+    "maxSafeCapacity": 976809,
+    "availableCapacity": 162799,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-SOHRA-480",
+    "sectorName": "Sohra Carrying Capacity Sector",
+    "population": 97587,
+    "maxSafeCapacity": 117100,
+    "availableCapacity": 19513,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-SOLUKHUM-918",
+    "sectorName": "Solukhumbu Carrying Capacity Sector",
+    "population": 104851,
+    "maxSafeCapacity": 125817,
+    "availableCapacity": 20966,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-SUNDARBA-484",
+    "sectorName": "Sundarbans Carrying Capacity Sector",
+    "population": 373796,
+    "maxSafeCapacity": 448555,
+    "availableCapacity": 74759,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-UNAKOTI-636",
+    "sectorName": "Unakoti Carrying Capacity Sector",
+    "population": 180630,
+    "maxSafeCapacity": 216753,
+    "availableCapacity": 36123,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-UTTARAKH-929",
+    "sectorName": "Uttarakhand Carrying Capacity Sector",
+    "population": 750000,
+    "maxSafeCapacity": 900000,
+    "availableCapacity": 150000,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-VISAKHAP-522",
+    "sectorName": "Visakhapatnam Carrying Capacity Sector",
+    "population": 121510,
+    "maxSafeCapacity": 145809,
+    "availableCapacity": 24299,
+    "stressLevel": "HIGH"
+  },
+  {
+    "assessmentId": "CAP-WAYANAD-672",
+    "sectorName": "Wayanad Carrying Capacity Sector",
+    "population": 817420,
+    "maxSafeCapacity": 980904,
+    "availableCapacity": 163484,
+    "stressLevel": "HIGH"
+  }
+]

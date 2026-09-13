@@ -8,6 +8,10 @@ const router = Router();
 // GET /api/v1/relocation/options - Get starting points, safe shelters & hazard zones
 router.get('/options', controller.getOptions);
 
+// GET /api/v1/relocation/priorities - Get ranked relocation priority matrix
+router.get('/priorities', controller.getPriorities);
+
+
 // POST /api/v1/relocation/calculate - Compute scored relocation routes & safe path
 router.post('/calculate', validate(v.calculateRelocationSchema), controller.calculate);
 

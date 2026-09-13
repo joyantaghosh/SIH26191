@@ -92,9 +92,32 @@ export async function getRelocationById(id, { signal } = {}) {
   return json.data || json;
 }
 
+/**
+ * Fetch ranked relocation priorities
+ */
+export async function fetchRelocationPriorities(params = {}, { signal } = {}) {
+  const base = getBaseUrl();
+  const queryStr = new URLSearchParams(params).toString();
+  const url = `${base}/relocation/priorities${queryStr ? `?${queryStr}` : ''}`;
+  const res = await fetch(url, {
+    method: 'GET',
+    headers: { Accept: 'application/json' },
+    signal,
+  });
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch relocation priorities: HTTP ${res.status}`);
+  }
+
+  const json = await res.json();
+  return json.data || json;
+}
+
 export default {
   getRelocationOptions,
+  fetchRelocationPriorities,
   calculateRelocation,
   getRelocationHistory,
   getRelocationById,
 };
+

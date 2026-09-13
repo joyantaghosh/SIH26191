@@ -1,0 +1,3502 @@
+[
+  {
+    "relocationId": "REL-2C8F5A88",
+    "zoneId": "ZONE-E17F15F5",
+    "region": "Kullu, Himachal Pradesh, India",
+    "habitationName": "Kullu Vulnerable Settlement Sector",
+    "vulnerablePopulation": 100235,
+    "priorityRank": 1,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 91.3,
+    "mobilityConstrainedCount": 18042,
+    "destinationRefugeSector": "Kullu High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 20043,
+    "availableShelterCapacity": 20043,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      31.96,
+      77.11
+    ],
+    "destinationLatLng": [
+      31.87664,
+      77.19632
+    ],
+    "curvedPath": [
+      [
+        31.96,
+        77.11
+      ],
+      [
+        31.93472,
+        77.10227
+      ],
+      [
+        31.91326,
+        77.09822
+      ],
+      [
+        31.89824,
+        77.1004
+      ],
+      [
+        31.89031,
+        77.10943
+      ],
+      [
+        31.88811,
+        77.12398
+      ],
+      [
+        31.88886,
+        77.14139
+      ],
+      [
+        31.88952,
+        77.15871
+      ],
+      [
+        31.88787,
+        77.1738
+      ],
+      [
+        31.88325,
+        77.18602
+      ],
+      [
+        31.87664,
+        77.19632
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-F1EB1BA2",
+    "zoneId": "ZONE-AD754E3A",
+    "region": "Cuddalore, Tamil Nadu, India",
+    "habitationName": "Cuddalore Vulnerable Settlement Sector",
+    "vulnerablePopulation": 312215,
+    "priorityRank": 2,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 90.6,
+    "mobilityConstrainedCount": 56198,
+    "destinationRefugeSector": "Cuddalore High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 62439,
+    "availableShelterCapacity": 62439,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      11.75,
+      79.77
+    ],
+    "destinationLatLng": [
+      11.87951,
+      79.75867
+    ],
+    "curvedPath": [
+      [
+        11.75,
+        79.77
+      ],
+      [
+        11.76272,
+        79.76628
+      ],
+      [
+        11.77519,
+        79.75957
+      ],
+      [
+        11.78726,
+        79.74841
+      ],
+      [
+        11.79903,
+        79.73378
+      ],
+      [
+        11.81079,
+        79.71901
+      ],
+      [
+        11.82294,
+        79.70867
+      ],
+      [
+        11.83583,
+        79.70692
+      ],
+      [
+        11.84966,
+        79.71582
+      ],
+      [
+        11.86433,
+        79.73438
+      ],
+      [
+        11.87951,
+        79.75867
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-D149BCA2",
+    "zoneId": "ZONE-B7566FA2",
+    "region": "Visakhapatnam, Andhra Pradesh, India",
+    "habitationName": "Visakhapatnam Vulnerable Settlement Sector",
+    "vulnerablePopulation": 121510,
+    "priorityRank": 3,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 90.6,
+    "mobilityConstrainedCount": 21871,
+    "destinationRefugeSector": "Visakhapatnam High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 24299,
+    "availableShelterCapacity": 24299,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      17.69,
+      83.22
+    ],
+    "destinationLatLng": [
+      17.62305,
+      83.33143
+    ],
+    "curvedPath": [
+      [
+        17.69,
+        83.22
+      ],
+      [
+        17.68553,
+        83.23248
+      ],
+      [
+        17.68364,
+        83.24651
+      ],
+      [
+        17.68557,
+        83.26284
+      ],
+      [
+        17.69049,
+        83.28095
+      ],
+      [
+        17.69553,
+        83.29915
+      ],
+      [
+        17.69675,
+        83.31505
+      ],
+      [
+        17.69058,
+        83.32651
+      ],
+      [
+        17.67526,
+        83.33247
+      ],
+      [
+        17.65162,
+        83.33343
+      ],
+      [
+        17.62305,
+        83.33143
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-70B2D209",
+    "zoneId": "ZONE-7F24D4C1",
+    "region": "Aizawl, Mizoram, India",
+    "habitationName": "Aizawl Vulnerable Settlement Sector",
+    "vulnerablePopulation": 341558,
+    "priorityRank": 4,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 89.9,
+    "mobilityConstrainedCount": 61480,
+    "destinationRefugeSector": "Aizawl High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 68309,
+    "availableShelterCapacity": 68309,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      23.73,
+      92.72
+    ],
+    "destinationLatLng": [
+      23.65375,
+      92.60259
+    ],
+    "curvedPath": [
+      [
+        23.73,
+        92.72
+      ],
+      [
+        23.72003,
+        92.70978
+      ],
+      [
+        23.70735,
+        92.70133
+      ],
+      [
+        23.69063,
+        92.69549
+      ],
+      [
+        23.67077,
+        92.69169
+      ],
+      [
+        23.65078,
+        92.68798
+      ],
+      [
+        23.63482,
+        92.68166
+      ],
+      [
+        23.62663,
+        92.67028
+      ],
+      [
+        23.6281,
+        92.65264
+      ],
+      [
+        23.63832,
+        92.6293
+      ],
+      [
+        23.65375,
+        92.60259
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-E0836A5A",
+    "zoneId": "ZONE-D7E2B890",
+    "region": "Darbhanga, Bihar, India",
+    "habitationName": "Darbhanga Vulnerable Settlement Sector",
+    "vulnerablePopulation": 286140,
+    "priorityRank": 5,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 89.9,
+    "mobilityConstrainedCount": 51505,
+    "destinationRefugeSector": "Darbhanga High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 57228,
+    "availableShelterCapacity": 57228,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      26.15,
+      85.89
+    ],
+    "destinationLatLng": [
+      26.28947,
+      85.8778
+    ],
+    "curvedPath": [
+      [
+        26.15,
+        85.89
+      ],
+      [
+        26.1637,
+        85.88599
+      ],
+      [
+        26.17712,
+        85.87876
+      ],
+      [
+        26.19013,
+        85.86674
+      ],
+      [
+        26.2028,
+        85.85099
+      ],
+      [
+        26.21546,
+        85.83509
+      ],
+      [
+        26.22855,
+        85.82396
+      ],
+      [
+        26.24243,
+        85.82207
+      ],
+      [
+        26.25733,
+        85.83165
+      ],
+      [
+        26.27313,
+        85.85164
+      ],
+      [
+        26.28947,
+        85.8778
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-B9C2C469",
+    "zoneId": "ZONE-834D8FAD",
+    "region": "Mon, Nagaland, India",
+    "habitationName": "Mon Vulnerable Settlement Sector",
+    "vulnerablePopulation": 80620,
+    "priorityRank": 6,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 89.9,
+    "mobilityConstrainedCount": 14511,
+    "destinationRefugeSector": "Mon High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 16124,
+    "availableShelterCapacity": 16124,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      26.75,
+      95.06
+    ],
+    "destinationLatLng": [
+      26.80917,
+      94.93312
+    ],
+    "curvedPath": [
+      [
+        26.75,
+        95.06
+      ],
+      [
+        26.75338,
+        95.04613
+      ],
+      [
+        26.75383,
+        95.03089
+      ],
+      [
+        26.74992,
+        95.01362
+      ],
+      [
+        26.74262,
+        94.99477
+      ],
+      [
+        26.73518,
+        94.97585
+      ],
+      [
+        26.73208,
+        94.95896
+      ],
+      [
+        26.73739,
+        94.94599
+      ],
+      [
+        26.75313,
+        94.93788
+      ],
+      [
+        26.77834,
+        94.93419
+      ],
+      [
+        26.80917,
+        94.93312
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-128F1337",
+    "zoneId": "ZONE-4488C9B4",
+    "region": "Chitwan, Nepal",
+    "habitationName": "Chitwan Vulnerable Settlement Sector",
+    "vulnerablePopulation": 719859,
+    "priorityRank": 7,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 89.2,
+    "mobilityConstrainedCount": 129574,
+    "destinationRefugeSector": "Chitwan High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 143968,
+    "availableShelterCapacity": 143968,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      27.5833,
+      84.5167
+    ],
+    "destinationLatLng": [
+      27.45609,
+      84.43721
+    ],
+    "curvedPath": [
+      [
+        27.5833,
+        84.5167
+      ],
+      [
+        27.58618,
+        84.48378
+      ],
+      [
+        27.58555,
+        84.45648
+      ],
+      [
+        27.57898,
+        84.43869
+      ],
+      [
+        27.56588,
+        84.43134
+      ],
+      [
+        27.54752,
+        84.43243
+      ],
+      [
+        27.52643,
+        84.43788
+      ],
+      [
+        27.50542,
+        84.44318
+      ],
+      [
+        27.48655,
+        84.44509
+      ],
+      [
+        27.4704,
+        84.44262
+      ],
+      [
+        27.45609,
+        84.43721
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-D9951B0A",
+    "zoneId": "ZONE-F9275DC7",
+    "region": "Ranchi, Jharkhand, India",
+    "habitationName": "Ranchi Vulnerable Settlement Sector",
+    "vulnerablePopulation": 295785,
+    "priorityRank": 8,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 89.2,
+    "mobilityConstrainedCount": 53241,
+    "destinationRefugeSector": "Ranchi High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 59155,
+    "availableShelterCapacity": 59155,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      23.34,
+      85.31
+    ],
+    "destinationLatLng": [
+      23.35568,
+      85.16082
+    ],
+    "curvedPath": [
+      [
+        23.34,
+        85.31
+      ],
+      [
+        23.37086,
+        85.29816
+      ],
+      [
+        23.39511,
+        85.28563
+      ],
+      [
+        23.40823,
+        85.27192
+      ],
+      [
+        23.40908,
+        85.25693
+      ],
+      [
+        23.40005,
+        85.2409
+      ],
+      [
+        23.38591,
+        85.22433
+      ],
+      [
+        23.37194,
+        85.20778
+      ],
+      [
+        23.36195,
+        85.19164
+      ],
+      [
+        23.35709,
+        85.17605
+      ],
+      [
+        23.35568,
+        85.16082
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-3CBCA648",
+    "zoneId": "ZONE-69704DA9",
+    "region": "Uttarakhand, India",
+    "habitationName": "Uttarakhand Vulnerable Settlement Sector",
+    "vulnerablePopulation": 750000,
+    "priorityRank": 9,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 89.2,
+    "mobilityConstrainedCount": 135000,
+    "destinationRefugeSector": "Uttarakhand High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 150000,
+    "availableShelterCapacity": 150000,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      30.28,
+      78.98
+    ],
+    "destinationLatLng": [
+      30.35949,
+      78.85279
+    ],
+    "curvedPath": [
+      [
+        30.28,
+        78.98
+      ],
+      [
+        30.31292,
+        78.98288
+      ],
+      [
+        30.34022,
+        78.98225
+      ],
+      [
+        30.35801,
+        78.97568
+      ],
+      [
+        30.36536,
+        78.96258
+      ],
+      [
+        30.36427,
+        78.94422
+      ],
+      [
+        30.35882,
+        78.92313
+      ],
+      [
+        30.35352,
+        78.90212
+      ],
+      [
+        30.35161,
+        78.88325
+      ],
+      [
+        30.35408,
+        78.8671
+      ],
+      [
+        30.35949,
+        78.85279
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-79094D29",
+    "zoneId": "ZONE-BMR9104H",
+    "region": "Barmer, Rajasthan, India",
+    "habitationName": "Barmer Vulnerable Settlement Sector",
+    "vulnerablePopulation": 2603751,
+    "priorityRank": 10,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 88.5,
+    "mobilityConstrainedCount": 468675,
+    "destinationRefugeSector": "Barmer High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 520746,
+    "availableShelterCapacity": 520746,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      25.75,
+      71.3967
+    ],
+    "destinationLatLng": [
+      25.88106,
+      71.48847
+    ],
+    "curvedPath": [
+      [
+        25.75,
+        71.3967
+      ],
+      [
+        25.76494,
+        71.40326
+      ],
+      [
+        25.782,
+        71.40679
+      ],
+      [
+        25.80221,
+        71.40582
+      ],
+      [
+        25.82488,
+        71.40134
+      ],
+      [
+        25.84765,
+        71.39671
+      ],
+      [
+        25.86727,
+        71.39658
+      ],
+      [
+        25.88082,
+        71.40513
+      ],
+      [
+        25.88682,
+        71.42446
+      ],
+      [
+        25.88597,
+        71.45356
+      ],
+      [
+        25.88106,
+        71.48847
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-FE59DEE1",
+    "zoneId": "ZONE-2A4001F0",
+    "region": "Indore, Madhya Pradesh, India",
+    "habitationName": "Indore Vulnerable Settlement Sector",
+    "vulnerablePopulation": 170093,
+    "priorityRank": 11,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 88.5,
+    "mobilityConstrainedCount": 30616,
+    "destinationRefugeSector": "Indore High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 34017,
+    "availableShelterCapacity": 34017,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      22.72,
+      75.86
+    ],
+    "destinationLatLng": [
+      22.86835,
+      75.80006
+    ],
+    "curvedPath": [
+      [
+        22.72,
+        75.86
+      ],
+      [
+        22.7466,
+        75.88313
+      ],
+      [
+        22.77055,
+        75.89969
+      ],
+      [
+        22.79003,
+        75.90519
+      ],
+      [
+        22.80458,
+        75.89848
+      ],
+      [
+        22.81515,
+        75.88195
+      ],
+      [
+        22.82368,
+        75.86034
+      ],
+      [
+        22.83227,
+        75.83888
+      ],
+      [
+        22.84246,
+        75.8214
+      ],
+      [
+        22.85471,
+        75.80902
+      ],
+      [
+        22.86835,
+        75.80006
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-2E745AC0",
+    "zoneId": "ZONE-F7EFA2DD",
+    "region": "Kodagu, Karnataka, India",
+    "habitationName": "Kodagu Vulnerable Settlement Sector",
+    "vulnerablePopulation": 182132,
+    "priorityRank": 12,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 88.5,
+    "mobilityConstrainedCount": 32783,
+    "destinationRefugeSector": "Kodagu High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 36426,
+    "availableShelterCapacity": 36426,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      12.42,
+      75.74
+    ],
+    "destinationLatLng": [
+      12.46944,
+      75.58783
+    ],
+    "curvedPath": [
+      [
+        12.42,
+        75.74
+      ],
+      [
+        12.45482,
+        75.73449
+      ],
+      [
+        12.4829,
+        75.72679
+      ],
+      [
+        12.49963,
+        75.7154
+      ],
+      [
+        12.50385,
+        75.69995
+      ],
+      [
+        12.49798,
+        75.68122
+      ],
+      [
+        12.4869,
+        75.6608
+      ],
+      [
+        12.47599,
+        75.64043
+      ],
+      [
+        12.46915,
+        75.62138
+      ],
+      [
+        12.46754,
+        75.60404
+      ],
+      [
+        12.46944,
+        75.58783
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-032C6468",
+    "zoneId": "ZONE-811E8DD4",
+    "region": "Chiplun, Maharashtra, India",
+    "habitationName": "Chiplun Vulnerable Settlement Sector",
+    "vulnerablePopulation": 132623,
+    "priorityRank": 13,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 86.4,
+    "mobilityConstrainedCount": 23872,
+    "destinationRefugeSector": "Chiplun High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 26521,
+    "availableShelterCapacity": 26521,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      17.53,
+      73.52
+    ],
+    "destinationLatLng": [
+      17.39104,
+      73.64958
+    ],
+    "curvedPath": [
+      [
+        17.53,
+        73.52
+      ],
+      [
+        17.51869,
+        73.53574
+      ],
+      [
+        17.51038,
+        73.55468
+      ],
+      [
+        17.50652,
+        73.5784
+      ],
+      [
+        17.50612,
+        73.60584
+      ],
+      [
+        17.50587,
+        73.63343
+      ],
+      [
+        17.50118,
+        73.65626
+      ],
+      [
+        17.48791,
+        73.66988
+      ],
+      [
+        17.46398,
+        73.67208
+      ],
+      [
+        17.43038,
+        73.6639
+      ],
+      [
+        17.39104,
+        73.64958
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-A8FDA2D5",
+    "zoneId": "ZONE-DA8C3B3C",
+    "region": "Gangtok, Sikkim, India",
+    "habitationName": "Gangtok Vulnerable Settlement Sector",
+    "vulnerablePopulation": 331734,
+    "priorityRank": 14,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 85.7,
+    "mobilityConstrainedCount": 59712,
+    "destinationRefugeSector": "Gangtok High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 66344,
+    "availableShelterCapacity": 66344,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      27.34,
+      88.61
+    ],
+    "destinationLatLng": [
+      27.22816,
+      88.44419
+    ],
+    "curvedPath": [
+      [
+        27.34,
+        88.61
+      ],
+      [
+        27.36137,
+        88.57146
+      ],
+      [
+        27.3754,
+        88.53787
+      ],
+      [
+        27.37705,
+        88.51263
+      ],
+      [
+        27.36508,
+        88.49659
+      ],
+      [
+        27.34211,
+        88.48795
+      ],
+      [
+        27.31347,
+        88.48315
+      ],
+      [
+        27.28501,
+        88.47822
+      ],
+      [
+        27.26099,
+        88.4703
+      ],
+      [
+        27.24266,
+        88.45854
+      ],
+      [
+        27.22816,
+        88.44419
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-4DD60A0B",
+    "zoneId": "ZONE-66D13AE1",
+    "region": "Solukhumbu, Nepal",
+    "habitationName": "Solukhumbu Vulnerable Settlement Sector",
+    "vulnerablePopulation": 104851,
+    "priorityRank": 15,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 84.3,
+    "mobilityConstrainedCount": 18873,
+    "destinationRefugeSector": "Solukhumbu High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 20966,
+    "availableShelterCapacity": 20966,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      27.790973,
+      86.661108
+    ],
+    "destinationLatLng": [
+      27.67318,
+      86.63821
+    ],
+    "curvedPath": [
+      [
+        27.79097,
+        86.66111
+      ],
+      [
+        27.77874,
+        86.66117
+      ],
+      [
+        27.76597,
+        86.66396
+      ],
+      [
+        27.75242,
+        86.67079
+      ],
+      [
+        27.73825,
+        86.68077
+      ],
+      [
+        27.72406,
+        86.69089
+      ],
+      [
+        27.71066,
+        86.69696
+      ],
+      [
+        27.69877,
+        86.69524
+      ],
+      [
+        27.68876,
+        86.68383
+      ],
+      [
+        27.68046,
+        86.66363
+      ],
+      [
+        27.67318,
+        86.63821
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-3BB552C9",
+    "zoneId": "ZONE-30EA8E55",
+    "region": "Bihar, India",
+    "habitationName": "Bihar Vulnerable Settlement Sector",
+    "vulnerablePopulation": 130725310,
+    "priorityRank": 16,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 83.6,
+    "mobilityConstrainedCount": 23530555,
+    "destinationRefugeSector": "Bihar High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 26145059,
+    "availableShelterCapacity": 26145059,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      25.5941,
+      85.1376
+    ],
+    "destinationLatLng": [
+      25.67591,
+      85.23863
+    ],
+    "curvedPath": [
+      [
+        25.5941,
+        85.1376
+      ],
+      [
+        25.6043,
+        85.14607
+      ],
+      [
+        25.61683,
+        85.15265
+      ],
+      [
+        25.63284,
+        85.15641
+      ],
+      [
+        25.65155,
+        85.15799
+      ],
+      [
+        25.67037,
+        85.15948
+      ],
+      [
+        25.68572,
+        85.16377
+      ],
+      [
+        25.69439,
+        85.17349
+      ],
+      [
+        25.69475,
+        85.18992
+      ],
+      [
+        25.68756,
+        85.21247
+      ],
+      [
+        25.67591,
+        85.23863
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-8284D666",
+    "zoneId": "ZONE-15EDC4C9",
+    "region": "Gujarat, India",
+    "habitationName": "Gujarat Vulnerable Settlement Sector",
+    "vulnerablePopulation": 385000,
+    "priorityRank": 17,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 82.9,
+    "mobilityConstrainedCount": 69300,
+    "destinationRefugeSector": "Gujarat High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 77000,
+    "availableShelterCapacity": 77000,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      21.05,
+      72.9
+    ],
+    "destinationLatLng": [
+      20.93532,
+      72.9803
+    ],
+    "curvedPath": [
+      [
+        21.05,
+        72.9
+      ],
+      [
+        21.04014,
+        72.91032
+      ],
+      [
+        21.03213,
+        72.92329
+      ],
+      [
+        21.02688,
+        72.9402
+      ],
+      [
+        21.02378,
+        72.96018
+      ],
+      [
+        21.02076,
+        72.98029
+      ],
+      [
+        21.015,
+        72.99646
+      ],
+      [
+        21.00392,
+        73.00504
+      ],
+      [
+        20.98623,
+        73.00419
+      ],
+      [
+        20.96255,
+        72.99478
+      ],
+      [
+        20.93532,
+        72.9803
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-048622CC",
+    "zoneId": "ZONE-DAR5192C",
+    "region": "Darjeeling, West Bengal, India",
+    "habitationName": "Darjeeling Vulnerable Settlement Sector",
+    "vulnerablePopulation": 1846823,
+    "priorityRank": 18,
+    "priorityTier": "CRITICAL_URGENT",
+    "priorityScore": 81.5,
+    "mobilityConstrainedCount": 332428,
+    "destinationRefugeSector": "Darjeeling High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 369361,
+    "availableShelterCapacity": 369361,
+    "status": "PENDING_EVACUATION",
+    "originLatLng": [
+      27.041,
+      88.2627
+    ],
+    "destinationLatLng": [
+      27.02984,
+      88.10309
+    ],
+    "curvedPath": [
+      [
+        27.041,
+        88.2627
+      ],
+      [
+        27.07122,
+        88.24455
+      ],
+      [
+        27.09437,
+        88.22689
+      ],
+      [
+        27.10562,
+        88.21006
+      ],
+      [
+        27.10374,
+        88.19416
+      ],
+      [
+        27.09128,
+        88.17899
+      ],
+      [
+        27.07336,
+        88.1642
+      ],
+      [
+        27.05561,
+        88.14941
+      ],
+      [
+        27.04214,
+        88.13431
+      ],
+      [
+        27.03415,
+        88.11883
+      ],
+      [
+        27.02984,
+        88.10309
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-104AF6BA",
+    "zoneId": "ZONE-30CD2338",
+    "region": "Port Blair, Andaman and Nicobar Islands, India",
+    "habitationName": "Port Blair Vulnerable Settlement Sector",
+    "vulnerablePopulation": 346806,
+    "priorityRank": 19,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 79.4,
+    "mobilityConstrainedCount": 62425,
+    "destinationRefugeSector": "Port Blair High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 69358,
+    "availableShelterCapacity": 69358,
+    "status": "STAGED",
+    "originLatLng": [
+      11.62,
+      92.73
+    ],
+    "destinationLatLng": [
+      11.80815,
+      92.75644
+    ],
+    "curvedPath": [
+      [
+        11.62,
+        92.73
+      ],
+      [
+        11.63362,
+        92.76958
+      ],
+      [
+        11.64842,
+        92.80084
+      ],
+      [
+        11.66519,
+        92.81805
+      ],
+      [
+        11.68413,
+        92.81979
+      ],
+      [
+        11.70482,
+        92.80907
+      ],
+      [
+        11.72642,
+        92.7919
+      ],
+      [
+        11.74799,
+        92.77494
+      ],
+      [
+        11.76885,
+        92.76302
+      ],
+      [
+        11.78881,
+        92.75756
+      ],
+      [
+        11.80815,
+        92.75644
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-7B6E4509",
+    "zoneId": "ZONE-4876FF38",
+    "region": "Idukki, Kerala, India",
+    "habitationName": "Idukki Vulnerable Settlement Sector",
+    "vulnerablePopulation": 93743,
+    "priorityRank": 20,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 78.7,
+    "mobilityConstrainedCount": 16873,
+    "destinationRefugeSector": "Idukki High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 18745,
+    "availableShelterCapacity": 18745,
+    "status": "STAGED",
+    "originLatLng": [
+      9.849,
+      76.98
+    ],
+    "destinationLatLng": [
+      9.6501,
+      76.95909
+    ],
+    "curvedPath": [
+      [
+        9.849,
+        76.98
+      ],
+      [
+        9.83322,
+        76.93886
+      ],
+      [
+        9.8165,
+        76.90652
+      ],
+      [
+        9.79823,
+        76.88903
+      ],
+      [
+        9.77824,
+        76.88789
+      ],
+      [
+        9.75687,
+        76.89993
+      ],
+      [
+        9.73478,
+        76.91878
+      ],
+      [
+        9.71271,
+        76.93742
+      ],
+      [
+        9.6912,
+        76.95073
+      ],
+      [
+        9.67041,
+        76.95721
+      ],
+      [
+        9.6501,
+        76.95909
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-9029E085",
+    "zoneId": "ZONE-9390D319",
+    "region": "Jaisalmer, Rajasthan, India",
+    "habitationName": "Jaisalmer Vulnerable Settlement Sector",
+    "vulnerablePopulation": 91694,
+    "priorityRank": 21,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 78.7,
+    "mobilityConstrainedCount": 16504,
+    "destinationRefugeSector": "Jaisalmer High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 18336,
+    "availableShelterCapacity": 18336,
+    "status": "STAGED",
+    "originLatLng": [
+      26.92,
+      70.91
+    ],
+    "destinationLatLng": [
+      26.94783,
+      70.71195
+    ],
+    "curvedPath": [
+      [
+        26.92,
+        70.91
+      ],
+      [
+        26.96166,
+        70.89566
+      ],
+      [
+        26.99456,
+        70.88009
+      ],
+      [
+        27.01268,
+        70.86244
+      ],
+      [
+        27.01452,
+        70.8425
+      ],
+      [
+        27.00323,
+        70.82072
+      ],
+      [
+        26.98516,
+        70.79798
+      ],
+      [
+        26.96731,
+        70.77528
+      ],
+      [
+        26.95475,
+        70.75332
+      ],
+      [
+        26.94901,
+        70.73231
+      ],
+      [
+        26.94783,
+        70.71195
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-64510F74",
+    "zoneId": "ZONE-SML3021G",
+    "region": "Shimla, Himachal Pradesh, India",
+    "habitationName": "Shimla Vulnerable Settlement Sector",
+    "vulnerablePopulation": 814010,
+    "priorityRank": 22,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 78.7,
+    "mobilityConstrainedCount": 146521,
+    "destinationRefugeSector": "Shimla High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 162799,
+    "availableShelterCapacity": 162799,
+    "status": "STAGED",
+    "originLatLng": [
+      31.1048,
+      77.1734
+    ],
+    "destinationLatLng": [
+      30.95159,
+      77.04484
+    ],
+    "curvedPath": [
+      [
+        31.1048,
+        77.1734
+      ],
+      [
+        31.11472,
+        77.13047
+      ],
+      [
+        31.11895,
+        77.09431
+      ],
+      [
+        31.11358,
+        77.06959
+      ],
+      [
+        31.09764,
+        77.05747
+      ],
+      [
+        31.07319,
+        77.0555
+      ],
+      [
+        31.04433,
+        77.05877
+      ],
+      [
+        31.01562,
+        77.06188
+      ],
+      [
+        30.99034,
+        77.06089
+      ],
+      [
+        30.96948,
+        77.05463
+      ],
+      [
+        30.95159,
+        77.04484
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-3A6E7306",
+    "zoneId": "ZONE-8773563F",
+    "region": "Kathmandu Valley, Nepal",
+    "habitationName": "Kathmandu Valley Vulnerable Settlement Sector",
+    "vulnerablePopulation": 3500000,
+    "priorityRank": 23,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 78.0,
+    "mobilityConstrainedCount": 630000,
+    "destinationRefugeSector": "Kathmandu Valley High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 700000,
+    "availableShelterCapacity": 700000,
+    "status": "STAGED",
+    "originLatLng": [
+      27.704,
+      85.309
+    ],
+    "destinationLatLng": [
+      27.50666,
+      85.23718
+    ],
+    "curvedPath": [
+      [
+        27.704,
+        85.309
+      ],
+      [
+        27.69837,
+        85.26308
+      ],
+      [
+        27.68955,
+        85.22589
+      ],
+      [
+        27.67538,
+        85.20342
+      ],
+      [
+        27.6553,
+        85.19718
+      ],
+      [
+        27.63047,
+        85.20402
+      ],
+      [
+        27.60317,
+        85.21762
+      ],
+      [
+        27.57595,
+        85.231
+      ],
+      [
+        27.55066,
+        85.2391
+      ],
+      [
+        27.52783,
+        85.24042
+      ],
+      [
+        27.50666,
+        85.23718
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-4841B3BF",
+    "zoneId": "ZONE-57F64B95",
+    "region": "Majuli, Assam, India",
+    "habitationName": "Majuli Vulnerable Settlement Sector",
+    "vulnerablePopulation": 226875,
+    "priorityRank": 24,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 77.3,
+    "mobilityConstrainedCount": 40837,
+    "destinationRefugeSector": "Majuli High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 4965,
+    "availableShelterCapacity": 4965,
+    "status": "STAGED",
+    "originLatLng": [
+      26.95,
+      94.17
+    ],
+    "destinationLatLng": [
+      26.96046,
+      94.05046
+    ],
+    "curvedPath": [
+      [
+        26.95,
+        94.17
+      ],
+      [
+        26.94866,
+        94.15784
+      ],
+      [
+        26.94455,
+        94.14543
+      ],
+      [
+        26.93634,
+        94.13267
+      ],
+      [
+        26.92493,
+        94.11962
+      ],
+      [
+        26.91339,
+        94.10657
+      ],
+      [
+        26.90595,
+        94.09387
+      ],
+      [
+        26.90642,
+        94.08187
+      ],
+      [
+        26.91672,
+        94.07072
+      ],
+      [
+        26.93595,
+        94.06036
+      ],
+      [
+        26.96046,
+        94.05046
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-55DF370D",
+    "zoneId": "ZONE-PRI6610F",
+    "region": "Puri, Odisha, India",
+    "habitationName": "Puri Vulnerable Settlement Sector",
+    "vulnerablePopulation": 1698730,
+    "priorityRank": 25,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 77.3,
+    "mobilityConstrainedCount": 305771,
+    "destinationRefugeSector": "Puri High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 339743,
+    "availableShelterCapacity": 339743,
+    "status": "STAGED",
+    "originLatLng": [
+      19.8135,
+      85.8312
+    ],
+    "destinationLatLng": [
+      19.81141,
+      85.71122
+    ],
+    "curvedPath": [
+      [
+        19.8135,
+        85.8312
+      ],
+      [
+        19.81089,
+        85.81924
+      ],
+      [
+        19.80552,
+        85.80734
+      ],
+      [
+        19.79602,
+        85.7955
+      ],
+      [
+        19.7833,
+        85.78372
+      ],
+      [
+        19.77046,
+        85.77194
+      ],
+      [
+        19.76173,
+        85.76009
+      ],
+      [
+        19.76095,
+        85.7481
+      ],
+      [
+        19.77003,
+        85.73594
+      ],
+      [
+        19.78806,
+        85.72363
+      ],
+      [
+        19.81141,
+        85.71122
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-ADBFC776",
+    "zoneId": "ZONE-55DB4D9B",
+    "region": "Anantnag, Jammu and Kashmir, India",
+    "habitationName": "Anantnag Vulnerable Settlement Sector",
+    "vulnerablePopulation": 237802,
+    "priorityRank": 26,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 75.2,
+    "mobilityConstrainedCount": 42804,
+    "destinationRefugeSector": "Anantnag High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 47558,
+    "availableShelterCapacity": 47558,
+    "status": "STAGED",
+    "originLatLng": [
+      33.73,
+      75.15
+    ],
+    "destinationLatLng": [
+      33.84147,
+      75.04963
+    ],
+    "curvedPath": [
+      [
+        33.73,
+        75.15
+      ],
+      [
+        33.76085,
+        75.16185
+      ],
+      [
+        33.78726,
+        75.16876
+      ],
+      [
+        33.80618,
+        75.16735
+      ],
+      [
+        33.81685,
+        75.15679
+      ],
+      [
+        33.82086,
+        75.13883
+      ],
+      [
+        33.82144,
+        75.11705
+      ],
+      [
+        33.82213,
+        75.0954
+      ],
+      [
+        33.82551,
+        75.07673
+      ],
+      [
+        33.83233,
+        75.0619
+      ],
+      [
+        33.84147,
+        75.04963
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-01CAF2F1",
+    "zoneId": "ZONE-834403E5",
+    "region": "Pokhara, Nepal",
+    "habitationName": "Pokhara Vulnerable Settlement Sector",
+    "vulnerablePopulation": 513504,
+    "priorityRank": 27,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 75.2,
+    "mobilityConstrainedCount": 92430,
+    "destinationRefugeSector": "Pokhara High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 102700,
+    "availableShelterCapacity": 102700,
+    "status": "STAGED",
+    "originLatLng": [
+      28.26689,
+      83.96851
+    ],
+    "destinationLatLng": [
+      28.14554,
+      84.05668
+    ],
+    "curvedPath": [
+      [
+        28.26689,
+        83.96851
+      ],
+      [
+        28.23745,
+        83.9535
+      ],
+      [
+        28.2119,
+        83.94387
+      ],
+      [
+        28.19294,
+        83.94329
+      ],
+      [
+        28.18123,
+        83.95269
+      ],
+      [
+        28.17536,
+        83.97012
+      ],
+      [
+        28.1725,
+        83.99172
+      ],
+      [
+        28.16956,
+        84.01318
+      ],
+      [
+        28.16425,
+        84.03139
+      ],
+      [
+        28.15591,
+        84.04544
+      ],
+      [
+        28.14554,
+        84.05668
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-FE00FF21",
+    "zoneId": "ZONE-900AED0E",
+    "region": "Sohra, Meghalaya, India",
+    "habitationName": "Sohra Vulnerable Settlement Sector",
+    "vulnerablePopulation": 97587,
+    "priorityRank": 28,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 75.2,
+    "mobilityConstrainedCount": 17565,
+    "destinationRefugeSector": "Sohra High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 19513,
+    "availableShelterCapacity": 19513,
+    "status": "STAGED",
+    "originLatLng": [
+      25.27,
+      91.73
+    ],
+    "destinationLatLng": [
+      25.28828,
+      91.87888
+    ],
+    "curvedPath": [
+      [
+        25.27,
+        91.73
+      ],
+      [
+        25.2748,
+        91.74452
+      ],
+      [
+        25.28305,
+        91.75862
+      ],
+      [
+        25.2964,
+        91.7721
+      ],
+      [
+        25.31374,
+        91.78508
+      ],
+      [
+        25.33125,
+        91.79804
+      ],
+      [
+        25.34365,
+        91.81163
+      ],
+      [
+        25.34619,
+        91.82643
+      ],
+      [
+        25.33649,
+        91.84274
+      ],
+      [
+        25.31568,
+        91.8604
+      ],
+      [
+        25.28828,
+        91.87888
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-E616C33A",
+    "zoneId": "ZONE-627F9374",
+    "region": "Kendrapara, Odisha, India",
+    "habitationName": "Kendrapara Vulnerable Settlement Sector",
+    "vulnerablePopulation": 207517,
+    "priorityRank": 29,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 74.5,
+    "mobilityConstrainedCount": 37353,
+    "destinationRefugeSector": "Kendrapara High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 41502,
+    "availableShelterCapacity": 41502,
+    "status": "STAGED",
+    "originLatLng": [
+      20.5,
+      86.42
+    ],
+    "destinationLatLng": [
+      20.34965,
+      86.36528
+    ],
+    "curvedPath": [
+      [
+        20.5,
+        86.42
+      ],
+      [
+        20.49571,
+        86.38501
+      ],
+      [
+        20.48899,
+        86.35668
+      ],
+      [
+        20.4782,
+        86.33956
+      ],
+      [
+        20.4629,
+        86.33481
+      ],
+      [
+        20.44398,
+        86.34002
+      ],
+      [
+        20.42318,
+        86.35038
+      ],
+      [
+        20.40244,
+        86.36057
+      ],
+      [
+        20.38317,
+        86.36674
+      ],
+      [
+        20.36578,
+        86.36775
+      ],
+      [
+        20.34965,
+        86.36528
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-5C86C830",
+    "zoneId": "ZONE-CF1F01BD",
+    "region": "Korba, Chhattisgarh, India",
+    "habitationName": "Korba Vulnerable Settlement Sector",
+    "vulnerablePopulation": 187341,
+    "priorityRank": 30,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 74.5,
+    "mobilityConstrainedCount": 33721,
+    "destinationRefugeSector": "Korba High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 37467,
+    "availableShelterCapacity": 37467,
+    "status": "STAGED",
+    "originLatLng": [
+      22.36,
+      82.75
+    ],
+    "destinationLatLng": [
+      22.51525,
+      82.78871
+    ],
+    "curvedPath": [
+      [
+        22.36,
+        82.75
+      ],
+      [
+        22.36793,
+        82.78435
+      ],
+      [
+        22.37756,
+        82.81183
+      ],
+      [
+        22.39009,
+        82.82772
+      ],
+      [
+        22.4058,
+        82.83085
+      ],
+      [
+        22.42408,
+        82.82369
+      ],
+      [
+        22.44368,
+        82.81122
+      ],
+      [
+        22.46324,
+        82.79891
+      ],
+      [
+        22.48176,
+        82.79076
+      ],
+      [
+        22.49895,
+        82.78794
+      ],
+      [
+        22.51525,
+        82.78871
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-DCA761CD",
+    "zoneId": "ZONE-3D1937AC",
+    "region": "Sundarbans, West Bengal, India",
+    "habitationName": "Sundarbans Vulnerable Settlement Sector",
+    "vulnerablePopulation": 373796,
+    "priorityRank": 31,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 73.8,
+    "mobilityConstrainedCount": 67283,
+    "destinationRefugeSector": "Sundarbans High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 74759,
+    "availableShelterCapacity": 74759,
+    "status": "STAGED",
+    "originLatLng": [
+      21.95,
+      88.9
+    ],
+    "destinationLatLng": [
+      22.04751,
+      89.03926
+    ],
+    "curvedPath": [
+      [
+        21.95,
+        88.9
+      ],
+      [
+        21.96253,
+        88.91198
+      ],
+      [
+        21.97828,
+        88.9217
+      ],
+      [
+        21.99882,
+        88.92808
+      ],
+      [
+        22.02308,
+        88.93184
+      ],
+      [
+        22.0475,
+        88.9355
+      ],
+      [
+        22.06714,
+        88.9425
+      ],
+      [
+        22.07756,
+        88.95596
+      ],
+      [
+        22.07652,
+        88.97744
+      ],
+      [
+        22.0651,
+        89.00619
+      ],
+      [
+        22.04751,
+        89.03926
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-AD750897",
+    "zoneId": "ZONE-27F52735",
+    "region": "Itanagar, Arunachal Pradesh, India",
+    "habitationName": "Itanagar Vulnerable Settlement Sector",
+    "vulnerablePopulation": 374815,
+    "priorityRank": 32,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 72.4,
+    "mobilityConstrainedCount": 67466,
+    "destinationRefugeSector": "Itanagar High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 74959,
+    "availableShelterCapacity": 74959,
+    "status": "STAGED",
+    "originLatLng": [
+      27.08,
+      93.61
+    ],
+    "destinationLatLng": [
+      27.05356,
+      93.42185
+    ],
+    "curvedPath": [
+      [
+        27.08,
+        93.61
+      ],
+      [
+        27.11429,
+        93.58599
+      ],
+      [
+        27.14026,
+        93.56316
+      ],
+      [
+        27.15218,
+        93.5423
+      ],
+      [
+        27.14864,
+        93.52361
+      ],
+      [
+        27.13263,
+        93.50667
+      ],
+      [
+        27.11018,
+        93.49064
+      ],
+      [
+        27.08793,
+        93.47458
+      ],
+      [
+        27.07071,
+        93.45781
+      ],
+      [
+        27.05996,
+        93.44014
+      ],
+      [
+        27.05356,
+        93.42185
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-AE3991D1",
+    "zoneId": "ZONE-C9A093A4",
+    "region": "Bharuch, Gujarat, India",
+    "habitationName": "Bharuch Vulnerable Settlement Sector",
+    "vulnerablePopulation": 345988,
+    "priorityRank": 33,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 71.7,
+    "mobilityConstrainedCount": 62277,
+    "destinationRefugeSector": "Bharuch High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 69197,
+    "availableShelterCapacity": 69197,
+    "status": "STAGED",
+    "originLatLng": [
+      21.71,
+      73.0
+    ],
+    "destinationLatLng": [
+      21.74816,
+      73.19633
+    ],
+    "curvedPath": [
+      [
+        21.71,
+        73.0
+      ],
+      [
+        21.71774,
+        73.01887
+      ],
+      [
+        21.73001,
+        73.03686
+      ],
+      [
+        21.74903,
+        73.05354
+      ],
+      [
+        21.77331,
+        73.06919
+      ],
+      [
+        21.7978,
+        73.08481
+      ],
+      [
+        21.81556,
+        73.10173
+      ],
+      [
+        21.82031,
+        73.12118
+      ],
+      [
+        21.80893,
+        73.14377
+      ],
+      [
+        21.78289,
+        73.16921
+      ],
+      [
+        21.74816,
+        73.19633
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-A7B34D65",
+    "zoneId": "ZONE-7905515B",
+    "region": "North Goa, Goa, India",
+    "habitationName": "North Goa Vulnerable Settlement Sector",
+    "vulnerablePopulation": 307208,
+    "priorityRank": 34,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 71.7,
+    "mobilityConstrainedCount": 55297,
+    "destinationRefugeSector": "North Goa High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 61441,
+    "availableShelterCapacity": 61441,
+    "status": "STAGED",
+    "originLatLng": [
+      15.55,
+      73.81
+    ],
+    "destinationLatLng": [
+      15.73126,
+      73.72548
+    ],
+    "curvedPath": [
+      [
+        15.55,
+        73.81
+      ],
+      [
+        15.56644,
+        73.79792
+      ],
+      [
+        15.58092,
+        73.78166
+      ],
+      [
+        15.5925,
+        73.75918
+      ],
+      [
+        15.60182,
+        73.73184
+      ],
+      [
+        15.61105,
+        73.7043
+      ],
+      [
+        15.62317,
+        73.68297
+      ],
+      [
+        15.64089,
+        73.67365
+      ],
+      [
+        15.66556,
+        73.67924
+      ],
+      [
+        15.69654,
+        73.69835
+      ],
+      [
+        15.73126,
+        73.72548
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-05ED741A",
+    "zoneId": "ZONE-LEH8803J",
+    "region": "Leh, Ladakh, India",
+    "habitationName": "Leh Vulnerable Settlement Sector",
+    "vulnerablePopulation": 133487,
+    "priorityRank": 35,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 71.0,
+    "mobilityConstrainedCount": 24027,
+    "destinationRefugeSector": "Leh High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 26693,
+    "availableShelterCapacity": 26693,
+    "status": "STAGED",
+    "originLatLng": [
+      34.1526,
+      77.5771
+    ],
+    "destinationLatLng": [
+      34.1709,
+      77.3679
+    ],
+    "curvedPath": [
+      [
+        34.1526,
+        77.5771
+      ],
+      [
+        34.15025,
+        77.55581
+      ],
+      [
+        34.14307,
+        77.53411
+      ],
+      [
+        34.1287,
+        77.51177
+      ],
+      [
+        34.10873,
+        77.48894
+      ],
+      [
+        34.08853,
+        77.46609
+      ],
+      [
+        34.0755,
+        77.44388
+      ],
+      [
+        34.07633,
+        77.42287
+      ],
+      [
+        34.09436,
+        77.40336
+      ],
+      [
+        34.128,
+        77.38523
+      ],
+      [
+        34.1709,
+        77.3679
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-465A84CC",
+    "zoneId": "ZONE-02D53772",
+    "region": "Mustang, Nepal",
+    "habitationName": "Mustang Vulnerable Settlement Sector",
+    "vulnerablePopulation": 14452,
+    "priorityRank": 36,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 71.0,
+    "mobilityConstrainedCount": 2601,
+    "destinationRefugeSector": "Mustang High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 2890,
+    "availableShelterCapacity": 2890,
+    "status": "STAGED",
+    "originLatLng": [
+      28.7833,
+      83.725
+    ],
+    "destinationLatLng": [
+      28.77597,
+      83.93487
+    ],
+    "curvedPath": [
+      [
+        28.7833,
+        83.725
+      ],
+      [
+        28.74136,
+        83.74455
+      ],
+      [
+        28.70872,
+        83.76442
+      ],
+      [
+        28.69174,
+        83.78484
+      ],
+      [
+        28.692,
+        83.80586
+      ],
+      [
+        28.70618,
+        83.82737
+      ],
+      [
+        28.72755,
+        83.84913
+      ],
+      [
+        28.74868,
+        83.87088
+      ],
+      [
+        28.7642,
+        83.89243
+      ],
+      [
+        28.77251,
+        83.91374
+      ],
+      [
+        28.77597,
+        83.93487
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-29F0CCBA",
+    "zoneId": "ZONE-43153C1D",
+    "region": "Rupnagar, Punjab, India",
+    "habitationName": "Rupnagar Vulnerable Settlement Sector",
+    "vulnerablePopulation": 163165,
+    "priorityRank": 37,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 70.3,
+    "mobilityConstrainedCount": 29369,
+    "destinationRefugeSector": "Rupnagar High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 32631,
+    "availableShelterCapacity": 32631,
+    "status": "STAGED",
+    "originLatLng": [
+      30.97,
+      76.52
+    ],
+    "destinationLatLng": [
+      30.89778,
+      76.42416
+    ],
+    "curvedPath": [
+      [
+        30.97,
+        76.52
+      ],
+      [
+        30.96086,
+        76.51186
+      ],
+      [
+        30.94951,
+        76.50539
+      ],
+      [
+        30.93487,
+        76.50139
+      ],
+      [
+        30.91766,
+        76.49934
+      ],
+      [
+        30.90035,
+        76.49736
+      ],
+      [
+        30.88632,
+        76.4929
+      ],
+      [
+        30.87864,
+        76.48366
+      ],
+      [
+        30.87883,
+        76.46849
+      ],
+      [
+        30.88619,
+        76.44792
+      ],
+      [
+        30.89778,
+        76.42416
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-DBBDDEF2",
+    "zoneId": "ZONE-WYN4921A",
+    "region": "Wayanad, Kerala, India",
+    "habitationName": "Wayanad Vulnerable Settlement Sector",
+    "vulnerablePopulation": 817420,
+    "priorityRank": 38,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 68.9,
+    "mobilityConstrainedCount": 147135,
+    "destinationRefugeSector": "Wayanad High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 163484,
+    "availableShelterCapacity": 163484,
+    "status": "STAGED",
+    "originLatLng": [
+      11.605,
+      76.132
+    ],
+    "destinationLatLng": [
+      11.74287,
+      76.15631
+    ],
+    "curvedPath": [
+      [
+        11.605,
+        76.132
+      ],
+      [
+        11.61401,
+        76.1615
+      ],
+      [
+        11.6241,
+        76.18489
+      ],
+      [
+        11.63601,
+        76.198
+      ],
+      [
+        11.64991,
+        76.19977
+      ],
+      [
+        11.66543,
+        76.19241
+      ],
+      [
+        11.68177,
+        76.18032
+      ],
+      [
+        11.69809,
+        76.16839
+      ],
+      [
+        11.71376,
+        76.16014
+      ],
+      [
+        11.7286,
+        76.15663
+      ],
+      [
+        11.74287,
+        76.15631
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-8ED792EB",
+    "zoneId": "ZONE-9195C606",
+    "region": "Pithoragarh, Uttarakhand, India",
+    "habitationName": "Pithoragarh Vulnerable Settlement Sector",
+    "vulnerablePopulation": 387046,
+    "priorityRank": 39,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 68.2,
+    "mobilityConstrainedCount": 69668,
+    "destinationRefugeSector": "Pithoragarh High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 77406,
+    "availableShelterCapacity": 77406,
+    "status": "STAGED",
+    "originLatLng": [
+      29.58,
+      80.22
+    ],
+    "destinationLatLng": [
+      29.72672,
+      80.25119
+    ],
+    "curvedPath": [
+      [
+        29.58,
+        80.22
+      ],
+      [
+        29.58855,
+        80.25192
+      ],
+      [
+        29.59848,
+        80.27735
+      ],
+      [
+        29.61073,
+        80.29183
+      ],
+      [
+        29.62556,
+        80.29425
+      ],
+      [
+        29.64244,
+        80.28695
+      ],
+      [
+        29.6604,
+        80.27462
+      ],
+      [
+        29.67832,
+        80.26245
+      ],
+      [
+        29.69541,
+        80.25421
+      ],
+      [
+        29.71142,
+        80.251
+      ],
+      [
+        29.72672,
+        80.25119
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-0E51477D",
+    "zoneId": "ZONE-CCH7734D",
+    "region": "Cachar, Assam, India",
+    "habitationName": "Cachar Vulnerable Settlement Sector",
+    "vulnerablePopulation": 1736617,
+    "priorityRank": 40,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 67.5,
+    "mobilityConstrainedCount": 312591,
+    "destinationRefugeSector": "Cachar High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 347322,
+    "availableShelterCapacity": 347322,
+    "status": "STAGED",
+    "originLatLng": [
+      24.8333,
+      92.7976
+    ],
+    "destinationLatLng": [
+      24.73701,
+      92.92538
+    ],
+    "curvedPath": [
+      [
+        24.8333,
+        92.7976
+      ],
+      [
+        24.82623,
+        92.8123
+      ],
+      [
+        24.8221,
+        92.82923
+      ],
+      [
+        24.82237,
+        92.84946
+      ],
+      [
+        24.82605,
+        92.87227
+      ],
+      [
+        24.82988,
+        92.89519
+      ],
+      [
+        24.82933,
+        92.91481
+      ],
+      [
+        24.82031,
+        92.92805
+      ],
+      [
+        24.80078,
+        92.93337
+      ],
+      [
+        24.77173,
+        92.93151
+      ],
+      [
+        24.73701,
+        92.92538
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-D75A0C77",
+    "zoneId": "ZONE-17582CBA",
+    "region": "Ambala, Haryana, India",
+    "habitationName": "Ambala Vulnerable Settlement Sector",
+    "vulnerablePopulation": 340891,
+    "priorityRank": 41,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 66.8,
+    "mobilityConstrainedCount": 61360,
+    "destinationRefugeSector": "Ambala High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 68174,
+    "availableShelterCapacity": 68174,
+    "status": "STAGED",
+    "originLatLng": [
+      30.38,
+      76.78
+    ],
+    "destinationLatLng": [
+      30.44368,
+      76.62238
+    ],
+    "curvedPath": [
+      [
+        30.38,
+        76.78
+      ],
+      [
+        30.41731,
+        76.77674
+      ],
+      [
+        30.44765,
+        76.77066
+      ],
+      [
+        30.46622,
+        76.75983
+      ],
+      [
+        30.47184,
+        76.74376
+      ],
+      [
+        30.46701,
+        76.72348
+      ],
+      [
+        30.45678,
+        76.70101
+      ],
+      [
+        30.44672,
+        76.67861
+      ],
+      [
+        30.44088,
+        76.65792
+      ],
+      [
+        30.44046,
+        76.63941
+      ],
+      [
+        30.44368,
+        76.62238
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-B0A71ED4",
+    "zoneId": "ZONE-CHM8301B",
+    "region": "Chamoli, Uttarakhand, India",
+    "habitationName": "Chamoli Vulnerable Settlement Sector",
+    "vulnerablePopulation": 391600,
+    "priorityRank": 42,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 66.8,
+    "mobilityConstrainedCount": 70488,
+    "destinationRefugeSector": "Chamoli High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 78320,
+    "availableShelterCapacity": 78320,
+    "status": "STAGED",
+    "originLatLng": [
+      30.4,
+      79.33
+    ],
+    "destinationLatLng": [
+      30.45814,
+      79.17025
+    ],
+    "curvedPath": [
+      [
+        30.4,
+        79.33
+      ],
+      [
+        30.43718,
+        79.32544
+      ],
+      [
+        30.46728,
+        79.31831
+      ],
+      [
+        30.48547,
+        79.30683
+      ],
+      [
+        30.49052,
+        79.29058
+      ],
+      [
+        30.48498,
+        79.27047
+      ],
+      [
+        30.47398,
+        79.24838
+      ],
+      [
+        30.46314,
+        79.22634
+      ],
+      [
+        30.45659,
+        79.20587
+      ],
+      [
+        30.45552,
+        79.18739
+      ],
+      [
+        30.45814,
+        79.17025
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-4EF805D9",
+    "zoneId": "ZONE-A08DE16E",
+    "region": "Imphal, Manipur, India",
+    "habitationName": "Imphal Vulnerable Settlement Sector",
+    "vulnerablePopulation": 113042,
+    "priorityRank": 43,
+    "priorityTier": "HIGH_PRIORITY",
+    "priorityScore": 66.1,
+    "mobilityConstrainedCount": 20347,
+    "destinationRefugeSector": "Imphal High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 22606,
+    "availableShelterCapacity": 22606,
+    "status": "STAGED",
+    "originLatLng": [
+      24.82,
+      93.94
+    ],
+    "destinationLatLng": [
+      24.70918,
+      94.08184
+    ],
+    "curvedPath": [
+      [
+        24.82,
+        93.94
+      ],
+      [
+        24.78107,
+        93.93243
+      ],
+      [
+        24.74842,
+        93.92976
+      ],
+      [
+        24.72636,
+        93.93536
+      ],
+      [
+        24.71595,
+        93.95008
+      ],
+      [
+        24.71495,
+        93.97213
+      ],
+      [
+        24.7188,
+        93.99799
+      ],
+      [
+        24.7225,
+        94.02372
+      ],
+      [
+        24.7224,
+        94.04648
+      ],
+      [
+        24.71743,
+        94.06544
+      ],
+      [
+        24.70918,
+        94.08184
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-B5DF94DD",
+    "zoneId": "ZONE-E67CA0A9",
+    "region": "Unakoti, Tripura, India",
+    "habitationName": "Unakoti Vulnerable Settlement Sector",
+    "vulnerablePopulation": 180630,
+    "priorityRank": 44,
+    "priorityTier": "MEDIUM_PRIORITY",
+    "priorityScore": 64.0,
+    "mobilityConstrainedCount": 32513,
+    "destinationRefugeSector": "Unakoti High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 36123,
+    "availableShelterCapacity": 36123,
+    "status": "STAGED",
+    "originLatLng": [
+      24.33,
+      92.02
+    ],
+    "destinationLatLng": [
+      24.12029,
+      92.03099
+    ],
+    "curvedPath": [
+      [
+        24.33,
+        92.02
+      ],
+      [
+        24.30925,
+        92.02529
+      ],
+      [
+        24.28875,
+        92.03542
+      ],
+      [
+        24.26863,
+        92.05276
+      ],
+      [
+        24.24881,
+        92.07571
+      ],
+      [
+        24.22899,
+        92.09889
+      ],
+      [
+        24.2088,
+        92.11489
+      ],
+      [
+        24.18788,
+        92.11699
+      ],
+      [
+        24.16606,
+        92.10185
+      ],
+      [
+        24.14342,
+        92.07106
+      ],
+      [
+        24.12029,
+        92.03099
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-58240BD3",
+    "zoneId": "ZONE-8915D2BE",
+    "region": "Assam, India",
+    "habitationName": "Assam Vulnerable Settlement Sector",
+    "vulnerablePopulation": 1500000,
+    "priorityRank": 45,
+    "priorityTier": "MEDIUM_PRIORITY",
+    "priorityScore": 61.2,
+    "mobilityConstrainedCount": 270000,
+    "destinationRefugeSector": "Assam High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 300000,
+    "availableShelterCapacity": 300000,
+    "status": "STAGED",
+    "originLatLng": [
+      26.1445,
+      91.7362
+    ],
+    "destinationLatLng": [
+      26.29413,
+      91.72574
+    ],
+    "curvedPath": [
+      [
+        26.1445,
+        91.7362
+      ],
+      [
+        26.16152,
+        91.76453
+      ],
+      [
+        26.17807,
+        91.78624
+      ],
+      [
+        26.19384,
+        91.79678
+      ],
+      [
+        26.20876,
+        91.79502
+      ],
+      [
+        26.22298,
+        91.78334
+      ],
+      [
+        26.23684,
+        91.76654
+      ],
+      [
+        26.25071,
+        91.7499
+      ],
+      [
+        26.26486,
+        91.73727
+      ],
+      [
+        26.27938,
+        91.72978
+      ],
+      [
+        26.29413,
+        91.72574
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-9313BE3F",
+    "zoneId": "ZONE-36F6C5FB",
+    "region": "Gorakhpur, Uttar Pradesh, India",
+    "habitationName": "Gorakhpur Vulnerable Settlement Sector",
+    "vulnerablePopulation": 136035,
+    "priorityRank": 46,
+    "priorityTier": "MEDIUM_PRIORITY",
+    "priorityScore": 59.8,
+    "mobilityConstrainedCount": 24486,
+    "destinationRefugeSector": "Gorakhpur High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 27203,
+    "availableShelterCapacity": 27203,
+    "status": "STAGED",
+    "originLatLng": [
+      26.76,
+      83.37
+    ],
+    "destinationLatLng": [
+      26.82915,
+      83.2147
+    ],
+    "curvedPath": [
+      [
+        26.76,
+        83.37
+      ],
+      [
+        26.7974,
+        83.36805
+      ],
+      [
+        26.82793,
+        83.36303
+      ],
+      [
+        26.84687,
+        83.35286
+      ],
+      [
+        26.85305,
+        83.33699
+      ],
+      [
+        26.84893,
+        83.31655
+      ],
+      [
+        26.83949,
+        83.29374
+      ],
+      [
+        26.83022,
+        83.27101
+      ],
+      [
+        26.82511,
+        83.25012
+      ],
+      [
+        26.82534,
+        83.23161
+      ],
+      [
+        26.82915,
+        83.2147
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-EE801B83",
+    "zoneId": "ZONE-7F4EEDC5",
+    "region": "Himachal Pradesh, India",
+    "habitationName": "Himachal Pradesh Vulnerable Settlement Sector",
+    "vulnerablePopulation": 350000,
+    "priorityRank": 47,
+    "priorityTier": "MEDIUM_PRIORITY",
+    "priorityScore": 59.8,
+    "mobilityConstrainedCount": 63000,
+    "destinationRefugeSector": "Himachal Pradesh High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 70000,
+    "availableShelterCapacity": 70000,
+    "status": "STAGED",
+    "originLatLng": [
+      31.7089,
+      76.9261
+    ],
+    "destinationLatLng": [
+      31.54915,
+      76.98424
+    ],
+    "curvedPath": [
+      [
+        31.7089,
+        76.9261
+      ],
+      [
+        31.68151,
+        76.90055
+      ],
+      [
+        31.65669,
+        76.88207
+      ],
+      [
+        31.63622,
+        76.87552
+      ],
+      [
+        31.62052,
+        76.8821
+      ],
+      [
+        31.60868,
+        76.89926
+      ],
+      [
+        31.59882,
+        76.92189
+      ],
+      [
+        31.58891,
+        76.94435
+      ],
+      [
+        31.57743,
+        76.96254
+      ],
+      [
+        31.56396,
+        76.97523
+      ],
+      [
+        31.54915,
+        76.98424
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-87B69D95",
+    "zoneId": "ZONE-JSH1029E",
+    "region": "Joshimath, Uttarakhand, India",
+    "habitationName": "Joshimath Vulnerable Settlement Sector",
+    "vulnerablePopulation": 23000,
+    "priorityRank": 48,
+    "priorityTier": "MEDIUM_PRIORITY",
+    "priorityScore": 59.8,
+    "mobilityConstrainedCount": 4140,
+    "destinationRefugeSector": "Joshimath High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 4600,
+    "availableShelterCapacity": 4600,
+    "status": "STAGED",
+    "originLatLng": [
+      30.55,
+      79.5667
+    ],
+    "destinationLatLng": [
+      30.56482,
+      79.39735
+    ],
+    "curvedPath": [
+      [
+        30.55,
+        79.5667
+      ],
+      [
+        30.5481,
+        79.54947
+      ],
+      [
+        30.54228,
+        79.5319
+      ],
+      [
+        30.53065,
+        79.51381
+      ],
+      [
+        30.51449,
+        79.49533
+      ],
+      [
+        30.49814,
+        79.47684
+      ],
+      [
+        30.48759,
+        79.45885
+      ],
+      [
+        30.48826,
+        79.44184
+      ],
+      [
+        30.50286,
+        79.42606
+      ],
+      [
+        30.53009,
+        79.41138
+      ],
+      [
+        30.56482,
+        79.39735
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-3326170F",
+    "zoneId": "ZONE-KTC4012I",
+    "region": "Kutch, Gujarat, India",
+    "habitationName": "Kutch Vulnerable Settlement Sector",
+    "vulnerablePopulation": 2092371,
+    "priorityRank": 49,
+    "priorityTier": "MEDIUM_PRIORITY",
+    "priorityScore": 59.8,
+    "mobilityConstrainedCount": 376626,
+    "destinationRefugeSector": "Kutch High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 418470,
+    "availableShelterCapacity": 418470,
+    "status": "STAGED",
+    "originLatLng": [
+      23.25,
+      69.6667
+    ],
+    "destinationLatLng": [
+      23.294,
+      69.50249
+    ],
+    "curvedPath": [
+      [
+        23.25,
+        69.6667
+      ],
+      [
+        23.25112,
+        69.6494
+      ],
+      [
+        23.24844,
+        69.63108
+      ],
+      [
+        23.24013,
+        69.61126
+      ],
+      [
+        23.22742,
+        69.59025
+      ],
+      [
+        23.21453,
+        69.5692
+      ],
+      [
+        23.20726,
+        69.54965
+      ],
+      [
+        23.21088,
+        69.53302
+      ],
+      [
+        23.22799,
+        69.52
+      ],
+      [
+        23.25736,
+        69.51027
+      ],
+      [
+        23.294,
+        69.50249
+      ]
+    ]
+  },
+  {
+    "relocationId": "REL-C8870ABF",
+    "zoneId": "ZONE-36162539",
+    "region": "Bhadrachalam, Telangana, India",
+    "habitationName": "Bhadrachalam Vulnerable Settlement Sector",
+    "vulnerablePopulation": 178615,
+    "priorityRank": 50,
+    "priorityTier": "MEDIUM_PRIORITY",
+    "priorityScore": 59.1,
+    "mobilityConstrainedCount": 32150,
+    "destinationRefugeSector": "Bhadrachalam High-Ground Safe Haven & Refuge Complex",
+    "destinationRiskScore": "LOW RISK (1.8 / 10)",
+    "allocatedShelterBeds": 35719,
+    "availableShelterCapacity": 35719,
+    "status": "STAGED",
+    "originLatLng": [
+      17.67,
+      80.89
+    ],
+    "destinationLatLng": [
+      17.57196,
+      81.04096
+    ],
+    "curvedPath": [
+      [
+        17.67,
+        80.89
+      ],
+      [
+        17.66321,
+        80.90706
+      ],
+      [
+        17.65991,
+        80.92638
+      ],
+      [
+        17.6618,
+        80.94906
+      ],
+      [
+        17.66772,
+        80.97437
+      ],
+      [
+        17.67382,
+        80.99979
+      ],
+      [
+        17.67474,
+        81.02185
+      ],
+      [
+        17.66565,
+        81.03742
+      ],
+      [
+        17.64416,
+        81.04492
+      ],
+      [
+        17.6114,
+        81.04511
+      ],
+      [
+        17.57196,
+        81.04096
+      ]
+    ]
+  }
+]

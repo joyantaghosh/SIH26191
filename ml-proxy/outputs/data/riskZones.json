@@ -1,0 +1,1193 @@
+[
+  {
+    "zoneId": "ZONE-7F24D4C1",
+    "name": "Aizawl Multi-Hazard Active Disaster Zone",
+    "region": "Aizawl, Mizoram, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Aizawl, Mizoram, India.",
+    "hazardTypes": [
+      "landslide",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.83,
+    "severityIndex": 8.3,
+    "population": 341558,
+    "households": 83306,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        92.72,
+        23.73
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-17582CBA",
+    "name": "Ambala Multi-Hazard Active Disaster Zone",
+    "region": "Ambala, Haryana, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Ambala, Haryana, India.",
+    "hazardTypes": [
+      "flood",
+      "flash_flood"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.59,
+    "severityIndex": 5.9,
+    "population": 340891,
+    "households": 83144,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        76.78,
+        30.38
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-55DB4D9B",
+    "name": "Anantnag Multi-Hazard Active Disaster Zone",
+    "region": "Anantnag, Jammu and Kashmir, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Anantnag, Jammu and Kashmir, India.",
+    "hazardTypes": [
+      "flood",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.82,
+    "severityIndex": 8.2,
+    "population": 237802,
+    "households": 58000,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        75.15,
+        33.73
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-8915D2BE",
+    "name": "Assam Monsoon Flooding and Guwahati Landslide Zone",
+    "region": "Assam, India",
+    "description": "Assam is currently experiencing a fresh spell of monsoon flooding, affecting over 25,000 people across seven districts with the Dhansiri and Katakhal rivers flowing above danger levels. Recent heavy rainfall also triggered deadly landslides in Guwahati. The region faces persistent risks from annual floods, and is situated in Seismic Zone V, making it highly vulnerable to major earthquakes and associated hazards like liquefaction and landslides.",
+    "hazardTypes": [
+      "flood",
+      "landslide",
+      "earthquake",
+      "flash_flood",
+      "debris_flow"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.85,
+    "severityIndex": 8.5,
+    "population": 1500000,
+    "households": 375000,
+    "radiusMeters": 50000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        91.7362,
+        26.1445
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-BMR9104H",
+    "name": "Luni River Basin Anomalous Monsoon Flash Flood Zone",
+    "region": "Barmer, Rajasthan, India",
+    "description": "Barmer faces sudden desert flash flooding and river overflows along the ephemeral Luni River basin due to intense anomalous monsoon rain spells. Normally arid sandy terrain suffers rapid surface run-off and inundation in low-lying salt flats (Rann areas), stranding agricultural settlements and rural transport networks.",
+    "hazardTypes": [
+      "flash_flood",
+      "flood",
+      "cyclone"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.68,
+    "severityIndex": 7.2,
+    "population": 2603751,
+    "households": 650937,
+    "radiusMeters": 60000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        71.3967,
+        25.75
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-36162539",
+    "name": "Bhadrachalam Multi-Hazard Active Disaster Zone",
+    "region": "Bhadrachalam, Telangana, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Bhadrachalam, Telangana, India.",
+    "hazardTypes": [
+      "flood",
+      "flash_flood"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.79,
+    "severityIndex": 7.9,
+    "population": 178615,
+    "households": 43564,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        80.89,
+        17.67
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-C9A093A4",
+    "name": "Bharuch Multi-Hazard Active Disaster Zone",
+    "region": "Bharuch, Gujarat, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Bharuch, Gujarat, India.",
+    "hazardTypes": [
+      "flood",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.76,
+    "severityIndex": 7.6,
+    "population": 345988,
+    "households": 84387,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        73.0,
+        21.71
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-30EA8E55",
+    "name": "Ganga-Kosi-Gandak River Basins Active Flood Zone",
+    "region": "Bihar, India",
+    "description": "Bihar is currently experiencing critical flood conditions with the Ganga, Kosi, Gandak, and other major rivers flowing significantly above danger marks, impacting at least 13 districts including Patna, Bhagalpur, and Muzaffarpur. This is exacerbated by heavy monsoon rainfall and recent flash floods originating from Nepal. The region also faces a high baseline risk from earthquakes, with most areas falling into seismic zones IV and V, and localized landslide susceptibility.",
+    "hazardTypes": [
+      "flood",
+      "flash_flood",
+      "landslide",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.85,
+    "severityIndex": 9.0,
+    "population": 130725310,
+    "households": 32681328,
+    "radiusMeters": 150000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        85.1376,
+        25.5941
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-CCH7734D",
+    "name": "Barak River Valley Active Monsoon Flood and Inundation Zone",
+    "region": "Cachar, Assam, India",
+    "description": "Cachar is suffering widespread monsoon inundation from the swollen Barak River and its tributaries, submerging agricultural tracts and residential wards across Silchar sub-division. Continuous rain in headwater catchment areas has breached local embankments, raising flash flood risks and waterlogging in low-lying rural blocks.",
+    "hazardTypes": [
+      "flood",
+      "flash_flood",
+      "landslide",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.86,
+    "severityIndex": 8.8,
+    "population": 1736617,
+    "households": 434154,
+    "radiusMeters": 40000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        92.7976,
+        24.8333
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-CHM8301B",
+    "name": "Rishi Ganga Basin Glacial Outburst and Flash Flood Zone",
+    "region": "Chamoli, Uttarakhand, India",
+    "description": "Chamoli is under heightened alert for Glacial Lake Outburst Floods (GLOFs) and rapid flash flooding in the Rishi Ganga and Dhauli Ganga river basins following active glacial lake expansion in the Nanda Devi sanctuary region. Ongoing monsoon downpours have triggered localized rock-ice avalanches and secondary slope failures threatening downstream hydro projects.",
+    "hazardTypes": [
+      "glof",
+      "flash_flood",
+      "landslide",
+      "debris_flow",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.88,
+    "severityIndex": 9.1,
+    "population": 391600,
+    "households": 97900,
+    "radiusMeters": 35000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        79.33,
+        30.4
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-811E8DD4",
+    "name": "Chiplun Multi-Hazard Active Disaster Zone",
+    "region": "Chiplun, Maharashtra, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Chiplun, Maharashtra, India.",
+    "hazardTypes": [
+      "flood",
+      "landslide"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.9,
+    "severityIndex": 9.0,
+    "population": 132623,
+    "households": 32347,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        73.52,
+        17.53
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-4488C9B4",
+    "name": "Trishuli-Narayani River Basin Active Flood Zone, Chitwan",
+    "region": "Chitwan, Nepal",
+    "description": "Chitwan district is currently experiencing the aftermath of a major flash flood event from August 26, 2026, originating from a glacial collapse upstream in the Bhotekoshi/Trishuli river system, which flows into the Narayani River. This event caused significant casualties and widespread disruption, including blocked road access due to landslides and erosion. The region is also under ongoing monsoon conditions, increasing the risk of further localized flooding and landslides, alongside a baseline medium seismic hazard.",
+    "hazardTypes": [
+      "flash_flood",
+      "flood",
+      "landslide",
+      "debris_flow",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.8,
+    "severityIndex": 8.5,
+    "population": 719859,
+    "households": 179345,
+    "radiusMeters": 30000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        84.5167,
+        27.5833
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-AD754E3A",
+    "name": "Cuddalore Multi-Hazard Active Disaster Zone",
+    "region": "Cuddalore, Tamil Nadu, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Cuddalore, Tamil Nadu, India.",
+    "hazardTypes": [
+      "cyclone",
+      "flood"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.84,
+    "severityIndex": 8.4,
+    "population": 312215,
+    "households": 76150,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        79.77,
+        11.75
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-D7E2B890",
+    "name": "Darbhanga Multi-Hazard Active Disaster Zone",
+    "region": "Darbhanga, Bihar, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Darbhanga, Bihar, India.",
+    "hazardTypes": [
+      "flood",
+      "flash_flood"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.85,
+    "severityIndex": 8.5,
+    "population": 286140,
+    "households": 69790,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        85.89,
+        26.15
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-DAR5192C",
+    "name": "Teesta River Basin Landslide and Highway Inundation Zone",
+    "region": "Darjeeling, West Bengal, India",
+    "description": "Darjeeling experiences active slope instability and destructive landslides along National Highway 10 corridor due to heavy monsoon rains oversaturating fragile Himalayan soils. The turbulent Teesta River basin is flowing near warning levels, causing bank erosion and threatening major transportation links connecting Kalimpong and Sikkim.",
+    "hazardTypes": [
+      "landslide",
+      "flash_flood",
+      "flood",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.82,
+    "severityIndex": 8.4,
+    "population": 1846823,
+    "households": 461705,
+    "radiusMeters": 30000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        88.2627,
+        27.041
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-DA8C3B3C",
+    "name": "Gangtok Multi-Hazard Active Disaster Zone",
+    "region": "Gangtok, Sikkim, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Gangtok, Sikkim, India.",
+    "hazardTypes": [
+      "glof",
+      "landslide"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.94,
+    "severityIndex": 9.4,
+    "population": 331734,
+    "households": 80910,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        88.61,
+        27.34
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-36F6C5FB",
+    "name": "Gorakhpur Multi-Hazard Active Disaster Zone",
+    "region": "Gorakhpur, Uttar Pradesh, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Gorakhpur, Uttar Pradesh, India.",
+    "hazardTypes": [
+      "flood"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.78,
+    "severityIndex": 7.8,
+    "population": 136035,
+    "households": 33179,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        83.37,
+        26.76
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-15EDC4C9",
+    "name": "South Gujarat Monsoon Flood & Cyclone Risk Zone",
+    "region": "Gujarat, India",
+    "description": "This zone in South Gujarat, encompassing areas around Surat, Navsari, and Valsad, experienced severe monsoon flooding in late July and early August 2026, leading to urban waterlogging, infrastructure damage, and mass evacuations. The region remains susceptible to floods and flash floods during the ongoing monsoon season, with post-flood health concerns in affected areas like Bharuch. Additionally, it faces a high baseline risk from cyclones originating in the Arabian Sea, which have shown increased frequency and intensity.",
+    "hazardTypes": [
+      "flood",
+      "flash_flood",
+      "cyclone",
+      "earthquake",
+      "landslide"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.75,
+    "severityIndex": 7.8,
+    "population": 385000,
+    "households": 96250,
+    "radiusMeters": 15000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        72.9,
+        21.05
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-7F4EEDC5",
+    "name": "Himachal Pradesh Active Monsoon Flood & Landslide Zone",
+    "region": "Himachal Pradesh, India",
+    "description": "Himachal Pradesh is currently experiencing widespread flash floods and landslides triggered by persistent heavy monsoon rainfall, leading to significant road closures, infrastructure damage, and casualties across districts like Mandi, Shimla, Kullu, and Solan. The region also faces inherent high seismic risk and increasing threats from glacial lake outburst floods (GLOFs).",
+    "hazardTypes": [
+      "flash_flood",
+      "landslide",
+      "debris_flow",
+      "glof",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.85,
+    "severityIndex": 8.5,
+    "population": 350000,
+    "households": 87500,
+    "radiusMeters": 50000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        76.9261,
+        31.7089
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-4876FF38",
+    "name": "Idukki Multi-Hazard Active Disaster Zone",
+    "region": "Idukki, Kerala, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Idukki, Kerala, India.",
+    "hazardTypes": [
+      "landslide",
+      "debris_flow"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.92,
+    "severityIndex": 9.2,
+    "population": 93743,
+    "households": 22864,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        76.98,
+        9.849
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-A08DE16E",
+    "name": "Imphal Multi-Hazard Active Disaster Zone",
+    "region": "Imphal, Manipur, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Imphal, Manipur, India.",
+    "hazardTypes": [
+      "earthquake",
+      "flood"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.79,
+    "severityIndex": 7.9,
+    "population": 113042,
+    "households": 27571,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        93.94,
+        24.82
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-2A4001F0",
+    "name": "Indore Multi-Hazard Active Disaster Zone",
+    "region": "Indore, Madhya Pradesh, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Indore, Madhya Pradesh, India.",
+    "hazardTypes": [
+      "flash_flood"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.55,
+    "severityIndex": 5.5,
+    "population": 170093,
+    "households": 41486,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        75.86,
+        22.72
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-27F52735",
+    "name": "Itanagar Multi-Hazard Active Disaster Zone",
+    "region": "Itanagar, Arunachal Pradesh, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Itanagar, Arunachal Pradesh, India.",
+    "hazardTypes": [
+      "landslide",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.78,
+    "severityIndex": 7.8,
+    "population": 374815,
+    "households": 91418,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        93.61,
+        27.08
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-9390D319",
+    "name": "Jaisalmer Multi-Hazard Active Disaster Zone",
+    "region": "Jaisalmer, Rajasthan, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Jaisalmer, Rajasthan, India.",
+    "hazardTypes": [
+      "flash_flood"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.54,
+    "severityIndex": 5.4,
+    "population": 91694,
+    "households": 22364,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        70.91,
+        26.92
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-JSH1029E",
+    "name": "Joshimath Urban Land Subsidence and Slope Collapse Zone",
+    "region": "Joshimath, Uttarakhand, India",
+    "description": "Joshimath faces severe active land subsidence and structural cracking across municipal wards caused by subterranean water seepage, slope destabilization, and heavy monsoon run-off above the Alaknanda riverbed. The town sits on ancient landslide debris in a highly active seismic zone, accelerating building distress and emergency evacuation alerts.",
+    "hazardTypes": [
+      "landslide",
+      "flash_flood",
+      "earthquake",
+      "debris_flow"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.94,
+    "severityIndex": 9.6,
+    "population": 23000,
+    "households": 5750,
+    "radiusMeters": 8000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        79.5667,
+        30.55
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-8773563F",
+    "name": "Kathmandu Valley Monsoon Flood and Landslide Risk Zone",
+    "region": "Kathmandu Valley, Nepal",
+    "description": "The Kathmandu Valley is currently experiencing heightened risks from monsoon-induced floods and landslides, with recent heavy rainfall causing road blockages on major highways connecting to the capital and localized disruptions within the valley. This region also faces a critical long-term threat from seismic activity, including potential for soil liquefaction, due to its location in a highly active Himalayan belt and dense, vulnerable urban development.",
+    "hazardTypes": [
+      "landslide",
+      "flood",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.85,
+    "severityIndex": 8.5,
+    "population": 3500000,
+    "households": 933333,
+    "radiusMeters": 13800,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        85.309,
+        27.704
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-627F9374",
+    "name": "Kendrapara Multi-Hazard Active Disaster Zone",
+    "region": "Kendrapara, Odisha, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Kendrapara, Odisha, India.",
+    "hazardTypes": [
+      "cyclone",
+      "flood"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.93,
+    "severityIndex": 9.3,
+    "population": 207517,
+    "households": 50613,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        86.42,
+        20.5
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-F7EFA2DD",
+    "name": "Kodagu Multi-Hazard Active Disaster Zone",
+    "region": "Kodagu, Karnataka, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Kodagu, Karnataka, India.",
+    "hazardTypes": [
+      "landslide",
+      "flash_flood"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.81,
+    "severityIndex": 8.1,
+    "population": 182132,
+    "households": 44422,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        75.74,
+        12.42
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-CF1F01BD",
+    "name": "Korba Multi-Hazard Active Disaster Zone",
+    "region": "Korba, Chhattisgarh, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Korba, Chhattisgarh, India.",
+    "hazardTypes": [
+      "flash_flood",
+      "landslide"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.58,
+    "severityIndex": 5.8,
+    "population": 187341,
+    "households": 45692,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        82.75,
+        22.36
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-E17F15F5",
+    "name": "Kullu Multi-Hazard Active Disaster Zone",
+    "region": "Kullu, Himachal Pradesh, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Kullu, Himachal Pradesh, India.",
+    "hazardTypes": [
+      "flash_flood",
+      "landslide"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.89,
+    "severityIndex": 8.9,
+    "population": 100235,
+    "households": 24447,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        77.11,
+        31.96
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-KTC4012I",
+    "name": "Bhuj Fault Seismic Zone and Arabian Sea Cyclonic Inundation Risk",
+    "region": "Kutch, Gujarat, India",
+    "description": "Kutch is situated in a highly active intraplate tectonic setting (Seismic Zone V) along the Kutch Mainland Fault and Katrol Hill Fault systems, with ongoing micro-seismicity and severe historic earthquake vulnerability. The district also faces compound coastal cyclone threats from the Arabian Sea, driving storm surges across the Great Rann mudflats.",
+    "hazardTypes": [
+      "earthquake",
+      "cyclone",
+      "flood"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.89,
+    "severityIndex": 9.2,
+    "population": 2092371,
+    "households": 523092,
+    "radiusMeters": 75000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        69.6667,
+        23.25
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-LEH8803J",
+    "name": "Indus River Tributary Cloudburst and Glacial Outburst Zone",
+    "region": "Leh, Ladakh, India",
+    "description": "Leh is highly susceptible to sudden high-altitude cloudbursts and violent debris flows along Indus River mountain streams, causing rapid mudslide inundation in urban valley floors. Rapid warming and glacial retreat across the Karakoram-Himalayan range also trigger GLOF alerts and permafrost slope destabilization.",
+    "hazardTypes": [
+      "flash_flood",
+      "glof",
+      "landslide",
+      "debris_flow",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.8,
+    "severityIndex": 8.5,
+    "population": 133487,
+    "households": 33371,
+    "radiusMeters": 40000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        77.5771,
+        34.1526
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-57F64B95",
+    "name": "Majuli Multi-Hazard Active Disaster Zone",
+    "region": "Majuli, Assam, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Majuli, Assam, India.",
+    "hazardTypes": [
+      "flood",
+      "flash_flood"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.91,
+    "severityIndex": 9.1,
+    "population": 226875,
+    "households": 55335,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        94.17,
+        26.95
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-834D8FAD",
+    "name": "Mon Multi-Hazard Active Disaster Zone",
+    "region": "Mon, Nagaland, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Mon, Nagaland, India.",
+    "hazardTypes": [
+      "landslide",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.77,
+    "severityIndex": 7.7,
+    "population": 80620,
+    "households": 19663,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        95.06,
+        26.75
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-02D53772",
+    "name": "Kali Gandaki River Valley Flash Flood and Landslide Zone",
+    "region": "Mustang, Nepal",
+    "description": "Mustang is currently affected by active monsoon flash floods and debris flows along the Kali Gandaki River basin, causing recent road blockages along the Jomsom-Muktinath transport corridor. The region also faces high secondary risks from slope instabilities, permafrost degradation, and long-term seismic vulnerabilities in the Trans-Himalayan zone.",
+    "hazardTypes": [
+      "flash_flood",
+      "landslide",
+      "debris_flow",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.78,
+    "severityIndex": 8.2,
+    "population": 14452,
+    "households": 3613,
+    "radiusMeters": 33700,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        83.725,
+        28.7833
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-7905515B",
+    "name": "North Goa Multi-Hazard Active Disaster Zone",
+    "region": "North Goa, Goa, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for North Goa, Goa, India.",
+    "hazardTypes": [
+      "cyclone",
+      "flood"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.61,
+    "severityIndex": 6.1,
+    "population": 307208,
+    "households": 74928,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        73.81,
+        15.55
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-9195C606",
+    "name": "Pithoragarh Multi-Hazard Active Disaster Zone",
+    "region": "Pithoragarh, Uttarakhand, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Pithoragarh, Uttarakhand, India.",
+    "hazardTypes": [
+      "landslide",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.91,
+    "severityIndex": 9.1,
+    "population": 387046,
+    "households": 94401,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        80.22,
+        29.58
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-834403E5",
+    "name": "Pokhara Valley Active Landslide and Monsoon Flood Zone",
+    "region": "Pokhara, Nepal",
+    "description": "Pokhara is currently experiencing heightened landslide activity, with a fatal incident reported today, September 4, 2026, near the city, and a recent partial blockage of the Seti River due to a landslide on July 19, 2026. The region is also under continuous threat from monsoon-induced heavy rainfall, increasing the risk of localized flash floods and debris flows. Underlying these immediate concerns is a very high seismic risk due to its location on a major fault line.",
+    "hazardTypes": [
+      "landslide",
+      "flash_flood",
+      "flood",
+      "earthquake",
+      "debris_flow"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.8,
+    "severityIndex": 8.5,
+    "population": 513504,
+    "households": 140459,
+    "radiusMeters": 12000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        83.96851,
+        28.26689
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-30CD2338",
+    "name": "Port Blair Multi-Hazard Active Disaster Zone",
+    "region": "Port Blair, Andaman and Nicobar Islands, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Port Blair, Andaman and Nicobar Islands, India.",
+    "hazardTypes": [
+      "tsunami",
+      "cyclone",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.92,
+    "severityIndex": 9.2,
+    "population": 346806,
+    "households": 84586,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        92.73,
+        11.62
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-PRI6610F",
+    "name": "Bay of Bengal Cyclonic Storm Surge and Coastal Inundation Zone",
+    "region": "Puri, Odisha, India",
+    "description": "Puri is vulnerable to severe tropical cyclones originating in the Bay of Bengal, producing extreme coastal storm surges, high-velocity gale winds, and intense heavy precipitation. Low-lying coastal belts and agricultural plains along Chilika lagoon experience sea-water inundation and flash flooding during peak depression systems.",
+    "hazardTypes": [
+      "cyclone",
+      "flood",
+      "flash_flood"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.81,
+    "severityIndex": 8.6,
+    "population": 1698730,
+    "households": 424682,
+    "radiusMeters": 45000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        85.8312,
+        19.8135
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-F9275DC7",
+    "name": "Ranchi Multi-Hazard Active Disaster Zone",
+    "region": "Ranchi, Jharkhand, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Ranchi, Jharkhand, India.",
+    "hazardTypes": [
+      "flash_flood",
+      "landslide"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.57,
+    "severityIndex": 5.7,
+    "population": 295785,
+    "households": 72142,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        85.31,
+        23.34
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-43153C1D",
+    "name": "Rupnagar Multi-Hazard Active Disaster Zone",
+    "region": "Rupnagar, Punjab, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Rupnagar, Punjab, India.",
+    "hazardTypes": [
+      "flood"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.62,
+    "severityIndex": 6.2,
+    "population": 163165,
+    "households": 39796,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        76.52,
+        30.97
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-SML3021G",
+    "name": "Shimla Hill-Slope Landslide and Cloudburst Flash Flood Zone",
+    "region": "Shimla, Himachal Pradesh, India",
+    "description": "Shimla is experiencing severe flash floods and widespread hill-slope landslides triggered by intense monsoon cloudburst events across the Giri and Sutlej river sub-catchments. Saturated soil conditions and unplanned steep-slope development have disrupted key arterial roads (NH-5), presenting acute structural hazards in urban municipal sectors.",
+    "hazardTypes": [
+      "flash_flood",
+      "landslide",
+      "debris_flow",
+      "earthquake"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.83,
+    "severityIndex": 8.7,
+    "population": 814010,
+    "households": 203502,
+    "radiusMeters": 28000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        77.1734,
+        31.1048
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-900AED0E",
+    "name": "Sohra Multi-Hazard Active Disaster Zone",
+    "region": "Sohra, Meghalaya, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Sohra, Meghalaya, India.",
+    "hazardTypes": [
+      "flash_flood",
+      "landslide"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.95,
+    "severityIndex": 9.5,
+    "population": 97587,
+    "households": 23801,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        91.73,
+        25.27
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-66D13AE1",
+    "name": "Dudh Kosi River Basin GLOF and Flash Flood Zone",
+    "region": "Solukhumbu, Nepal",
+    "description": "Solukhumbu is under heightened alert for Glacial Lake Outburst Floods (GLOFs) and monsoon flash flooding along the Dudh Kosi river valley, following recent glacial outburst activity and heavy precipitation in the Everest region. Steep Himalayan topography and rapid melt exacerbate secondary risks of destructive landslides and debris flows, alongside high baseline seismic risk.",
+    "hazardTypes": [
+      "glof",
+      "flash_flood",
+      "landslide",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.87,
+    "severityIndex": 8.9,
+    "population": 104851,
+    "households": 26212,
+    "radiusMeters": 35000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        86.661108,
+        27.790973
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-3D1937AC",
+    "name": "Sundarbans Multi-Hazard Active Disaster Zone",
+    "region": "Sundarbans, West Bengal, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Sundarbans, West Bengal, India.",
+    "hazardTypes": [
+      "cyclone",
+      "flood"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.95,
+    "severityIndex": 9.6,
+    "population": 373796,
+    "households": 91169,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        88.9,
+        21.95
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-E67CA0A9",
+    "name": "Unakoti Multi-Hazard Active Disaster Zone",
+    "region": "Unakoti, Tripura, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Unakoti, Tripura, India.",
+    "hazardTypes": [
+      "flood",
+      "landslide"
+    ],
+    "riskLevel": "moderate",
+    "vulnerabilityScore": 0.64,
+    "severityIndex": 6.4,
+    "population": 180630,
+    "households": 44056,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        92.02,
+        24.33
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-69704DA9",
+    "name": "Alaknanda-Bhagirathi River Basins Multi-Hazard Zone",
+    "region": "Uttarakhand, India",
+    "description": "Uttarakhand is currently experiencing widespread heavy rainfall, leading to flash floods, active landslides, and swollen rivers, with the Alaknanda, Mandakini, and Bhagirathi rivers reported to be flowing at or above danger levels. Recent incidents include a massive landslide in Uttarkashi damaging homes and multiple fatalities from rain-related events across the state. The region also faces a critical long-term risk from seismic activity, with the entire state now classified in Seismic Zone V, and an accelerating threat of Glacial Lake Outburst Floods (GLOFs) due to rapid glacier melt in areas like the Bhilangana Valley.",
+    "hazardTypes": [
+      "flash_flood",
+      "landslide",
+      "flood",
+      "glof",
+      "earthquake"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.85,
+    "severityIndex": 8.8,
+    "population": 750000,
+    "households": 185000,
+    "radiusMeters": 30000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        78.98,
+        30.28
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-B7566FA2",
+    "name": "Visakhapatnam Multi-Hazard Active Disaster Zone",
+    "region": "Visakhapatnam, Andhra Pradesh, India",
+    "description": "Grounded hydrometeorological and geological hazard monitoring profile for Visakhapatnam, Andhra Pradesh, India.",
+    "hazardTypes": [
+      "cyclone",
+      "flood"
+    ],
+    "riskLevel": "high",
+    "vulnerabilityScore": 0.82,
+    "severityIndex": 8.2,
+    "population": 121510,
+    "households": 29636,
+    "radiusMeters": 5000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        83.22,
+        17.69
+      ]
+    }
+  },
+  {
+    "zoneId": "ZONE-WYN4921A",
+    "name": "Chooralmala-Meppadi Active Landslide and Iruvaipuzha Flood Zone",
+    "region": "Wayanad, Kerala, India",
+    "description": "Wayanad is currently experiencing catastrophic monsoon landslides and massive debris flows along the Chooralmala, Mundakkai, and Meppadi hillsides, triggered by extreme 24-hour rainfall. The overflowing Iruvaipuzha River has severely inundated low-lying settlements, destroying critical bridge infrastructure and leaving vulnerable hill communities isolated.",
+    "hazardTypes": [
+      "landslide",
+      "flash_flood",
+      "debris_flow",
+      "flood"
+    ],
+    "riskLevel": "critical",
+    "vulnerabilityScore": 0.92,
+    "severityIndex": 9.5,
+    "population": 817420,
+    "households": 204355,
+    "radiusMeters": 25000,
+    "center": {
+      "type": "Point",
+      "coordinates": [
+        76.132,
+        11.605
+      ]
+    }
+  }
+]

@@ -1,41 +1,96 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import DashboardSidebar from '../components/DashboardSidebar';
 import LeafletMap from '../components/LeafletMap';
+import GoogleEvacuationMap from '../components/GoogleEvacuationMap';
 import { fetchEvacuationOptions, calculateEvacuationPlan } from '../services/evacuationApi';
 
+// Helper to compute geodesic distance in kilometers between two [lon, lat] coordinates
+const calculateDistanceKm = (coordA, coordB) => {
+  if (!coordA || !coordB || coordA.length < 2 || coordB.length < 2) return 999999;
+  const [lon1, lat1] = coordA;
+  const [lon2, lat2] = coordB;
+  const R = 6371; // Earth's mean radius in km
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return Number((R * c).toFixed(1));
+};
+
 export default function EvacuationRoutePage() {
+  const [searchParams] = useSearchParams();
   const [origins, setOrigins] = useState([]);
   const [shelters, setShelters] = useState([]);
   const [hazards, setHazards] = useState([]);
-  const [startPoint, setStartPoint] = useState('Sector 4 Habitation');
-  const [destination, setDestination] = useState('Alpha Command Bunker');
+  const [startPoint, setStartPoint] = useState('');
+  const [destination, setDestination] = useState('');
+
   const [selectedRoute, setSelectedRoute] = useState('A');
   const [isCalculating, setIsCalculating] = useState(false);
   const [calculationResult, setCalculationResult] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
+  const [mapEngine, setMapEngine] = useState('google'); // 'google' | 'leaflet'
 
   // 1. Fetch live evacuation options from backend
   const loadOptions = useCallback(async () => {
     try {
       const data = await fetchEvacuationOptions();
       if (data) {
-        setOrigins(data.origins || []);
-        setShelters(data.shelters || []);
+        const oList = data.origins || [];
+        const sList = data.shelters || [];
+        setOrigins(oList);
+        setShelters(sList);
         setHazards(data.hazards || []);
 
-        if (data.origins?.length > 0 && !startPoint) {
-          setStartPoint(data.origins[0].name);
+        // Check if origin query parameter was passed
+        const originParam = searchParams.get('origin');
+        let initialOrigin = oList[0]?.name || '';
+        if (originParam && oList.some((o) => o.name.toLowerCase().includes(originParam.toLowerCase()))) {
+          const matched = oList.find((o) => o.name.toLowerCase().includes(originParam.toLowerCase()));
+          if (matched) initialOrigin = matched.name;
         }
-        if (data.shelters?.length > 0 && !destination) {
-          setDestination(data.shelters[0].name);
+
+        if (initialOrigin) {
+          setStartPoint(initialOrigin);
         }
       }
     } catch (err) {
       console.warn('[EvacuationRoutePage] Fallback to default locations:', err.message);
     }
-  }, [startPoint, destination]);
+  }, [searchParams]);
 
-  // 2. Calculate dynamic route
+  // 2. Rank all safezone shelters by distance from the currently selected risk zone origin
+  const rankedShelters = useMemo(() => {
+    const originObj = origins.find((o) => o.name === startPoint);
+    if (!originObj || !shelters.length) return shelters;
+
+    return [...shelters]
+      .map((s) => ({
+        ...s,
+        distanceKm: calculateDistanceKm(originObj.coordinates, s.coordinates),
+      }))
+      .sort((a, b) => a.distanceKm - b.distanceKm);
+  }, [origins, shelters, startPoint]);
+
+  // Optimal nearest shelter
+  const nearestShelter = rankedShelters[0] || null;
+
+  // 3. AUTOMATIC SELECTION LOGIC: Whenever the selected risk zone (startPoint) changes,
+  // automatically select the closest safezone as destination!
+  useEffect(() => {
+    if (rankedShelters.length > 0) {
+      const closest = rankedShelters[0];
+      setDestination(closest.name);
+    }
+  }, [startPoint, origins.length, shelters.length]);
+
+  // 4. Calculate dynamic route
   const handleCalculate = useCallback(async (start, dest) => {
     const s = start || startPoint;
     const d = dest || destination;
@@ -68,16 +123,18 @@ export default function EvacuationRoutePage() {
     }
   }, [startPoint, destination, handleCalculate]);
 
+
   // Map coordinates
   const originLocation = useMemo(() => {
     const found = origins.find((o) => o.name === startPoint);
-    return found ? [found.coordinates[1], found.coordinates[0]] : [-6.22, 106.78];
+    return found ? [found.coordinates[1], found.coordinates[0]] : [11.685, 76.132];
   }, [origins, startPoint]);
 
   const destLocation = useMemo(() => {
     const found = shelters.find((s) => s.name === destination);
-    return found ? [found.coordinates[1], found.coordinates[0]] : [-6.15, 106.88];
+    return found ? [found.coordinates[1], found.coordinates[0]] : [11.605, 76.225];
   }, [shelters, destination]);
+
 
   const mapCenter = useMemo(() => {
     return [(originLocation[0] + destLocation[0]) / 2, (originLocation[1] + destLocation[1]) / 2];
@@ -153,24 +210,70 @@ export default function EvacuationRoutePage() {
 
         {/* Main Workspace Layout (GIS Map Canvas Left, Panel Right) */}
         <main className="flex-1 relative flex flex-col lg:flex-row overflow-hidden h-full">
-          {/* Interactive Leaflet Map (Left Side Canvas) */}
+          {/* Interactive Map Canvas (Google Maps or GIS Leaflet) */}
           <div className="flex-1 relative bg-[#060906] overflow-hidden h-full">
-            <LeafletMap
-              center={mapCenter}
-              zoom={13}
-              markers={mapMarkers}
-              circles={mapCircles}
-              polylines={mapPolylines}
-            />
+            {mapEngine === 'google' ? (
+              <GoogleEvacuationMap
+                originLocation={originLocation}
+                destLocation={destLocation}
+                startPointName={startPoint}
+                destinationName={destination}
+                routes={calculationResult?.routes || []}
+                selectedRouteId={selectedRoute}
+                onSelectRoute={setSelectedRoute}
+                hazards={hazards}
+                nearbyShelters={rankedShelters.slice(0, 6)}
+                onSelectDestination={(destName) => setDestination(destName)}
+                planId={calculationResult?.planId}
+              />
+            ) : (
+              <>
+                <LeafletMap
+                  center={mapCenter}
+                  zoom={13}
+                  markers={mapMarkers}
+                  circles={mapCircles}
+                  polylines={mapPolylines}
+                />
 
-            {/* Plan Info Overlay Badge */}
-            {calculationResult?.planId && (
-              <div className="absolute top-4 left-4 z-[400] bg-[#0D120C]/90 border border-[rgba(122,154,110,0.3)] rounded-[12px] px-3.5 py-2 backdrop-blur-md font-mono text-[11px] flex items-center gap-2 shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-[#86A978] animate-pulse"></span>
-                <span className="text-[#86A978]">Transit Matrix:</span>
-                <span className="text-[#E4E9DF] font-semibold">{calculationResult.planId}</span>
-              </div>
+                {/* Plan Info Overlay Badge */}
+                {calculationResult?.planId && (
+                  <div className="absolute top-4 left-4 z-[400] bg-[#0D120C]/90 border border-[rgba(122,154,110,0.3)] rounded-[12px] px-3.5 py-2 backdrop-blur-md font-mono text-[11px] flex items-center gap-2 shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-[#86A978] animate-pulse"></span>
+                    <span className="text-[#86A978]">Transit Matrix:</span>
+                    <span className="text-[#E4E9DF] font-semibold">{calculationResult.planId}</span>
+                  </div>
+                )}
+              </>
             )}
+
+            {/* Engine Switcher Floating Pill (Google Maps vs GIS Leaflet) */}
+            <div className="absolute bottom-6 right-6 z-[1000] flex items-center gap-1 bg-[#080C08]/92 border border-[rgba(228,233,223,0.14)] p-1 rounded-[12px] backdrop-blur-md shadow-2xl">
+              <button
+                type="button"
+                onClick={() => setMapEngine('google')}
+                className={`px-3 py-1 rounded-[8px] text-[11px] font-medium transition-all flex items-center gap-1.5 ${
+                  mapEngine === 'google'
+                    ? 'bg-[#1D2A1B] text-[#86A978] border border-[#86A978]/40 shadow-sm'
+                    : 'text-[#777C70] hover:text-[#E4E9DF]'
+                }`}
+              >
+                <span className="material-symbols-outlined text-[15px]">navigation</span>
+                <span>Google Maps Flow</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setMapEngine('leaflet')}
+                className={`px-3 py-1 rounded-[8px] text-[11px] font-medium transition-all flex items-center gap-1.5 ${
+                  mapEngine === 'leaflet'
+                    ? 'bg-[#1D2A1B] text-[#86A978] border border-[#86A978]/40 shadow-sm'
+                    : 'text-[#777C70] hover:text-[#E4E9DF]'
+                }`}
+              >
+                <span className="material-symbols-outlined text-[15px]">layers</span>
+                <span>GIS Leaflet</span>
+              </button>
+            </div>
           </div>
 
           {/* Contour Transit Panel (Right Side Sidebar) */}
@@ -215,7 +318,27 @@ export default function EvacuationRoutePage() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[10px] uppercase tracking-wider text-[#777C70] font-mono">Designated Refuge Shelter</label>
+                <div className="flex items-center justify-between">
+                  <label className="text-[10px] uppercase tracking-wider text-[#777C70] font-mono">
+                    Designated Refuge Shelter
+                  </label>
+                  {nearestShelter && (
+                    <button
+                      type="button"
+                      onClick={() => setDestination(nearestShelter.name)}
+                      className={`text-[10px] font-mono px-2 py-0.5 rounded-full flex items-center gap-1 transition-all ${
+                        destination === nearestShelter.name
+                          ? 'bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40'
+                          : 'bg-[#1D2A1B] text-[#86A978] hover:bg-[#86A978] hover:text-[#080C08]'
+                      }`}
+                      title="Click to snap to nearest safezone"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
+                      Auto-Nearest: {nearestShelter.distanceKm} km
+                    </button>
+                  )}
+                </div>
+
                 <div className="relative">
                   <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#777C70] text-[18px]">
                     flag
@@ -225,12 +348,13 @@ export default function EvacuationRoutePage() {
                     onChange={(e) => setDestination(e.target.value)}
                     className="w-full h-11 pl-10 pr-4 bg-[#080C08] border border-[rgba(122,154,110,0.3)] rounded-[12px] text-xs text-[#E4E9DF] font-mono focus:border-[#86A978] outline-none"
                   >
-                    {shelters.map((s) => (
+                    {rankedShelters.map((s, idx) => (
                       <option key={s._id || s.name} value={s.name}>
-                        {s.name} (Cap: {s.capacity || 2500})
+                        {idx === 0 ? '⭐ [AUTO-NEAREST] ' : `[${s.distanceKm} km] `}
+                        {s.name} (Cap: {(s.capacity || 2500).toLocaleString()})
                       </option>
                     ))}
-                    {shelters.length === 0 && (
+                    {rankedShelters.length === 0 && (
                       <>
                         <option value="Alpha Command Bunker">Alpha Command Bunker</option>
                         <option value="Highland Relief Center">Highland Relief Center</option>
@@ -239,6 +363,51 @@ export default function EvacuationRoutePage() {
                     )}
                   </select>
                 </div>
+
+                {/* Top 3 Nearest Refuge Quick Select Cards */}
+                {rankedShelters.length > 0 && (
+                  <div className="flex flex-col gap-1.5 mt-1">
+                    <span className="text-[9px] uppercase tracking-wider text-[#777C70] font-mono">
+                      Safezones Near Selected Risk Zone:
+                    </span>
+                    <div className="grid grid-cols-1 gap-1.5">
+                      {rankedShelters.slice(0, 3).map((s, idx) => {
+                        const isSelected = destination === s.name;
+                        return (
+                          <button
+                            key={s._id || s.name}
+                            type="button"
+                            onClick={() => setDestination(s.name)}
+                            className={`p-2 rounded-[10px] border text-left transition-all flex items-center justify-between ${
+                              isSelected
+                                ? 'bg-[#1D2A1B] border-[#86A978] shadow-sm'
+                                : 'bg-[#080C08] border-[rgba(122,154,110,0.15)] hover:border-[#86A978]/40'
+                            }`}
+                          >
+                            <div className="min-w-0 flex-1 mr-2">
+                              <div className="flex items-center gap-1.5">
+                                {idx === 0 && (
+                                  <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded bg-[#10B981]/25 text-[#10B981] border border-[#10B981]/40">
+                                    Nearest
+                                  </span>
+                                )}
+                                <span className={`text-[11px] truncate block ${isSelected ? 'font-semibold text-[#FFFFFF]' : 'font-medium text-[#E4E9DF]'}`}>
+                                  {s.name}
+                                </span>
+                              </div>
+                              <div className="text-[9px] text-[#777C70] mt-0.5 font-mono">
+                                Cap: {(s.capacity || 2500).toLocaleString()} • Safe Haven
+                              </div>
+                            </div>
+                            <span className="text-[10px] font-mono font-bold text-[#86A978] shrink-0">
+                              {s.distanceKm} km
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
 
               <button

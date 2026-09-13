@@ -7,6 +7,7 @@ import alertRoutes from '../features/alerts/alert.routes.js';
 import evacuationRoutes from '../features/evacuation/evacuation.routes.js';
 import capacityRoutes from '../features/carryingCapacity/capacity.routes.js';
 import settlementRoutes from '../features/settlements/settlement.routes.js';
+import mlProxyRoutes from '../features/mlProxy/mlProxy.routes.js';
 
 const router = Router();
 
@@ -18,5 +19,7 @@ router.use('/alerts', alertRoutes);
 router.use('/evacuation', evacuationRoutes);
 router.use('/capacity', capacityRoutes);
 router.use('/settlements', settlementRoutes);
+router.use('/ml-proxy', mlProxyRoutes);
 
 export default router;
+

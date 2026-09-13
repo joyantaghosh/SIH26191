@@ -136,9 +136,45 @@ const relocationRequestSchema = new Schema(
 export const RelocationLocation = mongoose.model('RelocationLocation', relocationLocationSchema);
 export const RelocationRequest = mongoose.model('RelocationRequest', relocationRequestSchema);
 
+const relocationPrioritySchema = new Schema(
+  {
+    relocationId: { type: String, required: true, unique: true, index: true },
+    zoneId: { type: String, required: true, index: true },
+    region: { type: String, required: true },
+    habitationName: { type: String, required: true },
+    vulnerablePopulation: { type: Number, default: 0 },
+    priorityRank: { type: Number, default: 1, index: true },
+    priorityTier: {
+      type: String,
+      enum: ['CRITICAL_URGENT', 'HIGH_PRIORITY', 'MEDIUM_PRIORITY', 'MONITORING'],
+      default: 'MEDIUM_PRIORITY',
+      index: true,
+    },
+    priorityScore: { type: Number, default: 50.0, index: true },
+    mobilityConstrainedCount: { type: Number, default: 0 },
+    destinationRefugeSector: { type: String, required: true },
+    destinationRiskScore: { type: String, default: 'LOW RISK (1.8 / 10)' },
+    allocatedShelterBeds: { type: Number, default: 0 },
+    availableShelterCapacity: { type: Number, default: 0 },
+    status: { type: String, default: 'PENDING_EVACUATION' },
+    originLatLng: { type: [Number], default: [] },
+    destinationLatLng: { type: [Number], default: [] },
+    curvedPath: { type: [[Number]], default: [] },
+  },
+  {
+    timestamps: true,
+    toJSON: { virtuals: true, versionKey: false },
+    toObject: { virtuals: true, versionKey: false },
+  }
+);
+
+export const RelocationPriority = mongoose.model('RelocationPriority', relocationPrioritySchema);
+
 export default {
   RelocationLocation,
   RelocationRequest,
+  RelocationPriority,
   seedLocations,
   seedRiskZones,
 };
+

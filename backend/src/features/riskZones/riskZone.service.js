@@ -1,6 +1,72 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
 import { RiskZone } from './riskZone.model.js';
 import { ApiError } from '../../common/utils/ApiError.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ML_ZONES_PATH = path.resolve(__dirname, '../../../../ml-proxy/outputs/data/riskZones.json');
+
+export async function ensureSeedData() {
+  const count = await RiskZone.countDocuments();
+  if (count === 0 && fs.existsSync(ML_ZONES_PATH)) {
+    try {
+      const raw = fs.readFileSync(ML_ZONES_PATH, 'utf-8');
+      const list = JSON.parse(raw);
+      if (Array.isArray(list) && list.length > 0) {
+        const zones = list.map((item) => {
+          let hType = 'landslide';
+          if (Array.isArray(item.hazardTypes) && item.hazardTypes.length > 0) {
+            const first = item.hazardTypes[0].toLowerCase();
+            hType = first.includes('flood') ? 'flood' : first.includes('earthquake') ? 'earthquake' : 'landslide';
+          }
+          let rLevel = (item.riskLevel || 'warning').toLowerCase();
+          if (rLevel === 'moderate' || rLevel === 'medium') rLevel = 'warning';
+          if (rLevel === 'high') rLevel = 'critical';
+          if (!['critical', 'warning', 'safe'].includes(rLevel)) rLevel = 'warning';
+
+          const coords = item.center?.coordinates || [76.13, 11.60];
+
+          return {
+            zoneId: item.zoneId,
+            name: item.name,
+            region: item.region || '',
+            description: item.description || '',
+            hazardType: hType,
+            riskLevel: rLevel,
+            vulnerabilityScore: Math.round(
+              (typeof item.vulnerabilityScore === 'number' && item.vulnerabilityScore <= 1
+                ? item.vulnerabilityScore * 100
+                : item.vulnerabilityScore) || 50
+            ),
+            severityIndex: Math.min(10, Math.round(item.severityIndex || 5)),
+            metrics: {
+              severity: Math.round((item.severityIndex || 5) * 10),
+              density: Math.min(100, Math.round((item.population || 50000) / 1000)),
+              soilRisk: Math.round((item.vulnerabilityScore || 0.5) * 100),
+            },
+            population: item.population || 0,
+            households: item.households || Math.round((item.population || 0) / 4),
+            distanceToHazardKm: 1.5,
+            center: {
+              type: 'Point',
+              coordinates: [coords[0], coords[1]],
+            },
+            radiusMeters: item.radiusMeters || 5000,
+            isActive: true,
+          };
+        });
+
+        await RiskZone.insertMany(zones);
+        console.log(`[seed:riskZones] Inserted ${zones.length} ML risk zones`);
+      }
+    } catch (err) {
+      console.warn('[seed:riskZones] Could not seed from ML data:', err.message);
+    }
+  }
+}
 
 const csv = (v) => String(v).split(',').map((s) => s.trim()).filter(Boolean);
 
@@ -48,7 +114,9 @@ const buildFilter = (q) => {
 };
 
 export const queryRiskZones = async (q) => {
+  await ensureSeedData();
   const filter = buildFilter(q);
+
   const page = q.page ?? 1;
   const limit = q.limit ?? 50;
   const isNear = q.lat !== undefined && q.lng !== undefined;
@@ -67,6 +135,7 @@ export const queryRiskZones = async (q) => {
 };
 
 export const queryRiskZonesAsGeoJSON = async (q) => {
+  await ensureSeedData();
   const docs = await RiskZone.find(buildFilter(q)).limit(q.limit ?? 500);
   return {
     type: 'FeatureCollection',
@@ -75,6 +144,7 @@ export const queryRiskZonesAsGeoJSON = async (q) => {
 };
 
 export const getRiskZoneByIdentifier = async (identifier) => {
+  await ensureSeedData();
   const query = mongoose.isValidObjectId(identifier)
     ? { _id: identifier }
     : { zoneId: identifier.toUpperCase() };
@@ -85,7 +155,9 @@ export const getRiskZoneByIdentifier = async (identifier) => {
 };
 
 export const getSummary = async () => {
+  await ensureSeedData();
   const [byLevel, byHazard, totals] = await Promise.all([
+
     RiskZone.aggregate([
       { $match: { isActive: true } },
       { $group: { _id: '$riskLevel', count: { $sum: 1 }, population: { $sum: '$population' } } },

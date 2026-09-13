@@ -1,16 +1,81 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { EvacuationLocation, EvacuationPlan, seedEvacLocations } from './evacuation.model.js';
 import { RiskZone } from '../riskZones/riskZone.model.js';
 import { ApiError } from '../../common/utils/ApiError.js';
 import { httpStatusCodes } from '../../common/constants/httpStatusCodes.js';
 import mongoose from 'mongoose';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ML_ROUTES_PATH = path.resolve(__dirname, '../../../../ml-proxy/outputs/data/evacuationRoutes.json');
 
 export async function ensureSeedData() {
   const count = await EvacuationLocation.countDocuments();
   if (count === 0) {
-    await EvacuationLocation.insertMany(seedEvacLocations);
+    let seeded = false;
+    if (fs.existsSync(ML_ROUTES_PATH)) {
+      try {
+        const raw = fs.readFileSync(ML_ROUTES_PATH, 'utf-8');
+        const list = JSON.parse(raw);
+        if (Array.isArray(list) && list.length > 0) {
+          const locs = [];
+          const seen = new Set();
+          for (const r of list) {
+            if (r.originName && r.originCoordinates?.length === 2 && !seen.has(r.originName)) {
+              seen.add(r.originName);
+              locs.push({
+                name: r.originName,
+                category: 'origin',
+                coordinates: r.originCoordinates,
+                population: 2500,
+                elevationMeters: 450,
+              });
+            }
+            if (r.destinationName && r.destinationCoordinates?.length === 2 && !seen.has(r.destinationName)) {
+              seen.add(r.destinationName);
+              locs.push({
+                name: r.destinationName,
+                category: 'shelter',
+                coordinates: r.destinationCoordinates,
+                capacity: r.destinationMaxCapacity || 50000,
+                currentOccupancy: (r.destinationMaxCapacity || 50000) - (r.destinationAvailableCapacity || 20000),
+                elevationMeters: 850,
+              });
+            }
+          }
+          if (locs.length > 0) {
+            await EvacuationLocation.insertMany(locs);
+            console.log(`[seed:evacuation] Inserted ${locs.length} ML evacuation locations`);
+            seeded = true;
+          }
+        }
+      } catch (err) {
+        console.warn('[seed:evacuation] ML location seed warning:', err.message);
+      }
+    }
+    if (!seeded) {
+      await EvacuationLocation.insertMany(seedEvacLocations);
+    }
   }
 }
+
+export async function getEvacuationRoutes(query = {}) {
+  await ensureSeedData();
+  if (fs.existsSync(ML_ROUTES_PATH)) {
+    try {
+      const raw = fs.readFileSync(ML_ROUTES_PATH, 'utf-8');
+      let list = JSON.parse(raw);
+      if (query.region) {
+        list = list.filter((r) => r.region?.toLowerCase().includes(query.region.toLowerCase()));
+      }
+      return list;
+    } catch (_) {}
+  }
+  return [];
+}
+
 
 export async function getEvacuationOptions() {
   await ensureSeedData();
@@ -47,15 +112,33 @@ export async function calculateEvacuationRoute(originIdentifier, destinationIden
     throw new ApiError(httpStatusCodes.NOT_FOUND, `Evacuation origin "${originIdentifier}" not found.`);
   }
 
-  // Find destination shelter
-  const destQuery = mongoose.isValidObjectId(destinationIdentifier)
-    ? { _id: destinationIdentifier, category: 'shelter' }
-    : { name: new RegExp(`^${destinationIdentifier}$`, 'i'), category: 'shelter' };
-  const destination = await EvacuationLocation.findOne(destQuery).lean();
+  // Find destination shelter (support automatic nearest shelter if 'auto' or omitted)
+  let destination;
+  if (!destinationIdentifier || destinationIdentifier === 'auto') {
+    const shelters = await EvacuationLocation.find({ category: 'shelter', isActive: true }).lean();
+    if (shelters.length === 0) {
+      throw new ApiError(httpStatusCodes.NOT_FOUND, 'No safe destination shelters available in database.');
+    }
+    const [origLng, origLat] = origin.coordinates;
+    destination = shelters.reduce((best, cur) => {
+      const [curLng, curLat] = cur.coordinates;
+      const d = Math.hypot(curLng - origLng, curLat - origLat);
+      if (!best || d < best._dist) {
+        return { ...cur, _dist: d };
+      }
+      return best;
+    }, null);
+  } else {
+    const destQuery = mongoose.isValidObjectId(destinationIdentifier)
+      ? { _id: destinationIdentifier, category: 'shelter' }
+      : { name: new RegExp(`^${destinationIdentifier}$`, 'i'), category: 'shelter' };
+    destination = await EvacuationLocation.findOne(destQuery).lean();
+  }
 
   if (!destination) {
     throw new ApiError(httpStatusCodes.NOT_FOUND, `Safe destination shelter "${destinationIdentifier}" not found.`);
   }
+
 
 
   const [startLng, startLat] = origin.coordinates;
@@ -65,51 +148,76 @@ export async function calculateEvacuationRoute(originIdentifier, destinationIden
   const midLat = (startLat + endLat) / 2;
   const midLng = (startLng + endLng) / 2;
 
-  // Waypoints for Route A (Safe Southern Bypass Contour)
-  const routeAWaypoints = [
-    { latitude: startLat, longitude: startLng },
-    { latitude: startLat + 0.02, longitude: midLng - 0.02 },
-    { latitude: midLat + 0.03, longitude: midLng },
-    { latitude: endLat + 0.01, longitude: endLng - 0.03 },
-    { latitude: endLat, longitude: endLng },
-  ];
+  // Check for matched ML route with precomputed curved waypoints
+  let matchedMLRoute = null;
+  if (fs.existsSync(ML_ROUTES_PATH)) {
+    try {
+      const raw = fs.readFileSync(ML_ROUTES_PATH, 'utf-8');
+      const list = JSON.parse(raw);
+      matchedMLRoute =
+        list.find((r) => r.originName === origin.name && r.destinationName === destination.name) ||
+        list.find((r) => r.originName === origin.name || r.destinationName === destination.name);
+    } catch (_) {}
+  }
 
-  // Waypoints for Route B (Direct but Compromised North Line)
-  const routeBWaypoints = [
-    { latitude: startLat, longitude: startLng },
-    { latitude: midLat - 0.02, longitude: midLng - 0.01 },
-    { latitude: endLat - 0.01, longitude: endLng - 0.02 },
-    { latitude: endLat, longitude: endLng },
-  ];
+  let routeAWaypoints = [];
+  let routeBWaypoints = [];
+  let distA = 14.5;
+  let distB = 12.0;
+  let etaA = 35;
+  let etaB = 28;
 
-  // Calculate distances (approx Euclidean / Haversine)
-  const distA = Number((Math.hypot(endLng - startLng, endLat - startLat) * 111 * 1.35).toFixed(1));
-  const distB = Number((Math.hypot(endLng - startLng, endLat - startLat) * 111 * 1.05).toFixed(1));
-
-  const etaA = Math.max(8, Math.round((distA / 28) * 60));
-  const etaB = Math.max(6, Math.round((distB / 32) * 60));
+  if (matchedMLRoute && Array.isArray(matchedMLRoute.waypoints) && matchedMLRoute.waypoints.length > 0) {
+    routeAWaypoints = matchedMLRoute.waypoints.map(([lat, lng]) => ({ latitude: lat, longitude: lng }));
+    distA = matchedMLRoute.distanceKm || 14.5;
+    etaA = matchedMLRoute.estimatedTransitMinutes || 35;
+    distB = Number((distA * 0.88).toFixed(1));
+    etaB = Number((etaA * 0.8).toFixed(0));
+    routeBWaypoints = [
+      { latitude: startLat, longitude: startLng },
+      { latitude: midLat + 0.01, longitude: midLng - 0.01 },
+      { latitude: endLat, longitude: endLng },
+    ];
+  } else {
+    routeAWaypoints = [
+      { latitude: startLat, longitude: startLng },
+      { latitude: startLat + (endLat - startLat) * 0.25 + 0.015, longitude: startLng + (endLng - startLng) * 0.25 - 0.01 },
+      { latitude: midLat + 0.02, longitude: midLng + 0.015 },
+      { latitude: startLat + (endLat - startLat) * 0.75 - 0.01, longitude: startLng + (endLng - startLng) * 0.75 + 0.01 },
+      { latitude: endLat, longitude: endLng },
+    ];
+    routeBWaypoints = [
+      { latitude: startLat, longitude: startLng },
+      { latitude: midLat - 0.02, longitude: midLng - 0.01 },
+      { latitude: endLat, longitude: endLng },
+    ];
+    distA = Number((Math.hypot(endLng - startLng, endLat - startLat) * 111 * 1.35).toFixed(1));
+    distB = Number((Math.hypot(endLng - startLng, endLat - startLat) * 111 * 1.05).toFixed(1));
+    etaA = Math.max(8, Math.round((distA / 28) * 60));
+    etaB = Math.max(6, Math.round((distB / 32) * 60));
+  }
 
   const routes = [
     {
       id: 'A',
-      label: 'Route A — Clear Contour Safe Transit',
+      label: 'Route A — Clear Contour Safe Transit Corridor',
       distanceKm: distA,
       etaMinutes: etaA,
       status: 'RECOMMENDED',
       riskLevel: 'Low',
-      condition: 'Reinforced valley contour bypass. Clear of critical flood channels.',
+      condition: 'Reinforced high-ground contour highway. Monitored clear of active hazard channels.',
       bottleneckRisk: 'Low (12% capacity)',
       clearanceIndex: 94,
       waypoints: routeAWaypoints,
     },
     {
       id: 'B',
-      label: 'Route B — Northern Vector (Compromised)',
+      label: 'Route B — Valley Vector (Compromised)',
       distanceKm: distB,
       etaMinutes: etaB,
       status: 'BLOCKED',
       riskLevel: 'High',
-      condition: 'High mudslide telemetry alert along sector slope. Transit restricted.',
+      condition: 'High landslide/flood telemetry alert along river catchment. Transit restricted.',
       bottleneckRisk: 'Severe (88% congestion / debris)',
       clearanceIndex: 32,
       waypoints: routeBWaypoints,
@@ -152,6 +260,8 @@ export async function getRecentPlans(limit = 10) {
 export default {
   ensureSeedData,
   getEvacuationOptions,
+  getEvacuationRoutes,
   calculateEvacuationRoute,
   getRecentPlans,
 };
+

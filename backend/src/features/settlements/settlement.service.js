@@ -1,14 +1,60 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { Settlement, seedSettlements } from './settlement.model.js';
 import { ApiError } from '../../common/utils/ApiError.js';
 import { httpStatusCodes } from '../../common/constants/httpStatusCodes.js';
 import mongoose from 'mongoose';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ML_ZONES_PATH = path.resolve(__dirname, '../../../../ml-proxy/outputs/data/riskZones.json');
+
 export async function ensureSeedData() {
   const count = await Settlement.countDocuments();
   if (count === 0) {
+    if (fs.existsSync(ML_ZONES_PATH)) {
+      try {
+        const raw = fs.readFileSync(ML_ZONES_PATH, 'utf-8');
+        const list = JSON.parse(raw);
+        if (Array.isArray(list) && list.length > 0) {
+          const settlements = list.map((z, idx) => {
+            const r = (z.riskLevel || 'warning').toLowerCase();
+            const riskLevel = r === 'critical' || r === 'high' ? 'Critical' : r === 'safe' ? 'Safe' : 'Warning';
+            const vuln = Math.round(
+              (typeof z.vulnerabilityScore === 'number' && z.vulnerabilityScore <= 1
+                ? z.vulnerabilityScore * 100
+                : z.vulnerabilityScore) || 50
+            );
+            return {
+              settlementId: `SETTL-${idx + 1001}`,
+              name: z.name.replace(/Multi-Hazard Active Disaster Zone/i, 'Sector').trim(),
+              district: z.region ? z.region.split(',')[0].trim() : 'District Zone',
+              riskLevel,
+              population: z.population || 5000,
+              vulnerabilityScore: vuln,
+              hazardType: (z.hazardTypes && z.hazardTypes[0]) || 'Landslide',
+              distanceToHazardKm: 1.5,
+              routeStatus: riskLevel === 'Critical' ? 'Compromised' : 'Clear',
+              progress: Math.max(15, 100 - vuln),
+              location: z.center || { type: 'Point', coordinates: [78.96, 20.59] },
+              mapPlacement: {
+                top: `${Math.round(20 + (idx % 8) * 8)}%`,
+                left: `${Math.round(15 + (idx % 7) * 11)}%`,
+              },
+              isActive: true,
+            };
+          });
+          await Settlement.insertMany(settlements);
+          console.log(`[seed:settlements] Inserted ${settlements.length} ML settlements`);
+          return;
+        }
+      } catch (_) {}
+    }
     await Settlement.insertMany(seedSettlements);
   }
 }
+
 
 export async function querySettlements(filterParams = {}) {
   await ensureSeedData();

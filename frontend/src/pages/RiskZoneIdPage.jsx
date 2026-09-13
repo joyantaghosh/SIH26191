@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import DashboardSidebar from '../components/DashboardSidebar';
 import LeafletMap from '../components/LeafletMap';
+import GoogleRiskZoneMap from '../components/GoogleRiskZoneMap';
 import { getRiskZones } from '../services/riskZoneApi';
+
 
 const DEFAULT_FALLBACK_ZONES = [
   {
@@ -66,6 +69,8 @@ export default function RiskZoneIdPage() {
   const [activeZone, setActiveZone] = useState(DEFAULT_FALLBACK_ZONES[0]);
   const [loading, setLoading] = useState(true);
   const [isLiveDb, setIsLiveDb] = useState(false);
+  const [mapEngine, setMapEngine] = useState('google'); // 'google' | 'leaflet'
+
 
   // Fetch Risk Zones from MongoDB
   useEffect(() => {
@@ -194,35 +199,65 @@ export default function RiskZoneIdPage() {
         <main className="flex-1 relative bg-[#060906] overflow-hidden flex flex-col lg:flex-row h-full">
           {/* GIS Interactive Visual Canvas */}
           <div className="flex-1 h-full relative z-10 overflow-hidden flex flex-col">
-            {/* Top Search Bar */}
+            {/* Top Search Bar & Map Controls */}
             <div className="p-4 md:p-6 bg-[#080C08]/90 border-b border-[rgba(228,233,223,0.08)] z-30 backdrop-blur-md">
-              <form onSubmit={handleSearch} className="flex gap-3 max-w-2xl w-full mx-auto lg:mx-0">
-                <div className="relative flex-1">
-                  <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#86A978] text-[20px] pointer-events-none">
-                    search
-                  </span>
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Enter place, city, region or zone ID (e.g. OKH-01, Oakhaven, Pine Ridge)..."
-                    className="w-full h-11 pl-11 pr-4 bg-[#0D120C] border border-[rgba(122,154,110,0.3)] rounded-[14px] text-xs text-[#E4E9DF] placeholder-[#777C70] outline-none focus:border-[#86A978] focus:ring-1 focus:ring-[#86A978] shadow-inner transition-all"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="px-5 h-11 bg-[#6F9164] hover:bg-[#86A978] text-[#0A0E09] rounded-[14px] font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-2 shrink-0 shadow-lg"
-                >
-                  <span>Search Sector</span>
-                  <span className="material-symbols-outlined text-[16px]">location_searching</span>
-                </button>
-              </form>
+              <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+                <form onSubmit={handleSearch} className="flex gap-3 flex-1 max-w-2xl">
+                  <div className="relative flex-1">
+                    <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#86A978] text-[20px] pointer-events-none">
+                      search
+                    </span>
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Enter place, city, region or zone ID (e.g. OKH-01, Oakhaven, Sundarbans)..."
+                      className="w-full h-11 pl-11 pr-4 bg-[#0D120C] border border-[rgba(122,154,110,0.3)] rounded-[14px] text-xs text-[#E4E9DF] placeholder-[#777C70] outline-none focus:border-[#86A978] focus:ring-1 focus:ring-[#86A978] shadow-inner transition-all"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-5 h-11 bg-[#6F9164] hover:bg-[#86A978] text-[#0A0E09] rounded-[14px] font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-2 shrink-0 shadow-lg"
+                  >
+                    <span>Search Sector</span>
+                    <span className="material-symbols-outlined text-[16px]">location_searching</span>
+                  </button>
+                </form>
 
-              {/* Quick suggestions from Database */}
-              <div className="flex flex-wrap items-center gap-2 mt-3 max-w-2xl mx-auto lg:mx-0 text-[11px] text-[#777C70]">
-                <span className="uppercase text-[10px] tracking-wider text-[#7A9A6E] flex items-center gap-1">
+                {/* Map Engine Switcher (Google Map vs Leaflet GIS) */}
+                <div className="flex items-center gap-1 bg-[#0D120C] border border-[rgba(228,233,223,0.08)] p-1 rounded-[14px] shrink-0 self-start md:self-auto">
+                  <button
+                    type="button"
+                    onClick={() => setMapEngine('google')}
+                    className={`px-3 py-1.5 rounded-[10px] text-xs font-medium transition-all flex items-center gap-1.5 ${
+                      mapEngine === 'google'
+                        ? 'bg-[#1D2A1B] text-[#86A978] border border-[#86A978]/40 shadow-sm'
+                        : 'text-[#777C70] hover:text-[#E4E9DF]'
+                    }`}
+                  >
+                    <span className="material-symbols-outlined text-[16px]">map</span>
+                    <span>Google Maps</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setMapEngine('leaflet')}
+                    className={`px-3 py-1.5 rounded-[10px] text-xs font-medium transition-all flex items-center gap-1.5 ${
+                      mapEngine === 'leaflet'
+                        ? 'bg-[#1D2A1B] text-[#86A978] border border-[#86A978]/40 shadow-sm'
+                        : 'text-[#777C70] hover:text-[#E4E9DF]'
+                    }`}
+                  >
+                    <span className="material-symbols-outlined text-[16px]">layers</span>
+                    <span>GIS Leaflet</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Quick suggestions from Database (Single horizontal scroll row to preserve full map canvas) */}
+              <div className="flex items-center gap-2 mt-3 w-full overflow-x-auto no-scrollbar py-1 text-[11px] text-[#777C70] whitespace-nowrap">
+                <span className="uppercase text-[10px] tracking-wider text-[#7A9A6E] flex items-center gap-1 shrink-0 pr-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#7A9A6E] animate-pulse"></span>
-                  {isLiveDb ? 'DB Risk Zones:' : 'Quick Select:'}
+                  {isLiveDb ? `DB Risk Zones (${zones.length}):` : 'Quick Select:'}
                 </span>
                 {zones.map((place) => (
                   <button
@@ -232,14 +267,14 @@ export default function RiskZoneIdPage() {
                       setActiveZone(place);
                       setSearchQuery(place.name);
                     }}
-                    className={`px-3 py-1 rounded-full border text-[11px] transition-all flex items-center gap-1.5 ${
+                    className={`px-3 py-1 rounded-full border text-[11px] transition-all flex items-center gap-1.5 shrink-0 ${
                       activeZone?.id === place.id
                         ? 'bg-[#7A9A6E]/20 text-[#86A978] border-[#7A9A6E] shadow-[0_0_12px_rgba(122,154,110,0.3)]'
                         : 'bg-[#0D120C] border-[rgba(228,233,223,0.08)] text-[#B0B5A8] hover:border-[rgba(122,154,110,0.3)]'
                     }`}
                   >
                     <span
-                      className="w-1.5 h-1.5 rounded-full"
+                      className="w-1.5 h-1.5 rounded-full shrink-0"
                       style={{
                         backgroundColor:
                           place.riskLevel === 'critical'
@@ -255,47 +290,60 @@ export default function RiskZoneIdPage() {
               </div>
             </div>
 
-            {/* Interactive Leaflet Map */}
-            <div className="flex-1 relative w-full overflow-hidden">
-              <LeafletMap
-                center={activeZone?.latLng || [-6.2, 106.8]}
-                zoom={13}
-                markers={mapMarkers}
-                circles={mapCircles}
-                activeZoneId={activeZone?.id}
-                onZoneClick={(selected) => {
-                  const match = zones.find((z) => z.id === selected.id || z.zoneId === selected.zoneId);
-                  if (match) setActiveZone(match);
-                }}
-              />
+            {/* Interactive Map Canvas (Google Maps or GIS Leaflet) */}
+            <div className="flex-1 relative w-full h-full overflow-hidden">
+              {mapEngine === 'google' ? (
+                <GoogleRiskZoneMap
+                  zones={zones}
+                  activeZone={activeZone}
+                  onZoneClick={(selected) => {
+                    const match = zones.find((z) => z.id === selected.id || z.zoneId === selected.zoneId);
+                    if (match) setActiveZone(match);
+                  }}
+                />
+              ) : (
+                <>
+                  <LeafletMap
+                    center={activeZone?.latLng || [-6.2, 106.8]}
+                    zoom={13}
+                    markers={mapMarkers}
+                    circles={mapCircles}
+                    activeZoneId={activeZone?.id}
+                    onZoneClick={(selected) => {
+                      const match = zones.find((z) => z.id === selected.id || z.zoneId === selected.zoneId);
+                      if (match) setActiveZone(match);
+                    }}
+                  />
 
-              {/* Legend Overlay */}
-              <div className="absolute bottom-6 left-6 bg-[#080C08]/92 border border-[rgba(228,233,223,0.12)] p-4 rounded-[16px] z-[1000] font-sans text-xs backdrop-blur-md shadow-2xl pointer-events-auto">
-                <div className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E] mb-2.5 font-medium flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#7A9A6E] animate-pulse"></span>
-                  Risk Zone Index Legend
-                </div>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-2.5 h-2.5 bg-[#EF4444] rounded-full animate-pulse shadow-[0_0_8px_#EF4444]"></div>
-                    <span className="text-[#E4E9DF]">Critical Danger Zone</span>
+                  {/* Leaflet Legend Overlay */}
+                  <div className="absolute bottom-6 left-6 bg-[#080C08]/92 border border-[rgba(228,233,223,0.12)] p-4 rounded-[16px] z-[1000] font-sans text-xs backdrop-blur-md shadow-2xl pointer-events-auto">
+                    <div className="text-[10px] uppercase tracking-[0.16em] text-[#7A9A6E] mb-2.5 font-medium flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#7A9A6E] animate-pulse"></span>
+                      GIS Leaflet Index Legend
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-2.5 h-2.5 bg-[#EF4444] rounded-full animate-pulse shadow-[0_0_8px_#EF4444]"></div>
+                        <span className="text-[#E4E9DF]">Critical Danger Zone</span>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-2.5 h-2.5 bg-[#F59E0B] rounded-full"></div>
+                        <span className="text-[#B0B5A8]">Warning Sector</span>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-2.5 h-2.5 bg-[#10B981] rounded-full"></div>
+                        <span className="text-[#B0B5A8]">Safe Refuge Zone</span>
+                      </div>
+                    </div>
+                    {isLiveDb && (
+                      <div className="mt-2.5 pt-2 border-t border-[rgba(228,233,223,0.08)] text-[10px] text-[#777C70] flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                        <span>Synchronized with MongoDB</span>
+                      </div>
+                    )}
                   </div>
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-2.5 h-2.5 bg-[#F59E0B] rounded-full"></div>
-                    <span className="text-[#B0B5A8]">Warning Sector</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-2.5 h-2.5 bg-[#10B981] rounded-full"></div>
-                    <span className="text-[#B0B5A8]">Safe Refuge Zone</span>
-                  </div>
-                </div>
-                {isLiveDb && (
-                  <div className="mt-2.5 pt-2 border-t border-[rgba(228,233,223,0.08)] text-[10px] text-[#777C70] flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
-                    <span>Synchronized with MongoDB</span>
-                  </div>
-                )}
-              </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -425,6 +473,17 @@ export default function RiskZoneIdPage() {
               <div className="flex justify-between items-center py-2 border-b border-[rgba(228,233,223,0.06)]">
                 <span className="text-[11px] uppercase text-[#777C70]">Zone Radius</span>
                 <span className="text-[#E4E9DF] font-mono">{activeZone?.radiusMeters ?? 800} meters</span>
+              </div>
+
+              {/* Quick Deploy to Evacuation Route with Nearest Safezone */}
+              <div className="pt-2">
+                <Link
+                  to={`/evacuation-route?origin=${encodeURIComponent(activeZone?.name || '')}`}
+                  className="w-full py-2.5 bg-[#6F9164] hover:bg-[#86A978] text-[#080C08] rounded-[12px] font-mono text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg"
+                >
+                  <span className="material-symbols-outlined text-[16px]">alt_route</span>
+                  <span>Route to Nearest Safezone</span>
+                </Link>
               </div>
             </div>
           </div>

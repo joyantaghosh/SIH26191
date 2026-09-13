@@ -334,3 +334,12 @@
 .mg-bg-dark {
   background-color: #080C08;
 }
+
+/* Hide scrollbar for clean UI overflow */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

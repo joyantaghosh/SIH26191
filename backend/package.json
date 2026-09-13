@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "seed:risk-zones": "node src/seeds/riskZones.seed.js"
+    "seed:risk-zones": "node src/seeds/riskZones.seed.js",
+    "seed:ml": "node src/seeds/mlSeed.js"
+
   },
   "keywords": [],
   "author": "",
